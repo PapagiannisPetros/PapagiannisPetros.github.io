@@ -1,157 +1,232 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #1c1f26;
-  color: #fff;
-  line-height: 1.6;
-}
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #111;
+  }
+  
+  /* Navbar styling */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  background: #13161d;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000; /* Adjust to your design */
+    color: white;
+    padding-right: 50px;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: bold;
+    font-weight: 500;
+    text-emphasis: bold;
+    font-weight: bold;
+    padding-inline: 3rem;
+  }
+  
+  /* Hero section styling */
+  .hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 80vh; /* optional: ensures full-height section */
+  }
+  
+  .left-section {
+    flex: 1;
+    background-color: #d9d9d9;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}   
+  
+  .hero-left h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-left span {
+    color: #0077ff;
+  }
+  
+  .hero-left p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-icons a {
+    margin-right: 1rem;
+    display: inline-block;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Right side with image */
+  .right-section {
+    flex: 1;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .hero-right img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+  
+  .hero-text h1 span {
+    color: #eee;
+    font-weight: bold;
+  }
+  
+  .hero-img img {
+    width: 250px;
+    border-radius: 10px;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    margin: 0.5rem;
+  }
+  
+  section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .services {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+  
+  .service {
+    width: 30%;
+  }
+  
+  .skill-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .skill-icons img {
+    width: 40px;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .portfolio-grid img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  form input, form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form button {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: #111;
+    color: white;
+  }
+  
+  .footer-icons img {
+    width: 20px;
+    margin: 0 5px;
+  }
+
+  .left-section {
+    flex: 1;
+    background-color: #d9d9d9;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.navbar .logo {
-  font-size: 1.5rem;
-  color: #00ffe0;
-}
-
-.navbar nav ul {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-}
-
-.navbar nav a {
-  color: #ccc;
-  text-decoration: none;
-}
-
-.hero {
-  display: flex;
-  justify-content: space-around;
-  padding: 3rem 2rem;
-  align-items: center;
-}
-
-.hero-left h1 {
-  font-size: 2.5rem;
-}
-
-.hero-left h1 span {
-  color: #00ffe0;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 1rem;
-  background: #00ffe0;
-  color: #000;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 25px;
-  text-decoration: none;
-}
-
-.card {
-  background: #2a2e39;
-  padding: 1.5rem;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.about {
-  padding: 4rem 2rem;
-}
-
-.about-content {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.skills {
-  padding: 4rem 2rem;
-  background-color: #13161d;
-}
-
-.skill-cards {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.skill-cards .card {
-  background: #2a2e39;
-  padding: 1rem;
-  border-radius: 10px;
-  flex: 1;
-  text-align: center;
-}
-
-.tech-icons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 2rem;
-}
-
-.tech-icons .icon {
-  background: #00ffe0;
-  color: #000;
-  padding: 1rem;
-  border-radius: 50%;
-}
-
-.works, .blogs, .contact {
-  padding: 4rem 2rem;
-}
-
-.project-carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.project img {
-  width: 200px;
-  border-radius: 10px;
-}
-
-.blog-post {
-  background: #2a2e39;
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-  max-width: 500px;
-}
-
-input, textarea, button {
-  padding: 0.75rem;
-  border-radius: 5px;
-  border: none;
-}
-
-button[type="submit"] {
-  background-color: #00ffe0;
-  color: #000;
-  font-weight: bold;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #13161d;
-  font-size: 0.875rem;
+.right-section {
+    flex: 1;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
