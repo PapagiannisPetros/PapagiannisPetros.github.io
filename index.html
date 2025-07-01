@@ -1,30 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petros Papagiannis</title>
-    <link rel="icon" href="img/headIcon.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" type="text/css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinan Tokmak | Full-Stack Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        Petros Papagiannis
-    </header>
+  <header class="navbar">
+    <div class="logo">&lt;/&gt; SinanTokmak</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Developer</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Github</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="mainText">
-        <h2>Welcome to My Website!</h2>
-        <p>Hi, I'm Petros Papagiannis. This is my personal site where I share my projects and thoughts.</p>
-        <p>Check out my <a href="https://github.com/PapagiannisPetros" target="_blank">GitHub</a>.</p>
-    </section>
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Hey<br>I'm <span>Sinan</span>,<br>Full-Stack Developer</h1>
+      <p>I build modern apps by crafting beautiful UIs and experiences. If you’re looking for a developer, click below to get into touch.</p>
+      <a href="#contact" class="cta-button">Let's Talk</a>
+    </div>
+    <div class="hero-right">
+      <div class="card">
+        <img src="profile.jpg" alt="Sinan">
+        <h2>Sinan</h2>
+        <p>Full-Stack Developer</p>
+        <ul>
+          <li>4+ Years Experience</li>
+          <li>6+ Projects</li>
+          <li>8+ Satisfied Clients</li>
+        </ul>
+        <a href="#" class="download-cv">Download CV</a>
+      </div>
+    </div>
+  </section>
 
-    <section>
-        <img src="img/me.png" alt="me" height="500">
-    </section>
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>Hello! My name is Sinan. I specialize in web development with HTML, CSS, JS, and React. I enjoy creating web apps that solve user problems while maintaining aesthetic quality. I'm always learning new technologies and improving.</p>
+      <img src="laptop.jpg" alt="Coding">
+    </div>
+  </section>
 
-    <!-- todo; more sections -->
-    <footer>
-        &copy; 2025 Petros Papagiannis
-    </footer>
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <div class="skill-cards">
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>HTML, CSS, JS, React</p>
+      </div>
+      <div class="card">
+        <h3>App Development</h3>
+        <p>JavaScript, React</p>
+      </div>
+    </div>
+    <div class="tech-icons">
+      <div class="icon">HTML</div>
+      <div class="icon">CSS</div>
+      <div class="icon">JS</div>
+      <div class="icon">REACT</div>
+    </div>
+  </section>
+
+  <section class="works" id="works">
+    <h2>Works</h2>
+    <p>I had the pleasure of working with these awesome projects</p>
+    <div class="project-carousel">
+      <button class="carousel-left">&#8249;</button>
+      <div class="project">
+        <img src="project.jpg" alt="Project Screenshot">
+        <a href="#">View Website</a>
+      </div>
+      <button class="carousel-right">&#8250;</button>
+    </div>
+  </section>
+
+  <section class="blogs" id="blogs">
+    <h2>Blogs</h2>
+    <div class="blog-post">
+      <img src="blog.jpg" alt="Blog">
+      <h3>What does it take to become a web developer?</h3>
+      <p>Here’s a breakdown of tools, technologies, and lessons you’ll learn on the way to becoming a developer.</p>
+      <a href="#">Read More</a>
+    </div>
+    <button class="more-button">View More</button>
+    <button class="subscribe-button">Subscribe</button>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>The contact solution for freelance work</p>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SinanTokmak. All rights reserved.</p>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms & Conditions</a>
+  </footer>
 </body>
 </html>
