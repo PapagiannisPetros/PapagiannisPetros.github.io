@@ -1,108 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio - Petros Papagiannis</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petros Papagiannis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
-    <header>
-        <!-- Navbar -->
-        <nav class="navbar">
-          <div class="logo">TG</div>
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      
-        <!-- Hero Section (Split Left and Right) -->
-        <div class="hero-section">
-          <div class="left-section">
-            <h1>Hi, I am <span>Tomasz Gajda</span></h1>
-            <p>Front-end Developer / UI Designer</p>
-            <div class="social-icons">
-              <a href="#"><img src="icons/github.svg" alt="GitHub" /></a>
-              <a href="#"><img src="icons/linkedin.svg" alt="LinkedIn" /></a>
-              <a href="#"><img src="icons/email.svg" alt="Email" /></a>
-            </div>
-          </div>
-          <div class="right-section">
-            <img src="images/profile.png" alt="Profile Image" />
-          </div>
+     <!-- Navbar -->
+     <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo" id="logo">
         </div>
-      </header>
+        <div class="nav-right">
+            <a href="#about">About me</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact" id="contact-button">Contact me</a>
+        </div>
+      </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-left">
+            <h2 id="beg1">Hi, I am</h2>
+            <h1 id="beg2">Petros Papagiannis</h1>
+            <h3 id="beg3">Software Engineer</h3>
+            <div class="social-icons">
+                <a href="#"><img src="icons/git.png" alt="GitHub" /></a>
+                <a href="#"><img src="icons/linkedin.png" alt="LinkedIn" /></a>
+                <a href="#"><img src="icons/mail.png" alt="Email" /></a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="images/Subject(1).png" alt="Petros Papagiannis">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I’m a front-end developer and UI designer with a passion for creating clean, responsive, and engaging websites and user interfaces.</p>
+        <div class="about-cards">
+            <div class="card">
+                <h3>Design</h3>
+                <p>UI/UX design with modern and user-friendly interfaces.</p>
+            </div>
+            <div class="card">
+                <h3>Development</h3>
+                <p>Front-end coding using modern frameworks and tools.</p>
+            </div>
+            <div class="card">
+                <h3>Maintenance</h3>
+                <p>Keeping websites running smoothly and updated.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <h3>Using now:</h3>
+        <div class="skills-grid">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>SASS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Bootstrap</span>
+            <span>Git</span>
+            <span>Figma</span>
+        </div>
+
+        <h3>Learning:</h3>
+        <div class="skills-grid">
+            <span>Node.js</span>
+            <span>MySQL</span>
+            <span>MongoDB</span>
+            <span>TypeScript</span>
+        </div>
+
+        <h3>Other Skills:</h3>
+        <div class="skills-grid">
+            <span>English (C1/C2)</span>
+            <span>Spanish (B1/B2)</span>
+            <span>C</span>
+            <span>C++</span>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio-section">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">Project 1</div>
+            <div class="portfolio-item">Project 2</div>
+            <div class="portfolio-item">Project 3</div>
+            <div class="portfolio-item">Project 4</div>
+        </div>
+        <p>And many more to come!</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <h2 id="contact_text">CONTACT</h2>
+        <form>
+            <input type="text" placeholder="Enter your name">
+            <input type="email" placeholder="Enter your email">
+            <input type="text" placeholder="Subject">
+            <textarea placeholder="Your message"></textarea>
+            <button id="last_but" type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#top" class="back-to-top">↑ Back to Top ↑</a>
+            <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>© 2025 Petros Papagiannis. All rights reserved.</p>
+        </div>
+    </footer>
       
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>I am a front-end developer passionate about creating elegant and user-friendly web applications.</p>
-    <div class="services">
-      <div class="service"><h3>Design</h3><p>UI/UX and responsive design</p></div>
-      <div class="service"><h3>Development</h3><p>HTML, CSS, JS, React</p></div>
-      <div class="service"><h3>Maintenance</h3><p>Bug fixes and performance tuning</p></div>
-    </div>
-  </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <h2>Skills</h2>
-    <h4>Using Now:</h4>
-    <div class="skill-icons">
-      <img src="icons/html5.svg" alt="HTML5"/>
-      <img src="icons/css3.svg" alt="CSS3"/>
-      <img src="icons/sass.svg" alt="SASS"/>
-      <img src="icons/js.svg" alt="JavaScript"/>
-      <img src="icons/react.svg" alt="React"/>
-      <img src="icons/bootstrap.svg" alt="Bootstrap"/>
-      <img src="icons/git.svg" alt="Git"/>
-      <img src="icons/figma.svg" alt="Figma"/>
-    </div>
-    <h4>Learning:</h4>
-    <div class="skill-icons">
-      <img src="icons/nodejs.svg" alt="Node.js"/>
-      <img src="icons/mysql.svg" alt="MySQL"/>
-      <img src="icons/mongodb.svg" alt="MongoDB"/>
-      <img src="icons/typescript.svg" alt="TypeScript"/>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
-      <img src="images/work1.jpg" alt="Work 1"/>
-      <img src="images/work2.jpg" alt="Work 2"/>
-      <img src="images/work3.jpg" alt="Work 3"/>
-      <img src="images/work4.jpg" alt="Work 4"/>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required/>
-      <input type="email" name="email" placeholder="Your Email" required/>
-      <input type="text" name="subject" placeholder="Subject" />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>© 2025 Tomasz Gajda</p>
-    <div class="footer-icons">
-      <a href="#"><img src="icons/github.svg" /></a>
-      <a href="#"><img src="icons/linkedin.svg" /></a>
-      <a href="#"><img src="icons/email.svg" /></a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
