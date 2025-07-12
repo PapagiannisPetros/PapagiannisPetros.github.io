@@ -182,25 +182,89 @@ button{
 }
 
 /* Skills Section */
+/* Container for the entire skills section */
 #skills {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
+  padding: 40px 0;
 }
 
+/* Skills content box */
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+}
+
+/* Title box at the top */
+.skills-title {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 2px;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  display: inline-block;
+  margin: 0 auto 30px;
+}
+
+/* Section subtitle (e.g. Using Now, Learning) */
+.skills-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills-section h2 {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #111;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+/* Grid layout for skill icons */
 .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 50px 80px; /* Increase spacing between rows and columns */
+  justify-items: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.skills-grid span {
-    display: inline-block;
-    padding: 8px 15px;
-    background: #f2f2f2;
-    border-radius: 20px;
-    font-size: 14px;
+
+/* Individual skill item */
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
+
+/* Skill icon */
+.skill img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Skill label */
+.skill p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Optional subtext below skill name */
+.skill small {
+  font-size: 12px;
+  color: #555;
+}
+
 
 /* Portfolio Section */
 #portfolio {
@@ -454,4 +518,3 @@ footer {
     gap: 2rem;
     margin-bottom: 2rem;
   }
-  
