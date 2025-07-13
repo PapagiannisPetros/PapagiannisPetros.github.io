@@ -145,14 +145,12 @@ button{
 
 .hero-right {
     flex: 1;
-    text-align: left;
     display: flex;
-    padding-right: 15rem;
-    margin-left: auto;
     bottom: 0;
-    width: 50%;
+    width: 45%;
     position: absolute;
-    margin-left: 48rem;
+    right: 0;
+    margin-right: 8rem;
 }
 
 .hero-right img {
