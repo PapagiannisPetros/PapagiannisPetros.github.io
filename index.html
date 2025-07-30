@@ -8,15 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="images/logo.png" type="image/png">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+
+
 
 </head>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init();
+  var typed = new Typed("#beg3", {
+    strings: ["Software Engineer", "AI Enthusiast", "Cybersecurity Learner"],
+    typeSpeed: 50,
+    backSpeed: 30,
+    loop: true
+  });
 </script>
 
 <body>
+  <div id="progressBar"></div>
 
      <!-- Navbar -->
      <nav class="navbar">
@@ -36,7 +45,9 @@
         <div class="hero-left">
             <h2 id="beg1">Hi, I am</h2>
             <h1 id="beg2">Petros Papagiannis</h1>
-            <h3 id="beg3">Software Engineer</h3>
+            <h3 id="beg4">Software Engineer</h3>
+            <h3><span id="beg3"></span></h3>
+
             <div class="social-icons">
                 <a class="icons" href="https://github.com/PapagiannisPetros" target="_blank" ><img src="icons/git.png" alt="GitHub" /></a>
                 <a class="icons" href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img src="icons/linkedin.png" alt="LinkedIn" /></a>
@@ -60,18 +71,18 @@
         <div class="separator">
             <img src="images/separatorBlack 1.png" alt="Separator">
         </div>
-            <div class="services-container" data-aos="fade-up" data-aos-delay="200">
-              <div class="service-box" >
+            <div class="services-container" >
+              <div class="service-box" data-aos="fade-up" data-aos-delay="200">
                 <img src="images/work.png" alt="Work Icon" />
                 <h3>Work</h3>
                 <p>I actively engage in research and development projects involving Conversational AI, Artificial Intelligence features, and Machine Learning systems. I enjoy building intelligent, user-centric applications and exploring how AI can enhance human-computer interaction..</p>
               </div>
-              <div class="service-box">
+              <div class="service-box" data-aos="fade-up" data-aos-delay="200">
                 <img src="images/university.png" alt="University Icon" />
                 <h3>University</h3>
                 <p>I am currently an undergraduate student at the Department of Computer Engineering and Informatics (CEID) at the University of Patras. My academic focus is on Artificial Intelligence, Machine Learning, and Intelligent Systems. Through both coursework and research, I am developing a strong foundation in core computer science concepts while exploring how AI can be applied to solve real-world problems.</p>
               </div>
-              <div class="service-box" id="study">
+              <div class="service-box" id="study" data-aos="fade-up" data-aos-delay="200">
                 <img src="images/study.png" alt="Study Icon" />
                 <h3>Study</h3>
                 <p>Beyond my academic work, I actively deepen my knowledge in Artificial Intelligence and Machine Learning through personal projects, online courses, and reading recent research. I enjoy experimenting with AI models, building intelligent systems, and exploring how machine learning can solve real-world problems.
@@ -196,6 +207,7 @@
 
     <!-- Contact Section -->
 <section id="contact" class="section contact-section">
+  
     <h2 class="text_title">CONTACT</h2>
     <form action="https://formspree.io/f/mnqkwxyz" method="POST" id="contactForm">
       <input type="text" name="name" placeholder="Enter your name" required>
@@ -221,7 +233,89 @@
             <p>© 2025 Petros Papagiannis. <small>All rights reserved.</small></p>
         </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
       
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Typed("#beg3", {
+          strings: ["Dreamer", "Doer", "Lover"],
+          typeSpeed: 50,
+          backSpeed: 30,
+          backDelay: 1500,
+          loop: true
+        });
+      });
+    </script>
+    
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 100) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
 
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".service-box"), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2
+      });
+    </script>
+
+    <script>
+      window.onscroll = function () {
+        const scroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (scroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+      };
+    </script>
+
+    <script>
+  window.addEventListener('scroll', function () {
+    const beg1 = document.getElementById("beg1");
+    const beg2 = document.getElementById("beg2");
+    const beg4 = document.getElementById("beg4");
+
+    const maxScroll = window.innerHeight; // hero section height
+    const scrollTop = window.scrollY;
+    const progress = Math.min(scrollTop / maxScroll, 1); // clamp to [0,1]
+
+    // Interpolate font sizes
+    beg1.style.fontSize = `${2 - 1 * progress}rem`;  // from 2rem to 1rem
+    beg2.style.fontSize = `${3 - 1.5 * progress}rem`;  // from 3rem to 1.5rem
+    beg4.style.fontSize = `${1.5 - 0.5 * progress}rem`;  // from 1.5rem to 1rem
+  });
+</script>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const hero = document.querySelector('.hero');
+    const maxScroll = window.innerHeight;
+    const scrollTop = window.scrollY;
+    const progress = Math.min(scrollTop / maxScroll, 1);
+
+    // Card effect: shrink and lift
+    const scale = 1 - progress * 0.1;        // scale down to 90%
+    const translateY = progress * -50;       // move up slightly
+    const opacity = 1 - progress * 0.1;
+
+    hero.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+    hero.style.opacity = opacity;
+  });
+</script>
+
+
+    
+    
+    
 </body>
 </html>
