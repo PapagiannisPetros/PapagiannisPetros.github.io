@@ -21,11 +21,6 @@ h2 {
     white-space: nowrap;
 }
 
-#beg2 {
-  white-space: nowrap;
-  z-index: 22;
-}
-
 p {
     max-width: 800px;
     margin: 0 auto 20px;
@@ -166,6 +161,8 @@ button{
 #beg2{
     font-size: 4rem;
     padding-bottom: -90px;
+    white-space: nowrap;
+    z-index: 22;
 }
 
 #beg3 {
@@ -450,6 +447,7 @@ footer {
     width: 10rem;
     font-weight: bold;
   }
+
 
   input[type="email"] {
     background-color: transparent;

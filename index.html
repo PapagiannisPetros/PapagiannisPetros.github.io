@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petros Papagiannis</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petros Papagiannis</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
 
 
 
@@ -27,189 +28,284 @@
 <body>
   <div id="progressBar"></div>
 
-     <!-- Navbar -->
-     <nav class="navbar">
-        <div class="logo">
-            <img src="images/logo.png" alt="Logo" id="logo">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" id="logo">
+    </div>
+    <div class="nav-right">
+      <a href="#about">About me</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact" id="contact-button">Contact me</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-left">
+      <h2 id="beg1">Hi, I am</h2>
+      <h1 id="beg2">Petros Papagiannis</h1>
+      <h3 id="beg4">Software Engineer</h3>
+      <h3><span id="beg3"></span></h3>
+
+      <div class="social-icons">
+        <a class="icons" href="https://github.com/PapagiannisPetros" target="_blank"><img src="icons/git.png"
+            alt="GitHub" /></a>
+        <a class="icons" href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img
+            src="icons/linkedin.png" alt="LinkedIn" /></a>
+        <a class="icons" href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png"
+            alt="Email" /></a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="images/Subject(1).png" alt="Petros Papagiannis">
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2 class="text_title">ABOUT ME</h2>
+    <p class="textall">Hello! I’m an undergraduate student at the Department of Computer Engineering and Informatics
+      (CEID) at the University of Patras.
+      I’m actively working in the field of Artificial Intelligence, with a strong focus on Conversational AI and
+      developing intelligent system features.
+
+      At university, I study AI and Machine Learning both in theory and through practical applications.
+      In my free time, I explore topics in cybersecurity, driven by a curiosity for systems, vulnerabilities, and secure
+      design.</p>
+    <button id="about_button" onclick="window.open('index.html', '_blank')">Learn More</button>
+    <div class="separator">
+      <img src="images/separatorBlack 1.png" alt="Separator">
+    </div>
+    <div class="services-container">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/work.png" alt="Work Icon" />
+        <h3>Work</h3>
+        <p>I actively engage in research and development projects involving Conversational AI, Artificial Intelligence
+          features, and Machine Learning systems. I enjoy building intelligent, user-centric applications and exploring
+          how AI can enhance human-computer interaction..</p>
+      </div>
+      <div class="service-box" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/university.png" alt="University Icon" />
+        <h3>University</h3>
+        <p>I am currently an undergraduate student at the Department of Computer Engineering and Informatics (CEID) at
+          the University of Patras. My academic focus is on Artificial Intelligence, Machine Learning, and Intelligent
+          Systems. Through both coursework and research, I am developing a strong foundation in core computer science
+          concepts while exploring how AI can be applied to solve real-world problems.</p>
+      </div>
+      <div class="service-box" id="study" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/study.png" alt="Study Icon" />
+        <h3>Study</h3>
+        <p>Beyond my academic work, I actively deepen my knowledge in Artificial Intelligence and Machine Learning
+          through personal projects, online courses, and reading recent research. I enjoy experimenting with AI models,
+          building intelligent systems, and exploring how machine learning can solve real-world problems.
+          In addition, I study cybersecurity to understand how to protect digital systems, and I also explore web
+          development to improve my front-end and back-end skills, ensuring I can create secure, modern applications.
+        </p>
+      </div>
+    </div>
+
+    <div class="separator">
+      <img src="images/separatorBlack 1.png" alt="Separator">
+    </div>
+
+  </section>
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h1 class="text_title">SKILLS</h1>
+
+    <div class="skills-section">
+      <h2>Programming Languages:</h2>
+      <div class="skills-grid">
+        <div class="skill"><img src="images/cpp.png" alt="C++">
+          <p>C++</p>
         </div>
-        <div class="nav-right">
-            <a href="#about">About me</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact" id="contact-button">Contact me</a>
+        <div class="skill"><img src="images/c.png" alt="C">
+          <p>C</p>
         </div>
-      </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-left">
-            <h2 id="beg1">Hi, I am</h2>
-            <h1 id="beg2">Petros Papagiannis</h1>
-            <h3 id="beg4">Software Engineer</h3>
-            <h3><span id="beg3"></span></h3>
-
-            <div class="social-icons">
-                <a class="icons" href="https://github.com/PapagiannisPetros" target="_blank" ><img src="icons/git.png" alt="GitHub" /></a>
-                <a class="icons" href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img src="icons/linkedin.png" alt="LinkedIn" /></a>
-                <a class="icons" href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png" alt="Email" /></a>
-            </div>
+        <div class="skill"><img src="images/js.png" alt="JavaScript">
+          <p>JavaScript</p>
         </div>
-        <div class="hero-right">
-            <img src="images/Subject(1).png" alt="Petros Papagiannis">
+        <div class="skill"><img src="images/python.png" alt="Python">
+          <p>Python</p>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2 class="text_title">ABOUT ME</h2>
-        <p class="textall">Hello! I’m an undergraduate student at the Department of Computer Engineering and Informatics (CEID) at the University of Patras.
-            I’m actively working in the field of Artificial Intelligence, with a strong focus on Conversational AI and developing intelligent system features.
-            
-            At university, I study AI and Machine Learning both in theory and through practical applications.
-            In my free time, I explore topics in cybersecurity, driven by a curiosity for systems, vulnerabilities, and secure design.</p>
-        <button id="about_button" onclick="window.open('index.html', '_blank')">Learn More</button>
-        <div class="separator">
-            <img src="images/separatorBlack 1.png" alt="Separator">
+        <div class="skill"><img src="images/java.png" alt="Java">
+          <p>Java</p>
         </div>
-            <div class="services-container" >
-              <div class="service-box" data-aos="fade-up" data-aos-delay="200">
-                <img src="images/work.png" alt="Work Icon" />
-                <h3>Work</h3>
-                <p>I actively engage in research and development projects involving Conversational AI, Artificial Intelligence features, and Machine Learning systems. I enjoy building intelligent, user-centric applications and exploring how AI can enhance human-computer interaction..</p>
-              </div>
-              <div class="service-box" data-aos="fade-up" data-aos-delay="200">
-                <img src="images/university.png" alt="University Icon" />
-                <h3>University</h3>
-                <p>I am currently an undergraduate student at the Department of Computer Engineering and Informatics (CEID) at the University of Patras. My academic focus is on Artificial Intelligence, Machine Learning, and Intelligent Systems. Through both coursework and research, I am developing a strong foundation in core computer science concepts while exploring how AI can be applied to solve real-world problems.</p>
-              </div>
-              <div class="service-box" id="study" data-aos="fade-up" data-aos-delay="200">
-                <img src="images/study.png" alt="Study Icon" />
-                <h3>Study</h3>
-                <p>Beyond my academic work, I actively deepen my knowledge in Artificial Intelligence and Machine Learning through personal projects, online courses, and reading recent research. I enjoy experimenting with AI models, building intelligent systems, and exploring how machine learning can solve real-world problems.
-                    In addition, I study cybersecurity to understand how to protect digital systems, and I also explore web development to improve my front-end and back-end skills, ensuring I can create secure, modern applications.</p>
-              </div>
-            </div>
-
-            <div class="separator">
-                <img src="images/separatorBlack 1.png" alt="Separator">
-            </div>
-            
-    </section>
-    
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <h1 class="text_title">SKILLS</h1>
-
-        <div class="skills-section">
-            <h2>Programming Languages:</h2>
-            <div class="skills-grid">
-                <div class="skill"><img src="images/cpp.png" alt="C++"><p>C++</p></div>
-                <div class="skill"><img src="images/c.png" alt="C"><p>C</p></div>
-                <div class="skill"><img src="images/js.png" alt="JavaScript"><p>JavaScript</p></div>
-                <div class="skill"><img src="images/python.png" alt="Python"><p>Python</p></div>
-                <div class="skill"><img src="images/java.png" alt="Java"><p>Java</p></div>
-                <div class="skill"><img src="images/ts.png" alt="TypeScript"><p>TypeScript</p></div>
-                <div class="skill"><img src="images/bash.png" alt="Bash/Shell"><p>Bash/Shell</p></div>
-            </div>
+        <div class="skill"><img src="images/ts.png" alt="TypeScript">
+          <p>TypeScript</p>
         </div>
-
-        <div class="skills-section">
-            <h2> AI / Machine Learning:</h2>
-            <div class="skills-grid">
-                <div class="skill"><img src="images/python.png" alt="Python"><p>Python</p></div>
-                <div class="skill"><img src="images/pytorch.png" alt="Pytorch"><p>PyTorch</p></div>
-                <div class="skill"><img src="images/numpy.png" alt="NUmpY"><p>NumPy</p></div>
-                <div class="skill"><img src="images/tensor.png" alt="TensorFlow"><p>TensorFlow</p></div> 
-                <div class="skill"><img src="images/sk.png" alt="Scikit-Learn"><p>Scikit-Learn</p></div>
-                <div class="skill"><img src="images/pandas.png" alt="Pandas"><p>Pandas</p></div>
-            </div>
+        <div class="skill"><img src="images/bash.png" alt="Bash/Shell">
+          <p>Bash/Shell</p>
         </div>
+      </div>
+    </div>
 
-        <div class="skills-section">
-            <h2> APIs:</h2>
-            <div class="skills-grid">
-                <div class="skill"><img src="images/gemini.png" alt="Gemini"><p>Gemini</p></div>
-                <div class="skill"><img src="images/gpt.png" alt="gpt 3o"><p>GPT 3o</p></div>
-            </div>
+    <div class="skills-section">
+      <h2> AI / Machine Learning:</h2>
+      <div class="skills-grid">
+        <div class="skill"><img src="images/python.png" alt="Python">
+          <p>Python</p>
         </div>
-
-        <div class="skills-section">
-            <h2>Cybersecurity Skills:</h2>
-            <div class="skills-grid">
-              <div class="skill"><img src="images/kali.png" alt="Kali"><p>Kali Linux</p></div>
-              <div class="skill"><img src="images/owasp.png" alt="OWASP"><p>OWASP</p></div>
-              <div class="skill"><img src="images/whireshark.png" alt="Whireshark"><p>Whireshark</p></div>
-              <div class="skill"><img src="images/burp.png" alt="BurpSuite"><p>Burp Suite</p></div>
-            </div>
-          </div>
-    
-        <div class="skills-section">
-          <h2>Web Development:</h2>
-          <div class="skills-grid">
-            <div class="skill"><img src="images/html.png" alt="HTML5"><p>HTML5</p></div>
-            <div class="skill"><img src="images/css.png" alt="CSS3"><p>CSS3</p></div>
-            <div class="skill"><img src="images/js.png" alt="JavaScript"><p>JavaScript</p></div>
-            <div class="skill"><img src="images/react.png" alt="React"><p>React</p></div>
-            <div class="skill"><img src="images/bootstrap.png" alt="Bootstrap"><p>Bootstrap</p></div>
-            <div class="skill"><img src="images/figma.png" alt="Figma"><p>Figma</p></div>
-            <div class="skill"><img src="images/php.png" alt="PHP"><p>PHP</p></div>
-            <div class="skill"><img src="images/mysql.png" alt="MySQL"><p>MySQL</p></div>
-            <div class="skill"><img src="images/env.png" alt=".env"><p>.env</p></div>
-            <div class="skill"><img src="images/nodejs.png" alt="nodejs"><p>NodeJS</p></div>
-            <div class="skill"><img src="images/git.png" alt="Git"><p>Git</p></div>
-            <div class="skill"><img src="images/github.png" alt="GitHub"><p>GitHub</p></div>
+        <div class="skill"><img src="images/pytorch.png" alt="Pytorch">
+          <p>PyTorch</p>
         </div>
+        <div class="skill"><img src="images/numpy.png" alt="NUmpY">
+          <p>NumPy</p>
         </div>
-
-
-    
-        <div class="skills-section">
-          <h2>DevOps / Tools:</h2>
-          <div class="skills-grid">
-            <div class="skill"><img src="images/docker.png" alt="Docker"><p>Docker</p></div>
-            <div class="skill"><img src="images/git.png" alt="Git"><p>Git</p></div>
-            <div class="skill"><img src="images/github.png" alt="GitHub"><p>GitHub</p></div>
-          </div>
+        <div class="skill"><img src="images/tensor.png" alt="TensorFlow">
+          <p>TensorFlow</p>
         </div>
-
-        <div class="skills-section">
-            <h2>Developer Tools:</h2>
-            <div class="skills-grid">
-                <div class="skill"><img src="images/qtcreator.png" alt="QTcreator"><p>QT Creator</p></div>
-                <div class="skill"><img src="images/vs.png" alt="VSCode"><p>Visual Studio Code</p></div>
-                <div class="skill"><img src="images/copilot.png" alt="Copilot"><p>Copilot</p></div>
-                <div class="skill"><img src="images/latex.png" alt="LaTeX"><p>LaTeX</p></div>
-            </div>
-          </div>
-
-    
-        <div class="skills-section">
-          <h2>Other Skills:</h2>
-          <div class="skills-grid">
-            <div class="skill"><img src="images/english.png" alt="English"><p>English<br><small>C2</small></p></div>
-            <div class="skill"><img src="images/fr.png" alt="French"><p>French<br><small>B2</small></p></div>
-          </div>
+        <div class="skill"><img src="images/sk.png" alt="Scikit-Learn">
+          <p>Scikit-Learn</p>
         </div>
-      </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section portfolio-section">
-        <h2 class="text_title">PORTFOLIO</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">Project 1</div>
-            <div class="portfolio-item">Project 2</div>
-            <div class="portfolio-item">Project 3</div>
-            <div class="portfolio-item">Project 4</div>
+        <div class="skill"><img src="images/pandas.png" alt="Pandas">
+          <p>Pandas</p>
         </div>
-        <p>And many more to come!</p>
-    </section>
+      </div>
+    </div>
 
-    <!-- Contact Section -->
-<section id="contact" class="section contact-section">
-  
+    <div class="skills-section">
+      <h2> APIs:</h2>
+      <div class="skills-grid">
+        <div class="skill"><img src="images/gemini.png" alt="Gemini">
+          <p>Gemini</p>
+        </div>
+        <div class="skill"><img src="images/gpt.png" alt="gpt 3o">
+          <p>GPT 3o</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-section">
+      <h2>Cybersecurity Skills:</h2>
+      <div class="skills-grid">
+        <div class="skill"><img src="images/kali.png" alt="Kali">
+          <p>Kali Linux</p>
+        </div>
+        <div class="skill"><img src="images/owasp.png" alt="OWASP">
+          <p>OWASP</p>
+        </div>
+        <div class="skill"><img src="images/whireshark.png" alt="Whireshark">
+          <p>Whireshark</p>
+        </div>
+        <div class="skill"><img src="images/burp.png" alt="BurpSuite">
+          <p>Burp Suite</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-section">
+      <h2>Web Development:</h2>
+      <div class="skills-grid">
+        <div class="skill"><img src="images/html.png" alt="HTML5">
+          <p>HTML5</p>
+        </div>
+        <div class="skill"><img src="images/css.png" alt="CSS3">
+          <p>CSS3</p>
+        </div>
+        <div class="skill"><img src="images/js.png" alt="JavaScript">
+          <p>JavaScript</p>
+        </div>
+        <div class="skill"><img src="images/react.png" alt="React">
+          <p>React</p>
+        </div>
+        <div class="skill"><img src="images/bootstrap.png" alt="Bootstrap">
+          <p>Bootstrap</p>
+        </div>
+        <div class="skill"><img src="images/figma.png" alt="Figma">
+          <p>Figma</p>
+        </div>
+        <div class="skill"><img src="images/php.png" alt="PHP">
+          <p>PHP</p>
+        </div>
+        <div class="skill"><img src="images/mysql.png" alt="MySQL">
+          <p>MySQL</p>
+        </div>
+        <div class="skill"><img src="images/env.png" alt=".env">
+          <p>.env</p>
+        </div>
+        <div class="skill"><img src="images/nodejs.png" alt="nodejs">
+          <p>NodeJS</p>
+        </div>
+        <div class="skill"><img src="images/git.png" alt="Git">
+          <p>Git</p>
+        </div>
+        <div class="skill"><img src="images/github.png" alt="GitHub">
+          <p>GitHub</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="skills-section">
+      <h2>DevOps / Tools:</h2>
+      <div class="skills-grid">
+        <div class="skill"><img src="images/docker.png" alt="Docker">
+          <p>Docker</p>
+        </div>
+        <div class="skill"><img src="images/git.png" alt="Git">
+          <p>Git</p>
+        </div>
+        <div class="skill"><img src="images/github.png" alt="GitHub">
+          <p>GitHub</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-section">
+      <h2>Developer Tools:</h2>
+      <div class="skills-grid">
+        <div class="skill"><img src="images/qtcreator.png" alt="QTcreator">
+          <p>QT Creator</p>
+        </div>
+        <div class="skill"><img src="images/vs.png" alt="VSCode">
+          <p>Visual Studio Code</p>
+        </div>
+        <div class="skill"><img src="images/copilot.png" alt="Copilot">
+          <p>Copilot</p>
+        </div>
+        <div class="skill"><img src="images/latex.png" alt="LaTeX">
+          <p>LaTeX</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="skills-section">
+      <h2>Other Skills:</h2>
+      <div class="skills-grid">
+        <div class="skill"><img src="images/english.png" alt="English">
+          <p>English<br><small>C2</small></p>
+        </div>
+        <div class="skill"><img src="images/fr.png" alt="French">
+          <p>French<br><small>B2</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section portfolio-section">
+    <h2 class="text_title">PORTFOLIO</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">Project 1</div>
+      <div class="portfolio-item">Project 2</div>
+      <div class="portfolio-item">Project 3</div>
+      <div class="portfolio-item">Project 4</div>
+    </div>
+    <p>And many more to come!</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+
     <h2 class="text_title">CONTACT</h2>
-    <form action="https://formspree.io/f/mnqkwxyz" method="POST" id="contactForm">
+    <form action="https://formspree.io/f/xkgzobyy" method="POST" id="contactForm">
       <input type="text" name="name" placeholder="Enter your name" required>
       <input type="email" name="email" placeholder="Enter your email" required>
       <input type="text" name="subject" placeholder="Subject" required>
@@ -218,104 +314,140 @@
     </form>
     <p id="formMessage" style="margin-top: 10px;"></p>
   </section>
-  
 
-    <footer>
-        <div class="footer-content">
-            <a href="#top" class="back-to-top">↑ Back to Top ↑</a>
-            <div class="social-icons">
-            <a href="https://www.facebook.com/petrospapagiannis2004" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/papagiannis._._/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:petros.t.papagiannis@gmail.com"><i class="fas fa-envelope"></i></a>
-            
-        </div>
-            <p>© 2025 Petros Papagiannis. <small>All rights reserved.</small></p>
-        </div>
-    </footer>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-      
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        new Typed("#beg3", {
-          strings: ["Dreamer", "Doer", "Lover"],
-          typeSpeed: 50,
-          backSpeed: 30,
-          backDelay: 1500,
-          loop: true
-        });
+
+  <footer>
+    <div class="footer-content">
+      <a href="#top" class="back-to-top">↑ Back to Top ↑</a>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/petrospapagiannis2004" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/papagiannis._._/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:petros.t.papagiannis@gmail.com"><i class="fas fa-envelope"></i></a>
+
+      </div>
+      <p>© 2025 Petros Papagiannis. <small>All rights reserved.</small></p>
+    </div>
+  </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contactForm");
+      const message = document.getElementById("formMessage");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", form.action, true);
+        xhr.setRequestHeader("Accept", "application/json");
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+
+          if (xhr.status === 200) {
+            message.style.color = "green";
+            message.textContent = "✅ Your message was sent successfully!";
+            form.reset();
+          } else {
+            message.style.color = "red";
+            message.textContent = "❌ Oops! Something went wrong. Try again.";
+          }
+        };
+
+        xhr.send(formData);
       });
-    </script>
-    
-    <script>
-      window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".navbar");
-        if (window.scrollY > 100) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
+    });
+  </script>
+
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Typed("#beg3", {
+        strings: ["Dreamer", "Doer", "Lover"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 1500,
+        loop: true
       });
-    </script>
+    });
+  </script>
 
-    <script>
-      VanillaTilt.init(document.querySelectorAll(".service-box"), {
-        max: 15,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.2
-      });
-    </script>
+  <script>
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 100) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
 
-    <script>
-      window.onscroll = function () {
-        const scroll = document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (scroll / height) * 100;
-        document.getElementById("progressBar").style.width = scrolled + "%";
-      };
-    </script>
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".service-box"), {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.2
+    });
+  </script>
 
-    <script>
-  window.addEventListener('scroll', function () {
-    const beg1 = document.getElementById("beg1");
-    const beg2 = document.getElementById("beg2");
-    const beg4 = document.getElementById("beg4");
+  <script>
+    window.onscroll = function () {
+      const scroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (scroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
 
-    const maxScroll = window.innerHeight; // hero section height
-    const scrollTop = window.scrollY;
-    const progress = Math.min(scrollTop / maxScroll, 1); // clamp to [0,1]
+  <script>
+    window.addEventListener('scroll', function () {
+      const beg1 = document.getElementById("beg1");
+      const beg2 = document.getElementById("beg2");
+      const beg4 = document.getElementById("beg4");
 
-    // Interpolate font sizes
-    beg1.style.fontSize = `${2 - 1 * progress}rem`;  // from 2rem to 1rem
-    beg2.style.fontSize = `${3 - 1.5 * progress}rem`;  // from 3rem to 1.5rem
-    beg4.style.fontSize = `${1.5 - 0.5 * progress}rem`;  // from 1.5rem to 1rem
-  });
-</script>
+      const maxScroll = window.innerHeight; // hero section height
+      const scrollTop = window.scrollY;
+      const progress = Math.min(scrollTop / maxScroll, 1); // clamp to [0,1]
 
-<script>
-  window.addEventListener('scroll', function () {
-    const hero = document.querySelector('.hero');
-    const maxScroll = window.innerHeight;
-    const scrollTop = window.scrollY;
-    const progress = Math.min(scrollTop / maxScroll, 1);
+      // Interpolate font sizes
+      beg1.style.fontSize = `${2 - 1 * progress}rem`;  // from 2rem to 1rem
+      beg2.style.fontSize = `${3 - 1.5 * progress}rem`;  // from 3rem to 1.5rem
+      beg4.style.fontSize = `${1.5 - 0.5 * progress}rem`;  // from 1.5rem to 1rem
+    });
+  </script>
 
-    // Card effect: shrink and lift
-    const scale = 1 - progress * 0.1;        // scale down to 90%
-    const translateY = progress * -50;       // move up slightly
-    const opacity = 1 - progress * 0.1;
+  <script>
+    window.addEventListener('scroll', function () {
+      const hero = document.querySelector('.hero');
+      const maxScroll = window.innerHeight;
+      const scrollTop = window.scrollY;
+      const progress = Math.min(scrollTop / maxScroll, 1);
 
-    hero.style.transform = `scale(${scale}) translateY(${translateY}px)`;
-    hero.style.opacity = opacity;
-  });
-</script>
+      // Card effect: shrink and lift
+      const scale = 1 - progress * 0.1;        // scale down to 90%
+      const translateY = progress * -50;       // move up slightly
+      const opacity = 1 - progress * 0.1;
+
+      hero.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+      hero.style.opacity = opacity;
+    });
+  </script>
 
 
-    
-    
-    
+
+
+
 </body>
+
 </html>
