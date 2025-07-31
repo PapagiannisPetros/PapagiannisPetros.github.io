@@ -1,10 +1,27 @@
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
+    const allowedOrigin = 'https://papagiannispetros.github.io';
+
+  const origin = req.headers.origin;
+
+  if (origin === allowedOrigin) {
+    res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+  } else {
+    // Reject requests from other origins
+    return res.status(403).json({ message: 'Forbidden: CORS' });
+  }
+
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
-
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
