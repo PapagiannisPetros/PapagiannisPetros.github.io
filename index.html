@@ -345,7 +345,7 @@
       };
 
       const msgElem = document.getElementById('formMessage');
-      msgElem.className = ""; // Reset styles
+      msgElem.textContent = "Sending...";
 
       try {
         const response = await fetch("https://papagiannis-petros-github-io.vercel.app/api/contact", {
