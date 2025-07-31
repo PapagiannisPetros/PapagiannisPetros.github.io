@@ -41,7 +41,7 @@ export default async function handler(req, res) {
   rateLimitCache.set(ip, recentRequests);
 
   // ✅ Form handling
-  const { name, email, message } = req.body;
+  const { name, email, subject, message } = req.body;
 
   if (!name || !email || !message) {
     return res.status(400).json({ message: 'Missing required fields' });
@@ -60,9 +60,11 @@ export default async function handler(req, res) {
   const mailOptions = {
     from: `"${name}" <${email}>`,
     to: process.env.RECEIVER_EMAIL,
-    subject: `New message from ${name}`,
+    subject: `${name} send you a message: ${subject}`,
     text: `
+      From papagiannispetros.github.io contact form you received a new message:
       Name: ${name}
+      Subject: ${subject}
       Email: ${email}
       Message: ${message}
     `,
