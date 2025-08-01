@@ -33,10 +33,12 @@ p {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 50px;
     background: transparent;
     z-index: 100;
 }
+
 
 .nav-right {
     display: flex;
@@ -92,6 +94,8 @@ button{
   overflow: hidden;
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* gives card-like shadow */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center top;
 }
 
 
@@ -186,13 +190,40 @@ button{
 }
 
 .social-icons{
-    margin-top: 3rem;
+  margin-top: 2rem;
 }
 
-.social-icons a {
-    margin-right: 10px;
-    font-size: 20px;
+.spotify-card{
+  margin-bottom: -10rem;
 }
+
+#beg1, #beg2, #beg4 {
+  transition: font-size 0.3s ease;
+}
+
+
+
+
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.social-icons a {
+  color: white;
+  margin: 3rem 8px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons img {
+  width: 3.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  padding: 4px;
+  margin-top: 3rem;
+}
+
 
 /* About Section */
 #about{
@@ -418,14 +449,14 @@ footer {
     align-items: center;
     gap: 1rem;
   }
-  
+
   .social-icons a {
     color: white;
     margin: 0 8px;
     font-size: 1.2rem;
     transition: color 0.3s ease;
   }
-  
+    
   .social-icons a:hover {
     color: #0077ff;
   }
@@ -610,4 +641,3 @@ footer {
     color: #856404;
     border: 1px solid #ffeeba;
   }
-  
