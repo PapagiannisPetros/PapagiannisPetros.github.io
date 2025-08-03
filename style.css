@@ -152,6 +152,11 @@
     width: 100%;
   }
 
+  .service-box:nth-child(3) {
+    max-width: 100%%;
+    /* ensure it doesn't shrink too much */
+  }
+
 }
 
 
