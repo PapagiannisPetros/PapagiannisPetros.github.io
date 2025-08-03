@@ -1,3 +1,6 @@
+.mobile-hero {
+  display: none;
+}
 
 
 
@@ -49,6 +52,9 @@ p {
   z-index: 100;
 }
 
+.mobile-image-container{
+  display: none;
+}
 
 .nav-right {
   display: flex;
@@ -96,8 +102,10 @@ button {
   border-radius: 20px;
 }
 
+
+
 /* Hero Section with Diagonal Split */
-.hero {
+.desktop-hero {
   display: flex;
   flex-direction: row;
   height: 100vh;
@@ -750,104 +758,103 @@ textarea {
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
     background: transparent;
   }
   .nav-right {
-    display: none; /* hides links on mobile */
-    flex-direction: column;
-    text-align: center;
-    padding-right: 0.5rem !important;
-  }
-
-  .nav-right a {
-    margin: 10px 0;
-    padding: 5px 0;
+    display: none; /* Hide nav links on mobile */
   }
 
 
   .logo img {
     height: 2rem;
-    color: #fff;
+    padding-left: 0.5rem;
   }
-  
-
-  /* Hero section */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    background-color: #000;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-right {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-  }
-
-  .hero-right img {
-    width: auto;
-    height: 100vh;
-    object-fit: contain;
-  }
-
-  .hero-left {
-    background: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
-    padding: 1.5rem;
-    text-align: left;
-    color: white;
-  }
-
-  .hero-left *{
-    color: white;
-  }
-
-  .hero-left h1,
-  .hero-left h2,
-  .hero-left h3 {
-    line-height: 1.3;
-  }
-
-  #beg1 {
-    font-size: 0.75rem !important;
-  }
-
-  #beg2 {
-    font-size: 1.5rem !important;
-    flex-wrap: wrap;
-  }
-
-  #beg4 {
-    font-size: 0.75rem !important;
-  }
-
-  #beg3 {
-    font-size: 0.5rem !important;
-  }
-
-
-  .hero-right::before {
+  .desktop-hero {
     display: none;
   }
-
-  .social-icons {
+  
+  /* Ensure hero-right is properly displayed */
+  .mobile-hero {
+    display: block;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .mobile-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/Subject(1).png');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    filter: brightness(0.8);
+  }
+  
+  .mobile-hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 2rem;
+    color: white;
+    padding-bottom: 4rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  }
+  .diagonal-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(15deg, rgba(0,0,0,0.8) 30%, transparent 70%);
+    z-index: 1;
+  }
+  
+  .mobile-hero-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  
+  .mobile-hero-content h1 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+  }
+  
+  .mobile-hero-content h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+  
+  .mobile-social-icons {
+    display: flex;
+    gap: 1.2rem;
     margin-top: 1.5rem;
   }
-
-  .social-icons .icons img {
+  
+  .mobile-social-icons img {
     width: 24px;
     height: 24px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
   }
-
+  
+  .mobile-social-icons a:hover img {
+    opacity: 1;
+  }
   .spotify-card {
     display: none;
   }
@@ -897,4 +904,6 @@ textarea {
   #last_but {
     width: 80%;
   }
+
+  
 }
