@@ -743,12 +743,16 @@ textarea {
 
   /* Navbar */
   .navbar {
-    flex-direction: row;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: transparent;
   }
-
   .nav-right {
     display: none; /* hides links on mobile */
     flex-direction: column;
@@ -761,31 +765,47 @@ textarea {
     padding: 5px 0;
   }
 
+
   .logo img {
-    height: 32px;
+    height: 2rem;
+    color: #fff;
   }
+  
 
   /* Hero section */
   .hero {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
   }
 
   .hero-right {
     width: 100%;
-    clip-path: none;
-    position: static;
-    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
   }
 
   .hero-right img {
-    width: 100%;
-    height: auto;
-    display: block;
+    width: auto;
+    height: 100vh;
     object-fit: contain;
-    position: static;
-    z-index: 1;
-    background: transparent;
+  }
+
+  .hero-left {
+    background: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
+    padding: 1.5rem;
+    text-align: left;
+    color: white;
+  }
+
+  .hero-left *{
+    color: white;
   }
 
   .hero-left h1,
