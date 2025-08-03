@@ -57,7 +57,7 @@
   }
 
   .hero {
-    flex-direction: column;
+    flex-direction: row;
     height: auto;
     width: 100%;
     max-width: 100%;
