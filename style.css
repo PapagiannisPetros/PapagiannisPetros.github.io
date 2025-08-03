@@ -137,6 +137,17 @@
     width: 80%;
   }
 
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .portfolio-item {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
 }
 
 
