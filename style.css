@@ -67,7 +67,7 @@ p {
   padding: 3rem;
   margin-top: 3rem;
 }
-.
+
 
 button {
   cursor: pointer;
@@ -797,13 +797,22 @@ textarea {
   }
   
   /* Ensure hero-right is properly displayed */
+  @keyframes heroGradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Mobile Hero with Full Gradient Background */
   .mobile-hero {
     display: block;
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    background-color: #000;
+    background: linear-gradient(-70deg, #000, #172125, #000, #000);
+    background-size: 400% 400%;
+    animation: heroGradientShift 6s ease infinite;
   }
   
   .mobile-hero-bg {
@@ -830,6 +839,7 @@ textarea {
     padding: 2rem;
     color: white;
     padding-bottom: 4rem;
+    
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
   }
   .diagonal-overlay {
