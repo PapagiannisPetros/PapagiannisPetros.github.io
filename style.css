@@ -98,7 +98,7 @@
   }
 
   .hero-left {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
     align-items: center;
   }
