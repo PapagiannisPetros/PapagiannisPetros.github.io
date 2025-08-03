@@ -95,13 +95,12 @@
   }
 
   .services-container {
-    width: 90%;
     flex-direction: column;
     align-items: center;
   }
 
   .service-box {
-    width: 90%;
+    width: 95%;
     max-width: 100%;
     padding: 1rem;
     margin: 0.5rem 0;
