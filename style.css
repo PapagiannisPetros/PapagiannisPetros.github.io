@@ -348,6 +348,9 @@ button {
   color: #555;
 }
 
+#portf{
+  border-color: white;
+}
 
 .portfolio-grid {
   display: grid;
@@ -831,8 +834,14 @@ textarea {
 
   /* Skills grid */
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .skill-item {
+    padding: 1rem;
+    text-align: center;
   }
 
   /* Form */
