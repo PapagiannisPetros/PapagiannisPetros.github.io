@@ -3,13 +3,6 @@
 }
 
 
-
-
-
-
-
-
-
 /* Reset & Base Styles */
 body,
 html {
@@ -74,6 +67,7 @@ p {
   padding: 3rem;
   margin-top: 3rem;
 }
+.
 
 button {
   cursor: pointer;
@@ -86,6 +80,12 @@ button {
 #logo {
   height: 100px;
   width: 100px;
+}
+
+#logowhite{
+  height: 100px;
+  width: 100px;
+  display: none;
 }
 
 .navbar a {
@@ -706,7 +706,8 @@ textarea {
 
 
 @media (max-width: 768px) {
-
+  
+  
   /* General resets */
   *,
   *::before,
@@ -737,6 +738,10 @@ textarea {
     flex-direction: column;
     align-items: center;
   }
+  .social-icons img {
+    filter: brightness(0) invert(1); /* Makes icons white */
+    transition: opacity 0.3s ease;
+  }
 
   .service-box {
     background-color: #000;
@@ -750,6 +755,11 @@ textarea {
   }
 
   /* Navbar */
+
+  #logo{
+    display: none;
+  }
+
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -765,6 +775,18 @@ textarea {
     display: none; /* Hide nav links on mobile */
   }
 
+  #logowhite {
+    display: block;
+  }
+  #beg3{
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    text-shadow: none
+  }
+
+  .typed-cursor {
+    display: none;
+  }
 
   .logo img {
     height: 2rem;
@@ -781,6 +803,7 @@ textarea {
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    background-color: #000;
   }
   
   .mobile-hero-bg {
@@ -807,7 +830,7 @@ textarea {
     padding: 2rem;
     color: white;
     padding-bottom: 4rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
   }
   .diagonal-overlay {
     position: absolute;
