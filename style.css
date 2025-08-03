@@ -20,33 +20,6 @@
     overflow-x: hidden;
   }
 
-  #beg1 {
-    font-size: 1rem;
-  }
-
-  #beg2 {
-    font-size: 1.5rem;
-  }
-
-  #beg4 {
-    font-size: 1rem;
-  }
-
-  #beg3 {
-    font-size: 1rem;
-  }
-
-  .navbar a {
-    font-size: 0.9rem;
-  }
-
-  .hero-left h1,
-  .hero-left h2,
-  .hero-left h3 {
-    line-height: 1.3;
-  }
-
-
   .services-container {
     flex-direction: column;
     align-items: center;
@@ -82,23 +55,43 @@
     margin: 10px 0;
     padding: 5px 0;
   }
+  #beg1 {
+    font-size: 1rem;
+  }
+
+  #beg2 {
+    font-size: 1.5rem;
+  }
+
+  #beg4 {
+    font-size: 1rem;
+  }
+
+  #beg3 {
+    font-size: 1rem;
+  }
+
+  .hero-left h1,
+  .hero-left h2,
+  .hero-left h3 {
+    line-height: 1.3;
+  }
 
   .hero {
     flex-direction: column;
     height: auto;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     max-width: 100%;
     position: relative;
     box-sizing: border-box;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    /* gives card-like shadow */
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform-origin: center top;
   }
 
   .hero-left {
-    padding-left: 1rem !important;  /* or 0 if you want no padding */
+    padding-left: 1rem !important;
     padding-right: 1rem;
     flex-direction: column;
     text-align: center;
