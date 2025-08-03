@@ -101,7 +101,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    padding-left: 0;
+    padding-left: 0.25rem;
   }
 
   .hero-right {
