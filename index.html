@@ -16,14 +16,34 @@
 
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-  var typed = new Typed("#beg3", {
-    strings: ["Software Engineer", "AI Enthusiast", "Cybersecurity Learner"],
-    typeSpeed: 50,
-    backSpeed: 30,
-    loop: true
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile typing animation
+    if (document.querySelector("#beg3-mobile")) {
+      new Typed("#beg3-mobile", {
+        strings: ["Dreamer", "Doer", "Lover"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+        showCursor: false
+      });
+    }else if
+    
+    // Desktop typing animation
+     (document.querySelector("#beg3")) {
+      new Typed("#beg3", {
+        strings: ["Dreamer", "Doer", "Lover"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true
+      });
+    }
   });
 </script>
+
+
+
 
 <body>
   <div id="progressBar"></div>
@@ -54,7 +74,7 @@
         <h2 id="beg1-mobile">Hi, I am</h2>
         <h1 id="beg2-mobile">Petros Papagiannis</h1>
         <h3 id="beg4-mobile">Software Engineer</h3>
-        <h3 id="beg3"></h3>
+        <h3 id="beg3-mobile"></h3>
         
         <div class="social-icons">
           <a class="icons" href="https://github.com/PapagiannisPetros" target="_blank"><img src="icons/git.png" alt="GitHub" /></a>
