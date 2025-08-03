@@ -55,7 +55,21 @@
     margin: 10px 0;
     padding: 5px 0;
   }
+  #beg1 {
+    font-size: 0.5rem important;
+  }
 
+  #beg2 {
+    font-size: 0.5rem important;
+  }
+
+  #beg4 {
+    font-size: 0.25rem important;
+  }
+
+  #beg3 {
+    font-size: 0.25rem !important;
+  }
 
   .hero-left h1,
   .hero-left h2,
