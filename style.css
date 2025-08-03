@@ -1,15 +1,20 @@
 @media (max-width: 768px) {
 
+  /* General resets */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   body,
   html {
     overflow-x: hidden;
   }
 
-  * {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-
+  /* Layout containers */
   .container,
   .section,
   .spotify-card,
@@ -20,6 +25,7 @@
     overflow-x: hidden;
   }
 
+  /* Services section */
   .services-container {
     flex-direction: column;
     align-items: center;
@@ -28,33 +34,58 @@
   .service-box {
     background-color: #000;
     color: #fff;
-    padding: 2rem;
-    border-radius: 12px; /* Ensure this stays */
+    padding: 1rem;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    width: 95%;
+    margin: 0.5rem 0;
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
+  /* Navbar */
   .navbar {
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
   }
 
   .nav-right {
+    display: none; /* hides links on mobile */
     flex-direction: column;
-    padding-right: 0.5rem !important;
     text-align: center;
+    padding-right: 0.5rem !important;
   }
 
   .nav-right a {
     margin: 10px 0;
     padding: 5px 0;
   }
+
+  .logo img {
+    height: 32px;
+  }
+
+  /* Hero section */
+  .hero {
+    display: flex;
+    flex-direction: column-reverse !important;
+    height: auto;
+  }
+
+  .hero-left {
+    padding: 2rem 1rem;
+    text-align: center;
+    align-items: center;
+    background-color: #f2f2f2;
+  }
+
+  .hero-left h1,
+  .hero-left h2,
+  .hero-left h3 {
+    line-height: 1.3;
+  }
+
   #beg1 {
     font-size: 0.75rem !important;
   }
@@ -72,96 +103,49 @@
     font-size: 0.5rem !important;
   }
 
-  .hero-left h1,
-  .hero-left h2,
-  .hero-left h3 {
-    line-height: 1.3;
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: row !important;
-    overflow-x: hidden;
-    max-width: 100%;
-    position: relative;
-    box-sizing: border-box !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform-origin: center top;
-  }
-
-  .hero-left {
-    padding-left: 1rem !important;
-    padding-right: 1rem;
-    flex-direction: column;
-    text-align: left;
-    align-items: left;
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    overflow: hidden;
-  }
-
   .hero-right {
-    width: 100%;
     clip-path: none;
-    bottom: 0 !important;
+    position: static;
+    overflow: visible;
+  }
+
+  .hero-right::before {
+    display: none;
   }
 
   .hero-right img {
+    position: static;
     transform: none;
-    width: 100%;
-    height: 70%;
+    display: block;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .social-icons .icons img {
+    width: 24px;
+    height: 24px;
   }
 
   .spotify-card {
-    width: 100%;
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+    display: none;
   }
 
-  .spotify-card>div {
-    width: 100% !important;
-    height: auto;
-  }
-
-  .services-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .service-box {
-    width: 95%;
-    max-width: 100%;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border-radius: 12px;
-  }
-
+  /* Skills grid */
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 20px;
   }
 
+  /* Form */
   form * {
     margin-top: 1rem;
     width: 100%;
     max-width: 100%;
-    box-sizing: border-box;
-  }
-
-
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .text_title {
-    width: auto;
-    padding: 12px 10px;
-    font-size: 1.2rem;
   }
 
   .contact-section form {
@@ -169,11 +153,7 @@
     padding: 0 1rem;
   }
 
-  #about_button,
-  #last_but {
-    width: 80%;
-  }
-
+  /* Portfolio */
   .portfolio-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem;
@@ -185,7 +165,18 @@
     width: 100%;
   }
 
+  .text_title {
+    width: auto;
+    padding: 12px 10px;
+    font-size: 1.2rem;
+  }
+
+  #about_button,
+  #last_but {
+    width: 80%;
+  }
 }
+
 
 
 
