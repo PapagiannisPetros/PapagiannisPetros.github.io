@@ -20,6 +20,14 @@
     overflow-x: hidden;
   }
 
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-box {
+    max-width: 90%;
+  }
 
   *,
   *::before,
