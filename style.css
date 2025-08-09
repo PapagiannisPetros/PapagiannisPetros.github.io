@@ -2,6 +2,24 @@
   display: none;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+}
+.section {
+  scroll-snap-align: start;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.portfolio-section.parallax {
+  background-attachment: fixed;
+}
+
+
 
 /* Reset & Base Styles */
 body,
@@ -941,5 +959,8 @@ textarea {
     width: 80%;
   }
 
+  .parallax {
+    background-attachment: scroll;
+  }
   
 }
