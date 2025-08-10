@@ -224,6 +224,8 @@ button {
 .hero-left h1 {
   font-size: 36px;
   margin: 10px 0;
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  
 }
 
 .hero-left h3 {
@@ -402,7 +404,7 @@ button {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 15px 15px 20px rgba(230, 3, 3, 0.25);
+  box-shadow: 15px 15px 20px rgba(207, 4, 4, 0.877);
 }
 
 
@@ -723,18 +725,30 @@ textarea {
 }
 
 .port-text {
-  color: #fa0b0b; /* Bright red */
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-  letter-spacing: 0.5px;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0 0 16px 16px;
+  color: red;
 }
+
+.port-desc {
+  font-size: 0.85rem;
+  font-weight: normal;
+  margin-top: 0.5rem;
+  color: #ddd;
+  line-height: 1.4;
+}
+
 .port-text:hover {
   color: #ff0000; /* Slightly deeper red on hover */
   transform: scale(1.02);
   transition: all 0.2s ease-in-out;
 }
 
+.hero-left{
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
 
 
 @media (max-width: 768px) {

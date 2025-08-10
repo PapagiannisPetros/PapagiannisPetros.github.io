@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 // In-memory store for IP rate limiting
 const rateLimitCache = new Map();
 
-const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 60 seconds
+const RATE_LIMIT_WINDOW_MS = 300 * 1000; // seconds
 const MAX_REQUESTS = 1;
 
 export default async function handler(req, res) {
