@@ -722,6 +722,20 @@ textarea {
   border: 1px solid #ffeeba;
 }
 
+.port-text {
+  color: #fa0b0b; /* Bright red */
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  letter-spacing: 0.5px;
+}
+.port-text:hover {
+  color: #ff0000; /* Slightly deeper red on hover */
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+}
+
+
 
 @media (max-width: 768px) {
   
@@ -808,6 +822,7 @@ textarea {
   .typed-cursor {
     display: none;
   }
+  
 
   .logo img {
     height: 2rem;
