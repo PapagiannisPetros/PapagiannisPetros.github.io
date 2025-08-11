@@ -868,7 +868,7 @@ textarea {
     overflow: hidden;
     background: linear-gradient(-70deg, #000, #1f2c31, #000, #000);
     background-size: 400% 400%;
-    animation: heroGradientShift 6s ease infinite;
+    animation: heroGradientShift 5s ease infinite;
   }
   
   .mobile-hero-bg {
