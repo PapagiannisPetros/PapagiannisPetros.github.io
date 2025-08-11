@@ -482,8 +482,7 @@
       <input type="text" name="subject" placeholder="Subject" required>
       <textarea name="message" placeholder="Your message" required></textarea>
       <!-- Honeypot (hidden) -->
-    <input type="text" name="botField" style="display:none">
-
+      <input type="text" name="website" style="display:none"> <!-- changed name here -->
       <button id="last_but" type="submit">Submit</button>
     </form>
     <p id="formMessage" style="margin-top: 10px;"></p>
@@ -507,59 +506,61 @@
   
 
   <script>
-    // Obfuscated endpoint URL
-    const endpointChars = [104,116,116,112,115,58,47,47,
-                           112, 97, 112, 97, 103, 105, 97, 110, 110, 105, 115, 45,
-                           112, 101, 116, 114, 111, 115, 45, 103, 105, 116, 104,
-                           117, 98, 45, 105, 111, 46, 118, 101, 114, 99, 101, 108,
-                           46, 97, 112, 112, 47, 97, 112, 105, 47, 99, 111, 110, 116, 97, 99, 116];
-    const endpoint = String.fromCharCode(...endpointChars);
+    document.addEventListener("DOMContentLoaded", () => {
+      const endpointChars = [104,116,116,112,115,58,47,47,
+        112,97,112,97,103,105,97,110,110,105,115,45,
+        112,101,116,114,111,115,45,103,105,116,104,
+        117,98,45,105,111,46,118,101,114,99,101,108,
+        46,97,112,112,47,97,112,105,47,99,111,110,116,97,99,116];
+      const endpoint = String.fromCharCode(...endpointChars);
   
-    // Obfuscated API key (replace with your actual key)
-    const keyChars = [115, 101, 99, 114, 101, 116, 45, 49, 50, 51]; // "secret-123"
-    const apiKey = String.fromCharCode(...keyChars);
+      const keyChars = [115,101,99,114,101,116,45,49,50,51];
+      const apiKey = String.fromCharCode(...keyChars);
   
-    document.getElementById("contactForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
+      document.getElementById("contactForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
   
-      const formData = {
-        name: e.target.name.value.trim(),
-        email: e.target.email.value.trim(),
-        subject: e.target.subject.value.trim(),
-        message: e.target.message.value.trim(),
-        website: e.target.website.value  // honeypot
-      };
+        const formData = {
+          name: e.target.name.value.trim(),
+          email: e.target.email.value.trim(),
+          subject: e.target.subject.value.trim(),
+          message: e.target.message.value.trim(),
+          website: e.target.website.value
+        };
   
-      const msgElem = document.getElementById('formMessage');
-      msgElem.textContent = "Sending...";
-      msgElem.className = "";
+        console.log("Sending form data:", formData); // debug
   
-      try {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": apiKey
-          },
-          body: JSON.stringify(formData)
-        });
+        const msgElem = document.getElementById('formMessage');
+        msgElem.textContent = "Sending...";
+        msgElem.className = "";
   
-        if (res.status === 429) {
-          msgElem.textContent = "You're sending messages too quickly. Please wait.";
-          msgElem.classList.add("warning");
-        } else if (res.ok) {
-          msgElem.textContent = "Message sent successfully! 🎉";
-          msgElem.classList.add("success");
-          e.target.reset();
-        } else {
-          msgElem.textContent = "Error sending message.";
+        try {
+          const res = await fetch(endpoint, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "x-api-key": apiKey
+            },
+            body: JSON.stringify(formData)
+          });
+  
+          if (res.status === 429) {
+            msgElem.textContent = "You're sending messages too quickly. Please wait.";
+            msgElem.classList.add("warning");
+          } else if (res.ok) {
+            msgElem.textContent = "Message sent successfully! 🎉";
+            msgElem.classList.add("success");
+            e.target.reset();
+          } else {
+            msgElem.textContent = "Error sending message.";
+            msgElem.classList.add("error");
+          }
+        } catch (err) {
+          console.error("Network error:", err);
+          msgElem.textContent = "Network error. Please try again later.";
           msgElem.classList.add("error");
         }
-      } catch (err) {
-        console.error("Network error:", err);
-        msgElem.textContent = "Network error. Please try again later.";
-        msgElem.classList.add("error");
-      }
+      });
     });
   </script>
   
