@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/PapagiannisPetros/PapagiannisPetros.github.io#readme",
   "dependencies": {
+    "@upstash/redis": "^1.35.3",
     "nodemailer": "^7.0.5"
   }
 }
