@@ -5,20 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Petros Papagiannis</title>
+
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Preload important images -->
+  <link rel="preload" href="images/logo.png" as="image">
+  <link rel="preload" href="images/logowhite.png" as="image">
+
+  <!-- Font Awesome (load asynchronously to avoid blocking) -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </noscript>
+
+  <!-- AOS CSS (async load) -->
+  <link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  </noscript>
+
   <link rel="icon" href="images/logo.png" type="image/png">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
 </head>
+
 
 <body>
   <div id="progressBar"></div>
   <div>
     <nav class="navbar">
       <div class="logo">
-        <img  rel="preload" src="images/logo.png" alt="Logo" id="logo">
+        <img src="images/logo.png" alt="Logo" id="logo">
         <img src="images/logowhite.png" alt="Logo" id="logowhite">
       </div>
 
@@ -50,7 +69,7 @@
               alt="Email" /></a>
           <a class="icons" href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=e2635a2e105e4a63"
             target="_blank" id="spotify">
-          <img src="icons/spotify.png" alt="Spotify" />
+            <img src="icons/spotify.png" alt="Spotify" />
           </a>
         </div>
       </div>
@@ -100,7 +119,7 @@
         </div>
       </div>
       <div class="hero-right">
-        <img rel="preload" src="images/Subject(1).png" alt="Petros Papagiannis" class="desktop-image">
+        <img src="images/Subject(1).png" alt="Petros Papagiannis" class="desktop-image">
       </div>
     </div>
   </section>
@@ -354,7 +373,7 @@
   <section id="portfolio" class="section portfolio-section parallax">
     <h2 class="text_title" id="portf">PORTFOLIO</h2>
     <div class="portfolio-grid">
-      <div class="portfolio-item" style="background-image: url('images/uni.png');" loading="lazy">
+      <div class="portfolio-item" style="background-image: url('images/uni.png');">
         <div class="port-text">
           Managing Authorities Chatbot
           <p class="port-desc">
@@ -366,7 +385,7 @@
         </div>
       </div>
 
-      <div class="portfolio-item" style="background-image: url('images/uni.png');" loading="lazy">
+      <div class="portfolio-item" style="background-image: url('images/uni.png');">
         <div class="port-text">
           Destination Piraeus Chatbot
           <p class="port-desc">
@@ -377,7 +396,7 @@
           </p>
         </div>
       </div>
-      <div class="portfolio-item" style="background-image: url('images/web.png');" loading="lazy">
+      <div class="portfolio-item" style="background-image: url('images/web.png');">
         <div class="port-text">
           Collaborative Thesis Management System
           <p class="port-desc">
@@ -389,7 +408,7 @@
 
         </div>
       </div>
-      <div class="portfolio-item" style="background-image: url('images/uni.png');" loading="lazy">
+      <div class="portfolio-item" style="background-image: url('images/uni.png');">
         <div class="port-text">
           UniBook – Collaborative Note Sharing Platform for Students
           <p class="port-desc">
@@ -399,7 +418,7 @@
         </div>
       </div>
 
-      <div class="portfolio-item" style="background-image: url('images/multi.jpg');" loading="lazy">
+      <div class="portfolio-item" style="background-image: url('images/multi.jpg');">
         <div class="port-text">
           Multi-Core Process Scheduler for Unix (FCFS, RR, RR-AFF)
           <p class="port-desc">
@@ -410,13 +429,13 @@
         </div>
       </div>
 
-      <div class="portfolio-item" style="background-image: url('images/multi3.jpg');" loading="lazy">
+      <div class="portfolio-item" style="background-image: url('images/multi3.jpg');">
         <div class="port-text">
           Multi-Core Process Scheduler & OS Utilities
           <p class="port-desc">
-        Unix-based project developed in C and Shell scripting, featuring multiple scheduling algorithms (FCFS, RR,
-        SJF, and more), process synchronization using semaphores, memory management simulation, and passenger data
-        processing with awk/sed/grep. It simulates a survival mission with boats and passengers.</p>
+            Unix-based project developed in C and Shell scripting, featuring multiple scheduling algorithms (FCFS, RR,
+            SJF, and more), process synchronization using semaphores, memory management simulation, and passenger data
+            processing with awk/sed/grep. It simulates a survival mission with boats and passengers.</p>
         </div>
       </div>
     </div>
@@ -452,6 +471,17 @@
       <p>© 2025 Petros Papagiannis. <small>All rights reserved.</small></p>
     </div>
   </footer>
+
+  <!-- External libs -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js" defer></script>
+
+  <!-- Your scripts in ONE minified file -->
+  <script src="main.min.js" defer></script>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -636,6 +666,7 @@
       });
     });
   </script>
-  
+
 </body>
+
 </html>
