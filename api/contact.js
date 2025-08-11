@@ -6,7 +6,7 @@ const redis = new Redis({
   token: process.env.UPSTASH_REDIS_REST_TOKEN,
 });
 
-const RATE_LIMIT_WINDOW_SEC = 60;
+const RATE_LIMIT_WINDOW_SEC = 180;
 const MAX_REQUESTS = 1;
 
 module.exports = async function handler(req, res) {
