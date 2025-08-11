@@ -11,39 +11,7 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-
-
-
 </head>
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Mobile typing animation
-    if (document.querySelector("#beg3-mobile")) {
-      new Typed("#beg3-mobile", {
-        strings: ["Dreamer", "Doer", "Lover"],
-        typeSpeed: 50,
-        backSpeed: 30,
-        loop: true,
-        showCursor: false
-      });
-    } else if
-
-      // Desktop typing animation
-      (document.querySelector("#beg3")) {
-      new Typed("#beg3", {
-        strings: ["Dreamer", "Doer", "Lover"],
-        typeSpeed: 50,
-        backSpeed: 30,
-        loop: true
-      });
-    }
-  });
-</script>
-
-
-
 
 <body>
   <div id="progressBar"></div>
@@ -61,10 +29,7 @@
         <a href="#contact" id="contact-button">Contact me</a>
       </div>
     </nav>
-
   </div>
-
-
 
   <!-- Hero Section -->
   <section class="hero">
@@ -200,18 +165,14 @@
         </p>
       </div>
     </div>
-
     <div class="separator">
       <img src="images/separatorBlack 1.png" alt="Separator">
     </div>
-
   </section>
-
 
   <!-- Skills Section -->
   <section id="skills" class="section">
     <h1 class="text_title">SKILLS</h1>
-
     <div class="skills-section">
       <h2>Programming Languages:</h2>
       <div class="skills-grid">
@@ -338,8 +299,6 @@
       </div>
     </div>
 
-
-
     <div class="skills-section">
       <h2>DevOps / Tools:</h2>
       <div class="skills-grid">
@@ -376,7 +335,6 @@
       </div>
     </div>
 
-
     <div class="skills-section">
       <h2>Other Skills:</h2>
       <div class="skills-grid">
@@ -391,10 +349,7 @@
     <div class="separator"></div>
     <img src="images/separatorBlack 1.png" alt="Separator">
     </div>
-
   </section>
-
-
 
   <section id="portfolio" class="section portfolio-section parallax">
     <h2 class="text_title" id="portf">PORTFOLIO</h2>
@@ -464,13 +419,8 @@
             processing with awk/sed/grep. It simulates a survival mission with boats and passengers.</p>
         </div>
       </div>
-
-
     </div>
-
   </section>
-
-
 
   <!-- Contact Section -->
   <section id="contact" class="section contact-section">
@@ -503,23 +453,21 @@
     </div>
   </footer>
 
-  
-
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const endpointChars = [104,116,116,112,115,58,47,47,
-        112,97,112,97,103,105,97,110,110,105,115,45,
-        112,101,116,114,111,115,45,103,105,116,104,
-        117,98,45,105,111,46,118,101,114,99,101,108,
-        46,97,112,112,47,97,112,105,47,99,111,110,116,97,99,116];
+      const endpointChars = [104, 116, 116, 112, 115, 58, 47, 47,
+        112, 97, 112, 97, 103, 105, 97, 110, 110, 105, 115, 45,
+        112, 101, 116, 114, 111, 115, 45, 103, 105, 116, 104,
+        117, 98, 45, 105, 111, 46, 118, 101, 114, 99, 101, 108,
+        46, 97, 112, 112, 47, 97, 112, 105, 47, 99, 111, 110, 116, 97, 99, 116];
       const endpoint = String.fromCharCode(...endpointChars);
-  
-      const keyChars = [115,101,99,114,101,116,45,49,50,51];
+
+      const keyChars = [115, 101, 99, 114, 101, 116, 45, 49, 50, 51];
       const apiKey = String.fromCharCode(...keyChars);
-  
+
       document.getElementById("contactForm").addEventListener("submit", async (e) => {
         e.preventDefault();
-  
+
         const formData = {
           name: e.target.name.value.trim(),
           email: e.target.email.value.trim(),
@@ -527,13 +475,13 @@
           message: e.target.message.value.trim(),
           website: e.target.website.value
         };
-  
+
         console.log("Sending form data:", formData); // debug
-  
+
         const msgElem = document.getElementById('formMessage');
         msgElem.textContent = "Sending...";
         msgElem.className = "";
-  
+
         try {
           const res = await fetch(endpoint, {
             method: "POST",
@@ -543,7 +491,7 @@
             },
             body: JSON.stringify(formData)
           });
-  
+
           if (res.status === 429) {
             msgElem.textContent = "You're sending messages too quickly. Please wait.";
             msgElem.classList.add("warning");
@@ -563,8 +511,32 @@
       });
     });
   </script>
-  
 
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Mobile typing animation
+      if (document.querySelector("#beg3-mobile")) {
+        new Typed("#beg3-mobile", {
+          strings: ["Dreamer", "Doer", "Lover"],
+          typeSpeed: 50,
+          backSpeed: 30,
+          loop: true,
+          showCursor: false
+        });
+      } else if
+
+        // Desktop typing animation
+        (document.querySelector("#beg3")) {
+        new Typed("#beg3", {
+          strings: ["Dreamer", "Doer", "Lover"],
+          typeSpeed: 50,
+          backSpeed: 30,
+          loop: true
+        });
+      }
+    });
+  </script>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
@@ -663,14 +635,7 @@
         }
       });
     });
-
-
-
   </script>
-
-
-
-
+  
 </body>
-
 </html>
