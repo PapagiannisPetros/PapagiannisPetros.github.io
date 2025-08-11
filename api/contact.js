@@ -1,5 +1,6 @@
-import nodemailer from "nodemailer";
-import { Redis } from "@upstash/redis";
+const nodemailer = require("nodemailer");
+const { Redis } = require("@upstash/redis");
+
 
 const redis = new Redis({
   url: process.env.UPSTASH_REDIS_REST_URL,
@@ -12,7 +13,8 @@ const MAX_REQUESTS = 1;
 try {
 
 
-  export default async function handler(req, res) {
+  module.exports = async function handler(req, res) {
+
     const allowedOrigin = "https://papagiannispetros.github.io";
     const origin = req.headers.origin;
 
