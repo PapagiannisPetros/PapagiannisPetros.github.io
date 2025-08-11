@@ -507,27 +507,29 @@
   
 
   <script>
-    // API endpoint obfuscated
-    const endpointChars = [104, 116, 116, 112, 115, 58, 47, 47,
+    // Obfuscated endpoint URL
+    const endpointChars = [104,116,116,112,115,58,47,47,
                            112, 97, 112, 97, 103, 105, 97, 110, 110, 105, 115, 45,
                            112, 101, 116, 114, 111, 115, 45, 103, 105, 116, 104,
                            117, 98, 45, 105, 111, 46, 118, 101, 114, 99, 101, 108,
                            46, 97, 112, 112, 47, 97, 112, 105, 47, 99, 111, 110, 116, 97, 99, 116];
     const endpoint = String.fromCharCode(...endpointChars);
   
-    // API key obfuscated
+    // Obfuscated API key (replace with your actual key)
     const keyChars = [115, 101, 99, 114, 101, 116, 45, 49, 50, 51]; // "secret-123"
     const apiKey = String.fromCharCode(...keyChars);
   
     document.getElementById("contactForm").addEventListener("submit", async (e) => {
       e.preventDefault();
+  
       const formData = {
         name: e.target.name.value.trim(),
         email: e.target.email.value.trim(),
         subject: e.target.subject.value.trim(),
         message: e.target.message.value.trim(),
-        website: e.target.website.value // honeypot
+        website: e.target.website.value  // honeypot
       };
+  
       const msgElem = document.getElementById('formMessage');
       msgElem.textContent = "Sending...";
       msgElem.className = "";
@@ -560,6 +562,7 @@
       }
     });
   </script>
+  
 
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>

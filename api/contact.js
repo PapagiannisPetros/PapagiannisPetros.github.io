@@ -1,9 +1,12 @@
 import nodemailer from "nodemailer";
+import { Redis } from "@upstash/redis";
 
-// Rate limit in-memory store
-const rateLimitCache = new Map();
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
+});
 
-const RATE_LIMIT_WINDOW_MS = 300 * 1000; // 5 minutes
+const RATE_LIMIT_WINDOW_SEC = 180; // 5 minutes
 const MAX_REQUESTS = 1;
 
 export default async function handler(req, res) {
@@ -22,30 +25,35 @@ export default async function handler(req, res) {
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "POST") return res.status(405).json({ message: "Method not allowed" });
 
-  // Check API key
+  // API key check
   if (req.headers["x-api-key"] !== process.env.CONTACT_FORM_API_KEY) {
     return res.status(401).json({ message: "Unauthorized" });
   }
 
-  // Rate limiting by IP
-  const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-  const now = Date.now();
-  const history = rateLimitCache.get(ip) || [];
-  const recent = history.filter(ts => now - ts < RATE_LIMIT_WINDOW_MS);
-  if (recent.length >= MAX_REQUESTS) {
+  // Get IP (normalized)
+  const ip = (req.headers["x-forwarded-for"] || req.socket.remoteAddress || "")
+    .split(",")[0]
+    .trim();
+
+  // Persistent rate limit
+  const key = `rate:${ip}`;
+  const currentCount = await redis.incr(key);
+
+  if (currentCount === 1) {
+    // First request → set expiry
+    await redis.expire(key, RATE_LIMIT_WINDOW_SEC);
+  }
+
+  if (currentCount > MAX_REQUESTS) {
     return res.status(429).json({ message: "Too many requests. Try later." });
   }
-  recent.push(now);
-  rateLimitCache.set(ip, recent);
 
   const { name, email, subject, message, website } = req.body;
 
-  // Honeypot check
   if (website && website.trim() !== "") {
-    return res.status(200).json({ message: "Message received" }); // Pretend success
+    return res.status(200).json({ message: "Message received" });
   }
 
-  // Validation
   if (!name || !email || !message) {
     return res.status(400).json({ message: "Missing required fields" });
   }
@@ -56,7 +64,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: "Invalid email format" });
   }
 
-  // Mail transport
   let transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: parseInt(process.env.SMTP_PORT || "465", 10),
@@ -68,18 +75,11 @@ export default async function handler(req, res) {
   });
 
   const mailOptions = {
-    from: `"Website Contact" <${process.env.SMTP_USER}>`, // fixed sender
-    replyTo: email, // so you can reply to the sender
+    from: `"Website Contact" <${process.env.SMTP_USER}>`,
+    replyTo: email,
     to: process.env.RECEIVER_EMAIL,
     subject: `${name} sent you a message: ${subject || "(no subject)"}`,
-    text: `
-From: ${name}
-Email: ${email}
-Subject: ${subject || "(none)"}
-
-Message:
-${message}
-    `,
+    text: `From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
   };
 
   try {
