@@ -31,8 +31,16 @@ module.exports = async function handler(req, res) {
     return res.status(401).json({ message: "Unauthorized" });
   }
 
-  const ips = (req.headers["x-forwarded-for"] || "").split(",");
-const ip = ips[ips.length - 1].trim() || req.socket.remoteAddress;
+  // Vercel-specific IP retrieval logic
+  // x-real-ip is the most reliable header on Vercel for the client's IP.
+  // We fall back to x-forwarded-for as a secondary option.
+  const ip = req.headers['x-real-ip'] || (req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+
+  // If no IP is found (e.g., from an unknown source), we can't rate limit.
+  // It's a good idea to handle this case, maybe by using a default IP.
+  if (!ip) {
+    return res.status(500).json({ message: "Unable to determine client IP address" });
+  }
 
   const key = `rate:${ip}`;
   const currentCount = await redis.incr(key);
