@@ -6,8 +6,8 @@ const redis = new Redis({
   token: process.env.UPSTASH_REDIS_REST_TOKEN,
 });
 
-const RATE_LIMIT_WINDOW_SEC = 1200;
-const MAX_REQUESTS = 4;
+const RATE_LIMIT_WINDOW_SEC = 900;
+const MAX_REQUESTS = 2;
 
 module.exports = async function handler(req, res) {
   const allowedOrigin = "https://papagiannispetros.github.io";
