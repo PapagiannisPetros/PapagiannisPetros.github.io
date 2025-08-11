@@ -752,6 +752,10 @@ textarea {
 
 
 @media (max-width: 768px) {
+  .port-text{
+    font-size: 0.7rem;
+    padding: 0.3rem;
+  }
   
   
   /* General resets */
