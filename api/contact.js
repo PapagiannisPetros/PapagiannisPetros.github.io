@@ -74,7 +74,8 @@ module.exports = async function handler(req, res) {
     replyTo: email,
     to: process.env.RECEIVER_EMAIL,
     subject: `${name} sent you a message: ${subject || "(no subject)"}`,
-    text: `From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    text: `From your personal site papagiannispetros.github.io you received the following message:\n\n 
+    From: ${name}\nEmail: ${email}Subject: ${subject}\n\nMessage:\n${message}`,
   };
 
   try {
