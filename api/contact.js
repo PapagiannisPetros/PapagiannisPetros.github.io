@@ -6,7 +6,7 @@ const redis = new Redis({
   token: process.env.UPSTASH_REDIS_REST_TOKEN,
 });
 
-const RATE_LIMIT_WINDOW_SEC = 180;
+const RATE_LIMIT_WINDOW_SEC = 60;
 const MAX_REQUESTS = 1;
 
 module.exports = async function handler(req, res) {
@@ -31,9 +31,8 @@ module.exports = async function handler(req, res) {
     return res.status(401).json({ message: "Unauthorized" });
   }
 
-  const ip = (req.headers["x-forwarded-for"] || req.socket.remoteAddress || "")
-    .split(",")[0]
-    .trim();
+  const ips = (req.headers["x-forwarded-for"] || "").split(",");
+const ip = ips[ips.length - 1].trim() || req.socket.remoteAddress;
 
   const key = `rate:${ip}`;
   const currentCount = await redis.incr(key);
@@ -75,7 +74,7 @@ module.exports = async function handler(req, res) {
     to: process.env.RECEIVER_EMAIL,
     subject: `${name} sent you a message: ${subject || "(no subject)"}`,
     text: `From your personal site papagiannispetros.github.io you received the following message:\n\n 
-    From: ${name}\nEmail: ${email}Subject: ${subject}\n\nMessage:\n${message}`,
+    From: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
   };
 
   try {
