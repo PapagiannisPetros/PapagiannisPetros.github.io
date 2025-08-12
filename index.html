@@ -6,27 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Petros Papagiannis</title>
 
-  <!-- Highest Priority Image (loads first) -->
-  <link rel="preload" as="image" href="images/Subject(1).avif" fetchpriority="high">
-  <link rel="preload" as="image" href="images/Subject(1).webp" fetchpriority="high">
-  <link rel="preload" as="image" href="images/Subject(1).png" fetchpriority="high">
-
-  <!-- Critical CSS -->
+  <!-- Preload critical CSS -->
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Preload important images (but after main subject image) -->
-  <link rel="preload" href="images/logo.png" as="image">
-  <link rel="preload" href="images/logowhite.png" as="image">
+  <!-- Preload important images -->
+  <link rel="preload" href="images/Subject(1).webp" as="image">
 
-  <!-- Font Awesome async -->
+  <!-- Font Awesome (load asynchronously to avoid blocking) -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </noscript>
 
-  <!-- AOS CSS async -->
+  <!-- AOS CSS (async load) -->
   <link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
@@ -36,14 +30,16 @@
   <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 
+
 <body>
   <div id="progressBar"></div>
   <div>
     <nav class="navbar">
       <div class="logo">
-        <img src="images/logo.png" alt="Logo" id="logo" loading="eager">
-        <img src="images/logowhite.png" alt="Logo" id="logowhite" loading="eager">
+        <img src="images/logo.png" alt="Logo" id="logo">
+        <img src="images/logowhite.png" alt="Logo" id="logowhite">
       </div>
+
       <div class="nav-right">
         <a href="#about">About me</a>
         <a href="#skills">Skills</a>
@@ -53,38 +49,76 @@
     </nav>
   </div>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero">
-    <!-- Desktop -->
+    <!-- Mobile Content (shown only on mobile) -->
+    <div class="mobile-hero">
+      <div class="mobile-hero-content">
+        <h2 id="beg1-mobile">Hi, I am</h2>
+        <h1 id="beg2-mobile">Petros Papagiannis</h1>
+        <h3 id="beg4-mobile">Software Engineer</h3>
+        <h3 id="beg3-mobile"></h3>
+
+        <div class="social-icons">
+          <a class="icons" href="https://github.com/PapagiannisPetros" target="_blank"><img src="icons/git.png"
+              alt="GitHub" /></a>
+          <a class="icons" href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img
+              src="icons/linkedin.png" alt="LinkedIn" /></a>
+          <a class="icons" href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png"
+              alt="Email" /></a>
+          <a class="icons" href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=e2635a2e105e4a63"
+            target="_blank" id="spotify">
+            <img src="icons/spotify.png" alt="Spotify" />
+          </a>
+        </div>
+      </div>
+      <div class="mobile-hero-bg"></div>
+      <div class="diagonal-overlay"></div>
+    </div>
+
+    <!-- Desktop Content (shown only on desktop) -->
     <div class="desktop-hero">
       <div class="hero-left">
         <h2 id="beg1">Hi, I am</h2>
         <h1 id="beg2">Petros Papagiannis</h1>
         <h3 id="beg4">Software Engineer</h3>
         <h3><span id="beg3"></span></h3>
+
         <div class="social-icons">
-          <a href="https://github.com/PapagiannisPetros" target="_blank"><img src="icons/git.png" alt="GitHub"
-              loading="lazy"></a>
-          <a href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img
-              src="icons/linkedin.png" alt="LinkedIn" loading="lazy"></a>
-          <a href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png" alt="Email"
-              loading="lazy"></a>
-          <a href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq" target="_blank"><img
-              src="icons/spotify.png" alt="Spotify" loading="lazy"></a>
+          <a class="icons" href="https://github.com/PapagiannisPetros" target="_blank"><img src="icons/git.png"
+              alt="GitHub" /></a>
+          <a class="icons" href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img
+              src="icons/linkedin.png" alt="LinkedIn" /></a>
+          <a class="icons" href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png"
+              alt="Email" /></a>
+          <a class="icons" href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=e2635a2e105e4a63"
+            target="_blank" id="spotify">
+            <img src="icons/spotify.png" alt="Spotify" />
+          </a>
         </div>
         <div class="spotify-card">
-          <iframe style="border-radius:12px"
-            src="https://open.spotify.com/embed/track/4nHJcUtNSUVjXRnjdP29Bk?utm_source=generator&theme=0" width="100%"
-            height="152" frameBorder="0" allowfullscreen loading="lazy"></iframe>
+          <div style="
+            width: 30rem;
+            height: 9.5rem;
+            margin-top: 5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #1db954, #191414);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+          ">
+            <iframe style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/4nHJcUtNSUVjXRnjdP29Bk?utm_source=generator&theme=0"
+              width="100%" height="152" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
         </div>
       </div>
       <div class="hero-right">
-        <picture>
-          <source srcset="images/Subject(1).avif" type="image/avif">
-          <source srcset="images/Subject(1).webp" type="image/webp">
-          <img src="images/Subject(1).png" alt="Petros Papagiannis" class="desktop-image" loading="eager"
-            fetchpriority="high" decoding="async">
-        </picture>
+        <img src="images/Subject(1).webp" alt="Petros Papagiannis" class="desktop-image">
       </div>
     </div>
   </section>
@@ -444,8 +478,9 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js" defer></script>
 
-  <!-- Main JS combined & minified -->
+  <!-- Your scripts in ONE minified file -->
   <script src="main.min.js" defer></script>
+
 </body>
 
 </html>
