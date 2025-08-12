@@ -6,14 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Petros Papagiannis</title>
 
+  <!-- Highest Priority Image (loads first) -->
+  <link rel="preload" as="image" href="images/Subject(1).avif" fetchpriority="high">
+  <link rel="preload" as="image" href="images/Subject(1).webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/Subject(1).png" fetchpriority="high">
+
   <!-- Critical CSS -->
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Preload important images -->
+  <!-- Preload important images (but after main subject image) -->
   <link rel="preload" href="images/logo.png" as="image">
   <link rel="preload" href="images/logowhite.png" as="image">
-  <link rel="preload" as="image" href="images/Subject(1).png" fetchpriority="high">
 
   <!-- Font Awesome async -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
@@ -32,7 +36,6 @@
   <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 
-
 <body>
   <div id="progressBar"></div>
   <div>
@@ -41,7 +44,6 @@
         <img src="images/logo.png" alt="Logo" id="logo" loading="eager">
         <img src="images/logowhite.png" alt="Logo" id="logowhite" loading="eager">
       </div>
-
       <div class="nav-right">
         <a href="#about">About me</a>
         <a href="#skills">Skills</a>
@@ -53,28 +55,6 @@
 
   <!-- Hero -->
   <section class="hero">
-    <!-- Mobile -->
-    <div class="mobile-hero">
-      <div class="mobile-hero-content">
-        <h2 id="beg1-mobile">Hi, I am</h2>
-        <h1 id="beg2-mobile">Petros Papagiannis</h1>
-        <h3 id="beg4-mobile">Software Engineer</h3>
-        <h3 id="beg3-mobile"></h3>
-        <div class="social-icons">
-          <a href="https://github.com/PapagiannisPetros" target="_blank"><img src="icons/git.png" alt="GitHub"
-              loading="lazy"></a>
-          <a href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img
-              src="icons/linkedin.png" alt="LinkedIn" loading="lazy"></a>
-          <a href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png" alt="Email"
-              loading="lazy"></a>
-          <a href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=e2635a2e105e4a63" target="_blank"><img
-              src="icons/spotify.png" alt="Spotify" loading="lazy"></a>
-        </div>
-      </div>
-      <div class="mobile-hero-bg"></div>
-      <div class="diagonal-overlay"></div>
-    </div>
-
     <!-- Desktop -->
     <div class="desktop-hero">
       <div class="hero-left">
@@ -89,7 +69,7 @@
               src="icons/linkedin.png" alt="LinkedIn" loading="lazy"></a>
           <a href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png" alt="Email"
               loading="lazy"></a>
-          <a href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=e2635a2e105e4a63" target="_blank"><img
+          <a href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq" target="_blank"><img
               src="icons/spotify.png" alt="Spotify" loading="lazy"></a>
         </div>
         <div class="spotify-card">
@@ -99,7 +79,10 @@
         </div>
       </div>
       <div class="hero-right">
-        <img src="images/Subject(1).png" alt="Petros Papagiannis" class="desktop-image" loading="lazy">
+        <picture>
+          <img src="images/Subject(1).png" alt="Petros Papagiannis" class="desktop-image" loading="eager"
+            fetchpriority="high" decoding="async">
+        </picture>
       </div>
     </div>
   </section>
