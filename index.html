@@ -10,11 +10,8 @@
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
 
-  <link rel="preload" href="images/Subject(1)-optimized-transparent.webp" as="image" media="(min-width: 769px)" fetchpriority="high">
-  <link rel="preload" href="images/Subject(1)-small-transparent.webp" as="image" media="(max-width: 768px)" fetchpriority="high">
+  <link rel="preload" href="images/Subject(1).webp" as="image" fetchpriority="high">
   
-
-
   <!-- Font Awesome (load asynchronously to avoid blocking) -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
@@ -120,13 +117,8 @@
         </div>
       </div>
       <div class="hero-right">
-        <picture>
-          <!-- Mobile first -->
-          <source srcset="images/Subject(1)-small-transparent.webp" media="(max-width: 768px)">
-          <!-- Desktop -->
-          <source srcset="images/Subject(1)-optimized-transparent.webp" media="(min-width: 769px)">
-          <img src="images/Subject(1)-optimized-transparent.webp" alt="Petros Papagiannis" class="desktop-image"
-            width="600" height="800" loading="eager" decoding="async" fetchpriority="high">
+          <img src="images/Subject(1).webp" alt="Petros Papagiannis" class="desktop-image"
+            width="500" height="700" loading="eager" decoding="async" fetchpriority="high">
       </div>
 
     </div>
