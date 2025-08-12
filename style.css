@@ -178,7 +178,7 @@ button {
   max-height: 90%;
   object-fit: contain;
   position: absolute;
-  bottom: 0;
+  bottom: -1.3rem;
   left: 40%;
   /* default was 50% */
   transform: translateX(-50%);
