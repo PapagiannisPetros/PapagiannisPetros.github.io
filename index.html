@@ -6,22 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Petros Papagiannis</title>
 
-  <!-- Preload critical CSS -->
+  <!-- Critical CSS -->
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
 
   <!-- Preload important images -->
   <link rel="preload" href="images/logo.png" as="image">
   <link rel="preload" href="images/logowhite.png" as="image">
+  <link rel="preload" href="images/Subject(1).png" as="image">
 
-  <!-- Font Awesome (load asynchronously to avoid blocking) -->
+  <!-- Font Awesome async -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </noscript>
 
-  <!-- AOS CSS (async load) -->
+  <!-- AOS CSS async -->
   <link rel="preload" href="https://unpkg.com/aos@2.3.4/dist/aos.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
@@ -37,8 +38,8 @@
   <div>
     <nav class="navbar">
       <div class="logo">
-        <img src="images/logo.png" alt="Logo" id="logo">
-        <img src="images/logowhite.png" alt="Logo" id="logowhite">
+        <img src="images/logo.png" alt="Logo" id="logo" loading="eager">
+        <img src="images/logowhite.png" alt="Logo" id="logowhite" loading="eager">
       </div>
 
       <div class="nav-right">
@@ -50,76 +51,55 @@
     </nav>
   </div>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <!-- Mobile Content (shown only on mobile) -->
+    <!-- Mobile -->
     <div class="mobile-hero">
       <div class="mobile-hero-content">
         <h2 id="beg1-mobile">Hi, I am</h2>
         <h1 id="beg2-mobile">Petros Papagiannis</h1>
         <h3 id="beg4-mobile">Software Engineer</h3>
         <h3 id="beg3-mobile"></h3>
-
         <div class="social-icons">
-          <a class="icons" href="https://github.com/PapagiannisPetros" target="_blank"><img src="icons/git.png"
-              alt="GitHub" /></a>
-          <a class="icons" href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img
-              src="icons/linkedin.png" alt="LinkedIn" /></a>
-          <a class="icons" href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png"
-              alt="Email" /></a>
-          <a class="icons" href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=e2635a2e105e4a63"
-            target="_blank" id="spotify">
-            <img src="icons/spotify.png" alt="Spotify" />
-          </a>
+          <a href="https://github.com/PapagiannisPetros" target="_blank"><img src="icons/git.png" alt="GitHub"
+              loading="lazy"></a>
+          <a href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img
+              src="icons/linkedin.png" alt="LinkedIn" loading="lazy"></a>
+          <a href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png" alt="Email"
+              loading="lazy"></a>
+          <a href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=e2635a2e105e4a63" target="_blank"><img
+              src="icons/spotify.png" alt="Spotify" loading="lazy"></a>
         </div>
       </div>
       <div class="mobile-hero-bg"></div>
       <div class="diagonal-overlay"></div>
     </div>
 
-    <!-- Desktop Content (shown only on desktop) -->
+    <!-- Desktop -->
     <div class="desktop-hero">
       <div class="hero-left">
         <h2 id="beg1">Hi, I am</h2>
         <h1 id="beg2">Petros Papagiannis</h1>
         <h3 id="beg4">Software Engineer</h3>
         <h3><span id="beg3"></span></h3>
-
         <div class="social-icons">
-          <a class="icons" href="https://github.com/PapagiannisPetros" target="_blank"><img src="icons/git.png"
-              alt="GitHub" /></a>
-          <a class="icons" href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img
-              src="icons/linkedin.png" alt="LinkedIn" /></a>
-          <a class="icons" href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png"
-              alt="Email" /></a>
-          <a class="icons" href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=e2635a2e105e4a63"
-            target="_blank" id="spotify">
-            <img src="icons/spotify.png" alt="Spotify" />
-          </a>
+          <a href="https://github.com/PapagiannisPetros" target="_blank"><img src="icons/git.png" alt="GitHub"
+              loading="lazy"></a>
+          <a href="https://www.linkedin.com/in/petros-papagiannis-04655a292/" target="_blank"><img
+              src="icons/linkedin.png" alt="LinkedIn" loading="lazy"></a>
+          <a href="mailto:petros.t.papagiannis@gmail.com" target="_blank"><img src="icons/mail.png" alt="Email"
+              loading="lazy"></a>
+          <a href="https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=e2635a2e105e4a63" target="_blank"><img
+              src="icons/spotify.png" alt="Spotify" loading="lazy"></a>
         </div>
         <div class="spotify-card">
-          <div style="
-            width: 30rem;
-            height: 9.5rem;
-            margin-top: 5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            background: linear-gradient(135deg, #1db954, #191414);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-          ">
-            <iframe style="border-radius:12px"
-              src="https://open.spotify.com/embed/track/4nHJcUtNSUVjXRnjdP29Bk?utm_source=generator&theme=0"
-              width="100%" height="152" frameBorder="0" allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"></iframe>
-          </div>
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/4nHJcUtNSUVjXRnjdP29Bk?utm_source=generator&theme=0" width="100%"
+            height="152" frameBorder="0" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
       <div class="hero-right">
-        <img src="images/Subject(1).png" alt="Petros Papagiannis" class="desktop-image">
+        <img src="images/Subject(1).png" alt="Petros Papagiannis" class="desktop-image" loading="lazy">
       </div>
     </div>
   </section>
@@ -479,194 +459,8 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js" defer></script>
 
-  <!-- Your scripts in ONE minified file -->
+  <!-- Main JS combined & minified -->
   <script src="main.min.js" defer></script>
-
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const endpointChars = [104, 116, 116, 112, 115, 58, 47, 47,
-        112, 97, 112, 97, 103, 105, 97, 110, 110, 105, 115, 45,
-        112, 101, 116, 114, 111, 115, 45, 103, 105, 116, 104,
-        117, 98, 45, 105, 111, 46, 118, 101, 114, 99, 101, 108,
-        46, 97, 112, 112, 47, 97, 112, 105, 47, 99, 111, 110, 116, 97, 99, 116];
-      const endpoint = String.fromCharCode(...endpointChars);
-
-      const keyChars = [115, 101, 99, 114, 101, 116, 45, 49, 50, 51];
-      const apiKey = String.fromCharCode(...keyChars);
-
-      document.getElementById("contactForm").addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const formData = {
-          name: e.target.name.value.trim(),
-          email: e.target.email.value.trim(),
-          subject: e.target.subject.value.trim(),
-          message: e.target.message.value.trim(),
-          website: e.target.website.value
-        };
-
-        console.log("Sending form data:", formData); // debug
-
-        const msgElem = document.getElementById('formMessage');
-        msgElem.textContent = "Sending...";
-        msgElem.className = "";
-
-        try {
-          const res = await fetch(endpoint, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "x-api-key": apiKey
-            },
-            body: JSON.stringify(formData)
-          });
-
-          if (res.status === 429) {
-            msgElem.textContent = "You're sending messages too quickly. Please wait.";
-            msgElem.classList.add("warning");
-          } else if (res.ok) {
-            msgElem.textContent = "Message sent successfully! 🎉";
-            msgElem.classList.add("success");
-            e.target.reset();
-          } else {
-            msgElem.textContent = "Error sending message.";
-            msgElem.classList.add("error");
-          }
-        } catch (err) {
-          console.error("Network error:", err);
-          msgElem.textContent = "Network error. Please try again later.";
-          msgElem.classList.add("error");
-        }
-      });
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Mobile typing animation
-      if (document.querySelector("#beg3-mobile")) {
-        new Typed("#beg3-mobile", {
-          strings: ["Dreamer", "Doer", "Lover"],
-          typeSpeed: 50,
-          backSpeed: 30,
-          loop: true,
-          showCursor: false
-        });
-      } else if
-
-        // Desktop typing animation
-        (document.querySelector("#beg3")) {
-        new Typed("#beg3", {
-          strings: ["Dreamer", "Doer", "Lover"],
-          typeSpeed: 50,
-          backSpeed: 30,
-          loop: true
-        });
-      }
-    });
-  </script>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      new Typed("#beg3", {
-        strings: ["Dreamer", "Doer", "Lover"],
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 1500,
-        loop: true
-      });
-    });
-  </script>
-
-  <script>
-    window.addEventListener("scroll", function () {
-      const navbar = document.querySelector(".navbar");
-      if (window.scrollY > 100) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
-  </script>
-
-  <script>
-    VanillaTilt.init(document.querySelectorAll(".service-box"), {
-      max: 15,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.2
-    });
-  </script>
-
-  <script>
-    window.onscroll = function () {
-      const scroll = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (scroll / height) * 100;
-      document.getElementById("progressBar").style.width = scrolled + "%";
-    };
-  </script>
-
-  <script>
-    window.addEventListener('scroll', function () {
-      const beg1 = document.getElementById("beg1");
-      const beg2 = document.getElementById("beg2");
-      const beg4 = document.getElementById("beg4");
-
-      const maxScroll = window.innerHeight; // hero section height
-      const scrollTop = window.scrollY;
-      const progress = Math.min(scrollTop / maxScroll, 1); // clamp to [0,1]
-
-      // Interpolate font sizes
-      beg1.style.fontSize = `${2 - 1 * progress}rem`;  // from 2rem to 1rem
-      beg2.style.fontSize = `${3 - 1.5 * progress}rem`;  // from 3rem to 1.5rem
-      beg4.style.fontSize = `${1.5 - 0.5 * progress}rem`;  // from 1.5rem to 1rem
-    });
-  </script>
-
-  <script>
-    window.addEventListener('scroll', function () {
-      const hero = document.querySelector('.hero');
-      const maxScroll = window.innerHeight;
-      const scrollTop = window.scrollY;
-      const progress = Math.min(scrollTop / maxScroll, 1);
-
-      // Card effect: shrink and lift
-      const scale = 1 - progress * 0.1;        // scale down to 90%
-      const translateY = progress * -50;       // move up slightly
-      const opacity = 1 - progress * 0.1;
-
-      hero.style.transform = `scale(${scale}) translateY(${translateY}px)`;
-      hero.style.opacity = opacity;
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray(".section").forEach(section => {
-      gsap.from(section, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          toggleActions: "play none none reverse"
-        }
-      });
-    });
-  </script>
-
 </body>
 
 </html>
