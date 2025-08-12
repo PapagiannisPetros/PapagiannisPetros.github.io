@@ -118,8 +118,23 @@
         </div>
       </div>
       <div class="hero-right">
-        <img src="images/Subject(1).webp" alt="Petros Papagiannis" class="desktop-image">
+        <picture>
+          <!-- Mobile first -->
+          <source srcset="images/Subject(1)-small-transparent.webp" media="(max-width: 768px)">
+          <!-- Desktop -->
+          <source srcset="images/Subject(1)-optimized-transparent.webp" media="(min-width: 769px)">
+          <img 
+            src="images/Subject(1)-optimized.webp" 
+            alt="Petros Papagiannis" 
+            class="desktop-image"
+            width="600"
+            height="800"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="high">
+        </picture>
       </div>
+      
     </div>
   </section>
 
