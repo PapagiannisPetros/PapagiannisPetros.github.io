@@ -10,8 +10,10 @@
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Preload important images -->
-  <link rel="preload" href="images/Subject(1)-optimized-transparent.webp" as="image">
+  <link rel="preload" href="images/Subject(1)-optimized-transparent.webp" as="image" media="(min-width: 769px)" fetchpriority="high">
+  <link rel="preload" href="images/Subject(1)-small-transparent.webp" as="image" media="(max-width: 768px)" fetchpriority="high">
+  
+
 
   <!-- Font Awesome (load asynchronously to avoid blocking) -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style"
