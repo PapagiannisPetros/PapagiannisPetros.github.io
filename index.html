@@ -131,11 +131,12 @@
     <h2 class="text_title">ABOUT ME</h2>
     <p class="textall">Hello! I’m an undergraduate student at the Department of Computer Engineering and Informatics
       (CEID) at the University of Patras, and I currently work as a Junior Developer specializing in Artificial
-      Intelligence. My focus is on Conversational AI and building intelligent system features, blending theoretical
-      knowledge with practical, real-world development. At university, I dive deep into AI and Machine Learning,
-      applying concepts from mathematics, algorithms, and data science to innovative projects. Beyond my studies, I
-      explore cybersecurity—driven by a passion for understanding systems, uncovering vulnerabilities, and designing
-      with security in mind.</p>
+      Intelligence. In my role, I focus on Conversational AI, Machine Learning, and data analysis, blending theoretical
+      knowledge with practical, real-world development to create intelligent solutions. At university, I study
+      Artificial Intelligence, Machine Learning, and Cybersecurity, exploring topics such as
+      algorithms, data science, and secure system design. My academic work allows me to experiment with innovative
+      ideas, build prototypes, and deepen my understanding of how intelligent systems can be developed, optimized, and
+      secured.</p>
     <a href="PetrosPapagiannisCV.pdf" download class="download-button">
       <button id="about_button">Download CV</button>
     </a>
@@ -147,7 +148,9 @@
           features, and Machine Learning systems, with deep expertise in NLQ, RAQ, and CAG technologies for advanced
           data understanding and processing. In my role, I design and implement sophisticated chatbot solutions powered
           by cutting-edge Large Language Models (LLMs) such as GPT, Gemini, and other state-of-the-art architectures,
-          enabling natural, context-aware, and human-like dialogue. I build intelligent, user-focused applications that
+          enabling natural, context-aware, and human-like dialogue. I apply Machine Learning algorithms and data
+          engineering practices, including designing and managing data pipelines and DAG workflows, to ensure efficient
+          processing and analysis of large-scale datasets. I build intelligent, user-focused applications that
           seamlessly integrate frontend and backend development, enhancing human-computer interaction and delivering
           measurable impact. Based in Athens, I combine technical expertise with creative problem-solving to deliver
           forward-thinking, high-performance solutions.
@@ -164,7 +167,12 @@
           equations and applied mathematics, sharing knowledge with peers, and contributing to academic activities.
           Through both coursework and research, I am deepening my expertise in core computer science principles, while
           exploring how AI, mathematical modeling, and intelligent algorithms can be applied to address complex,
-          real-world problems.</p>
+          real-world problems. Additionally, I have developed a strong interest and growing expertise in cybersecurity,
+          focusing on network security, secure system architecture, and hardware security. I study how to design robust
+          systems resistant to cyber threats, identify vulnerabilities in software and hardware, and implement security
+          measures that protect data, networks, and computational infrastructures. This combination of AI, mathematics,
+          and security knowledge allows me to approach problems holistically, building intelligent and secure
+          technological solutions.</p>
       </div>
       <div class="service-box" id="study" data-aos="fade-up" data-aos-delay="200">
         <img src="images/study.png" alt="Study Icon" />
@@ -296,6 +304,9 @@
         <div class="skill"><img src="images/react.png" alt="React" loading="lazy" decoding="async">
           <p>React</p>
         </div>
+        <div class="skill"><img src="images/Frame.png" alt="Looker" loading="lazy" decoding="async">
+          <p>Looker Studio</p>
+        </div>
         <div class="skill"><img src="images/bootstrap.png" alt="Bootstrap" loading="lazy" decoding="async">
           <p>Bootstrap</p>
         </div>
@@ -328,6 +339,9 @@
       <div class="skills-grid">
         <div class="skill"><img src="images/docker.png" alt="Docker" loading="lazy" decoding="async">
           <p>Docker</p>
+        </div>
+        <div class="skill"><img src="images/Vector.png" alt="Airflow Dag" loading="lazy" decoding="async">
+          <p>Airflow DAG</p>
         </div>
         <div class="skill"><img src="images/git.png" alt="Git" loading="lazy" decoding="async">
           <p>Git</p>
@@ -378,11 +392,47 @@
   <section id="portfolio" class="section portfolio-section parallax">
     <h2 class="text_title" id="portf">PORTFOLIO</h2>
     <div class="portfolio-grid">
-      <div class="portfolio-item" style="background-image: url('images/uni.png');">
+
+      <div class="portfolio-item" style="background-image: url('images/chatbot4.png');">
         <div class="port-text">
-          Managing Authorities Chatbot
+          AI-Driven BI Assistant
           <p class="port-desc">
-            Full-stack conversational AI system for Managing Authorities, combining Natural Language Query (NLQ) and
+            Full-stack web chatbot for business intelligence dashboards, built with a Python backend and responsive
+            frontend, powered by Gemini LLM. Designed for supervisors, it uses Natural Language Queries (NLQ) to
+            retrieve and interpret BI data, dynamically generating tables, charts, and visual insights. Features include
+            contextual prompt handling, real-time data interaction, and seamless dashboard integration for an
+            interactive and data-driven supervision experience.
+          </p>
+        </div>
+      </div>
+      <div class="portfolio-item" style="background-image: url('images/chatbot3.jpg');">
+        <div class="port-text">
+          Tourism Sites Chatbot – Local RAG
+          <p class="port-desc">
+            Full-stack web chatbot for tourism websites, built with a Python backend and responsive frontend, powered by
+            OpenAI’s GPT-3.0. Uses a local RAG system with vector embeddings to retrieve relevant information from a
+            curated knowledge base, providing real-time, context-aware answers about tourist attractions, events, travel
+            tips, and sightseeing recommendations. Features include custom prompt engineering, dynamic response
+            handling, and seamless website integration for an engaging tourism experience.
+          </p>
+        </div>
+      </div>
+      <div class="portfolio-item" style="background-image: url('images/dag2.png');">
+        <div class="port-text">
+          ML Forecasting Pipeline – Airflow & BigQuery
+          <p class="port-desc">
+            Full-stack machine learning pipeline for time-series forecasting, built with Python and orchestrated using
+            Airflow DAGs. Retrieves and preprocesses large-scale data from BigQuery, trains predictive models, and
+            generates forecasts with automated scheduling and monitoring. Features include modular pipeline design,
+            real-time model evaluation, and seamless integration with dashboards for actionable business insights.
+          </p>
+        </div>
+      </div>
+      <div class="portfolio-item" style="background-image: url('images/chatbot2.webp');">
+        <div class="port-text">
+          Public Services Chatbot
+          <p class="port-desc">
+            Full-stack conversational AI system for public administration, combining Natural Language Query (NLQ) and
             Context-Aware Generation (CAG) with the Gemini 2.5 Flash LLM. Includes a complete back office for usage
             statistics, query analytics, and automated data updates. Delivers accurate, context-rich responses while
             ensuring the knowledge base stays continuously refreshed for reliable, up-to-date information access.
@@ -390,14 +440,15 @@
         </div>
       </div>
 
-      <div class="portfolio-item" style="background-image: url('images/uni.png');">
+      <div class="portfolio-item" style="background-image: url('images/chatbot1.webp');">
         <div class="port-text">
-          Destination Piraeus Chatbot
+          Tourism Sites Chatbot – Voiceflow
           <p class="port-desc">
-            Full-stack web chatbot for destinationpiraeus.com, built with a Python backend and responsive frontend,
-            powered by OpenAI’s GPT-3.0. Leverages AI and conversational AI to provide real-time, context-aware answers
-            about Piraeus attractions, events, and travel information. Features custom prompt engineering, dynamic
-            response handling, and seamless website integration for an engaging tourism experience.
+            Full-stack web chatbot for tourism websites, built with a Python backend and a responsive frontend, powered
+            by OpenAI’s GPT-3.0. Developed using Voiceflow, it leverages AI and conversational design to deliver
+            real-time, context-aware answers about popular tourist attractions, local events, travel tips, and
+            sightseeing recommendations. Features include custom prompt engineering, dynamic response handling, and
+            smooth website integration, offering visitors an engaging and informative tourism experience.
           </p>
         </div>
       </div>
