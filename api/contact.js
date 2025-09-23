@@ -10,7 +10,10 @@ const RATE_LIMIT_WINDOW_SEC = 900;
 const MAX_REQUESTS = 2;
 
 module.exports = async function handler(req, res) {
-  const allowedOrigin = "https://papagiannispetros.github.io";
+  const allowedOrigins = [
+    "https://papagiannispetros.github.io",
+    "https://papagiannis-petros-github-io.vercel.app", // your Vercel deployment
+  ];
   const origin = req.headers.origin;
 
   if (origin === allowedOrigin) {
