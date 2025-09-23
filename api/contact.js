@@ -9,90 +9,94 @@ const redis = new Redis({
 const RATE_LIMIT_WINDOW_SEC = 900;
 const MAX_REQUESTS = 2;
 
+const allowedOrigins = [
+  "https://papagiannispetros.github.io",
+  "https://papagiannis-petros-github-io.vercel.app",
+];
+
 module.exports = async function handler(req, res) {
-  const allowedOrigins = [
-    "https://papagiannispetros.github.io",
-    "https://papagiannis-petros-github-io.vercel.app", // your Vercel deployment
-  ];
-  const origin = req.headers.origin;
-
-  if (origin === allowedOrigin) {
-    res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
-  } else {
-    return res.status(403).json({ message: "Forbidden: CORS" });
-  }
-
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-api-key");
-
-  if (req.method === "OPTIONS") return res.status(200).end();
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
-  }
-
-  if (req.headers["x-api-key"] !== process.env.CONTACT_FORM_API_KEY) {
-    return res.status(401).json({ message: "Unauthorized" });
-  }
-
-  // Vercel-specific IP retrieval logic
-  // x-real-ip is the most reliable header on Vercel for the client's IP.
-  // We fall back to x-forwarded-for as a secondary option.
-  const ip = req.headers['x-real-ip'] || (req.headers['x-forwarded-for'] || '').split(',')[0].trim();
-
-  // If no IP is found (e.g., from an unknown source), we can't rate limit.
-  // It's a good idea to handle this case, maybe by using a default IP.
-  if (!ip) {
-    return res.status(500).json({ message: "Unable to determine client IP address" });
-  }
-
-  const key = `rate:${ip}`;
-  const currentCount = await redis.incr(key);
-  if (currentCount === 1) await redis.expire(key, RATE_LIMIT_WINDOW_SEC);
-
-  if (currentCount > MAX_REQUESTS) {
-    return res.status(429).json({ message: "Too many requests. Try later." });
-  }
-
-  const { name, email, subject, message, website } = req.body;
-
-  if (website && website.trim() !== "") {
-    return res.status(200).json({ message: "Message received" });
-  }
-
-  if (!name || !email || !message) {
-    return res.status(400).json({ message: "Missing required fields" });
-  }
-  if (name.length > 100 || subject?.length > 150 || message.length > 2000) {
-    return res.status(400).json({ message: "Input too long" });
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return res.status(400).json({ message: "Invalid email format" });
-  }
-
-  let transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || "465", 10),
-    secure: true,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
-
-  const mailOptions = {
-    from: `"Website Contact" <${process.env.SMTP_USER}>`,
-    replyTo: email,
-    to: process.env.RECEIVER_EMAIL,
-    subject: `${name} sent you a message: ${subject || "(no subject)"}`,
-    text: `From your personal site papagiannispetros.github.io you received the following message:\n\n 
-    From: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
-  };
-
   try {
+    const origin = req.headers.origin;
+
+    // ✅ Set CORS headers first, to avoid browser blocking error messages
+    if (allowedOrigins.includes(origin)) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+    } else {
+      // fallback: still send a CORS header so browser shows real error
+      res.setHeader("Access-Control-Allow-Origin", allowedOrigins[0]);
+    }
+
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-api-key");
+
+    if (req.method === "OPTIONS") return res.status(200).end();
+    if (req.method !== "POST") {
+      return res.status(405).json({ message: "Method not allowed" });
+    }
+
+    if (req.headers["x-api-key"] !== process.env.CONTACT_FORM_API_KEY) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    const ip =
+      req.headers["x-real-ip"] ||
+      (req.headers["x-forwarded-for"] || "").split(",")[0].trim();
+
+    if (!ip) {
+      console.error("Missing client IP");
+      return res.status(500).json({ message: "Unable to determine client IP" });
+    }
+
+    const key = `rate:${ip}`;
+    const currentCount = await redis.incr(key);
+    if (currentCount === 1) await redis.expire(key, RATE_LIMIT_WINDOW_SEC);
+
+    if (currentCount > MAX_REQUESTS) {
+      return res.status(429).json({ message: "Too many requests. Try later." });
+    }
+
+    const { name, email, subject, message, website } = req.body;
+
+    if (website && website.trim() !== "") {
+      return res.status(200).json({ message: "Message received" }); // honeypot
+    }
+
+    if (!name || !email || !message) {
+      return res.status(400).json({ message: "Missing required fields" });
+    }
+    if (name.length > 100 || subject?.length > 150 || message.length > 2000) {
+      return res.status(400).json({ message: "Input too long" });
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return res.status(400).json({ message: "Invalid email format" });
+    }
+
+    let transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: parseInt(process.env.SMTP_PORT || "465", 10),
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: `"Website Contact" <${process.env.SMTP_USER}>`,
+      replyTo: email,
+      to: process.env.RECEIVER_EMAIL,
+      subject: `${name} sent you a message: ${subject || "(no subject)"}`,
+      text: `From your personal site papagiannispetros.github.io you received the following message:\n\n
+      From: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
+    };
+
     await transporter.sendMail(mailOptions);
     return res.status(200).json({ message: "Email sent successfully" });
   } catch (err) {
-    console.error("Email error:", err);
-    return res.status(500).json({ message: "Failed to send email", error: err.message });
+    console.error("Server error:", err);
+    return res.status(500).json({
+      message: "Server crashed",
+      error: err.message,
+    });
   }
 };
