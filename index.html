@@ -111,16 +111,16 @@
             overflow: hidden;
           ">
             <iframe style="border-radius:12px"
-              src="https://open.spotify.com/embed/track/4nHJcUtNSUVjXRnjdP29Bk?utm_source=generator&theme=0"
-              width="100%" height="152" frameBorder="0" allowfullscreen=""
+              src="https://open.spotify.com/embed/track/3oTuTpF1F3A7rEC6RKsMRz?utm_source=generator" width="100%"
+              height="152" frameBorder="0" allowfullscreen=""
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </div>
         </div>
       </div>
       <div class="hero-right">
-        <!-- <img src="images/Subject(1).webp" alt="Petros Papagiannis" class="desktop-image" width="500" height="700"
-          loading="eager" decoding="async" fetchpriority="high"> -->
+        <img src="images/Subject(1).webp" alt="Petros Papagiannis" class="desktop-image" width="500" height="700"
+          loading="eager" decoding="async" fetchpriority="high">
       </div>
 
     </div>
@@ -129,14 +129,24 @@
   <!-- About Section -->
   <section id="about" class="section">
     <h2 class="text_title">ABOUT ME</h2>
-    <p class="textall">Hello! I’m an undergraduate student at the Department of Computer Engineering and Informatics
-      (CEID) at the University of Patras, and I currently work as a Junior Developer specializing in Artificial
-      Intelligence. In my role, I focus on Conversational AI, Machine Learning, and data analysis, blending theoretical
-      knowledge with practical, real-world development to create intelligent solutions. At university, I study
-      Artificial Intelligence, Machine Learning, and Cybersecurity, exploring topics such as
-      algorithms, data science, and secure system design. My academic work allows me to experiment with innovative
-      ideas, build prototypes, and deepen my understanding of how intelligent systems can be developed, optimized, and
-      secured.</p>
+    <p class="textall">Hello! I am an undergraduate student at the Department of Computer Engineering and Informatics
+      (CEID) at the University of Patras, with a strong academic and professional focus on **Cybersecurity and
+      Artificial Intelligence**. Alongside my studies, I work as a Junior Developer specializing in Artificial
+      Intelligence, where I design and implement intelligent systems with an emphasis on **secure, robust, and
+      privacy-aware architectures**.
+
+      My professional experience centers on Conversational AI, Machine Learning, and data analytics, but I approach
+      these domains through a security-first mindset. This includes secure model deployment, data protection,
+      adversarial robustness, and responsible AI practices. I am particularly interested in the intersection of AI and
+      cybersecurity, such as adversarial machine learning, threat detection using ML techniques, and the protection of
+      distributed and cloud-based AI systems.
+
+      At university, I study Artificial Intelligence, Machine Learning, and Cybersecurity in depth, covering
+      cryptography, network security, secure system design, algorithms, and data science. My academic projects allow me
+      to prototype intelligent systems while systematically addressing attack surfaces, vulnerability assessment, and
+      secure-by-design principles. I aim to engineer systems that are not only intelligent and efficient, but also
+      resilient against evolving cyber threats.
+    </p>
     <a href="PetrosPapagiannisCV.pdf" download class="download-button">
       <button id="about_button">Download CV</button>
     </a>
@@ -168,10 +178,11 @@
           Through both coursework and research, I am deepening my expertise in core computer science principles, while
           exploring how AI, mathematical modeling, and intelligent algorithms can be applied to address complex,
           real-world problems. Additionally, I have developed a strong interest and growing expertise in cybersecurity,
-          focusing on network security, secure system architecture, and hardware security. I study how to design robust
-          systems resistant to cyber threats, identify vulnerabilities in software and hardware, and implement security
-          measures that protect data, networks, and computational infrastructures. This combination of AI, mathematics,
-          and security knowledge allows me to approach problems holistically, building intelligent and secure
+          focusing on network security, secure system architecture, and hardware security. I am also actively engaged in
+          researching and publishing papers on drone cybersecurity, focusing on securing communication links, embedded
+          systems, and command-and-control infrastructures against emerging cyber threats. This combination of AI,
+          mathematics, and security knowledge allows me to approach problems holistically, building intelligent and
+          secure
           technological solutions.</p>
       </div>
       <div class="service-box" id="study" data-aos="fade-up" data-aos-delay="200">
@@ -337,6 +348,9 @@
     <div class="skills-section">
       <h2>DevOps / Tools:</h2>
       <div class="skills-grid">
+        <div class="skill"><img src="images/sparkar.svg" alt="Apache Spark" loading="lazy" decoding="async">
+          <p>Apache Spark</p>
+        </div>
         <div class="skill"><img src="images/docker.png" alt="Docker" loading="lazy" decoding="async">
           <p>Docker</p>
         </div>
@@ -392,7 +406,32 @@
   <section id="portfolio" class="section portfolio-section parallax">
     <h2 class="text_title" id="portf">PORTFOLIO</h2>
     <div class="portfolio-grid">
-
+      
+      <div class="portfolio-item" style="background-image: url('images/uav.jpg');">
+        <div class="port-text">
+          Cybersecurity Survey in Military UAV Systems
+          <p class="port-desc">
+            Analytical research project on cybersecurity threats in military Unmanned Aerial Vehicle (UAV) systems.
+            Examines attack surfaces across communication links, navigation systems, onboard sensors, and ground control
+            stations. Covers GPS spoofing, jamming, data-link interception, malware injection, and command hijacking,
+            along with countermeasures such as cryptographic protocols, intrusion detection, and resilient control
+            architectures.
+          </p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item" style="background-image: url('images/pen.jpeg');">
+        <div class="port-text">
+          Virtualized Penetration Testing Lab
+          <p class="port-desc">
+            End-to-end penetration testing environment built using isolated virtual machines with Kali Linux as the
+            attacker platform and vulnerable targets such as OWASP BWA and Kioptrix. Covers reconnaissance, vulnerability
+            scanning, exploitation, post-exploitation, and privilege escalation, providing hands-on experience with real-world
+            attack vectors in controlled lab conditions.
+          </p>
+        </div>
+      </div>
+      
       <div class="portfolio-item" style="background-image: url('images/chatbot4.png');">
         <div class="port-text">
           AI-Driven BI Assistant
@@ -452,6 +491,30 @@
           </p>
         </div>
       </div>
+      
+      <div class="portfolio-item" style="background-image: url('images/browse.png');">
+        <div class="port-text">
+          Open Courses Aggregator Platform
+          <p class="port-desc">
+            Full-stack aggregation platform integrating multiple open course repositories via REST APIs. Built with
+            React and a TypeScript backend, leveraging Apache Spark and PySpark for large-scale data processing,
+            course clustering, analytics, and recommendation systems. Designed for scalable ETL pipelines and
+            data-driven insights across heterogeneous educational content.
+          </p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item" style="background-image: url('images/multi.png');">
+        <div class="port-text">
+          Multi-Dimensional Data Indexing & Similarity Query Processing
+          <p class="port-desc">
+            Design and evaluation of multi-dimensional indexing structures (k-d trees, quad trees, range trees, R-trees)
+            for efficient k-dimensional queries. Integrates Locality-Sensitive Hashing (LSH) for similarity search on textual
+            attributes, including comparative performance analysis of hybrid indexing schemes for scalability and accuracy.
+          </p>
+        </div>
+      </div>
+      
       <div class="portfolio-item" style="background-image: url('images/web.png');">
         <div class="port-text">
           Collaborative Thesis Management System
@@ -524,7 +587,7 @@
         <a href="mailto:petros.t.papagiannis@gmail.com"><i class="fas fa-envelope"></i></a>
 
       </div>
-      <p>© 2025 Petros Papagiannis. <small>All rights reserved.</small></p>
+      <p>© 2026 Petros Papagiannis. <small>All rights reserved.</small></p>
     </div>
   </footer>
 
