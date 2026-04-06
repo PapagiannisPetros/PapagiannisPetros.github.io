@@ -12,6 +12,8 @@ const MAX_REQUESTS = 2;
 const allowedOrigins = [
   "https://papagiannispetros.github.io",
   "https://papagiannis-petros-github-io.vercel.app",
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
 ];
 
 module.exports = async function handler(req, res) {
