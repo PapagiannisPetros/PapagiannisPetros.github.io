@@ -18,11 +18,9 @@ module.exports = async function handler(req, res) {
   try {
     const origin = req.headers.origin;
 
-    // ✅ Set CORS headers first, to avoid browser blocking error messages
     if (allowedOrigins.includes(origin)) {
       res.setHeader("Access-Control-Allow-Origin", origin);
     } else {
-      // fallback: still send a CORS header so browser shows real error
       res.setHeader("Access-Control-Allow-Origin", allowedOrigins[0]);
     }
 
@@ -58,7 +56,7 @@ module.exports = async function handler(req, res) {
     const { name, email, subject, message, website } = req.body;
 
     if (website && website.trim() !== "") {
-      return res.status(200).json({ message: "Message received" }); // honeypot
+      return res.status(200).json({ message: "Message received" });
     }
 
     if (!name || !email || !message) {
@@ -71,7 +69,7 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ message: "Invalid email format" });
     }
 
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: parseInt(process.env.SMTP_PORT || "465", 10),
       secure: true,
@@ -86,8 +84,7 @@ module.exports = async function handler(req, res) {
       replyTo: email,
       to: process.env.RECEIVER_EMAIL,
       subject: `${name} sent you a message: ${subject || "(no subject)"}`,
-      text: `From your personal site papagiannispetros.github.io you received the following message:\n\n
-      From: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
+      text: `From your personal site papagiannispetros.github.io you received the following message:\n\nFrom: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
     };
 
     await transporter.sendMail(mailOptions);
