@@ -17,9 +17,12 @@ export function ContactSection() {
     const subject = String(form.get("subject") ?? "").trim();
     const message = String(form.get("message") ?? "").trim();
     const website = String(form.get("website") ?? "");
+    const endpoint =
+      process.env.NEXT_PUBLIC_CONTACT_API_URL ||
+      "https://papagiannis-petros-github-io.vercel.app/api/contact";
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
