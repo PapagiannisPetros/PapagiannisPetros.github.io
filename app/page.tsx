@@ -1,4 +1,6 @@
-import { cookies } from "next/headers";
+"use client";
+
+import { useEffect, useState } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -13,15 +15,35 @@ import { TravelSection } from "@/components/sections/TravelSection";
 import * as el from "@/data/site";
 import * as en from "@/data/site.en";
 
-export default async function HomePage() {
-  const cookieStore = await cookies();
-  const langCookie = cookieStore.get("lang")?.value;
-  const lang = langCookie === "el" ? "el" : "en";
+type Lang = "el" | "en";
+
+function getLangFromCookie(): Lang | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(/(?:^|; )lang=([^;]+)/);
+  const value = match ? decodeURIComponent(match[1] ?? "") : "";
+  if (value === "el") return "el";
+  if (value === "en") return "en";
+  return null;
+}
+
+export default function HomePage() {
+  const [lang, setLang] = useState<Lang>("en");
+
+  useEffect(() => {
+    const cookieLang = getLangFromCookie();
+    if (cookieLang) setLang(cookieLang);
+  }, []);
+
   const site = lang === "en" ? en : el;
 
   return (
     <>
-      <Header navigation={site.navigation} ui={site.ui.header} lang={lang} />
+      <Header
+        navigation={site.navigation}
+        ui={site.ui.header}
+        lang={lang}
+        onLangChange={setLang}
+      />
       <main>
         <HeroSection ui={site.ui.hero} />
         <StatsStrip stats={site.stats} />

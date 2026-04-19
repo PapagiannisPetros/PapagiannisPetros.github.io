@@ -9,9 +9,10 @@ type Props = {
   navigation: NavigationItem[];
   ui: { ariaLabel: string; brand: string };
   lang: Lang;
+  onLangChange?: (lang: Lang) => void;
 };
 
-export function Header({ navigation, ui, lang }: Props) {
+export function Header({ navigation, ui, lang, onLangChange }: Props) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export function Header({ navigation, ui, lang }: Props) {
               </a>
             ))}
           </div>
-          <LanguageSwitcher lang={lang} variant="header" />
+          <LanguageSwitcher lang={lang} variant="header" onChange={onLangChange} />
         </div>
       </nav>
     </header>

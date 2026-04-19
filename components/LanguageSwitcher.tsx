@@ -7,6 +7,7 @@ export type Lang = "el" | "en";
 
 type Props = {
   lang: Lang;
+  onChange?: (lang: Lang) => void;
   variant?: "hero" | "header";
 };
 
@@ -15,7 +16,7 @@ function setLangCookie(lang: Lang) {
   document.cookie = `lang=${lang}; path=/; max-age=${maxAge}; samesite=lax`;
 }
 
-export function LanguageSwitcher({ lang, variant = "header" }: Props) {
+export function LanguageSwitcher({ lang, onChange, variant = "header" }: Props) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
@@ -23,11 +24,12 @@ export function LanguageSwitcher({ lang, variant = "header" }: Props) {
     (nextLang: Lang) => {
       if (nextLang === lang) return;
       setLangCookie(nextLang);
+      onChange?.(nextLang);
       startTransition(() => {
         router.refresh();
       });
     },
-    [lang, router],
+    [lang, onChange, router],
   );
 
   return (
