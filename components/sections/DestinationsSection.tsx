@@ -1,17 +1,29 @@
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
-import { destinations } from "@/data/site";
 
-export function DestinationsSection() {
+type Destination = {
+  name: string;
+  tag: string;
+  description: string;
+  image: string;
+  featured?: boolean;
+};
+
+type Props = {
+  destinations: Destination[];
+  ui: { label: string; title: string };
+};
+
+export function DestinationsSection({ destinations, ui }: Props) {
   return (
     <section id="destinations" className="section">
       <div className="site-shell">
         <div className="section-header">
           <Reveal>
-            <p className="section-label">Μέρη που αξίζουν</p>
+            <p className="section-label">{ui.label}</p>
           </Reveal>
           <Reveal delay="1">
-            <h2 className="section-title">Εξερευνήστε την περιοχή</h2>
+            <h2 className="section-title">{ui.title}</h2>
           </Reveal>
         </div>
 

@@ -154,19 +154,108 @@ export const contactDetails = {
   mapsUrl: "https://maps.google.com/?q=Ιεράπετρα+Κρήτη",
 };
 
-type GuideItem = {
+export const ui = {
+  header: {
+    ariaLabel: "Κύρια πλοήγηση",
+    brand: "IeraTrip",
+  },
+  hero: {
+    imageAlt: "Πανοραμική άποψη της Ιεράπετρας",
+    badge: "Νότια Κρήτη · 35°01′N",
+    title: { primary: "Ιεράπετρα", emphasis: "Trip" },
+    subtitle: "Όπου το Λιβυκό συναντά τη νοτιότερη πόλη της Ευρώπης",
+    cta: "Εξερεύνηση",
+  },
+  about: {
+    imageAlt: "Μεσογειακό τοπίο της νότιας Κρήτης",
+    label: "Η Ψυχή του Τόπου",
+    title: { line1: "Η", emphasis: "τελευταία", line2: "αδάμαστη Κρήτη" },
+    copy:
+      "Η Ιεράπετρα συνδυάζει το φως του Λιβυκού, αυθεντική κρητική καθημερινότητα και προορισμούς που παραμένουν αληθινοί αντί για υπερφορτωμένοι.",
+    link: "Ανακαλύψτε τους προορισμούς",
+  },
+  destinations: {
+    label: "Μέρη που αξίζουν",
+    title: "Εξερευνήστε την περιοχή",
+  },
+  guide: {
+    label: "Διαδραστικό μενού",
+    title: "Οδηγός Ιεράπετρας",
+    copy:
+      "Διάλεξε κατηγορία και πάτησε σε όποιο σημείο σε ενδιαφέρει για να δεις γρήγορα μικρό κείμενο και φωτογραφία σε pop-up.",
+  },
+  experiences: {
+    label: "Τι να κάνετε",
+    title: "Εμπειρίες που μένουν",
+  },
+  travel: {
+    label: "Πού βρισκόμαστε",
+    title: { line1: "Ιεράπετρα,", line2: "Νότια Κρήτη" },
+    googleMaps: "Google Maps",
+    googleMapsUrl: "https://maps.google.com/?q=Ιεράπετρα+Κρήτη",
+    appleMaps: "Apple Maps",
+    appleMapsUrl: "https://maps.apple.com/?q=35.0119,25.7423",
+    iframeTitle: "Χάρτης Ιεράπετρας",
+    iframeSrc: "https://maps.google.com/maps?q=Ιεράπετρα+Κρήτη&output=embed&z=12",
+  },
+  contact: {
+    label: "Επικοινωνία",
+    title: { line1: "Σχεδιάστε το", emphasis: "ταξίδι σας" },
+    copy:
+      "Η ομάδα μας είναι έτοιμη να βοηθήσει με διαμονή, προτάσεις και γενικές πληροφορίες για την Ιεράπετρα.",
+    form: {
+      subjectDefault: "Νέο αίτημα από το site",
+      body: {
+        nameLabel: "Όνομα",
+        emailLabel: "Email",
+        fallbackMessage: "Θα ήθελα περισσότερες πληροφορίες.",
+      },
+      placeholders: {
+        name: "Όνομα",
+        email: "Email",
+        subject: "Θέμα",
+        message: "Μήνυμά σας...",
+      },
+      submit: "Αποστολή",
+      sent: "Δημιουργήθηκε draft email για αποστολή.",
+    },
+    meta: {
+      phone: { label: "Τηλέφωνο", copy: "Άμεση επικοινωνία για πληροφορίες." },
+      email: { label: "Email", copy: "Κεντρικό σημείο επικοινωνίας του brand." },
+      location: {
+        label: "Τοποθεσία",
+        value: "Ιεράπετρα, Κρήτη",
+      },
+    },
+  },
+  gallery: {
+    ariaLabel: "Travel gallery",
+  },
+  footer: {
+    brand: "Ierapetra Escape",
+    subtitle: "Νότια Κρήτη, Ελλάδα",
+    copy:
+      "Premium tourism website, ιδανικό για την προβολή προορισμού, boutique καταλυμάτων ή τοπικού travel brand.",
+    copyright: "© 2026 Ierapetra Escape",
+  },
+};
+
+export type GuideItem = {
   name: string;
   hours?: string;
+  phone?: string;
+  address?: string;
+  priceRange?: string;
   description?: string;
   image?: string;
 };
 
-type GuideGroup = {
+export type GuideGroup = {
   title: string;
   items: GuideItem[];
 };
 
-type GuideCategory = {
+export type GuideCategory = {
   id: string;
   label: string;
   intro: string;
@@ -248,7 +337,7 @@ const guideDetails: Record<
     title: "Vira Potzi",
     hours: "Δ-Τρ-Πε 14:00-22:30 • Παρ-Σαβ 14:00-23:00 • Κυρ 13:00-22:00",
     description:
-      "Μοντέρνα μεσογειακή κουζίνα με θέα στη θάλασσα και σκηνικό που θυμίζει ρομαντική ταινία.",
+      "Η μεσογειακή κουζίνα στην πιο μοντέρνα της εκδοχή, με τις χελώνες να κολυμπούν ανέμελα στη θάλασσα, δημιουργεί ονειρικές εικόνες.",
   },
   signiorino: {
     title: "Signiorino",
@@ -266,7 +355,7 @@ const guideDetails: Record<
     title: "Scisiliana",
     hours: "15:00-23:30 • Τετάρτη κλειστό",
     description:
-      "Ιταλικός αέρας στην Ιεράπετρα, με γεύσεις Σικελίας, πίτσες και ζυμαρικά για όσους αγαπούν την ιταλική κουζίνα.",
+      "Οι γνήσιες συνταγές με αρώματα Σικελίας αποτελούν πραγματική απόλαυση για τους λάτρεις της ιταλικής κουζίνας.",
   },
   massati: {
     title: "Massati",
@@ -379,7 +468,7 @@ const guideDetails: Record<
     title: "Κούρος",
     hours: "17:00-23:30 • ΣΚ 12:00-23:30 • Τετάρτη κλειστό",
     description:
-      "Δυνατή επιλογή για κρητικό κρέας και πιάτα ημέρας που δύσκολα βρίσκεις αλλού.",
+      "Αν πιστεύετε ότι έχετε φάει το καλύτερο κρητικό κρέας, σίγουρα δεν έχετε φάει ακόμα από τον Κούρο. Αν είστε τυχεροί, μπορεί να πετύχετε και πιάτα ημέρας που δεν θα βρείτε αλλού.",
   },
   ψαροπούλα: {
     title: "Ψαροπούλα",
@@ -397,7 +486,7 @@ const guideDetails: Record<
     title: "Σταυροδοξάρι",
     hours: "10:00-23:30",
     description:
-      "Σημείο για να δοκιμάσεις παραδοσιακό αντικριστό και αυθεντικές γεύσεις της Κρήτης.",
+      "Το αντικριστό είναι ένα από τα παραδοσιακά φαγητά της Κρήτης. Δεν γίνεται να λες ότι επισκέφτηκες την Κρήτη και δεν δοκίμασες αντικριστό. Θα το βρεις στο Σταυροδοξάρι και θα καταλάβεις γιατί είναι τόσο περιζήτητο.",
   },
   γιαννακος: {
     title: "Γιαννάκος",
@@ -499,7 +588,7 @@ const guideDetails: Record<
     title: "Balantinis",
     hours: "6:00-20:30 • Κυριακή κλειστό",
     description:
-      "Καφές και εξυπηρέτηση που προσαρμόζονται εύκολα στον ρυθμό της μέρας σου.",
+      "Το Balantinis Cafe έρχεται στην πόρτα σας με ένα μόλις τηλεφώνημα, ό,τι ώρα εσείς το επιθυμήσετε.",
   },
   mihelaros: {
     title: "Μιχελάρος",
@@ -708,6 +797,21 @@ const guideDetails: Record<
     image:
       "https://commons.wikimedia.org/wiki/Special:FilePath/Myrtos%20beach%20in%20Lasithi%2001.JPG",
   },
+  "παχεία άμμος": {
+    title: "Παχεία Άμμος",
+    description:
+      "Η Παχεία Άμμος είναι ένα γραφικό παραθαλάσσιο χωριό στον κόλπο του Μεραμπέλλου, περίπου 15 χλμ. από την Ιεράπετρα. Αποτελεί σημείο συνάντησης δρόμων που οδηγούν προς Σητεία, Άγιο Νικόλαο και Ιεράπετρα, διατηρώντας όμως τον ήρεμο, αυθεντικό χαρακτήρα του. Ξεχωρίζει για τη μεγάλη αμμώδη παραλία της με τα καθαρά, ρηχά νερά, ιδανική για οικογένειες και χαλάρωση. Στην περιοχή βρίσκονται σημαντικοί αρχαιολογικοί χώροι, όπως τα αρχαία Γουρνιά, ενώ ο επισκέπτης μπορεί να απολαύσει φρέσκο ψάρι και τοπικές γεύσεις στις παραθαλάσσιες ταβέρνες.",
+  },
+  "μοναστηράκι": {
+    title: "Μοναστηράκι",
+    description:
+      "Το Μοναστηράκι είναι ένας μικρός, ήσυχος οικισμός κοντά στην Παχεία Άμμο, χτισμένος στις παρυφές της οροσειράς Θρυπτής με θέα προς τον κόλπο του Μεραμπέλλου. Το όνομά του συνδέεται με την ύπαρξη παλιού μοναστηριού στην περιοχή. Το τοπίο είναι ιδιαίτερα γοητευτικό, με πλούσια βλάστηση, τρεχούμενα νερά και μια αίσθηση απομόνωσης που το καθιστά ιδανικό για όσους αναζητούν ηρεμία και επαφή με τη φύση. Παρότι σήμερα κατοικείται από λίγους μόνιμους κατοίκους, διατηρεί την αυθεντικότητα και την παραδοσιακή ατμόσφαιρα της κρητικής υπαίθρου.",
+  },
+  "άνω σύμη": {
+    title: "Άνω Σύμη",
+    description:
+      "Ορεινός και καταπράσινος οικισμός στα δυτικά όρια του Δήμου Ιεράπετρας, κοντά στη Βιάννο. Περιβάλλεται από πλούσια βλάστηση (πεύκα, πλατάνια, οπωροφόρα) και θεωρείται ιδανικός προορισμός για φυσιολατρικές δραστηριότητες. Διαθέτει αξιόλογα αξιοθέατα όπως βυζαντινές εκκλησίες (π.χ. Αγίου Γεωργίου) και μονοπάτια σε δασικό περιβάλλον.",
+  },
   "μακρύ γυαλλός": {
     title: "Μακρύς Γιαλός",
     description:
@@ -803,11 +907,9 @@ const guideDetails: Record<
       "https://commons.wikimedia.org/wiki/Special:FilePath/Ierapetra%20R04.jpg",
   },
   "αγιος γεωργιος": {
-    title: "Κουφονήσι",
+    title: "Εκκλησίες",
     description:
-      "Το Κουφονήσι είναι ακατοίκητο νησί με εξωτική ομορφιά, χρυσαφένιες παραλίες και κρυστάλλινα νερά που θυμίζουν τροπικό προορισμό. Προσφέρει ηρεμία, παρθένα φύση και μοναδικούς γεωλογικούς σχηματισμούς, ενώ διαθέτει και σημαντικά αρχαιολογικά κατάλοιπα, όπως το ρωμαϊκό θέατρο. Απέχει περίπου μία ώρα με καραβάκι από το λιμάνι του Μακρύ Γιαλού.",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+      "Εκκλησίες: Άγιος Γεώργιος, Αγία Φωτεινή, Τίμιος Σταυρός, Αφέντης Χριστός, Παναγία Ελεούσα, Παναγία Φανερωμένη, Ιερά Μονή Παπλίνου. Πληροφορίες στο τηλέφωνο 6906063706.",
   },
   "γουρνια": {
     title: "Αρχαιολογικός Χώρος Γουρνιών",
@@ -958,10 +1060,75 @@ const guideDetails: Record<
   },
 };
 
-function createGuideItems(names: string[], fallbackTag: string) {
+const shopContactDetails: Record<string, { phone?: string; address?: string }> = {
+  "alatorigani": { phone: "2842020001", address: "Ιατρου Παπαγεωργιου 25" },
+  "alatsi": { phone: "2842062040", address: "Αγιος Ιωαννης,κουτσουναρι" },
+  "balantinis": { phone: "2842307080", address: "Πλατεια Πλαστηρα" },
+  "blue parrrot": { phone: "6944640822", address: "Λακερδα 3" },
+  "boheme": { phone: "2842027900", address: "Πλατεια Ελευθεριας 1" },
+  "caravan": { address: "Κυρβα 15" },
+  "casablanca": { phone: "2842500140", address: "Λακερδα 5" },
+  "chocolicious": { phone: "2842022256", address: "Στρατηγου Σαμουηλ 18" },
+  "crunchy": { phone: "2842022252", address: "Κυπρου 30" },
+  "cup café": { phone: "2842020150", address: "Γεωρ. Γιαννακου 16" },
+  "elephant": { phone: "2842020733", address: "Δημοκρατιας 14" },
+  "gorgona": { phone: "2842023148", address: "Στρατηγου Σαμουηλ 38" },
+  "gspot": { phone: "2842020113", address: "Κυπρου 36" },
+  "gyros tou kosmou": { address: "Λασθενους 26" },
+  "island": { phone: "2842023615", address: "Στρατηγου Σαμουηλ 6" },
+  "kale": { phone: "2842027400", address: "Σοφοκλή Βενιζέλου 65" },
+  "kapilio": { phone: "2842028384", address: "Ιωαννου Καψαλη 12" },
+  "kermen": { phone: "2842301149", address: "Στρατηγου Σαμουηλ 74" },
+  "kimeri": { phone: "2842026074", address: "Σωκράτους 12" },
+  "kleio": { phone: "2842022127", address: "Τζαβέλα 14" },
+  "konaki": { phone: "2842023756", address: "Φιλοθεου Α 28" },
+  "koumpares": { phone: "2842022800", address: "Λακερδα 17" },
+  "koutouzos": { phone: "2842062053", address: "Βαινια" },
+  "kouros": { phone: "2842021092", address: "Φιλοθεου Α 21" },
+  "langolo": { phone: "2842024375", address: "Στρατηγου Σαμουηλ 32" },
+  "levante": { phone: "2842023155", address: "Νταμ Νταμ" },
+  "madam meze": { phone: "2842022226", address: "Λακερδα 6" },
+  "mama's": { phone: "2842023404", address: "Κυπρου 25" },
+  "massati": { phone: "2842022050", address: "Στρατηγου Σαμουηλ 30" },
+  "maestro": { phone: "2842023000", address: "Παπαναστασιου 31" },
+  "mihelaros": { phone: "2842110025", address: "ψυλλινακη44" },
+  "mpompos": { phone: "2842021646", address: "Ιεραπετρα" },
+  "napoleon": { phone: "2842022225", address: "Στρατηγου Σαμουηλ 20" },
+  "odeio": { phone: "2842024102", address: "Λακερδα 14" },
+  "panino": { phone: "2842026120", address: "Εθ. Αντιστασεως 1" },
+  "peperment": { phone: "6936816326", address: "Κυπρου 51" },
+  "pick up": { phone: "2842400613", address: "Δημοκρατιας 8" },
+  "plaz": { phone: "2842023204", address: "Γεωρ. Γιαννακου 2" },
+  "plori": { phone: "2842025300", address: "Στρατηγου Σαμουηλ 14" },
+  "scisiliana": { phone: "2842021040", address: "Μυλωνογιάννη 31" },
+  "searoco": { phone: "2842020730", address: "Στρατηγου Σαμουηλ 24" },
+  "signiorino": { phone: "2842025070", address: "Στρατηγου Σαμουηλ 22" },
+  "soho": { phone: "6972602747", address: "Κυπρου 53" },
+  "sousouo": { address: "Κυρβα 15" },
+  "saxo": { phone: "6943778191", address: "Δημοκρατιας 18" },
+  "special": { phone: "2842026272", address: "Λασθενους 4" },
+  "stavrodoksari": { phone: "2842024500", address: "Σταυροδοξαρι" },
+  "vira potzi": { phone: "2842026606", address: "Νικηφορου Φωκα 5" },
+  "veris": { phone: "2842307100", address: "Κυρβα 26" },
+  "waikiki": { phone: "2842025731", address: "Γεωργιου Τζαρδη 2" },
+  "zorbas": { phone: "2842023333", address: "Στρατηγου Σαμουηλ 28" },
+  "απεριττον": { phone: "2842026224", address: "Πλατεια Ελευθεριας 69-71" },
+  "γιαννακος": { phone: "2842027554" },
+  "κοκοσ": { phone: "6976859133", address: "Στρατηγου Σαμουηλ 76" },
+  "ψαροπούλα": { phone: "6977500272" },
+};
+
+function createGuideItems(
+  names: string[],
+  fallbackTag: string,
+  options?: { priceRange?: string },
+) {
   return names.map((name) => ({
     name: guideDetails[name]?.title ?? name,
     hours: guideDetails[name]?.hours,
+    phone: shopContactDetails[name]?.phone,
+    address: shopContactDetails[name]?.address,
+    priceRange: options?.priceRange,
     description:
       guideDetails[name]?.description ??
       `Μια πρόταση για ${fallbackTag} στην Ιεράπετρα, ιδανική για γρήγορη οργάνωση της επίσκεψης και εύκολη ανακάλυψη της περιοχής.`,
@@ -991,6 +1158,7 @@ export const guideCategories: GuideCategory[] = [
             "boheme",
           ],
           "καφέ και πρωινό",
+          { priceRange: "5-10 per person" },
         ),
       },
       {
@@ -1010,6 +1178,7 @@ export const guideCategories: GuideCategory[] = [
             "kleio",
           ],
           "φαγητό",
+          { priceRange: "15-20 per person" },
         ),
       },
       {
@@ -1038,6 +1207,7 @@ export const guideCategories: GuideCategory[] = [
             "κοκοσ",
           ],
           "παραδοσιακό φαγητό",
+          { priceRange: "15-20 per person" },
         ),
       },
       {
@@ -1045,20 +1215,23 @@ export const guideCategories: GuideCategory[] = [
         items: createGuideItems(
           ["kermen", "caravan", "kale", "waikiki", "peperment", "soho", "blue parrrot", "saxo"],
           "βραδινή έξοδο",
+          { priceRange: "5-10 per person" },
         ),
       },
       {
-        title: "Γρήγορο Φαγητό",
+        title: "fast food",
         items: createGuideItems(
           ["special", "mama's", "gyros tou kosmou", "veris", "crunchy", "alatorigani"],
-          "γρήγορο φαγητό",
+          "fast food",
+          { priceRange: "5-10 per person" },
         ),
       },
       {
-        title: "Πακέτο",
+        title: "take away",
         items: createGuideItems(
           ["gspot", "elephant", "pick up", "cup café", "balantinis", "mihelaros", "panino"],
-          "πακέτο",
+          "take away",
+          { priceRange: "1-5 per person" },
         ),
       },
     ],
@@ -1095,16 +1268,19 @@ export const guideCategories: GuideCategory[] = [
   },
   {
     id: "areas",
-    label: "Περιοχές",
+    label: "Χωριά",
     intro:
       "Χωριά και σημεία γύρω από την Ιεράπετρα για μικρές αποδράσεις, βόλτες και πιο αυθεντικό τοπικό χαρακτήρα.",
     image: "/images/guide-areas.webp",
     groups: [
       {
-        title: "Γύρω Περιοχές",
+        title: "Χωριά",
         items: createGuideItems(
           [
             "μύρτος",
+            "παχεία άμμος",
+            "μοναστηράκι",
+            "άνω σύμη",
             "μόχλος",
             "μακρύ γυαλλός",
             "ανατολή",
@@ -1121,14 +1297,14 @@ export const guideCategories: GuideCategory[] = [
     ],
   },
   {
-    id: "activities",
-    label: "Δραστηριότητες",
+    id: "attractions",
+    label: "Αξιοθέατα",
     intro:
-      "Αξιοθέατα, μουσεία, φαράγγια και εμπειρίες για να οργανώσετε την εξερεύνηση της περιοχής.",
+      "Κάστρο, μουσεία, μνημεία και ιστορικά σημεία για να γνωρίσετε την Ιεράπετρα και την περιοχή.",
     image: "/images/guide-activities.webp",
     groups: [
       {
-        title: "Τι Να Κάνω",
+        title: "Αξιοθέατα",
         items: createGuideItems(
           [
             "καστρο καλε",
@@ -1136,6 +1312,28 @@ export const guideCategories: GuideCategory[] = [
             "μουσείο",
             "ψηφιακο μουσείο",
             "τζαμί",
+            "αγιος γεωργιος",
+            "γουρνια",
+            "καβουσι(αρχαια ελια)",
+            "εκκλησιες-μητροπολη",
+            "καθολικη εκκλησια",
+          ],
+          "αξιοθέατο",
+        ),
+      },
+    ],
+  },
+  {
+    id: "activities",
+    label: "Δραστηριότητες",
+    intro:
+      "Θαλάσσια σπορ, εκδρομές, φαράγγια και εμπειρίες για να οργανώσετε την εξερεύνηση της περιοχής.",
+    image: "/images/guide-activities.webp",
+    groups: [
+      {
+        title: "Τι Να Κάνω",
+        items: createGuideItems(
+          [
             "θαλασσια σπορ",
             "chrissi",
             "safari ierapetra",
@@ -1146,13 +1344,8 @@ export const guideCategories: GuideCategory[] = [
             "κατάδυση",
             "φαράγγι παναγιά-αναρρίχηση",
             "takis shelter",
-            "αγιος γεωργιος",
-            "γουρνια",
-            "καβουσι(αρχαια ελια)",
-            "εκκλησιες-μητροπολη",
-            "καθολικη εκκλησια",
           ],
-          "δραστηριότητα και αξιοθέατο",
+          "δραστηριότητα",
         ),
       },
     ],

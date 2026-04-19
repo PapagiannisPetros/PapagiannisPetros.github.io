@@ -1,20 +1,38 @@
 import { Reveal } from "@/components/Reveal";
-import { travelInfo } from "@/data/site";
 
-export function TravelSection() {
+type TravelItem = {
+  title: string;
+  detail: string;
+};
+
+type Props = {
+  travelInfo: TravelItem[];
+  ui: {
+    label: string;
+    title: { line1: string; line2: string };
+    googleMaps: string;
+    googleMapsUrl: string;
+    appleMaps: string;
+    appleMapsUrl: string;
+    iframeTitle: string;
+    iframeSrc: string;
+  };
+};
+
+export function TravelSection({ travelInfo, ui }: Props) {
   return (
     <section id="travel">
       <div className="travel-grid">
         <div className="travel-content">
           <div className="section-header">
             <Reveal>
-              <p className="section-label">Πού βρισκόμαστε</p>
+              <p className="section-label">{ui.label}</p>
             </Reveal>
             <Reveal delay="1">
               <h2 className="section-title">
-                Ιεράπετρα,
+                {ui.title.line1}
                 <br />
-                Νότια Κρήτη
+                {ui.title.line2}
               </h2>
             </Reveal>
           </div>
@@ -36,29 +54,29 @@ export function TravelSection() {
           <div className="travel-actions">
             <a
               className="button-primary"
-              href="https://maps.google.com/?q=Ιεράπετρα+Κρήτη"
+              href={ui.googleMapsUrl}
               target="_blank"
               rel="noreferrer"
             >
-              Google Maps
+              {ui.googleMaps}
             </a>
             <a
               className="button-secondary"
-              href="https://maps.apple.com/?q=35.0119,25.7423"
+              href={ui.appleMapsUrl}
               target="_blank"
               rel="noreferrer"
             >
-              Apple Maps
+              {ui.appleMaps}
             </a>
           </div>
         </div>
 
         <div className="travel-map">
           <iframe
-            src="https://maps.google.com/maps?q=Ιεράπετρα+Κρήτη&output=embed&z=12"
+            src={ui.iframeSrc}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Χάρτης Ιεράπετρας"
+            title={ui.iframeTitle}
           />
         </div>
       </div>

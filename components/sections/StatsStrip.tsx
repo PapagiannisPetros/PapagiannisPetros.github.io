@@ -1,6 +1,10 @@
-import { stats } from "@/data/site";
+type StatItem = { value: string; label: string };
 
-export function StatsStrip() {
+type Props = {
+  stats: StatItem[];
+};
+
+export function StatsStrip({ stats }: Props) {
   return (
     <section className="stats-strip">
       <div className="site-shell">

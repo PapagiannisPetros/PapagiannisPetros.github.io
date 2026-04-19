@@ -1,9 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { navigation } from "@/data/site";
+import { LanguageSwitcher, type Lang } from "@/components/LanguageSwitcher";
 
-export function Header() {
+type NavigationItem = { href: string; label: string };
+
+type Props = {
+  navigation: NavigationItem[];
+  ui: { ariaLabel: string; brand: string };
+  lang: Lang;
+};
+
+export function Header({ navigation, ui, lang }: Props) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,16 +23,19 @@ export function Header() {
 
   return (
     <header className="site-header">
-      <nav className={scrolled ? "scrolled" : ""} aria-label="Κύρια πλοήγηση">
+      <nav className={scrolled ? "scrolled" : ""} aria-label={ui.ariaLabel}>
         <a className="brand" href="#top">
-          Ιεράπετρα
+          {ui.brand}
         </a>
-        <div className="nav-links">
-          {navigation.map((item) => (
-            <a key={item.href} href={item.href}>
-              {item.label}
-            </a>
-          ))}
+        <div className="nav-actions">
+          <div className="nav-links">
+            {navigation.map((item) => (
+              <a key={item.href} href={item.href}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+          <LanguageSwitcher lang={lang} variant="header" />
         </div>
       </nav>
     </header>

@@ -3,29 +3,47 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { Reveal } from "@/components/Reveal";
-import { guideCategories } from "@/data/site";
+import type { GuideCategory } from "@/data/site";
 
-type GuideItem = (typeof guideCategories)[number]["groups"][number]["items"][number];
+type GuideItem = GuideCategory["groups"][number]["items"][number];
 
-const imageByCategory: Record<string, string> = {
-  "Φαγητό & Ποτό": "/images/guide-food.webp",
-  Θάλασσες: "/images/guide-beaches.webp",
-  Περιοχές: "/images/guide-areas.webp",
-  Δραστηριότητες: "/images/guide-activities.webp",
-  Υπηρεσίες: "/images/guide-services.webp",
+const imageByCategoryId: Record<string, string> = {
+  "food-drink": "/images/guide-food.webp",
+  beaches: "/images/guide-beaches.webp",
+  areas: "/images/guide-areas.webp",
+  attractions: "/images/guide-activities.webp",
+  activities: "/images/guide-activities.webp",
+  services: "/images/guide-services.webp",
 };
 
 function isRemoteImage(src: string) {
   return src.startsWith("http://") || src.startsWith("https://");
 }
 
-export function GuideSection() {
+type Props = {
+  guideCategories: GuideCategory[];
+  ui: {
+    label: string;
+    title: string;
+    copy: string;
+    tabsAriaLabel: string;
+    closeLabel: string;
+    fields: {
+      hours: string;
+      phone: string;
+      address: string;
+      priceRange: string;
+    };
+  };
+};
+
+export function GuideSection({ guideCategories, ui }: Props) {
   const [activeCategoryId, setActiveCategoryId] = useState(guideCategories[0]?.id ?? "");
   const activeCategory =
     guideCategories.find((category) => category.id === activeCategoryId) ?? guideCategories[0];
   const [activeGroupTitle, setActiveGroupTitle] = useState(activeCategory?.groups[0]?.title ?? "");
   const [selectedItem, setSelectedItem] = useState<
-    { item: GuideItem; categoryLabel: string; groupTitle: string } | null
+    { item: GuideItem; categoryId: string; categoryLabel: string; groupTitle: string } | null
   >(null);
 
   useEffect(() => {
@@ -61,7 +79,7 @@ export function GuideSection() {
     if (!selectedItem) return "";
     return (
       selectedItem.item.image ??
-      imageByCategory[selectedItem.categoryLabel] ??
+      imageByCategoryId[selectedItem.categoryId] ??
       activeCategory.image
     );
   }, [activeCategory.image, selectedItem]);
@@ -74,24 +92,21 @@ export function GuideSection() {
     <>
       <section id="guide" className="section guide-section">
         <div className="site-shell">
-          <div className="section-header">
-            <Reveal>
-              <p className="section-label">Interactive menu</p>
-            </Reveal>
-            <Reveal delay="1">
-              <h2 className="section-title">Οδηγός Ιεράπετρας</h2>
-            </Reveal>
-            <Reveal delay="2">
-              <p className="section-copy">
-                Διάλεξε κατηγορία και πάτησε σε όποιο σημείο σε ενδιαφέρει για να δεις
-                γρήγορα μικρό κείμενο και φωτογραφία σε pop-up.
-              </p>
-            </Reveal>
-          </div>
+              <div className="section-header">
+                <Reveal>
+                  <p className="section-label">{ui.label}</p>
+                </Reveal>
+                <Reveal delay="1">
+                  <h2 className="section-title">{ui.title}</h2>
+                </Reveal>
+                <Reveal delay="2">
+                  <p className="section-copy">{ui.copy}</p>
+                </Reveal>
+              </div>
 
           <div className="guide-layout">
             <Reveal className="guide-panel">
-              <div className="guide-tabs" role="tablist" aria-label="Κατηγορίες οδηγού">
+              <div className="guide-tabs" role="tablist" aria-label={ui.tabsAriaLabel}>
                 {guideCategories.map((category) => (
                   <button
                     key={category.id}
@@ -146,6 +161,7 @@ export function GuideSection() {
                       onClick={() =>
                         setSelectedItem({
                           item,
+                          categoryId: activeCategory.id,
                           categoryLabel: activeCategory.label,
                           groupTitle: activeGroup.title,
                         })
@@ -179,7 +195,7 @@ export function GuideSection() {
             <button
               type="button"
               className="guide-modal-close"
-              aria-label="Κλείσιμο"
+              aria-label={ui.closeLabel}
               onClick={() => setSelectedItem(null)}
             >
               ×
@@ -203,8 +219,28 @@ export function GuideSection() {
               <p>{selectedItem.item.description}</p>
               {selectedItem.item.hours ? (
                 <div className="guide-modal-info">
-                  <span>Ωράριο</span>
+                  <span>{ui.fields.hours}</span>
                   <strong>{selectedItem.item.hours}</strong>
+                </div>
+              ) : null}
+              {selectedItem.item.phone ? (
+                <div className="guide-modal-info">
+                  <span>{ui.fields.phone}</span>
+                  <strong>
+                    <a href={`tel:${selectedItem.item.phone}`}>{selectedItem.item.phone}</a>
+                  </strong>
+                </div>
+              ) : null}
+              {selectedItem.item.address ? (
+                <div className="guide-modal-info">
+                  <span>{ui.fields.address}</span>
+                  <strong>{selectedItem.item.address}</strong>
+                </div>
+              ) : null}
+              {selectedItem.item.priceRange ? (
+                <div className="guide-modal-info">
+                  <span>{ui.fields.priceRange}</span>
+                  <strong>{selectedItem.item.priceRange}</strong>
                 </div>
               ) : null}
             </div>

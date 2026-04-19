@@ -1,17 +1,27 @@
 import { Reveal } from "@/components/Reveal";
-import { experiences } from "@/data/site";
 
-export function ExperiencesSection() {
+type Experience = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+type Props = {
+  experiences: Experience[];
+  ui: { label: string; title: string };
+};
+
+export function ExperiencesSection({ experiences, ui }: Props) {
   return (
     <section id="experiences" className="section experiences-section">
       <div className="site-shell">
         <div className="section-header">
           <Reveal>
-            <p className="section-label">Τι να κάνετε</p>
+            <p className="section-label">{ui.label}</p>
           </Reveal>
           <Reveal delay="1">
             <h2 className="section-title" style={{ color: "white" }}>
-              Εμπειρίες που μένουν
+              {ui.title}
             </h2>
           </Reveal>
         </div>

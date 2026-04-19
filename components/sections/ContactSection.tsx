@@ -2,49 +2,64 @@
 
 import { FormEvent, useState } from "react";
 import { Reveal } from "@/components/Reveal";
-import { contactDetails } from "@/data/site";
 
-export function ContactSection() {
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "rate">("idle");
+type ContactDetails = {
+  phone: string;
+  email: string;
+  address: string;
+  mapsUrl: string;
+};
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+type ContactUi = {
+  label: string;
+  title: { line1: string; emphasis: string };
+  copy: string;
+  form: {
+    subjectDefault: string;
+    body: { nameLabel: string; emailLabel: string; fallbackMessage: string };
+    placeholders: { name: string; email: string; subject: string; message: string };
+    submit: string;
+    sent: string;
+  };
+  meta: {
+    phone: { label: string; copy: string };
+    email: { label: string; copy: string };
+    location: { label: string; value: string };
+  };
+};
+
+type Props = {
+  contactDetails: ContactDetails;
+  ui: ContactUi;
+};
+
+export function ContactSection({ contactDetails, ui }: Props) {
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setStatus("sending");
 
     const form = new FormData(event.currentTarget);
     const name = String(form.get("name") ?? "").trim();
     const email = String(form.get("email") ?? "").trim();
     const subject = String(form.get("subject") ?? "").trim();
     const message = String(form.get("message") ?? "").trim();
-    const website = String(form.get("website") ?? "");
-    const endpoint =
-      process.env.NEXT_PUBLIC_CONTACT_API_URL ||
-      "https://papagiannis-petros-github-io.vercel.app/api/contact";
 
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": process.env.NEXT_PUBLIC_CONTACT_FORM_API_KEY || "",
-        },
-        body: JSON.stringify({ name, email, subject, message, website }),
-      });
+    const mailto = new URL(`mailto:${contactDetails.email}`);
+    mailto.searchParams.set("subject", subject || ui.form.subjectDefault);
+    mailto.searchParams.set(
+      "body",
+      [
+        `${ui.form.body.nameLabel}: ${name}`,
+        `${ui.form.body.emailLabel}: ${email}`,
+        "",
+        message || ui.form.body.fallbackMessage,
+      ].join("\n"),
+    );
 
-      if (res.status === 429) {
-        setStatus("rate");
-        return;
-      }
-      if (!res.ok) {
-        setStatus("error");
-        return;
-      }
-
-      setStatus("success");
-      event.currentTarget.reset();
-    } catch {
-      setStatus("error");
-    }
+    window.location.href = mailto.toString();
+    setSent(true);
+    event.currentTarget.reset();
   };
 
   return (
@@ -53,53 +68,32 @@ export function ContactSection() {
         <div className="contact-grid">
           <div className="contact-panel">
             <Reveal>
-              <p className="section-label">Επικοινωνία</p>
+              <p className="section-label">{ui.label}</p>
             </Reveal>
             <Reveal delay="1">
               <h2 className="section-title">
-                Σχεδιάστε το
+                {ui.title.line1}
                 <br />
-                <em style={{ color: "var(--terracotta)" }}>ταξίδι σας</em>
+                <em style={{ color: "var(--terracotta)" }}>{ui.title.emphasis}</em>
               </h2>
             </Reveal>
             <Reveal delay="2">
-              <p className="section-copy">
-                Η ομάδα μας είναι έτοιμη να βοηθήσει με διαμονή, προτάσεις και
-                γενικές πληροφορίες για την Ιεράπετρα.
-              </p>
+              <p className="section-copy">{ui.copy}</p>
             </Reveal>
 
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="contact-row">
-                <input name="name" type="text" placeholder="Όνομα" required />
-                <input name="email" type="email" placeholder="Email" required />
+                <input name="name" type="text" placeholder={ui.form.placeholders.name} required />
+                <input name="email" type="email" placeholder={ui.form.placeholders.email} required />
               </div>
-              <input name="subject" type="text" placeholder="Θέμα" required />
-              <textarea name="message" placeholder="Μήνυμά σας..." required />
-              <input
-                name="website"
-                type="text"
-                autoComplete="off"
-                tabIndex={-1}
-                aria-hidden="true"
-                style={{ display: "none" }}
-              />
+              <input name="subject" type="text" placeholder={ui.form.placeholders.subject} required />
+              <textarea name="message" placeholder={ui.form.placeholders.message} required />
               <button className="button-primary" type="submit">
-                {status === "sending" ? "Αποστολή..." : "Αποστολή"}
+                {ui.form.submit}
               </button>
-              {status === "success" ? (
+              {sent ? (
                 <p className="section-copy" style={{ marginTop: 0 }}>
-                  Το μήνυμα στάλθηκε επιτυχώς.
-                </p>
-              ) : null}
-              {status === "rate" ? (
-                <p className="section-copy" style={{ marginTop: 0 }}>
-                  Στέλνεις πολύ γρήγορα μηνύματα. Περίμενε λίγο και δοκίμασε ξανά.
-                </p>
-              ) : null}
-              {status === "error" ? (
-                <p className="section-copy" style={{ marginTop: 0 }}>
-                  Υπήρξε πρόβλημα στην αποστολή. Προσπάθησε ξανά.
+                  {ui.form.sent}
                 </p>
               ) : null}
             </form>
@@ -107,18 +101,18 @@ export function ContactSection() {
 
           <div className="contact-meta">
             <article className="meta-card">
-              <p className="meta-card-label">Τηλέφωνο</p>
+              <p className="meta-card-label">{ui.meta.phone.label}</p>
               <p className="meta-card-value">{contactDetails.phone}</p>
-              <p className="meta-card-copy">Άμεση επικοινωνία για πληροφορίες.</p>
+              <p className="meta-card-copy">{ui.meta.phone.copy}</p>
             </article>
             <article className="meta-card">
-              <p className="meta-card-label">Email</p>
+              <p className="meta-card-label">{ui.meta.email.label}</p>
               <p className="meta-card-value">{contactDetails.email}</p>
-              <p className="meta-card-copy">Κεντρικό σημείο επικοινωνίας του brand.</p>
+              <p className="meta-card-copy">{ui.meta.email.copy}</p>
             </article>
             <article className="meta-card">
-              <p className="meta-card-label">Τοποθεσία</p>
-              <p className="meta-card-value">Ιεράπετρα, Κρήτη</p>
+              <p className="meta-card-label">{ui.meta.location.label}</p>
+              <p className="meta-card-value">{ui.meta.location.value}</p>
               <p className="meta-card-copy">
                 <a href={contactDetails.mapsUrl} target="_blank" rel="noreferrer">
                   {contactDetails.address}

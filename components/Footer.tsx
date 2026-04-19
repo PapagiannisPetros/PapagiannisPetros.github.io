@@ -1,15 +1,23 @@
-import { contactDetails, navigation } from "@/data/site";
+type NavigationItem = { href: string; label: string };
+type ContactDetails = { phone: string; email: string };
+type FooterUi = { brand: string; subtitle: string; copy: string; copyright: string };
 
-export function Footer() {
+type Props = {
+  navigation: NavigationItem[];
+  contactDetails: ContactDetails;
+  ui: FooterUi;
+};
+
+export function Footer({ navigation, contactDetails, ui }: Props) {
   return (
     <footer className="site-footer">
       <div className="site-shell">
         <div className="footer-shell">
           <div>
-            <div className="footer-brand">Ierapetra Escape</div>
-            <div className="footer-subtitle">Νότια Κρήτη, Ελλάδα</div>
+            <div className="footer-brand">{ui.brand}</div>
+            <div className="footer-subtitle">{ui.subtitle}</div>
             <p className="footer-copy">
-              Premium tourism website, ιδανικό για την προβολή προορισμού, boutique καταλυμάτων ή τοπικού travel brand.
+              {ui.copy}
             </p>
           </div>
           <div className="footer-nav">
@@ -22,7 +30,7 @@ export function Footer() {
           <div className="footer-copy">
             <div>{contactDetails.phone}</div>
             <div>{contactDetails.email}</div>
-            <div>© 2026 Ierapetra Escape</div>
+            <div>{ui.copyright}</div>
           </div>
         </div>
       </div>

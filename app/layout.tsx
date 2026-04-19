@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ierapetra Escape | Νότια Κρήτη",
+  title: "IeraTrip",
   description:
-    "Στατικό premium tourism site για την Ιεράπετρα με προορισμούς, εμπειρίες, χάρτη και στοιχεία επικοινωνίας.",
+    "Tourism site για την Ιεράπετρα με προορισμούς, εμπειρίες, χάρτη και στοιχεία επικοινωνίας.",
   openGraph: {
-    title: "Ierapetra Escape | Νότια Κρήτη",
+    title: "IeraTrip",
     description:
-      "Ανακαλύψτε την Ιεράπετρα μέσα από ένα premium static travel website έτοιμο για deploy στο Vercel.",
+      "Ανακαλύψτε την Ιεράπετρα μέσα από ένα travel website.",
     locale: "el_GR",
     type: "website",
   },

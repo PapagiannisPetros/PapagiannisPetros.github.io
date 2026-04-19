@@ -1,14 +1,24 @@
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 
-export function AboutSection() {
+type Props = {
+  ui: {
+    imageAlt: string;
+    label: string;
+    title: { line1: string; emphasis: string; line2: string };
+    copy: string;
+    link: string;
+  };
+};
+
+export function AboutSection({ ui }: Props) {
   return (
     <section id="about">
       <div className="about-grid">
         <div className="about-visual">
           <Image
             src="/images/about.webp"
-            alt="Μεσογειακό τοπίο της νότιας Κρήτης"
+            alt={ui.imageAlt}
             fill
             className="about-image"
           />
@@ -16,25 +26,21 @@ export function AboutSection() {
         <div className="about-content">
           <div className="section-header">
             <Reveal>
-              <p className="section-label">Η Ψυχή του Τόπου</p>
+              <p className="section-label">{ui.label}</p>
             </Reveal>
             <Reveal delay="1">
               <h2 className="section-title">
-                Η <em>τελευταία</em>
+                {ui.title.line1} <em>{ui.title.emphasis}</em>
                 <br />
-                αδάμαστη Κρήτη
+                {ui.title.line2}
               </h2>
             </Reveal>
             <Reveal delay="2">
-              <p className="section-copy">
-                Η Ιεράπετρα συνδυάζει το φως του Λιβυκού, αυθεντική κρητική
-                καθημερινότητα και προορισμούς που παραμένουν αληθινοί αντί για
-                υπερφορτωμένοι.
-              </p>
+              <p className="section-copy">{ui.copy}</p>
             </Reveal>
             <Reveal delay="3">
               <a href="#destinations" className="eyebrow-link">
-                Ανακαλύψτε τους προορισμούς
+                {ui.link}
               </a>
             </Reveal>
           </div>
