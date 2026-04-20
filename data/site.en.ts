@@ -1,12 +1,9 @@
-import type { GuideCategory } from "@/data/site";
-import { guideCategories as elGuideCategories } from "@/data/site";
-
 export const navigation = [
   { href: "#about", label: "Area" },
   { href: "#destinations", label: "Destinations" },
   { href: "#guide", label: "Guide" },
   { href: "#experiences", label: "Experiences" },
-  { href: "#travel", label: "Getting here" },
+  { href: "#travel", label: "Getting Here" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -14,24 +11,24 @@ export const stats = [
   { value: "3,500", label: "Years of history" },
   { value: "300+", label: "Sunny days" },
   { value: "1", label: "Southernmost city in Europe" },
-  { value: "15km", label: "Coastline & nearby beaches" },
+  { value: "15km", label: "Coastal waterfront and nearby beaches" },
 ];
 
 export const destinations = [
   {
-    name: "Xrysi (Gaidouronisi)",
-    tag: "Island day trip",
+    name: "Chrysi (Gaidouronisi)",
+    tag: "Island – Day trip",
     description:
-      "A small uninhabited island with a cedar forest and turquoise waters — a Caribbean-like scene in the Libyan Sea.",
+      "An uninhabited islet with a cedar forest and turquoise waters — a Caribbean scene in the Libyan Sea.",
     image:
       "https://commons.wikimedia.org/wiki/Special:FilePath/Chrissi%20Island%20pathway%20to%20Golden%20Beach-embuck.jpg",
     featured: true,
   },
   {
-    name: "Palia poli Ierapetras",
-    tag: "Historic center",
+    name: "Ierapetra Old Town",
+    tag: "Historic centre",
     description:
-      "The Venetian Kales Fortress, narrow alleys, low houses, and walks where history meets the sea.",
+      "The Venetian fortress of Kales, narrow low-rise houses and walks that blend history with the sea.",
     image:
       "https://commons.wikimedia.org/wiki/Special:FilePath/Kales%20fortress%20Ierapetra%2C%20including%20Greek%20flag.JPG",
   },
@@ -39,23 +36,23 @@ export const destinations = [
     name: "Myrtos",
     tag: "Seaside village",
     description:
-      "A peaceful village with dark pebbles, a relaxed pace, and one of the most beloved beaches in southern Crete.",
+      "A quiet village with dark pebbles, a relaxed pace and one of the most beloved beaches on the south coast of Crete.",
     image:
       "https://commons.wikimedia.org/wiki/Special:FilePath/Myrtos%20beach%20in%20Lasithi%2001.JPG",
   },
   {
-    name: "Faraggi Sarakinas",
+    name: "Sarakina Gorge",
     tag: "Hiking",
     description:
-      "Narrow, dramatic, and cool even in summer — ideal for a short but impressive walk.",
+      "Narrow, imposing and cool even in summer — ideal for a short yet spectacular hike.",
     image:
       "https://commons.wikimedia.org/wiki/Special:FilePath/Sarakina%20Gorge%2C%20Ierapetra%2C%20Crete.jpg",
   },
   {
-    name: "Makrys Gialos",
+    name: "Makrygialos",
     tag: "Seaside escape",
     description:
-      "A favorite spot with a long sandy beach, shallow waters, and an easy summer vibe — ideal for families.",
+      "A favourite destination with a long sandy beach, shallow waters and a relaxed summer atmosphere — perfect for families.",
     image:
       "https://commons.wikimedia.org/wiki/Special:FilePath/Makrigialos%20beach%20lasithi.jpg",
   },
@@ -63,15 +60,15 @@ export const destinations = [
     name: "Koufonisi",
     tag: "Exotic excursion",
     description:
-      "A small island with golden shores, crystal-clear waters, and a sense of isolation that feels truly far away.",
+      "A small island with golden shores, crystal-clear waters and a sense of seclusion that feels like an exotic escape.",
     image:
       "https://commons.wikimedia.org/wiki/Special:FilePath/Koufonisi%20Aerial%20Photo.jpg",
   },
   {
     name: "Kavousi",
-    tag: "Village & History",
+    tag: "Village & history",
     description:
-      "A historic village known for its monumental olive tree and a beautiful route into the surrounding countryside.",
+      "A historic village with a strong local character, known for its monumental olive tree and the beautiful surrounding countryside.",
     image:
       "https://commons.wikimedia.org/wiki/Special:FilePath/Monumental%20Olive%20tree%20near%20Kavousi%20%28Crete%29%2002.jpg",
   },
@@ -79,68 +76,81 @@ export const destinations = [
     name: "Agia Fotia",
     tag: "Beach",
     description:
-      "A calm beach with clear water and a natural setting, for those who want an easy, quieter swim by the sea.",
+      "A peaceful beach with clear waters and a natural setting, ideal for those seeking a slower pace by the sea.",
     image:
       "https://commons.wikimedia.org/wiki/Special:FilePath/Agia%20Fotia%20Beach%20by%20Evangelos%20Mpikakis.jpg",
   },
 ];
 
 export const gallery = [
-  { image: "/images/gallery-1.webp", alt: "Turquoise waters of southern Crete" },
-  { image: "/images/gallery-2.webp", alt: "Rocky landscape near Ierapetra" },
-  { image: "/images/gallery-3.webp", alt: "Seaside stroll in Crete" },
-  { image: "/images/gallery-4.webp", alt: "View over a natural landscape of southern Crete" },
-  { image: "/images/gallery-5.webp", alt: "Summer drive into the Cretan countryside" },
+  {
+    image: "/images/gallery-1.webp",
+    alt: "Turquoise waters of southern Crete",
+  },
+  {
+    image: "/images/gallery-2.webp",
+    alt: "Rocky landscape near Ierapetra",
+  },
+  {
+    image: "/images/gallery-3.webp",
+    alt: "Seaside promenade in Crete",
+  },
+  {
+    image: "/images/gallery-4.webp",
+    alt: "View over the natural landscape of southern Crete",
+  },
+  {
+    image: "/images/gallery-5.webp",
+    alt: "Summer road through the Ierapetra countryside",
+  },
 ];
 
 export const experiences = [
   {
     icon: "⛵",
-    title: "Xrysi day trip",
+    title: "Chrysi – Day trip",
     description:
-      "Daily boats from the port to Gaidouronisi — snorkeling, cedar trees, and total calm.",
+      "Daily boats from the harbour to Gaidouronisi — snorkelling, cedar forest and absolute serenity.",
   },
   {
     icon: "🏰",
     title: "History & archaeology",
     description:
-      "Kales Fortress, the old town, and traces of Venetian, Ottoman, and Roman presence — all within easy reach.",
+      "The Kales fortress, the old town and traces of Venetian, Ottoman and Roman presence all within short distances.",
   },
   {
     icon: "🫒",
     title: "Rural life",
     description:
-      "Greenhouses, olive groves, local markets, and producers that give Ierapetra its unique rhythm.",
+      "Greenhouses, olive groves, local markets and producers that give Ierapetra its own distinctive pulse.",
   },
   {
     icon: "🐟",
     title: "Gastronomy",
     description:
-      "Fresh fish at the harbor, local pies, Cretan olive oil, and flavors that stay simple and authentic.",
+      "Fresh fish at the harbour, aladopites, local olive oil and flavours that stay simple and authentic.",
   },
 ];
 
 export const travelInfo = [
   {
     title: "Heraklion Airport (HER)",
-    detail:
-      "About 1 hour by road — the closest international airport with connections across Europe.",
+    detail: "About 1 hour by road — the nearest international airport with connections across Europe.",
   },
   {
-    title: "Ierapetra Port",
-    detail: "Departure point for Xrysi Island and a key hub of the town’s seaside life.",
+    title: "Ierapetra Harbour",
+    detail: "Departure point for Chrysi and the main hub of the city's waterfront life.",
   },
   {
     title: "By road from Heraklion",
-    detail:
-      "About 1.5 hours via the southern coastal route, with beautiful views over the Libyan Sea.",
+    detail: "About 1.5 hours via the southern coastal route, with beautiful views over the Libyan Sea.",
   },
 ];
 
 export const contactDetails = {
   phone: "+30 28420 22000",
   email: "info@ierapetra-escape.gr",
-  address: "Paraliaki Ierapetras, Kriti 722 00",
+  address: "Ierapetra Waterfront, Crete 722 00",
   mapsUrl: "https://maps.google.com/?q=Ierapetra+Crete",
 };
 
@@ -151,28 +161,28 @@ export const ui = {
   },
   hero: {
     imageAlt: "Panoramic view of Ierapetra",
-    badge: "South Crete · 35°01′N",
+    badge: "Southern Crete · 35°01′N",
     title: { primary: "Ierapetra", emphasis: "Trip" },
-    subtitle: "Where the Libyan Sea meets Europe’s southernmost city",
+    subtitle: "Where the Libyan Sea meets the southernmost city in Europe",
     cta: "Explore",
   },
   about: {
     imageAlt: "Mediterranean landscape of southern Crete",
-    label: "The spirit of the place",
+    label: "The Soul of the Place",
     title: { line1: "The", emphasis: "last", line2: "untamed Crete" },
     copy:
-      "Ierapetra blends the light of the Libyan Sea with authentic Cretan everyday life and destinations that still feel real — not overcrowded.",
-    link: "Discover destinations",
+      "Ierapetra combines the light of the Libyan Sea, authentic Cretan everyday life and destinations that remain genuine rather than overrun.",
+    link: "Discover the destinations",
   },
   destinations: {
-    label: "Worth the trip",
+    label: "Places worth visiting",
     title: "Explore the area",
   },
   guide: {
     label: "Interactive menu",
     title: "Ierapetra Guide",
     copy:
-      "Choose a category and tap any spot to see a short description and photo in a pop-up.",
+      "Choose a category and tap any spot you're interested in to quickly see a short description and photo in a pop-up.",
     tabsAriaLabel: "Guide categories",
     closeLabel: "Close",
     fields: {
@@ -188,21 +198,21 @@ export const ui = {
   },
   travel: {
     label: "Where we are",
-    title: { line1: "Ierapetra,", line2: "South Crete" },
+    title: { line1: "Ierapetra,", line2: "Southern Crete" },
     googleMaps: "Google Maps",
-    appleMaps: "Apple Maps",
     googleMapsUrl: "https://maps.google.com/?q=Ierapetra+Crete",
+    appleMaps: "Apple Maps",
     appleMapsUrl: "https://maps.apple.com/?q=35.0119,25.7423",
-    iframeTitle: "Map of Ierapetra",
+    iframeTitle: "Ierapetra map",
     iframeSrc: "https://maps.google.com/maps?q=Ierapetra+Crete&output=embed&z=12",
   },
   contact: {
     label: "Contact",
     title: { line1: "Plan your", emphasis: "trip" },
     copy:
-      "Our team is ready to help with accommodation, recommendations, and general information about Ierapetra.",
+      "Our team is ready to help with accommodation, recommendations and general information about Ierapetra.",
     form: {
-      subjectDefault: "New inquiry from the website",
+      subjectDefault: "New enquiry from the site",
       body: {
         nameLabel: "Name",
         emailLabel: "Email",
@@ -215,11 +225,11 @@ export const ui = {
         message: "Your message...",
       },
       submit: "Send",
-      sent: "An email draft was created for sending.",
+      sent: "Email draft created for sending.",
     },
     meta: {
-      phone: { label: "Phone", copy: "Direct contact for information." },
-      email: { label: "Email", copy: "Main contact point for the brand." },
+      phone: { label: "Phone", copy: "Direct contact for enquiries." },
+      email: { label: "Email", copy: "Central brand communication point." },
       location: {
         label: "Location",
         value: "Ierapetra, Crete",
@@ -231,130 +241,1153 @@ export const ui = {
   },
   footer: {
     brand: "Ierapetra Escape",
-    subtitle: "South Crete, Greece",
+    subtitle: "Southern Crete, Greece",
     copy:
-      "Premium tourism website, ideal for promoting a destination, boutique accommodations, or a local travel brand.",
+      "Premium tourism website, ideal for showcasing a destination, boutique accommodation or a local travel brand.",
     copyright: "© 2026 Ierapetra Escape",
   },
 };
+
+export type GuideItem = {
+  name: string;
+  hours?: string;
+  phone?: string;
+  address?: string;
+  priceRange?: string;
+  description?: string;
+  image?: string;
+};
+
+export type GuideGroup = {
+  title: string;
+  items: GuideItem[];
+};
+
+export type GuideCategory = {
+  id: string;
+  label: string;
+  intro: string;
+  image: string;
+  groups: GuideGroup[];
+};
+
+const guideDetails: Record<
+  string,
+  { title?: string; hours?: string; description?: string; image?: string }
+> = {
+  waikiki: {
+    title: "Waikiki",
+    hours: "8:00–1:00",
+    description:
+      "A café right on the seafront combining morning coffee, sun loungers and evening cocktails to the sound of the waves.",
+  },
+  plaz: {
+    title: "Plaz",
+    hours: "8:00–24:00",
+    description:
+      "A favourite spot on the seaside promenade for a quiet breakfast or a relaxed break after a walk around town.",
+  },
+  απεριττον: {
+    title: "Aperitton",
+    hours: "8:00–1:00",
+    description:
+      "An ideal stop for coffee and breakfast, with options that make starting the day more enjoyable.",
+  },
+  casablanca: {
+    title: "Casablanca",
+    hours: "7:00–1:30",
+    description:
+      "A relaxed hangout in the heart of town, under the trees — perfect for those looking for peace and a slower rhythm.",
+  },
+  island: {
+    title: "Island",
+    hours: "8:00–2:00",
+    description:
+      "Combines a morning swim, cool waters and a livelier evening atmosphere in a refreshed setting.",
+  },
+  chocolicious: {
+    title: "Chocolicious",
+    hours: "8:00–1:00",
+    description:
+      "A small paradise for sweets and ice cream — the perfect indulgent stop at any point in the day.",
+  },
+  kermen: {
+    title: "Kermen",
+    hours: "7:30–3:00",
+    description:
+      "With a panoramic view over the city and the Venetian castle as backdrop, it offers a powerful experience for food or cocktails.",
+  },
+  boheme: {
+    title: "Boheme",
+    hours: "8:30–23:00",
+    description:
+      "A modern space in the heart of the city, next to the historic cannons and the iconic square statue.",
+  },
+  langolo: {
+    title: "Langolo",
+    hours: "13:00–23:30 • Monday closed",
+    description:
+      "Italian cuisine by the sea, with warm hospitality and an atmosphere that lingers in the memory.",
+  },
+  kale: {
+    title: "Kale",
+    hours: "20:00–24:00",
+    description:
+      "A unique experience next to the Kales fortress, with sunset, vivid colours and a romantic atmosphere.",
+  },
+  searoco: {
+    title: "Searoco",
+    hours: "10:00–24:00",
+    description:
+      "Authentic Mediterranean cuisine with influences from the Cretan tradition and a creative approach to dishes.",
+  },
+  "vira potzi": {
+    title: "Vira Potzi",
+    hours: "Mon–Tue–Thu 14:00–22:30 • Fri–Sat 14:00–23:00 • Sun 13:00–22:00",
+    description:
+      "Mediterranean cuisine in its most modern form, with turtles swimming carefree in the sea creating dreamlike scenes.",
+  },
+  signiorino: {
+    title: "Signiorino",
+    hours: "18:00–24:00 • Sat–Sun 13:00–24:00",
+    description:
+      "An authentic Italian restaurant by the water, with a refined space and relaxed atmosphere.",
+  },
+  zorbas: {
+    title: "Zorbas",
+    hours: "12:15–23:00 • Sunday closed",
+    description:
+      "A classic Greek taverna with traditional recipes, Cretan ingredients and lively hospitality.",
+  },
+  scisiliana: {
+    title: "Scisiliana",
+    hours: "15:00–23:30 • Wednesday closed",
+    description:
+      "Authentic recipes with aromas of Sicily — a genuine treat for lovers of Italian cuisine.",
+  },
+  massati: {
+    title: "Massati",
+    hours: "12:00–24:00",
+    description:
+      "A modern space with creative cuisine, ideal for a more special gastronomic experience.",
+  },
+  pelagos: {
+    title: "Pelagos",
+    hours: "9:00–23:00",
+    description:
+      "Authentic Cretan flavours beside the Libyan Sea — an experience that perfectly fits an Ierapetra summer.",
+  },
+  plori: {
+    title: "Plori",
+    hours: "13:00–23:00 • Wednesday closed",
+    description:
+      "A seaside restaurant for fresh fish and seafood, with a calm view over the Libyan Sea.",
+  },
+  kleio: {
+    title: "Kleio",
+    hours: "12:00–23:00",
+    description:
+      "Home-cooked food, a friendly atmosphere and a laid-back vibe for those seeking something simple and genuine.",
+  },
+  koumpares: {
+    title: "Koumpares",
+    hours: "19:30–1:00 • Sunday closed",
+    description:
+      "A mezedopoleio for raki and a seaside feel — perfect for a relaxed evening in Crete.",
+  },
+  "madam meze": {
+    title: "Madam Meze",
+    hours: "19:00–24:00 • Sun–Mon closed",
+    description:
+      "A lovely courtyard on the Lakerda pedestrian street, with meze and an atmosphere that makes you want to linger.",
+  },
+  odeio: {
+    title: "Odeio",
+    hours: "19:30–1:30",
+    description:
+      "Traditional Greek meze in a courtyard that feels like a village square and brings everyone closer together.",
+  },
+  napoleon: {
+    title: "Napoleon",
+    hours: "12:00–24:00 • Sunday closed",
+    description:
+      "A classic city institution with an authentic character, warm hospitality and fresh seafood.",
+  },
+  maestro: {
+    title: "Maestro",
+    hours: "12:00–24:00 • Sunday closed",
+    description:
+      "A local favourite, with dishes well worth stopping for as you explore the centre.",
+  },
+  kapilio: {
+    title: "Kapilio",
+    hours: "Mon–Thu–Fri–Sat 18:00–24:00 • Sun 13:00–23:00",
+    description:
+      "An elegant courtyard that has become a meeting point, with flavours beyond the expected.",
+  },
+  gorgona: {
+    title: "Gorgona",
+    hours: "12:00–24:00",
+    description:
+      "Fresh seafood and a friendly vibe for those who want to feel, even briefly, like a local.",
+  },
+  konaki: {
+    title: "Konaki",
+    hours: "11:00–24:00",
+    description:
+      "The freshest fish goes straight from the sea to the table, with the emphasis firmly on simplicity.",
+  },
+  levante: {
+    title: "Levante",
+    hours: "12:00–21:00",
+    description:
+      "Fresh fish, an open view of the blue sea and a sense of relaxation that fits the journey perfectly.",
+  },
+  mpompos: {
+    title: "Mboubos",
+    hours: "14:00–1:00 • Monday closed",
+    description:
+      "Tasty food under the tamarisk trees, just steps from the sea.",
+  },
+  sousouo: {
+    title: "Sousouro",
+    description:
+      "Traditional little meze dishes and raki in a setting that brings out the unpretentious side of Crete.",
+  },
+  koutouzos: {
+    title: "Koutouzos",
+    hours: "19:00–23:30 • Sun 13:00–23:30 • Monday closed",
+    description:
+      "A traditional mezedopoleio in the lanes of Vainia, for those who love good food in a rustic setting.",
+  },
+  alatsi: {
+    title: "Alatsi",
+    hours: "12:30–23:00",
+    description:
+      "Almost right on the pebble beach, for a meal that is directly connected to summer.",
+  },
+  kimeri: {
+    title: "Kimeri",
+    hours: "13:00–24:00",
+    description:
+      "Traditional Greek cuisine, with dishes that serve the flavours of the region simply and cleanly.",
+  },
+  kouros: {
+    title: "Kouros",
+    hours: "17:00–23:30 • Weekends 12:00–23:30 • Wednesday closed",
+    description:
+      "If you think you've eaten the best Cretan meat, you certainly haven't been to Kouros yet. If you're lucky, you might also catch daily specials you won't find anywhere else.",
+  },
+  ψαροπούλα: {
+    title: "Psaropoula",
+    hours: "11:00–23:00",
+    description:
+      "Cooking with passion, Cretan hospitality and a simple flavour that leaves a lasting impression.",
+  },
+  thea: {
+    title: "Thea",
+    hours: "12:00–23:30",
+    description:
+      "An ideal meal after a swim at Livadi, with a view and the feeling of a summer dream.",
+  },
+  stavrodoksari: {
+    title: "Stavrodoxari",
+    hours: "10:00–23:30",
+    description:
+      "Antikristo is one of the traditional foods of Crete. You cannot say you have visited Crete without trying antikristo. You will find it at Stavrodoxari and understand why it is so sought after.",
+  },
+  γιαννακος: {
+    title: "Yiannakos",
+    hours: "20:00–23:00 • Monday closed",
+    description:
+      "A beautiful drive to the Bramiano reservoir and a table under the olive trees with local dishes.",
+  },
+  caravan: {
+    title: "Caravan",
+    hours: "20:00–4:00",
+    description:
+      "A spot for a night out with cocktails and more upbeat European music.",
+  },
+  peperment: {
+    title: "Peperment",
+    hours: "Thu–Sat 9:00–3:30",
+    description:
+      "A modern place for drinks and relaxed music, ideal for the start of the evening.",
+  },
+  soho: {
+    title: "Soho",
+    hours: "00:00–5:00",
+    description:
+      "For those who want to dance and have fun until morning with Greek and international hits.",
+  },
+  "blue parrrot": {
+    title: "Blue Parrot",
+    hours: "19:00–1:00",
+    description:
+      "A more laid-back choice for a drink, with distinctive taste and a small, atmospheric evening feel.",
+  },
+  saxo: {
+    title: "Saxo",
+    hours: "22:00–3:00 • Sunday closed",
+    description:
+      "Evenings with a strong 80s and 90s character for those who love the music of that era.",
+  },
+  special: {
+    title: "Special",
+    hours: "11:00–24:00",
+    description:
+      "A quick and punchy choice for gyros, with a flavour that has made it a favourite for many.",
+  },
+  "mama's": {
+    title: "Mama's",
+    hours: "12:00–24:00 • Sunday closed",
+    description:
+      "A homely feel and everyday options that taste like something from home.",
+  },
+  "gyros tou kosmou": {
+    title: "Gyros tou Kosmou",
+    hours: "12:00–24:00 • Sunday closed",
+    description:
+      "A classic choice for a more relaxed and filling stop during your walk around the city.",
+  },
+  veris: {
+    title: "Veris",
+    hours: "18:00–2:00 • Monday closed",
+    description:
+      "Pizzas, pasta, sandwiches and crepes for an easy solution when you want plenty of options.",
+  },
+  crunchy: {
+    title: "Crunchy",
+    hours: "12:30–23:30",
+    description:
+      "Burger or crispy chicken? Here, that's always the tasty dilemma.",
+  },
+  alatorigani: {
+    title: "Alatorigani",
+    hours: "12:00–24:00 • Monday closed",
+    description:
+      "An ideal stop on the way back from a day trip, for food that restores your energy.",
+  },
+  gspot: {
+    title: "G Spot",
+    hours: "7:00–24:00",
+    description:
+      "Quick bites in a more modern take — something casual but far from ordinary.",
+  },
+  elephant: {
+    title: "Elephant",
+    hours: "6:30–21:00 • Weekends 6:30–20:00",
+    description:
+      "Cool drinks and coffee for the hottest summer hours in Ierapetra.",
+  },
+  "pick up": {
+    title: "Pick Up",
+    hours: "6:00–20:00 • Sun 7:00–15:00",
+    description:
+      "Morning coffee and fast service before you set off to explore Crete.",
+  },
+  "cup café": {
+    title: "Cup Cafe",
+    hours: "6:30–20:30 • Sat 6:30–16:00 • Sun closed",
+    description:
+      "An ideal little break in the middle of shopping, for coffee and a breath of air.",
+  },
+  balantinis: {
+    title: "Balantinis",
+    hours: "6:00–20:30 • Sunday closed",
+    description:
+      "Balantinis Cafe comes to your door with just one phone call, whenever you wish.",
+  },
+  mihelaros: {
+    title: "Mihelaros",
+    hours: "7:00–21:00",
+    description:
+      "Iced coffee and a strong breakfast to kick off a hot day in Ierapetra the right way.",
+  },
+  panino: {
+    title: "Panino",
+    hours: "6:00–22:00 • Weekends 4:00–22:00",
+    description:
+      "An easy solution for a sandwich or breakfast, even after a night out.",
+  },
+  κοκοσ: {
+    title: "Kokos",
+    hours: "18:00–2:00 • Tuesday closed",
+    description:
+      "Good company, a relaxed vibe and a place that relies heavily on its atmosphere.",
+  },
+  "θαλασσια σπορ": {
+    title: "Water Sports",
+    description:
+      "If you enjoy adrenaline and fun on the water, Ierapetra has excellent options for organised water sports. You can check out Ierapetra Water Sports Petra Mare, Ostria Water Sports and Long Beach Parasailing Center.",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+  },
+  "safari ierapetra": {
+    title: "Ierapetra Safari",
+    description:
+      "The Ierapetra safari offers a thrilling exploration experience in south-eastern Crete. In 4x4 vehicles, visitors travel mountain routes, picturesque villages, olive groves and impressive viewpoints that showcase the magic of Cretan nature. Group drives with self-driven vehicles are available, as well as private guided tours.",
+    image:
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+  },
+  "φαράγγι χα": {
+    title: "Ha Gorge",
+    description:
+      "The Ha Gorge in Ierapetra is one of the most spectacular natural wonders in Crete. Its imposing, near-vertical walls rise dramatically above the passage and the narrow entrance, which acts as a natural gateway, creates a breathtaking scene. Inside you will find waterfalls, clear waters and rare plants. Crossing it requires equipment and specialist training.",
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80",
+  },
+  "φαράγγι σαρακίνας": {
+    title: "Sarakina Gorge",
+    description:
+      "Sarakina Gorge is one of the most impressive and accessible gorges in Crete, ideal for those who love nature and gentle adventure. With narrow passages, rocky formations, running water and small waterfalls, it offers a cool and enchanting route through a lush landscape. The trail is relatively easy, making it suitable for families as well.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Sarakina%20Gorge%2C%20Ierapetra%2C%20Crete.jpg",
+  },
+  "καταράκτης μυλωνά": {
+    title: "Mylonas Waterfall",
+    description:
+      "The Mylonas Waterfall is hidden inside a lush gorge and offers a beautiful, short hiking trail leading to a tall vertical waterfall. Its waters form a small natural pool at the base, while the landscape — with its cool atmosphere, vegetation and the sound of water — gives a feeling of complete serenity.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/%CE%9A%CE%B1%CF%84%CE%B1%CF%81%CF%81%CE%AC%CE%BA%CF%84%CE%B7%CF%82%20%CE%9C%CF%85%CE%BB%CF%89%CE%BD%CE%AC%206791-Pano.jpg",
+  },
+  ποδηλασία: {
+    title: "Cycling",
+    description:
+      "Cycling in Ierapetra is a wonderful way to discover the natural and cultural landscape of the area. Routes pass through coastal roads, olive groves and picturesque villages, with constant changes of scenery between the sea and the Cretan highlands. For bike rentals, check out Yiotis Car & Bike Rentals.",
+    image:
+      "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?w=1200&q=80",
+  },
+  κατάδυση: {
+    title: "Diving",
+    description:
+      "Diving in Ierapetra offers a magical experience in the Libyan Sea. Divers can explore colourful seabeds, caves, rocks and schools of fish. The area has organised diving centres with beginner lessons as well as more demanding routes for experienced divers, including Ierapetra Diving Centre.",
+    image:
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80",
+  },
+  "φαράγγι παναγιά-αναρρίχηση": {
+    title: "Panagia Gorge – Climbing",
+    description:
+      "Panagia Gorge is a small but impressive natural corridor, ideal for those seeking a short escape into nature with a touch of adventure. The steep rocky walls, the wild beauty of the landscape and the tranquil atmosphere create a scene that captivates every visitor. The gorge is also particularly known for its excellent climbing opportunities.",
+    image:
+      "https://images.unsplash.com/photo-1522163182402-834f871fd851?w=1200&q=80",
+  },
+  "takis shelter": {
+    title: "Takis Shelter",
+    description:
+      "Takis Shelter in Ierapetra is a unique animal sanctuary offering visitors a warm and moving experience. In a quiet, green space, Takis and volunteers care for hundreds of rescued dogs and cats, giving them a second chance at life. Visitors can tour the grounds, meet the animals and support the cause through adoptions or donations.",
+    image:
+      "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=1200&q=80",
+  },
+  "paralia ierapetras": {
+    title: "Ierapetra Beach – Apovrathra",
+    description:
+      "Apovrathra beach in Ierapetra is located close to the city centre and is an easily accessible spot for swimming and relaxation. It has clear waters, organised facilities, a lifeguard and accessibility provisions for people with disabilities. The combination of the city's vibrancy with the calm beach scene makes it a favourite for locals and visitors alike.",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+  },
+  "megali paralia": {
+    title: "Main Beach",
+    description:
+      "The Main Beach is an extensive stretch of fine dark sand with clear, calm waters ideal for swimming. It is organised in many sections with sun loungers, umbrellas, cafés and tavernas, while also offering free areas for a more relaxed stay.",
+    image:
+      "https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=1200&q=80",
+  },
+  achlia: {
+    title: "Achlia",
+    description:
+      "Achlia beach is a small but much-loved beach about 15 kilometres east of Ierapetra. It has fine pebbles and water with a distinctive turquoise-blue colour. It is known because, even when strong winds blow elsewhere, the cove keeps the sea calmer here. Ideal for families, with sun loungers, a taverna and a car park.",
+    image:
+      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=1200&q=80",
+  },
+  "agia fotia": {
+    title: "Agia Fotia",
+    description:
+      "If you are looking for a beach that combines sea, tranquillity and natural beauty without the crowds of major tourist shores, Agia Fotia is an excellent choice. Its clear, calm waters create an ideal environment for rest and relaxation.",
+    image:
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80",
+  },
+  agriomadra: {
+    title: "Agriomadra",
+    description:
+      "Agriomadra is a hidden and particularly picturesque beach near Kavousi. Access is via an easy 10–15 minute walk through the gorge. The rocks and tamarisk trees create an almost fairytale setting, while the blue-green waters and pebble bed make it ideal for snorkelling and exploration. It is best to bring your own water and food as there are no organised facilities.",
+    image:
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80",
+  },
+  "cavo bianco": {
+    title: "Cavo Bianco",
+    description:
+      "Cavo Bianco is an organised beach and beach bar in the Makrygialos area. The golden sand, turquoise waters and beach bar music create a feeling of relaxation and summer ease.",
+    image:
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1200&q=80",
+  },
+  tholos: {
+    title: "Tholos",
+    description:
+      "Tholos beach at Kavousi, in northern Crete, is a calm, natural and relatively secluded beach with fine sand and pebbles. The waters are clear and the landscape stays quiet, with a taverna and a café-bar offering everything you need for a wonderful day by the sea.",
+    image:
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1200&q=80",
+  },
+  "paralia peristera": {
+    title: "Peristera Beach",
+    description:
+      "Peristera beach in Ierapetra is quiet, secluded and particularly natural, with fine sand and low visitor numbers. The landscape is open and free of organised facilities, and in the more remote sections naturism is common, as the beach offers complete privacy and tranquillity.",
+    image:
+      "https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=1200&q=80",
+  },
+  "paralia livadi": {
+    title: "Livadi Beach",
+    description:
+      "Livadi beach is a calm, natural and relatively secluded beach with pebbles and clear waters. A distinctive feature is the clay on the rocks and shore, which many visitors use for natural mud treatments.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Ferma%20Livadi%2010.jpg",
+  },
+  diaskari: {
+    title: "Diaskari",
+    description:
+      "Diaskari is a calm and extensive beach with fine sand and clear, shallow waters ideal for relaxed swimming. It has organised sections with sun loungers but also plenty of free space for those who prefer quieter corners. It is an excellent choice for families.",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+  },
+  βουλισμα: {
+    title: "Voulisma",
+    description:
+      "Voulisma beach at Kalo Chorio is one of the most beautiful beaches in Crete. The sea colours are stunning, and the fine sand makes it very child-friendly. The beach is organised with sun loungers and a beach bar and is one of those places that makes you want to take lots of photos.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Voulisma%20Beach%2C%20Istro%2C%20Crete.JPG",
+  },
+  υγεία: {
+    title: "Health",
+    description:
+      "In Ierapetra you will find basic healthcare options, from a hospital and pharmacies to private doctors and diagnostic services.",
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
+  },
+  νοσοκομείο: {
+    title: "Hospital",
+    description:
+      "Ierapetra Hospital is located at Kalimerakis 6, postcode 72200, and is the main public healthcare facility in the area.",
+    image:
+      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80",
+  },
+  φαρμακείο: {
+    title: "Pharmacies",
+    description:
+      "There are several pharmacies in Ierapetra for immediate service. Among them: Vogiatzis Ioannis, Agianiotakis Marthas, Mprikas Yakinttis, Aspradakis Ioannis, Dermitzakis Konstantinos, Aronis Despoinas, Tyrakis, Lambrakis Ioannis and Vougioulkis Christina in Koutsouras.",
+    image:
+      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1200&q=80",
+  },
+  "ιδιοτικοι ιατροι": {
+    title: "Private Doctors",
+    description:
+      "For private medical care there are options such as Health Care Center in Koutsouras, Miminas Anestis (family doctor), Plakantonaki Krystalia (pathologist), Loulaki Lela (paediatrician) and Zagoridis Antonios (dentist).",
+    image:
+      "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1200&q=80",
+  },
+  "διαγνωστικο κεντρο": {
+    title: "Diagnostic Centre",
+    description:
+      "InterClinic Ierapetra is located at Lasthenos 87, postcode 72200, telephone 2811808000, and covers basic diagnostic needs in the area.",
+    image:
+      "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=1200&q=80",
+  },
+  "κλινικη αιμμοκαθαρσης": {
+    title: "Dialysis Clinic",
+    description:
+      "Mesogeios Dialysis Center Group is located at the 1st km Ierapetra–Pacheia Ammos road and offers specialist dialysis services for visitors and residents.",
+    image:
+      "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=1200&q=80",
+  },
+  μύρτος: {
+    title: "Myrtos",
+    description:
+      "Myrtos is a picturesque seaside village west of Ierapetra, just twenty minutes from the centre. It stands out for its tranquil atmosphere, clean beaches, narrow lanes with flowering courtyards and a lovely seafront promenade with small shops and views over the sea. It is an ideal destination for a day trip with an authentic Cretan feel.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Myrtos%20beach%20in%20Lasithi%2001.JPG",
+  },
+  "παχεία άμμος": {
+    title: "Pacheia Ammos",
+    description:
+      "Pacheia Ammos is a picturesque seaside village in the Gulf of Mirabello, about 15 km from Ierapetra. It is a crossroads for roads leading to Sitia, Agios Nikolaos and Ierapetra, while retaining its calm and authentic character. It is known for its large sandy beach with clear, shallow waters ideal for families. The area is home to important archaeological sites such as ancient Gournia, and visitors can enjoy fresh fish and local flavours at the waterfront tavernas.",
+  },
+  "μοναστηράκι": {
+    title: "Monastiraki",
+    description:
+      "Monastiraki is a small, quiet settlement near Pacheia Ammos, built on the slopes of the Thrypti mountain range with views over the Gulf of Mirabello. Its name is linked to the existence of an old monastery in the area. The landscape is particularly charming, with lush vegetation, running water and a sense of seclusion that makes it ideal for those seeking peace and contact with nature. Although today inhabited by only a few permanent residents, it retains the authenticity and traditional atmosphere of the Cretan countryside.",
+  },
+  "άνω σύμη": {
+    title: "Ano Symi",
+    description:
+      "A mountainous and lush settlement on the western boundary of the Municipality of Ierapetra, near Viannos. Surrounded by rich vegetation (pines, plane trees, fruit trees), it is considered an ideal destination for nature-loving activities. It has notable sights such as Byzantine churches (e.g. Agios Georgios) and trails through forested terrain.",
+  },
+  "μακρύ γυαλλός": {
+    title: "Makrygialos",
+    description:
+      "Makrygialos is a beautiful coastal area 25 kilometres east of Ierapetra, with an extensive sandy beach and bright blue waters. The shallow sea makes it ideal for families and relaxed swimming, while boats depart from its small harbour for Koufonisi. It is one of those villages that easily deserves a full day's visit.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Makrigialos%20beach%20lasithi.jpg",
+  },
+  καβούσι: {
+    title: "Kavousi",
+    description:
+      "Kavousi is one of the most beautiful and historic villages in the Ierapetra area. At an altitude of around 150 metres, it stands out for its rich history, archaeological sites and above all for its celebrated monumental olive tree, considered one of the oldest in Crete. It is a village that combines a natural landscape, tradition and historical depth.",
+    image:
+      "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=1200&q=80",
+  },
+  μόχλος: {
+    title: "Mochlos",
+    description:
+      "Mochlos is a picturesque seaside village with a tranquil landscape and traditional charm. Opposite its small harbour lies the namesake islet, an important Minoan archaeological site. The village is also known for its waterfront tavernas and authentic Cretan flavours.",
+    image:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+  },
+  ανατολή: {
+    title: "Anatoli",
+    description:
+      "Anatoli is a beautiful mountain village of Ierapetra, built in a privileged position with a panoramic view over the Libyan Sea. The traditional houses, cobblestone lanes and stunning sunset give the village a distinctive atmosphere.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/%CE%9A%CE%AC%CF%84%CF%89%20%CE%92%CF%81%CF%8D%CF%83%CE%B7%2C%20%CE%91%CE%BD%CE%B1%CF%84%CE%BF%CE%BB%CE%AE%20%CE%9B%CE%B1%CF%83%CE%B9%CE%B8%CE%AF%CE%BF%CF%85%202729.jpg",
+  },
+  καλαμαύκα: {
+    title: "Kalamafka",
+    description:
+      "Kalamafka is ideal for those who love nature and tradition. Built among impressive rocky formations and lush vegetation, it stands out for its scenic beauty, stone neighbourhoods and natural springs.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/%CE%9A%CE%B1%CE%BB%CE%B1%CE%BC%CE%B1%CF%8D%CE%BA%CE%B1%206436-9.jpg",
+  },
+  τερτσα: {
+    title: "Tertsa",
+    description:
+      "Tertsa is a small coastal settlement west of Ierapetra, known for its quieter and more secluded beaches. It is a very good choice for those seeking calm, seclusion and a slower pace beside the sea.",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+  },
+  σελακανο: {
+    title: "Selakano",
+    description:
+      "Selakano, and particularly its forest, is one of the most important ecosystems in Crete. The rich vegetation, cool springs and gorges create an ideal environment for hiking and exploring nature.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/772%20%CE%92%CF%81%CE%AC%CF%87%CE%B9%CE%B1%20%CE%BA%CE%B1%CE%B9%20%CE%B4%CE%AC%CF%83%CE%BF%CF%82%20%CF%83%CF%84%CE%B7%20%CE%A3%CE%B5%CE%BB%CE%AC%CE%BA%CE%B1%CE%BD%CE%BF.jpg",
+  },
+  chrissi: {
+    title: "Chrysi Island – Gaidouronisi",
+    description:
+      "Chrysi Island, also known as Gaidouronisi, is a small uninhabited island south of Ierapetra. Its golden beaches of shell fragments, blue-green waters and the largest cedar forest in Europe create the image of an exotic destination just about an hour from the city harbour. Bring a snorkel mask to explore the underwater world of the island.",
+    image:
+      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=1200&q=80",
+  },
+  "καστρο καλε": {
+    title: "Kales Fortress",
+    hours: "8:30–16:00",
+    description:
+      "Kales Fortress is a Venetian fortification from the 13th–14th century, built at the entrance to the old harbour to protect the city from sea raids. Today it is one of Ierapetra's most recognisable monuments and operates as a visitable archaeological site.",
+    image:
+      "https://images.unsplash.com/photo-1528127269322-539801943592?w=1200&q=80",
+  },
+  "σπιτι ναπολεοντα": {
+    title: "Napoleon's House",
+    description:
+      "Napoleon's House is a historic building in the old centre of Ierapetra, connected to the local tradition that Napoleon Bonaparte stayed here for one night. It remains to this day one of the city's most well-known points of interest.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/House%20of%20Napoleon%20in%20Ierapetra.jpg",
+  },
+  μουσείο: {
+    title: "Ierapetra Archaeological Museum",
+    hours: "8:30–15:30 • Closed every Tuesday • Entry €5",
+    description:
+      "The Ierapetra Archaeological Museum is housed in a neoclassical Ottoman school and presents the historical journey of the area from the Minoan to the Roman era. Its collection includes significant finds from excavations in Ierapetra and surrounding villages, the most celebrated being the marble statue of Persephone.",
+    image:
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1200&q=80",
+  },
+  "ψηφιακο μουσείο": {
+    title: "Ierapetra Digital Museum",
+    hours: "8:00–14:00",
+    description:
+      "The Digital Museum is an initiative of the Municipality of Ierapetra and showcases, through modern digital technologies, the cultural, historical and natural wealth of the wider area.",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+  },
+  τζαμί: {
+    title: "Ierapetra Mosque",
+    description:
+      "The Mosque of Ierapetra is an important Ottoman monument from the 18th century in the centre of the old town. It stands out for its simple yet imposing architecture and keeps alive the memory of Ierapetra's multicultural history.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Ierapetra%20R04.jpg",
+  },
+  "αγιος γεωργιος": {
+    title: "Churches",
+    description:
+      "Churches: Agios Georgios, Agia Fotini, Timios Stavros, Afentis Christos, Panagia Eleousa, Panagia Faneromeni, Holy Monastery of Paplinou. Information: 6906063706.",
+  },
+  "γουρνια": {
+    title: "Gournia Archaeological Site",
+    description:
+      "The archaeological site of Gournia is one of the most important Minoan settlements in Crete, dating from approximately 1900 to 1450 BC. It is a well-organised settlement with stone foundations, paved streets and storage areas.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/GourniaMinoanPalace.jpg",
+  },
+  "καβουσι(αρχαια ελια)": {
+    title: "Kavousi Ancient Olive Tree",
+    description:
+      "The ancient olive tree of Kavousi stands out for its age and size, estimated to be over two thousand years old. It is located near the village and is a remarkable sight for both locals and visitors.",
+    image:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Monumental%20Olive%20tree%20near%20Kavousi%20%28Crete%29%2002.jpg",
+  },
+  "εκκλησιες-μητροπολη": {
+    title: "Agia Fotini – Cathedral",
+    description:
+      "The Christian church of Agia Fotini is one of the oldest and most beloved churches in the city. Built in a traditional Cretan style, it stands out for its tasteful interior, while next to it stands the Metropolis of Ierapetra, one of Crete's eight bishoprics.",
+    image:
+      "https://images.unsplash.com/photo-1507692049790-de58290a4334?w=1200&q=80",
+  },
+  "καθολικη εκκλησια": {
+    title: "Ierapetra Catholic Church",
+    description:
+      "The Catholic Church of Ierapetra is a small but historically significant religious monument of the city. With simple and elegant architecture, it serves as a place of worship and a quiet space for reflection in the city centre.",
+    image:
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1200&q=80",
+  },
+  ψώνια: {
+    title: "Shopping",
+    description:
+      "In Ierapetra you will find options for everyday shopping, a street market, clothing stores, souvenirs and small local shops in the centre and along the waterfront.",
+    image:
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80",
+  },
+  "λαΪκή αγορα": {
+    title: "Street Market",
+    description:
+      "Ierapetra's street market is on Psilinakis Street and is a good stop for local produce, fruit, vegetables and a more everyday glimpse of the city.",
+    image:
+      "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=80",
+  },
+  σουπερμαρκετ: {
+    title: "Supermarkets",
+    description:
+      "For your everyday shopping there are well-known options such as Chalkiadakis, SYNKA, Sklavenitis, AB and Kalimera.",
+    image:
+      "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=80",
+  },
+  ρούχα: {
+    title: "Clothing Stores",
+    description:
+      "For clothing and accessories, head to the centre of Ierapetra, where you will find small shops with both local character and more contemporary style.",
+    image:
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80",
+  },
+  souvenir: {
+    title: "Souvenirs",
+    description:
+      "Along the waterfront and in the centre you will find tourist shops with souvenirs, small gifts and items that suit a summer visit to Ierapetra.",
+    image:
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=1200&q=80",
+  },
+  περιποίηση: {
+    title: "Wellness & Beauty",
+    description:
+      "The city has options for spas, beauty institutes and hairdressers for those wanting a little pampering and relaxation during their stay.",
+    image:
+      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1200&q=80",
+  },
+  κομμωτήρια: {
+    title: "Hairdressers",
+    description:
+      "Notable options include Cult Barbershop at Meletiou Metaxaki 16, Koureio Barber Shop at Georgiou Giannakous 9, Valantis Hair Salon at Emmanouel Plouimidi 9 and Mariaskordili Hair Art at Kyprou 22.",
+    image:
+      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1200&q=80",
+  },
+  "μασαζ -σπα": {
+    title: "Massage – Spa",
+    description:
+      "For moments of relaxation you can check out spa options such as Kallisti, as well as similar wellness services around the city.",
+    image:
+      "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&q=80",
+  },
+  "ινστιτούτο αισθητικής": {
+    title: "Beauty Institutes",
+    description:
+      "Notable options include Mk Medical Plus at Meletiou Metaxaki 9 and Beauty Salon Pitropaki Nikoleta at Ellinon Olympionikon 21.",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&q=80",
+  },
+  άθληση: {
+    title: "Sport & Fitness",
+    description:
+      "Ierapetra has options for those who want to keep up their routine during the holidays, from gyms to outdoor workout spaces and yoga.",
+    image:
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&q=80",
+  },
+  γυμναστήρια: {
+    title: "Gyms",
+    description:
+      "You can check out Life Fitness at Ethnikis Antistaseos 32 and Lakis at Anagnostaki 3 for a workout in the city.",
+    image:
+      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80",
+  },
+  yoga: {
+    title: "Yoga",
+    description:
+      "Ierapetra also lends itself to gentler exercise, with yoga sessions and a relaxed pace that suits the local climate perfectly.",
+    image:
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&q=80",
+  },
+  "ανοιχτο γυμναστήριο": {
+    title: "Outdoor Gym",
+    description:
+      "The outdoor gym is located at Ouranias Papaioannou 1 and is a convenient solution for exercising in an open-air setting.",
+    image:
+      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&q=80",
+  },
+  μετακινήσεις: {
+    title: "Getting Around",
+    description:
+      "For getting around Ierapetra there are options such as KTEL buses, taxis and car rental, depending on how far you want to travel inside or outside the city.",
+    image:
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80",
+  },
+  "διαδρομές ΚΤΕΛ": {
+    title: "KTEL Bus Routes",
+    description:
+      "KTEL routes serve key connections to and from Ierapetra and the surrounding villages, providing an affordable option for visitors without a car.",
+    image:
+      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1200&q=80",
+  },
+  ΤΑΞΙ: {
+    title: "Taxi",
+    description:
+      "For immediate transport you can use city taxis. Sample numbers are 2842026600 and 2842024000, based near Dimarchou Markopoulou 33.",
+    image:
+      "https://images.unsplash.com/photo-1511527844068-006b95d162c2?w=1200&q=80",
+  },
+  "ενικοίαση αυτοκινήτων": {
+    title: "Car Rental",
+    description:
+      "For greater freedom to explore, you can check out options such as Europlan at Michail Kothri 39, Drive Now at Filotheou A' 64 and Crete Cars at Filotheou A 43.",
+    image:
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80",
+  },
+};
+
+const shopContactDetails: Record<string, { phone?: string; address?: string }> = {
+  "alatorigani": { phone: "2842020001", address: "Iatrou Papageorgiou 25" },
+  "alatsi": { phone: "2842062040", address: "Agios Ioannis, Koutsouras" },
+  "balantinis": { phone: "2842307080", address: "Plastira Square" },
+  "blue parrrot": { phone: "6944640822", address: "Lakerda 3" },
+  "boheme": { phone: "2842027900", address: "Eleftherias Square 1" },
+  "caravan": { address: "Kyrva 15" },
+  "casablanca": { phone: "2842500140", address: "Lakerda 5" },
+  "chocolicious": { phone: "2842022256", address: "Stratigou Samouel 18" },
+  "crunchy": { phone: "2842022252", address: "Kyprou 30" },
+  "cup café": { phone: "2842020150", address: "Georgious Giannakis 16" },
+  "elephant": { phone: "2842020733", address: "Dimokratias 14" },
+  "gorgona": { phone: "2842023148", address: "Stratigou Samouel 38" },
+  "gspot": { phone: "2842020113", address: "Kyprou 36" },
+  "gyros tou kosmou": { address: "Lasthenos 26" },
+  "island": { phone: "2842023615", address: "Stratigou Samouel 6" },
+  "kale": { phone: "2842027400", address: "Sofokli Venizelou 65" },
+  "kapilio": { phone: "2842028384", address: "Ioannou Kapsali 12" },
+  "kermen": { phone: "2842301149", address: "Stratigou Samouel 74" },
+  "kimeri": { phone: "2842026074", address: "Sokrates 12" },
+  "kleio": { phone: "2842022127", address: "Tzavela 14" },
+  "konaki": { phone: "2842023756", address: "Filotheou A 28" },
+  "koumpares": { phone: "2842022800", address: "Lakerda 17" },
+  "koutouzos": { phone: "2842062053", address: "Vainia" },
+  "kouros": { phone: "2842021092", address: "Filotheou A 21" },
+  "langolo": { phone: "2842024375", address: "Stratigou Samouel 32" },
+  "levante": { phone: "2842023155", address: "Ntam Ntam" },
+  "madam meze": { phone: "2842022226", address: "Lakerda 6" },
+  "mama's": { phone: "2842023404", address: "Kyprou 25" },
+  "massati": { phone: "2842022050", address: "Stratigou Samouel 30" },
+  "maestro": { phone: "2842023000", address: "Papanastasiou 31" },
+  "mihelaros": { phone: "2842110025", address: "Psilinaki 44" },
+  "mpompos": { phone: "2842021646", address: "Ierapetra" },
+  "napoleon": { phone: "2842022225", address: "Stratigou Samouel 20" },
+  "odeio": { phone: "2842024102", address: "Lakerda 14" },
+  "panino": { phone: "2842026120", address: "Eth. Antistaseos 1" },
+  "peperment": { phone: "6936816326", address: "Kyprou 51" },
+  "pick up": { phone: "2842400613", address: "Dimokratias 8" },
+  "plaz": { phone: "2842023204", address: "Georgiou Giannakis 2" },
+  "plori": { phone: "2842025300", address: "Stratigou Samouel 14" },
+  "scisiliana": { phone: "2842021040", address: "Mylonogiannis 31" },
+  "searoco": { phone: "2842020730", address: "Stratigou Samouel 24" },
+  "signiorino": { phone: "2842025070", address: "Stratigou Samouel 22" },
+  "soho": { phone: "6972602747", address: "Kyprou 53" },
+  "sousouo": { address: "Kyrva 15" },
+  "saxo": { phone: "6943778191", address: "Dimokratias 18" },
+  "special": { phone: "2842026272", address: "Lasthenos 4" },
+  "stavrodoksari": { phone: "2842024500", address: "Stavrodoxari" },
+  "vira potzi": { phone: "2842026606", address: "Nikiforou Foka 5" },
+  "veris": { phone: "2842307100", address: "Kyrva 26" },
+  "waikiki": { phone: "2842025731", address: "Georgiou Tzardi 2" },
+  "zorbas": { phone: "2842023333", address: "Stratigou Samouel 28" },
+  "απεριττον": { phone: "2842026224", address: "Eleftherias Square 69–71" },
+  "γιαννακος": { phone: "2842027554" },
+  "κοκοσ": { phone: "6976859133", address: "Stratigou Samouel 76" },
+  "ψαροπούλα": { phone: "6977500272" },
+};
+
+function createGuideItems(
+  names: string[],
+  fallbackTag: string,
+  options?: { priceRange?: string },
+) {
+  return names.map((name) => ({
+    name: guideDetails[name]?.title ?? name,
+    hours: guideDetails[name]?.hours,
+    phone: shopContactDetails[name]?.phone,
+    address: shopContactDetails[name]?.address,
+    priceRange: options?.priceRange,
+    description:
+      guideDetails[name]?.description ??
+      `A recommendation for ${fallbackTag} in Ierapetra, ideal for quick planning and easy discovery of the area.`,
+    image: guideDetails[name]?.image,
+  }));
+}
 
 export const guideCategories: GuideCategory[] = [
   {
     id: "food-drink",
     label: "Food & Drink",
-    intro: "Cafés, restaurants, tavernas, and nightlife — organized in a handy menu.",
-    groupTitles: ["Cafés", "Restaurants", "Tavernas", "Nightlife", "fast food", "take away"],
+    intro:
+      "Cafés, restaurants, tavernas and evening spots, organised in an easy-to-use menu.",
+    image: "/images/guide-food.webp",
+    groups: [
+      {
+        title: "Cafés",
+        items: createGuideItems(
+          [
+            "waikiki",
+            "plaz",
+            "απεριττον",
+            "casablanca",
+            "island",
+            "chocolicious",
+            "kermen",
+            "boheme",
+          ],
+          "coffee and breakfast",
+          { priceRange: "5–10 per person" },
+        ),
+      },
+      {
+        title: "Restaurants",
+        items: createGuideItems(
+          [
+            "langolo",
+            "kale",
+            "searoco",
+            "vira potzi",
+            "signiorino",
+            "zorbas",
+            "scisiliana",
+            "massati",
+            "pelagos",
+            "plori",
+            "kleio",
+          ],
+          "dining",
+          { priceRange: "15–20 per person" },
+        ),
+      },
+      {
+        title: "Tavernas",
+        items: createGuideItems(
+          [
+            "koumpares",
+            "madam meze",
+            "odeio",
+            "napoleon",
+            "maestro",
+            "kapilio",
+            "gorgona",
+            "konaki",
+            "levante",
+            "mpompos",
+            "sousouo",
+            "koutouzos",
+            "alatsi",
+            "kimeri",
+            "kouros",
+            "ψαροπούλα",
+            "thea",
+            "stavrodoksari",
+            "γιαννακος",
+            "κοκοσ",
+          ],
+          "traditional food",
+          { priceRange: "15–20 per person" },
+        ),
+      },
+      {
+        title: "Nightlife",
+        items: createGuideItems(
+          ["kermen", "caravan", "kale", "waikiki", "peperment", "soho", "blue parrrot", "saxo"],
+          "a night out",
+          { priceRange: "5–10 per person" },
+        ),
+      },
+      {
+        title: "Fast Food",
+        items: createGuideItems(
+          ["special", "mama's", "gyros tou kosmou", "veris", "crunchy", "alatorigani"],
+          "fast food",
+          { priceRange: "5–10 per person" },
+        ),
+      },
+      {
+        title: "Take Away",
+        items: createGuideItems(
+          ["gspot", "elephant", "pick up", "cup café", "balantinis", "mihelaros", "panino"],
+          "take away",
+          { priceRange: "1–5 per person" },
+        ),
+      },
+    ],
   },
   {
     id: "beaches",
-    label: "Seas",
-    intro: "Beaches and coasts for a quick, well-organized sea guide.",
-    groupTitles: ["Beaches"],
+    label: "Beaches",
+    intro:
+      "Beaches and shores for those who want a quick and beautifully organised coastal guide.",
+    image: "/images/guide-beaches.webp",
+    groups: [
+      {
+        title: "Beaches",
+        items: createGuideItems(
+          [
+            "paralia ierapetras",
+            "agio antrea",
+            "megali paralia",
+            "kakkos",
+            "achlia",
+            "agia fotia",
+            "agriomadra",
+            "cavo bianco",
+            "tholos",
+            "paralia peristera",
+            "paralia livadi",
+            "diaskari",
+            "βουλισμα",
+          ],
+          "beach",
+        ),
+      },
+    ],
   },
   {
     id: "areas",
     label: "Villages",
     intro:
-      "Villages and nearby spots around Ierapetra for short trips, walks, and a more authentic local feel.",
-    groupTitles: ["Villages"],
+      "Villages and spots around Ierapetra for short getaways, walks and a more authentic local character.",
+    image: "/images/guide-areas.webp",
+    groups: [
+      {
+        title: "Villages",
+        items: createGuideItems(
+          [
+            "μύρτος",
+            "παχεία άμμος",
+            "μοναστηράκι",
+            "άνω σύμη",
+            "μόχλος",
+            "μακρύ γυαλλός",
+            "ανατολή",
+            "καλαμαύκα",
+            "κατω χωριό",
+            "καβούσι",
+            "ψαρη φοραδα",
+            "τερτσα",
+            "σελακανο",
+          ],
+          "day trip and walk",
+        ),
+      },
+    ],
   },
   {
     id: "attractions",
     label: "Attractions",
-    intro: "Fortress, museums, monuments, and historic sights to explore.",
-    groupTitles: ["Attractions"],
+    intro:
+      "Castle, museums, monuments and historic sites to get to know Ierapetra and the surrounding area.",
+    image: "/images/guide-activities.webp",
+    groups: [
+      {
+        title: "Attractions",
+        items: createGuideItems(
+          [
+            "καστρο καλε",
+            "σπιτι ναπολεοντα",
+            "μουσείο",
+            "ψηφιακο μουσείο",
+            "τζαμί",
+            "αγιος γεωργιος",
+            "γουρνια",
+            "καβουσι(αρχαια ελια)",
+            "εκκλησιες-μητροπολη",
+            "καθολικη εκκλησια",
+          ],
+          "attraction",
+        ),
+      },
+    ],
   },
   {
     id: "activities",
     label: "Activities",
-    intro: "Water sports, trips, gorges, and experiences to plan your exploration.",
-    groupTitles: ["What to do"],
+    intro:
+      "Water sports, excursions, gorges and experiences to help you plan your exploration of the area.",
+    image: "/images/guide-activities.webp",
+    groups: [
+      {
+        title: "Things To Do",
+        items: createGuideItems(
+          [
+            "θαλασσια σπορ",
+            "chrissi",
+            "safari ierapetra",
+            "φαράγγι χα",
+            "φαράγγι σαρακίνας",
+            "καταράκτης μυλωνά",
+            "ποδηλασία",
+            "κατάδυση",
+            "φαράγγι παναγιά-αναρρίχηση",
+            "takis shelter",
+          ],
+          "activity",
+        ),
+      },
+    ],
   },
   {
     id: "services",
     label: "Services",
-    intro: "Practical options for health, shopping, self-care, sports, and transport.",
-    groupTitles: ["Services"],
+    intro:
+      "Practical options for health, shopping, beauty, fitness and getting around in and around the city.",
+    image: "/images/guide-services.webp",
+    groups: [
+      {
+        title: "Health",
+        items: createGuideItems(
+          ["υγεία", "νοσοκομείο", "φαρμακείο", "ιδιοτικοι ιατροι", "διαγνωστικο κεντρο", "κλινικη αιμμοκαθαρσης"],
+          "health services",
+        ),
+      },
+      {
+        title: "Shopping",
+        items: createGuideItems(["ψώνια", "λαΪκή αγορα", "σουπερμαρκετ", "ρούχα", "souvenir"], "shopping"),
+      },
+      {
+        title: "Wellness & Beauty",
+        items: createGuideItems(["περιποίηση", "κομμωτήρια", "μασαζ -σπα", "ινστιτούτο αισθητικής"], "wellness"),
+      },
+      {
+        title: "Sport & Fitness",
+        items: createGuideItems(["άθληση", "γυμναστήρια", "yoga", "ανοιχτο γυμναστήριο"], "fitness"),
+      },
+      {
+        title: "Getting Around",
+        items: createGuideItems(["μετακινήσεις", "διαδρομές ΚΤΕΛ", "ΤΑΞΙ", "ενικοίαση αυτοκινήτων"], "transport"),
+      },
+    ],
   },
-].map((override) => {
-  const base =
-    elGuideCategories.find((category) => category.id === override.id) ?? elGuideCategories[0];
-  const withEnglishStructure: GuideCategory = {
-    ...base,
-    label: override.label,
-    intro: override.intro,
-    groups: base.groups.map((group, index) => ({
-      ...group,
-      title: override.groupTitles[index] ?? group.title,
-    })),
-  };
-
-  const hasGreek = (value: string) => /[Α-Ωα-ωάέήίόύώϊϋΐΰ]/.test(value);
-  const toGreeklish = (value: string) =>
-    value
-      .normalize("NFD")
-      .replace(/\p{Diacritic}/gu, "")
-      .replace(/Α/g, "A")
-      .replace(/Β/g, "V")
-      .replace(/Γ/g, "G")
-      .replace(/Δ/g, "D")
-      .replace(/Ε/g, "E")
-      .replace(/Ζ/g, "Z")
-      .replace(/Η/g, "I")
-      .replace(/Θ/g, "Th")
-      .replace(/Ι/g, "I")
-      .replace(/Κ/g, "K")
-      .replace(/Λ/g, "L")
-      .replace(/Μ/g, "M")
-      .replace(/Ν/g, "N")
-      .replace(/Ξ/g, "X")
-      .replace(/Ο/g, "O")
-      .replace(/Π/g, "P")
-      .replace(/Ρ/g, "R")
-      .replace(/Σ/g, "S")
-      .replace(/Τ/g, "T")
-      .replace(/Υ/g, "Y")
-      .replace(/Φ/g, "F")
-      .replace(/Χ/g, "X")
-      .replace(/Ψ/g, "Ps")
-      .replace(/Ω/g, "O")
-      .replace(/α/g, "a")
-      .replace(/β/g, "v")
-      .replace(/γ/g, "g")
-      .replace(/δ/g, "d")
-      .replace(/ε/g, "e")
-      .replace(/ζ/g, "z")
-      .replace(/η/g, "i")
-      .replace(/θ/g, "th")
-      .replace(/ι/g, "i")
-      .replace(/κ/g, "k")
-      .replace(/λ/g, "l")
-      .replace(/μ/g, "m")
-      .replace(/ν/g, "n")
-      .replace(/ξ/g, "x")
-      .replace(/ο/g, "o")
-      .replace(/π/g, "p")
-      .replace(/ρ/g, "r")
-      .replace(/σ/g, "s")
-      .replace(/ς/g, "s")
-      .replace(/τ/g, "t")
-      .replace(/υ/g, "y")
-      .replace(/φ/g, "f")
-      .replace(/χ/g, "x")
-      .replace(/ψ/g, "ps")
-      .replace(/ω/g, "o");
-
-  return {
-    ...withEnglishStructure,
-    groups: withEnglishStructure.groups.map((group) => ({
-      ...group,
-      items: group.items.map((item) => ({
-        ...item,
-        name: hasGreek(item.name) ? toGreeklish(item.name) : item.name,
-        hours: item.hours && hasGreek(item.hours) ? toGreeklish(item.hours) : item.hours,
-        description:
-          item.description && hasGreek(item.description) ? toGreeklish(item.description) : item.description,
-      })),
-    })),
-  };
-});
+];
