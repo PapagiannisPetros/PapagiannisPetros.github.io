@@ -17,7 +17,7 @@ export function HeroSection({ ui }: Props) {
       <div className="hero-grid">
         <div className="hero-panel">
           <Image
-            src="/images/hero.webp"
+            src="/images/hero.jpg"
             alt={ui.imageAlt}
             fill
             priority

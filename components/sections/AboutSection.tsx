@@ -17,7 +17,7 @@ export function AboutSection({ ui }: Props) {
       <div className="about-grid">
         <div className="about-visual">
           <Image
-            src="/images/about.webp"
+            src="/images/about.jpg"
             alt={ui.imageAlt}
             fill
             className="about-image"
