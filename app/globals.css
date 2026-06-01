@@ -127,12 +127,14 @@ img {
   font-size: 1.5rem;
   font-weight: 300;
   letter-spacing: 0.08em;
-  color: var(--olive);
-  transition: color 0.4s;
+  color: var(--cream);
+  text-shadow: 0 2px 10px rgba(5, 20, 28, 0.45);
+  transition: color 0.4s, text-shadow 0.4s;
 }
 
 .site-header nav.scrolled .brand {
   color: var(--olive);
+  text-shadow: none;
 }
 
 .nav-links {
@@ -150,12 +152,14 @@ img {
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
-  transition: color 0.4s;
+  color: rgba(250, 247, 242, 0.88);
+  text-shadow: 0 2px 10px rgba(5, 20, 28, 0.45);
+  transition: color 0.4s, text-shadow 0.4s;
 }
 
 .site-header nav.scrolled .nav-links a {
   color: var(--muted);
+  text-shadow: none;
 }
 
 .nav-links a:hover {
@@ -193,10 +197,10 @@ img {
   inset: 0;
   background:
     linear-gradient(
-      160deg,
-      rgba(250, 247, 242, 0.55) 0%,
-      rgba(245, 240, 232, 0.42) 45%,
-      rgba(201, 168, 76, 0.14) 100%
+      180deg,
+      rgba(10, 29, 39, 0.2) 0%,
+      rgba(10, 29, 39, 0.42) 46%,
+      rgba(10, 29, 39, 0.28) 100%
     );
   z-index: 1;
 }
@@ -214,8 +218,9 @@ img {
   z-index: 2;
   width: min(900px, calc(100% - 2rem));
   transform: translate(-50%, -50%);
-  color: var(--sea);
+  color: var(--cream);
   text-align: center;
+  text-shadow: 0 3px 22px rgba(5, 20, 28, 0.58), 0 1px 3px rgba(5, 20, 28, 0.5);
 }
 
 .language-switch {
@@ -258,10 +263,13 @@ img {
   padding: 0.35rem 0.75rem;
   font-size: 0.6rem;
   letter-spacing: 0.12em;
+  color: rgba(250, 247, 242, 0.88);
+  text-shadow: 0 2px 10px rgba(5, 20, 28, 0.45);
 }
 
 .site-header nav.scrolled .language-switch.header .language-switch-button {
   color: rgba(74, 82, 64, 0.85);
+  text-shadow: none;
 }
 
 .language-switch-button:hover {
@@ -278,6 +286,10 @@ img {
   color: var(--olive);
 }
 
+.language-switch.header .language-switch-button.active {
+  color: var(--cream);
+}
+
 .site-header nav.scrolled .language-switch.header .language-switch-button.active {
   background: rgba(74, 82, 64, 0.12);
   border-color: rgba(74, 82, 64, 0.24);
@@ -291,32 +303,35 @@ img {
 
 .hero-badge {
   margin-bottom: 1.2rem;
-  font-size: 0.65rem;
-  letter-spacing: 0.35em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: rgba(44, 62, 44, 0.82);
+  color: rgba(250, 247, 242, 0.88);
 }
 
 .hero-title {
   margin: 0;
   font-family: var(--serif);
   font-size: clamp(3.5rem, 9vw, 7rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1;
   letter-spacing: -0.01em;
+  color: var(--cream);
 }
 
 .hero-title em {
   font-style: italic;
-  color: var(--gold);
+  color: #d8b95e;
 }
 
 .hero-subtitle {
   margin: 0.8rem 0 0;
-  font-size: 0.75rem;
-  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(44, 62, 44, 0.82);
+  color: rgba(250, 247, 242, 0.9);
 }
 
 .hero-actions {
