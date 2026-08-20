@@ -149,7 +149,7 @@ export const travelInfo = [
 
 export const contactDetails = {
   phone: "+30 28420 22000",
-  email: "info@ierapetra-escape.gr",
+  email: "ieratrip@gmail.gr",
   address: "Παραλιακή Ιεράπετρας, Κρήτη 722 00",
   mapsUrl: "https://maps.google.com/?q=Ιεράπετρα+Κρήτη",
 };
@@ -177,6 +177,7 @@ export const ui = {
   destinations: {
     label: "Μέρη που αξίζουν",
     title: "Εξερευνήστε την περιοχή",
+    closeLabel: "Κλείσιμο",
   },
   guide: {
     label: "Διαδραστικό μενού",
@@ -195,6 +196,7 @@ export const ui = {
   experiences: {
     label: "Τι να κάνετε",
     title: "Εμπειρίες που μένουν",
+    closeLabel: "Κλείσιμο",
   },
   travel: {
     label: "Πού βρισκόμαστε",
@@ -240,11 +242,11 @@ export const ui = {
     ariaLabel: "Travel gallery",
   },
   footer: {
-    brand: "Ierapetra Escape",
+    brand: "Ierapetra Trip",
     subtitle: "Νότια Κρήτη, Ελλάδα",
     copy:
-      "Premium tourism website, ιδανικό για την προβολή προορισμού, boutique καταλυμάτων ή τοπικού travel brand.",
-    copyright: "© 2026 Ierapetra Escape",
+      "Τουριστικό website, ιδανικό για την προβολή προορισμού, boutique καταλυμάτων ή τοπικού travel brand.",
+    copyright: "© 2026 Ierapetra Trip, All rights reserved.",
   },
 };
 

@@ -123,18 +123,22 @@ img {
 }
 
 .brand {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  color: var(--cream);
-  text-shadow: 0 2px 10px rgba(5, 20, 28, 0.45);
-  transition: color 0.4s, text-shadow 0.4s;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
 }
 
-.site-header nav.scrolled .brand {
-  color: var(--olive);
-  text-shadow: none;
+.brand-logo {
+  display: block;
+  width: 12.5rem;
+  height: auto;
+  filter: drop-shadow(0 2px 10px rgba(5, 20, 28, 0.4));
+  transition: filter 0.4s, transform 0.4s;
+}
+
+.site-header nav.scrolled .brand-logo {
+  filter: none;
+  transform: scale(0.92);
 }
 
 .nav-links {
@@ -465,7 +469,15 @@ img {
 .destination-card {
   position: relative;
   overflow: hidden;
+  width: 100%;
   min-height: 220px;
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
 }
 
 .destination-card.destination-featured {
@@ -486,6 +498,11 @@ img {
 
 .destination-card:hover .destination-image {
   transform: scale(1.07);
+}
+
+.destination-card:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
 }
 
 .destination-card.destination-featured .destination-image {
@@ -822,9 +839,13 @@ img {
 }
 
 .experience-card {
+  width: 100%;
   text-align: center;
   padding: 2rem 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
   transition: border-color 0.3s, background 0.3s;
   color: white;
 }
@@ -832,6 +853,11 @@ img {
 .experience-card:hover {
   border-color: var(--gold);
   background: rgba(255, 255, 255, 0.05);
+}
+
+.experience-card:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
 }
 
 .experience-icon {
@@ -852,6 +878,20 @@ img {
   font-size: 0.72rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.55);
+}
+
+.experience-modal {
+  grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr);
+}
+
+.experience-modal-icon {
+  display: grid;
+  place-items: center;
+  min-height: 360px;
+  background:
+    radial-gradient(circle at center, rgba(201, 168, 76, 0.2), transparent 56%),
+    var(--sea);
+  font-size: clamp(4rem, 10vw, 7rem);
 }
 
 .travel-list {
@@ -1086,6 +1126,10 @@ img {
 
   .site-header nav.scrolled {
     padding: 1rem 1.5rem;
+  }
+
+  .brand-logo {
+    width: 9.5rem;
   }
 
   .nav-links {

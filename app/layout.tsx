@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "IeraTrip",
   description:
     "Tourism site για την Ιεράπετρα με προορισμούς, εμπειρίες, χάρτη και στοιχεία επικοινωνίας.",
+  icons: {
+    icon: "/images/ieratrip-icon.svg",
+  },
   openGraph: {
     title: "IeraTrip",
     description:

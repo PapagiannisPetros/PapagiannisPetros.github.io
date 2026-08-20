@@ -149,7 +149,7 @@ export const travelInfo = [
 
 export const contactDetails = {
   phone: "+30 28420 22000",
-  email: "info@ierapetra-escape.gr",
+  email: "ieratrip@gmail.gr",
   address: "Ierapetra Waterfront, Crete 722 00",
   mapsUrl: "https://maps.google.com/?q=Ierapetra+Crete",
 };
@@ -177,6 +177,7 @@ export const ui = {
   destinations: {
     label: "Places worth visiting",
     title: "Explore the area",
+    closeLabel: "Close",
   },
   guide: {
     label: "Interactive menu",
@@ -195,6 +196,7 @@ export const ui = {
   experiences: {
     label: "What to do",
     title: "Experiences that stay with you",
+    closeLabel: "Close",
   },
   travel: {
     label: "Where we are",
@@ -243,8 +245,8 @@ export const ui = {
     brand: "Ierapetra Escape",
     subtitle: "Southern Crete, Greece",
     copy:
-      "Premium tourism website, ideal for showcasing a destination, boutique accommodation or a local travel brand.",
-    copyright: "© 2026 Ierapetra Escape",
+      "Tourism website, ideal for showcasing a destination, boutique accommodation or a local travel brand.",
+    copyright: "© 2026 Ierapetra Escape, All rights reserved.",
   },
 };
 

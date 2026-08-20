@@ -26,7 +26,7 @@ export function Header({ navigation, ui, lang, onLangChange }: Props) {
     <header className="site-header">
       <nav className={scrolled ? "scrolled" : ""} aria-label={ui.ariaLabel}>
         <a className="brand" href="#top">
-          {ui.brand}
+          <img src="/images/ieratrip-logo.svg" alt={ui.brand} className="brand-logo" />
         </a>
         <div className="nav-actions">
           <div className="nav-links">
