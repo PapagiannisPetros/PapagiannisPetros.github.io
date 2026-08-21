@@ -8,12 +8,12 @@ import type { GuideCategory } from "@/data/site";
 type GuideItem = GuideCategory["groups"][number]["items"][number];
 
 const imageByCategoryId: Record<string, string> = {
-  "food-drink": "/images/guide-food.webp",
-  beaches: "/images/guide-beaches.webp",
-  areas: "/images/guide-areas.webp",
-  attractions: "/images/guide-activities.webp",
-  activities: "/images/guide-activities.webp",
-  services: "/images/guide-services.webp",
+  "food-drink": "/images/φαγητο και ποτο.jpg",
+  beaches: "/images/παραλια ιεραπετρας 3.jpg",
+  areas: "/images/χωρια.jpg",
+  attractions: "/images/αξιοθεατα.jpg",
+  activities: "/images/δραστηριοτητες.jpg",
+  services: "/images/υπηρεσιες.jpg",
 };
 
 function isRemoteImage(src: string) {

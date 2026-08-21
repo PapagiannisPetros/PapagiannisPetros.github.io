@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 
 type Experience = {
   icon: string;
   title: string;
   description: string;
+  image: string;
 };
 
 type Props = {
@@ -96,8 +98,14 @@ export function ExperiencesSection({ experiences, ui }: Props) {
               ×
             </button>
 
-            <div className="experience-modal-icon" aria-hidden="true">
-              {selectedExperience.icon}
+            <div className="guide-modal-media">
+              <Image
+                src={selectedExperience.image}
+                alt={selectedExperience.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 45vw"
+                className="guide-modal-image"
+              />
             </div>
 
             <div className="guide-modal-copy">
