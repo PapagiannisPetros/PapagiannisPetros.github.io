@@ -209,10 +209,50 @@ img {
   z-index: 1;
 }
 
+.hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
 .hero-image {
   object-fit: cover;
+  opacity: 0;
   transform: scale(1.06);
-  animation: heroZoom 8s ease-out forwards;
+  transition: opacity 1.2s ease, transform 6.5s ease;
+}
+
+.hero-image.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-slide-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  z-index: 3;
+  display: flex;
+  gap: 0.7rem;
+  transform: translateX(-50%);
+}
+
+.hero-slide-dots button {
+  width: 0.65rem;
+  height: 0.65rem;
+  padding: 0;
+  border: 1px solid rgba(250, 247, 242, 0.82);
+  border-radius: 999px;
+  background: rgba(250, 247, 242, 0.38);
+  box-shadow: 0 2px 10px rgba(10, 29, 39, 0.22);
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.hero-slide-dots button.active,
+.hero-slide-dots button:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.18);
 }
 
 .hero-copy {
