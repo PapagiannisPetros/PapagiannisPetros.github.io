@@ -49,7 +49,7 @@ export const destinations = [
     tag: "Seaside escape",
     description:
       "A favourite destination with a long sandy beach, shallow waters and a relaxed summer atmosphere — perfect for families.",
-    image: "/images/μακρυ γιαλλος 1.jpg",
+    image: "/images/μακρυ γιαλλος 2.jpg",
   },
   {
     name: "Koufonisi",
