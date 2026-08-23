@@ -104,7 +104,7 @@ export function ExperiencesSection({ experiences, ui }: Props) {
                 alt={selectedExperience.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 45vw"
-                className="guide-modal-image"
+                className="guide-modal-image experience-modal-image"
               />
             </div>
 

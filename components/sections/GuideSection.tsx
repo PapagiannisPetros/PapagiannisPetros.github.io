@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { type CSSProperties, useEffect, useMemo, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import type { GuideCategory } from "@/data/site";
 
@@ -45,6 +45,7 @@ export function GuideSection({ guideCategories, ui }: Props) {
   const [selectedItem, setSelectedItem] = useState<
     { item: GuideItem; categoryId: string; categoryLabel: string; groupTitle: string } | null
   >(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   useEffect(() => {
     setActiveGroupTitle(activeCategory?.groups[0]?.title ?? "");
@@ -69,20 +70,27 @@ export function GuideSection({ guideCategories, ui }: Props) {
     };
   }, [selectedItem]);
 
+  useEffect(() => {
+    setSelectedImageIndex(0);
+  }, [selectedItem]);
+
   const activeGroup =
     activeCategory?.groups.find((group) => group.title === activeGroupTitle) ??
     activeCategory?.groups[0];
 
   const revealDelays: Array<"0" | "1" | "2" | "3"> = ["0", "1", "2", "3"];
 
-  const featuredImage = useMemo(() => {
-    if (!selectedItem) return "";
-    return (
+  const featuredImages = useMemo(() => {
+    if (!selectedItem) return [];
+    const fallbackImage =
       selectedItem.item.image ??
       imageByCategoryId[selectedItem.categoryId] ??
-      activeCategory.image
-    );
+      activeCategory.image;
+    return selectedItem.item.images?.length ? selectedItem.item.images : [fallbackImage];
   }, [activeCategory.image, selectedItem]);
+
+  const featuredImage =
+    featuredImages[Math.min(selectedImageIndex, Math.max(featuredImages.length - 1, 0))] ?? "";
 
   if (!activeCategory) {
     return null;
@@ -150,29 +158,41 @@ export function GuideSection({ guideCategories, ui }: Props) {
               </div>
 
               <div className="guide-items-grid">
-                {activeGroup?.items.map((item, index) => (
-                  <Reveal
-                    key={`${activeGroup.title}-${item.name}`}
-                    delay={revealDelays[index % revealDelays.length]}
-                  >
-                    <button
-                      type="button"
-                      className="guide-item-card"
-                      onClick={() =>
-                        setSelectedItem({
-                          item,
-                          categoryId: activeCategory.id,
-                          categoryLabel: activeCategory.label,
-                          groupTitle: activeGroup.title,
-                        })
-                      }
+                {activeGroup?.items.map((item, index) => {
+                  const hasVisualCard =
+                    (activeCategory.id === "beaches" || activeCategory.id === "areas") &&
+                    Boolean(item.image);
+                  const cardStyle = hasVisualCard
+                    ? ({
+                        "--guide-card-image": `url("${item.image}")`,
+                      } as CSSProperties)
+                    : undefined;
+
+                  return (
+                    <Reveal
+                      key={`${activeGroup.title}-${item.name}`}
+                      delay={revealDelays[index % revealDelays.length]}
                     >
-                      <span className="guide-item-meta">{activeGroup.title}</span>
-                      <strong>{item.name}</strong>
-                      <span>{item.description}</span>
-                    </button>
-                  </Reveal>
-                ))}
+                      <button
+                        type="button"
+                        className={`guide-item-card ${hasVisualCard ? "guide-item-card-visual" : ""}`}
+                        style={cardStyle}
+                        onClick={() =>
+                          setSelectedItem({
+                            item,
+                            categoryId: activeCategory.id,
+                            categoryLabel: activeCategory.label,
+                            groupTitle: activeGroup.title,
+                          })
+                        }
+                      >
+                        <span className="guide-item-meta">{activeGroup.title}</span>
+                        <strong>{item.name}</strong>
+                        <span>{item.description}</span>
+                      </button>
+                    </Reveal>
+                  );
+                })}
               </div>
             </Reveal>
           </div>
@@ -209,6 +229,35 @@ export function GuideSection({ guideCategories, ui }: Props) {
                 unoptimized={isRemoteImage(featuredImage)}
                 className="guide-modal-image"
               />
+              {featuredImages.length > 1 ? (
+                <div className="guide-modal-slider" aria-label="Φωτογραφίες">
+                  <button
+                    type="button"
+                    aria-label="Προηγούμενη φωτογραφία"
+                    onClick={() =>
+                      setSelectedImageIndex((current) =>
+                        current === 0 ? featuredImages.length - 1 : current - 1,
+                      )
+                    }
+                  >
+                    ‹
+                  </button>
+                  <span>
+                    {selectedImageIndex + 1}/{featuredImages.length}
+                  </span>
+                  <button
+                    type="button"
+                    aria-label="Επόμενη φωτογραφία"
+                    onClick={() =>
+                      setSelectedImageIndex((current) =>
+                        current === featuredImages.length - 1 ? 0 : current + 1,
+                      )
+                    }
+                  >
+                    ›
+                  </button>
+                </div>
+              ) : null}
             </div>
 
             <div className="guide-modal-copy">

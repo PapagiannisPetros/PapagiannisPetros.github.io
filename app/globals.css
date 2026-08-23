@@ -699,13 +699,29 @@ img {
 }
 
 .guide-item-card {
+  position: relative;
   width: 100%;
   text-align: left;
   padding: 1.25rem;
   border: 1px solid rgba(74, 82, 64, 0.12);
   background: white;
+  overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.guide-item-card-visual {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image:
+    linear-gradient(180deg, rgba(10, 20, 28, 0.08) 0%, rgba(10, 20, 28, 0.78) 100%),
+    var(--guide-card-image);
+  background-position: center;
+  background-size: cover;
+  border-color: rgba(255, 255, 255, 0.24);
+  color: white;
 }
 
 .guide-item-card:hover {
@@ -715,6 +731,8 @@ img {
 }
 
 .guide-item-meta {
+  position: relative;
+  z-index: 1;
   display: inline-block;
   margin-bottom: 0.65rem;
   font-size: 0.58rem;
@@ -724,6 +742,8 @@ img {
 }
 
 .guide-item-card strong {
+  position: relative;
+  z-index: 1;
   display: block;
   font-family: var(--serif);
   font-size: 1.55rem;
@@ -731,12 +751,29 @@ img {
   color: var(--sea);
 }
 
+.guide-item-card-visual strong {
+  color: white;
+  text-shadow: 0 2px 14px rgba(5, 20, 28, 0.45);
+}
+
 .guide-item-card span:last-child {
+  position: relative;
+  z-index: 1;
   display: block;
   margin-top: 0.7rem;
   font-size: 0.76rem;
   line-height: 1.75;
   color: var(--muted);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.guide-item-card-visual span:last-child {
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 1px 8px rgba(5, 20, 28, 0.5);
 }
 
 .guide-modal-backdrop {
@@ -762,6 +799,40 @@ img {
 
 .guide-modal-media {
   min-height: 420px;
+}
+
+.guide-modal-slider {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  z-index: 2;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.45rem 0.6rem;
+  background: rgba(10, 20, 28, 0.58);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.guide-modal-slider button {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.guide-modal-slider span {
+  min-width: 3rem;
+  text-align: center;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
 }
 
 .guide-modal-copy {
@@ -933,6 +1004,11 @@ img {
 
 .experience-modal {
   grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr);
+}
+
+.experience-modal-image {
+  object-fit: contain;
+  background: var(--sea);
 }
 
 .travel-list {

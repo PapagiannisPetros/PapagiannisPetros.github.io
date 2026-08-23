@@ -9,6 +9,7 @@ type Destination = {
   tag: string;
   description: string;
   image: string;
+  images?: string[];
   featured?: boolean;
 };
 
@@ -19,6 +20,7 @@ type Props = {
 
 export function DestinationsSection({ destinations, ui }: Props) {
   const [selectedDestination, setSelectedDestination] = useState<Destination | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   useEffect(() => {
     if (!selectedDestination) return;
@@ -38,6 +40,18 @@ export function DestinationsSection({ destinations, ui }: Props) {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [selectedDestination]);
+
+  useEffect(() => {
+    setSelectedImageIndex(0);
+  }, [selectedDestination]);
+
+  const selectedImages = selectedDestination?.images?.length
+    ? selectedDestination.images
+    : selectedDestination
+      ? [selectedDestination.image]
+      : [];
+  const selectedImage =
+    selectedImages[Math.min(selectedImageIndex, Math.max(selectedImages.length - 1, 0))] ?? "";
 
   return (
     <>
@@ -108,12 +122,41 @@ export function DestinationsSection({ destinations, ui }: Props) {
 
             <div className="guide-modal-media">
               <Image
-                src={selectedDestination.image}
+                src={selectedImage}
                 alt={selectedDestination.name}
                 fill
-                unoptimized={selectedDestination.image.startsWith("http")}
+                unoptimized={selectedImage.startsWith("http")}
                 className="guide-modal-image"
               />
+              {selectedImages.length > 1 ? (
+                <div className="guide-modal-slider" aria-label="Φωτογραφίες">
+                  <button
+                    type="button"
+                    aria-label="Προηγούμενη φωτογραφία"
+                    onClick={() =>
+                      setSelectedImageIndex((current) =>
+                        current === 0 ? selectedImages.length - 1 : current - 1,
+                      )
+                    }
+                  >
+                    ‹
+                  </button>
+                  <span>
+                    {selectedImageIndex + 1}/{selectedImages.length}
+                  </span>
+                  <button
+                    type="button"
+                    aria-label="Επόμενη φωτογραφία"
+                    onClick={() =>
+                      setSelectedImageIndex((current) =>
+                        current === selectedImages.length - 1 ? 0 : current + 1,
+                      )
+                    }
+                  >
+                    ›
+                  </button>
+                </div>
+              ) : null}
             </div>
 
             <div className="guide-modal-copy">
