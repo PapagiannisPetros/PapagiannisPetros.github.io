@@ -1017,7 +1017,7 @@ const guideDetails: Record<
     title: "Chrysi Island – Gaidouronisi",
     description:
       "Chrysi Island, also known as Gaidouronisi, is a small uninhabited island south of Ierapetra. Its golden beaches of shell fragments, blue-green waters and the largest cedar forest in Europe create the image of an exotic destination just about an hour from the city harbour. Bring a snorkel mask to explore the underwater world of the island.",
-    image: "/images/χρυση 1.jpg",
+    image: "/images/χρυση 2.jpg",
   },
   "καστρο καλε": {
     title: "Kales Fortress",
