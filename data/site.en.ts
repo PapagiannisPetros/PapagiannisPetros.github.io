@@ -20,7 +20,7 @@ export const destinations = [
     tag: "Island – Day trip",
     description:
       "An uninhabited islet with a cedar forest and turquoise waters — a Caribbean scene in the Libyan Sea.",
-    image: "/images/χρυση 1.jpg",
+    image: "/images/χρυση 2.jpg",
     images: [
       "/images/χρυση 1.jpg",
       "/images/χρυση 2.jpg",
