@@ -10,6 +10,10 @@ type Props = {
   ui: { ariaLabel: string };
 };
 
+function isRemoteImage(src: string) {
+  return src.startsWith("http://") || src.startsWith("https://");
+}
+
 export function GalleryStrip({ gallery, ui }: Props) {
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
 
@@ -48,6 +52,7 @@ export function GalleryStrip({ gallery, ui }: Props) {
                   src={item.image}
                   alt={item.alt}
                   fill
+                  unoptimized={isRemoteImage(item.image)}
                   className="gallery-image"
                 />
               </button>
@@ -82,6 +87,7 @@ export function GalleryStrip({ gallery, ui }: Props) {
               alt={selectedImage.alt}
               fill
               sizes="(max-width: 900px) 92vw, 1100px"
+              unoptimized={isRemoteImage(selectedImage.image)}
               className="photo-modal-image"
             />
           </div>

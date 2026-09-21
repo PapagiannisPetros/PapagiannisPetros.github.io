@@ -7,10 +7,8 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { DestinationsSection } from "@/components/sections/DestinationsSection";
 import { ExperiencesSection } from "@/components/sections/ExperiencesSection";
-import { GalleryStrip } from "@/components/sections/GalleryStrip";
 import { GuideSection } from "@/components/sections/GuideSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { StatsStrip } from "@/components/sections/StatsStrip";
 import { TravelSection } from "@/components/sections/TravelSection";
 import * as el from "@/data/site";
 import * as en from "@/data/site.en";
@@ -27,7 +25,7 @@ function getLangFromCookie(): Lang | null {
 }
 
 export default function HomePage() {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLang] = useState<Lang>("el");
 
   useEffect(() => {
     const cookieLang = getLangFromCookie();
@@ -46,16 +44,18 @@ export default function HomePage() {
       />
       <main>
         <HeroSection ui={site.ui.hero} />
-        <StatsStrip stats={site.stats} />
         <AboutSection ui={site.ui.about} />
-        <DestinationsSection destinations={site.destinations} ui={site.ui.destinations} />
-        <GuideSection guideCategories={site.guideCategories} ui={site.ui.guide} />
-        <GalleryStrip gallery={site.gallery} ui={site.ui.gallery} />
         <ExperiencesSection experiences={site.experiences} ui={site.ui.experiences} />
+        <DestinationsSection destinations={site.destinations} ui={site.ui.destinations} />
         <TravelSection travelInfo={site.travelInfo} ui={site.ui.travel} />
-        <ContactSection contactDetails={site.contactDetails} ui={site.ui.contact} />
+        <GuideSection guideCategories={site.guideCategories} ui={site.ui.guide} />
+        <ContactSection
+          contactDetails={site.contactDetails}
+          socialLinks={site.socialLinks}
+          ui={site.ui.contact}
+        />
       </main>
-      <Footer navigation={site.navigation} contactDetails={site.contactDetails} ui={site.ui.footer} />
+      <Footer socialLinks={site.socialLinks} ui={site.ui.footer} />
     </>
   );
 }

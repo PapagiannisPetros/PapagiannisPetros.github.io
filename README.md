@@ -1,53 +1,46 @@
-# Ierapetra Tourism Site
+# Petros Papagiannis Personal Website
 
-Static tourism website σε `Next.js` με `App Router`, έτοιμο για deploy στο `Vercel`.
+Personal website built with `Next.js` App Router and static export.
 
-## Δομή
+## Structure
 
-- `app/`: layout, homepage και global styles
-- `components/`: sections και shared UI
-- `data/site.ts`: όλο το editable περιεχόμενο σε ένα σημείο
-- `next.config.ts`: static export config για hosting χωρίς server
+- `app/`: layout, homepage and global styles
+- `components/`: sections and shared UI
+- `data/site.ts`: Greek editable content
+- `data/site.en.ts`: English editable content
+- `next.config.ts`: static export config for hosting without a server
 
-## Πώς τρέχεις local
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Άνοιξε:
+Open:
 
 ```bash
 http://localhost:3000
 ```
 
-## Production build
+## Production Build
 
 ```bash
 npm run build
 ```
 
-Με το `output: "export"` η παραγωγή βγαίνει ως static output, οπότε το Vercel το σερβίρει χωρίς backend λογική.
+The project uses `output: "export"`, so the generated `out/` directory can be served as static files.
 
-Αν θέλεις να δεις το export τοπικά μετά το build:
+To preview the export locally after building:
 
 ```bash
 python3 -m http.server 4173 -d out
 ```
 
-και ανοίγεις `http://localhost:4173`.
+Then open `http://localhost:4173`.
 
-## Deploy στο Vercel
+## Common Edits
 
-1. Κάνε push το repo σε GitHub.
-2. Στο Vercel πάτα `Add New Project`.
-3. Επίλεξε το repo.
-4. Framework preset: `Next.js`.
-5. Deploy χωρίς extra environment variables.
-
-## Τι να πειράζεις συνήθως
-
-- Κείμενα, links, στοιχεία επικοινωνίας: `data/site.ts`
-- Styling / visual direction: `app/globals.css`
-- Δομή homepage: `app/page.tsx`
+- Text, links, contact details: `data/site.ts` and `data/site.en.ts`
+- Visual direction and responsive styling: `app/globals.css`
+- Homepage structure: `app/page.tsx`

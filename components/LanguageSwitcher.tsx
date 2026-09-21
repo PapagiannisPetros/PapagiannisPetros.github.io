@@ -34,23 +34,29 @@ export function LanguageSwitcher({ lang, onChange, variant = "header" }: Props) 
 
   return (
     <div className={`language-switch ${variant}`} role="group" aria-label="Language">
+      <span className="language-switch-mark" aria-hidden="true">
+        {lang.toUpperCase()}
+      </span>
       <button
         type="button"
         className={`language-switch-button ${lang === "el" ? "active" : ""}`}
         aria-pressed={lang === "el"}
+        aria-label="Ελληνικά"
         onClick={() => onSelect("el")}
         disabled={isPending}
       >
-        Ελληνικά
+        EL
       </button>
+      <span className="language-switch-divider" aria-hidden="true" />
       <button
         type="button"
         className={`language-switch-button ${lang === "en" ? "active" : ""}`}
         aria-pressed={lang === "en"}
+        aria-label="English"
         onClick={() => onSelect("en")}
         disabled={isPending}
       >
-        English
+        EN
       </button>
     </div>
   );

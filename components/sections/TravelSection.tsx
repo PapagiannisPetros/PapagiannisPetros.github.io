@@ -2,6 +2,7 @@ import { Reveal } from "@/components/Reveal";
 
 type TravelItem = {
   title: string;
+  period: string;
   detail: string;
 };
 
@@ -9,19 +10,41 @@ type Props = {
   travelInfo: TravelItem[];
   ui: {
     label: string;
-    title: { line1: string; line2: string };
-    googleMaps: string;
-    googleMapsUrl: string;
-    appleMaps: string;
-    appleMapsUrl: string;
-    iframeTitle: string;
-    iframeSrc: string;
+    educationTitle: string;
+    trainingLabel: string;
+    trainingTitle: string;
   };
 };
 
-export function TravelSection({ travelInfo, ui }: Props) {
+function EducationTrack({
+  items,
+}: {
+  items: TravelItem[];
+}) {
   return (
-    <section id="travel">
+    <ol className="education-track">
+      {items.map((item, index) => (
+        <Reveal key={item.title} delay={String(Math.min(index + 1, 3)) as "1" | "2" | "3"}>
+          <li>
+            <span className="education-index">{String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <span className="education-period">{item.period}</span>
+              <strong>{item.title}</strong>
+              <span className="education-detail">{item.detail}</span>
+            </div>
+          </li>
+        </Reveal>
+      ))}
+    </ol>
+  );
+}
+
+export function TravelSection({ travelInfo, ui }: Props) {
+  const educationItems = travelInfo.filter((_, index) => index === 0 || index === 3);
+  const trainingItems = travelInfo.filter((_, index) => index === 1 || index === 2);
+
+  return (
+    <section id="education" className="education-section">
       <div className="travel-grid">
         <div className="travel-content">
           <div className="section-header">
@@ -29,55 +52,28 @@ export function TravelSection({ travelInfo, ui }: Props) {
               <p className="section-label">{ui.label}</p>
             </Reveal>
             <Reveal delay="1">
-              <h2 className="section-title">
-                {ui.title.line1}
-                <br />
-                {ui.title.line2}
-              </h2>
+              <h2 className="section-title">{ui.educationTitle}</h2>
             </Reveal>
           </div>
 
-          <ul className="travel-list">
-            {travelInfo.map((item, index) => (
-              <Reveal
-                key={item.title}
-                delay={String(Math.min(index + 1, 3)) as "1" | "2" | "3"}
-              >
-                <li>
-                  <strong>{item.title}</strong>
-                  <span>{item.detail}</span>
-                </li>
-              </Reveal>
-            ))}
-          </ul>
-
-          <div className="travel-actions">
-            <a
-              className="button-primary"
-              href={ui.googleMapsUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {ui.googleMaps}
-            </a>
-            <a
-              className="button-secondary"
-              href={ui.appleMapsUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {ui.appleMaps}
-            </a>
+          <div className="education-column">
+            <EducationTrack items={educationItems} />
           </div>
         </div>
 
-        <div className="travel-map">
-          <iframe
-            src={ui.iframeSrc}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title={ui.iframeTitle}
-          />
+        <div className="travel-content training-content">
+          <div className="section-header">
+            <Reveal>
+              <p className="section-label">{ui.trainingLabel}</p>
+            </Reveal>
+            <Reveal delay="1">
+              <h2 className="section-title">{ui.trainingTitle}</h2>
+            </Reveal>
+          </div>
+
+          <div className="education-column training-column">
+            <EducationTrack items={trainingItems} />
+          </div>
         </div>
       </div>
     </section>

@@ -9,6 +9,7 @@ type Destination = {
   tag: string;
   description: string;
   image: string;
+  chips?: string[];
   images?: string[];
   featured?: boolean;
 };
@@ -55,7 +56,7 @@ export function DestinationsSection({ destinations, ui }: Props) {
 
   return (
     <>
-      <section id="destinations" className="section">
+      <section id="projects" className="section projects-section">
         <div className="site-shell">
           <div className="section-header">
             <Reveal>
@@ -87,9 +88,19 @@ export function DestinationsSection({ destinations, ui }: Props) {
                     className="destination-image"
                   />
                   <div className="destination-content">
-                    <p className="destination-tag">{destination.tag}</p>
+                    <div className="destination-kicker">
+                      <p className="destination-tag">{destination.tag}</p>
+                      <span className="destination-status">Case file</span>
+                    </div>
                     <h3 className="destination-title">{destination.name}</h3>
                     <p className="destination-copy">{destination.description}</p>
+                    {destination.chips?.length ? (
+                      <span className="destination-chips">
+                        {destination.chips.slice(0, 4).map((chip) => (
+                          <span key={chip}>{chip}</span>
+                        ))}
+                      </span>
+                    ) : null}
                   </div>
                 </button>
               </Reveal>
@@ -163,6 +174,13 @@ export function DestinationsSection({ destinations, ui }: Props) {
               <p className="guide-modal-tag">{selectedDestination.tag}</p>
               <h3 id="destination-modal-title">{selectedDestination.name}</h3>
               <p>{selectedDestination.description}</p>
+              {selectedDestination.chips?.length ? (
+                <ul className="destination-modal-chips">
+                  {selectedDestination.chips.map((chip) => (
+                    <li key={chip}>{chip}</li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           </div>
         </div>

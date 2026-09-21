@@ -7,14 +7,21 @@ import { Reveal } from "@/components/Reveal";
 type Experience = {
   icon: string;
   title: string;
+  period?: string;
+  eyebrow?: string;
   description: string;
+  highlights?: string[];
   image: string;
 };
 
 type Props = {
   experiences: Experience[];
-  ui: { label: string; title: string; closeLabel: string };
+  ui: { label: string; title: string; copy?: string; closeLabel: string };
 };
+
+function isRemoteImage(src: string) {
+  return src.startsWith("http://") || src.startsWith("https://");
+}
 
 export function ExperiencesSection({ experiences, ui }: Props) {
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
@@ -51,9 +58,18 @@ export function ExperiencesSection({ experiences, ui }: Props) {
                 {ui.title}
               </h2>
             </Reveal>
+            {ui.copy ? (
+              <Reveal delay="2">
+                <p className="section-copy experiences-intro">{ui.copy}</p>
+              </Reveal>
+            ) : null}
           </div>
 
-          <div className="experiences-grid">
+          <div
+            className={`experience-timeline${
+              experiences.length === 1 ? " experience-timeline-single" : ""
+            }`}
+          >
             {experiences.map((experience, index) => (
               <Reveal
                 key={experience.title}
@@ -64,11 +80,25 @@ export function ExperiencesSection({ experiences, ui }: Props) {
                   className="experience-card"
                   onClick={() => setSelectedExperience(experience)}
                 >
+                  <span className="experience-index" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                   <span className="experience-icon" aria-hidden="true">
                     {experience.icon}
                   </span>
+                  <span className="experience-meta">
+                    {experience.period}
+                    {experience.eyebrow ? ` · ${experience.eyebrow}` : ""}
+                  </span>
                   <h3 className="experience-title">{experience.title}</h3>
                   <p className="experience-copy">{experience.description}</p>
+                  {experience.highlights?.length ? (
+                    <span className="experience-highlights">
+                      {experience.highlights.slice(0, 3).map((highlight) => (
+                        <span key={highlight}>{highlight}</span>
+                      ))}
+                    </span>
+                  ) : null}
                 </button>
               </Reveal>
             ))}
@@ -104,6 +134,7 @@ export function ExperiencesSection({ experiences, ui }: Props) {
                 alt={selectedExperience.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 45vw"
+                unoptimized={isRemoteImage(selectedExperience.image)}
                 className="guide-modal-image experience-modal-image"
               />
             </div>
@@ -111,7 +142,17 @@ export function ExperiencesSection({ experiences, ui }: Props) {
             <div className="guide-modal-copy">
               <p className="guide-modal-tag">{ui.label}</p>
               <h3 id="experience-modal-title">{selectedExperience.title}</h3>
+              {selectedExperience.period ? (
+                <p className="experience-modal-meta">{selectedExperience.period}</p>
+              ) : null}
               <p>{selectedExperience.description}</p>
+              {selectedExperience.highlights?.length ? (
+                <ul className="experience-modal-list">
+                  {selectedExperience.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           </div>
         </div>

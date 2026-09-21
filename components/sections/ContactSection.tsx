@@ -14,6 +14,7 @@ type ContactUi = {
   label: string;
   title: { line1: string; emphasis: string };
   copy: string;
+  socialTitle: string;
   form: {
     subjectDefault: string;
     body: { nameLabel: string; emailLabel: string; fallbackMessage: string };
@@ -21,20 +22,18 @@ type ContactUi = {
     submit: string;
     sent: string;
   };
-  meta: {
-    phone: { label: string; copy: string };
-    email: { label: string; copy: string };
-    location: { label: string; value: string };
-  };
 };
 
 type Props = {
   contactDetails: ContactDetails;
+  socialLinks: Array<{ label: string; href: string; value: string }>;
   ui: ContactUi;
 };
 
-export function ContactSection({ contactDetails, ui }: Props) {
+export function ContactSection({ contactDetails, socialLinks, ui }: Props) {
   const [sent, setSent] = useState(false);
+  const getLinkProps = (href: string) =>
+    href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {};
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -73,8 +72,12 @@ export function ContactSection({ contactDetails, ui }: Props) {
             <Reveal delay="1">
               <h2 className="section-title">
                 {ui.title.line1}
-                <br />
-                <em style={{ color: "var(--terracotta)" }}>{ui.title.emphasis}</em>
+                {ui.title.emphasis ? (
+                  <>
+                    <br />
+                    <em style={{ color: "var(--terracotta)" }}>{ui.title.emphasis}</em>
+                  </>
+                ) : null}
               </h2>
             </Reveal>
             <Reveal delay="2">
@@ -99,27 +102,21 @@ export function ContactSection({ contactDetails, ui }: Props) {
             </form>
           </div>
 
-          <div className="contact-meta">
-            <article className="meta-card">
-              <p className="meta-card-label">{ui.meta.phone.label}</p>
-              <p className="meta-card-value">{contactDetails.phone}</p>
-              <p className="meta-card-copy">{ui.meta.phone.copy}</p>
-            </article>
-            <article className="meta-card">
-              <p className="meta-card-label">{ui.meta.email.label}</p>
-              <p className="meta-card-value">{contactDetails.email}</p>
-              <p className="meta-card-copy">{ui.meta.email.copy}</p>
-            </article>
-            <article className="meta-card">
-              <p className="meta-card-label">{ui.meta.location.label}</p>
-              <p className="meta-card-value">{ui.meta.location.value}</p>
-              <p className="meta-card-copy">
-                <a href={contactDetails.mapsUrl} target="_blank" rel="noreferrer">
-                  {contactDetails.address}
-                </a>
+          <aside className="contact-socials" aria-labelledby="contact-socials-title">
+            <Reveal delay="1">
+              <p className="contact-socials-label" id="contact-socials-title">
+                {ui.socialTitle}
               </p>
-            </article>
-          </div>
+            </Reveal>
+            <div className="social-links">
+              {socialLinks.map((item) => (
+                <a key={item.href} className="social-link" href={item.href} {...getLinkProps(item.href)}>
+                  <span>{item.label}</span>
+                  <strong>{item.value}</strong>
+                </a>
+              ))}
+            </div>
+          </aside>
         </div>
       </div>
     </section>

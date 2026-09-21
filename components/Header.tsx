@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { LanguageSwitcher, type Lang } from "@/components/LanguageSwitcher";
 
@@ -26,7 +27,14 @@ export function Header({ navigation, ui, lang, onLangChange }: Props) {
     <header className="site-header">
       <nav className={scrolled ? "scrolled" : ""} aria-label={ui.ariaLabel}>
         <a className="brand" href="#top">
-          <img src="/images/ieratrip-logo.svg" alt={ui.brand} className="brand-logo" />
+          <Image
+            src="/images/petros_papagiannis_full_logo_white_transparent.png"
+            alt={ui.brand}
+            width={170}
+            height={100}
+            priority
+            className="brand-logo"
+          />
         </a>
         <div className="nav-actions">
           <div className="nav-links">
