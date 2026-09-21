@@ -1,9 +1,8 @@
-name: Deploy GitHub Pages
+name: Deploy Next.js To Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -12,8 +11,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -25,19 +24,22 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
           cache: npm
 
-      - name: Install dependencies
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install Dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build Static Export
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: ./out
 
   deploy:
     needs: build
@@ -46,6 +48,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy To GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
