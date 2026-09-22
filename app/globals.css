@@ -1040,7 +1040,7 @@ img {
 }
 
 .destination-card.destination-featured .destination-title {
-  font-size: 1.75rem;
+  font-size: clamp(1.2rem, 2vw, 1.38rem);
 }
 
 .destination-copy {
@@ -1048,6 +1048,14 @@ img {
   font-size: 0.72rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.72);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.destination-card.destination-featured .destination-copy {
+  -webkit-line-clamp: 4;
 }
 
 .destination-chips,
@@ -2143,6 +2151,10 @@ img {
     rgba(7, 17, 31, 0.94);
 }
 
+.experience-timeline-single .experience-title {
+  font-size: clamp(1.9rem, 4vw, 2.85rem);
+}
+
 .experience-timeline-single .experience-copy {
   max-width: 58rem;
   font-size: 0.84rem;
@@ -2256,6 +2268,53 @@ img {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
+}
+
+.experience-eyebrow {
+  margin-bottom: 0.85rem;
+  color: rgba(235, 248, 250, 0.62);
+}
+
+.experience-periods,
+.experience-modal-periods {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0 4.5rem 0.9rem 0;
+}
+
+.experience-modal-periods {
+  margin-right: 0;
+}
+
+.experience-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid rgba(214, 163, 67, 0.36);
+  background:
+    linear-gradient(135deg, rgba(214, 163, 67, 0.14), rgba(34, 211, 238, 0.08)),
+    rgba(255, 255, 255, 0.05);
+  padding: 0.56rem 0.72rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.experience-period-count {
+  display: inline-grid;
+  place-items: center;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #07111f;
+  font-size: 0.58rem;
+  line-height: 1;
 }
 
 .experience-title {

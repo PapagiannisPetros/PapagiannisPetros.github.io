@@ -8,6 +8,7 @@ type Experience = {
   icon: string;
   title: string;
   period?: string;
+  periods?: string[];
   eyebrow?: string;
   description: string;
   highlights?: string[];
@@ -86,15 +87,30 @@ export function ExperiencesSection({ experiences, ui }: Props) {
                   <span className="experience-icon" aria-hidden="true">
                     {experience.icon}
                   </span>
-                  <span className="experience-meta">
-                    {experience.period}
-                    {experience.eyebrow ? ` · ${experience.eyebrow}` : ""}
-                  </span>
+                  {experience.periods?.length ? (
+                    <span className="experience-periods" aria-label={experience.period}>
+                      {experience.periods.map((period, periodIndex) => (
+                        <span className="experience-period" key={period}>
+                          <span className="experience-period-count">
+                            {String(periodIndex + 1).padStart(2, "0")}
+                          </span>
+                          {period}
+                        </span>
+                      ))}
+                    </span>
+                  ) : experience.period ? (
+                    <span className="experience-meta">{experience.period}</span>
+                  ) : null}
+                  {experience.eyebrow ? (
+                    <span className="experience-meta experience-eyebrow">
+                      {experience.eyebrow}
+                    </span>
+                  ) : null}
                   <h3 className="experience-title">{experience.title}</h3>
                   <p className="experience-copy">{experience.description}</p>
                   {experience.highlights?.length ? (
                     <span className="experience-highlights">
-                      {experience.highlights.slice(0, 3).map((highlight) => (
+                      {experience.highlights.slice(0, 8).map((highlight) => (
                         <span key={highlight}>{highlight}</span>
                       ))}
                     </span>
@@ -142,7 +158,18 @@ export function ExperiencesSection({ experiences, ui }: Props) {
             <div className="guide-modal-copy">
               <p className="guide-modal-tag">{ui.label}</p>
               <h3 id="experience-modal-title">{selectedExperience.title}</h3>
-              {selectedExperience.period ? (
+              {selectedExperience.periods?.length ? (
+                <div className="experience-modal-periods" aria-label={selectedExperience.period}>
+                  {selectedExperience.periods.map((period, index) => (
+                    <span className="experience-period" key={period}>
+                      <span className="experience-period-count">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      {period}
+                    </span>
+                  ))}
+                </div>
+              ) : selectedExperience.period ? (
                 <p className="experience-modal-meta">{selectedExperience.period}</p>
               ) : null}
               <p>{selectedExperience.description}</p>

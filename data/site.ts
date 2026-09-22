@@ -32,19 +32,51 @@ export const stats = [
 
 export const destinations = [
   {
+    name: "UAV Cybersecurity",
+    tag: "CEID · 2026",
+    description:
+      "Ανάλυση απειλών σε επικοινωνία, πλοήγηση, αισθητήρες και ground control στρατιωτικών UAV, μαζί με μέτρα προστασίας.",
+    chips: ["Threat Modeling", "UAV", "Security Research", "Countermeasures"],
+    image: images.code,
+    featured: true,
+  },
+  {
+    name: "Penetration Testing Lab",
+    tag: "Personal · 2026 - ongoing",
+    description:
+      "Απομονωμένο VM lab με Kali και ευάλωτους στόχους για reconnaissance, scanning, exploitation και privilege escalation.",
+    chips: ["Kali", "Nmap", "Burp Suite", "Metasploit"],
+    image: images.security,
+  },
+  {
+    name: "Kubernetes Forecasting",
+    tag: "Academic Project · 2026",
+    description:
+      "End-to-end ML pipeline για πρόβλεψη πόρων Kubernetes με δεδομένα Prometheus και containerized deployment.",
+    chips: ["Kubernetes", "Prometheus", "ML", "Containers"],
+    image: images.systems,
+  },
+  {
+    name: "AI Strategy & Data Utilization Study",
+    tag: "Professional study · 2026",
+    description:
+      "Συμμετοχή σε μελέτη AI strategy και αξιοποίησης δεδομένων, με ανάλυση οργανωτικών αναγκών, υφιστάμενων δυνατοτήτων, AI use cases, data management practices, απαιτήσεων, action plans και μετρήσιμων KPIs.",
+    chips: ["AI Strategy", "Data Utilization", "AI Use Cases", "KPIs", "AI Act"],
+    image: images.data,
+  },
+  {
     name: "Social AI Forecasting Platform",
     tag: "Professional project · 2026",
     description:
       "Forecasting και analytics platform με KPI dashboards, correlation analysis, Prophet regressors, MySQL persistence, authentication και Docker deployment.",
     chips: ["Python", "Streamlit", "Prophet", "MySQL", "Docker"],
     image: images.ai,
-    featured: true,
   },
   {
     name: "Tender Comparator Platform",
     tag: "Professional project · 2026",
     description:
-      "Πλατφόρμα σύγκρισης εγγράφων διαγωνισμών με templates, εντοπισμό αποκλίσεων, ιστορικό ελέγχων και εξαγωγή Markdown/PDF reports.",
+      "Πλατφόρμα σύγκρισης εγγράφων διαγωνισμών δικαιούχων με templates, εντοπισμό αποκλίσεων, εξαγωγή Markdown/PDF reports, ιστορικό ελέγχων και προαιρετικά Gemini summaries.",
     chips: ["Python", "Streamlit", "SQLite", "Gemini", "Reports"],
     image: images.lab,
   },
@@ -57,28 +89,12 @@ export const destinations = [
     image: images.data,
   },
   {
-    name: "Kubernetes Forecasting",
+    name: "AIoT Human Activity Recognition",
     tag: "Academic Project · 2026",
     description:
-      "End-to-end ML pipeline για πρόβλεψη πόρων Kubernetes με δεδομένα Prometheus και containerized deployment.",
-    chips: ["Kubernetes", "Prometheus", "ML", "Containers"],
-    image: images.systems,
-  },
-  {
-    name: "Penetration Testing Lab",
-    tag: "Personal · 2026 - ongoing",
-    description:
-      "Απομονωμένο VM lab με Kali και ευάλωτους στόχους για reconnaissance, scanning, exploitation και privilege escalation.",
-    chips: ["Kali", "Nmap", "Burp Suite", "Metasploit"],
-    image: images.security,
-  },
-  {
-    name: "UAV Cybersecurity",
-    tag: "CEID · 2026",
-    description:
-      "Ανάλυση απειλών σε επικοινωνία, πλοήγηση, αισθητήρες και ground control στρατιωτικών UAV, μαζί με μέτρα προστασίας.",
-    chips: ["Threat Modeling", "UAV", "Security Research", "Countermeasures"],
-    image: images.code,
+      "PAMAP2 activity-recognition workflow με MongoDB ingestion, signal preprocessing, windowing, feature engineering, σύγκριση sensor configurations και SVM/Random Forest μοντέλα.",
+    chips: ["Python", "MongoDB", "scikit-learn", "Time-Series ML"],
+    image: images.ai,
   },
   {
     name: "BigQuery Forecasting Pipeline",
@@ -89,19 +105,11 @@ export const destinations = [
     image: images.ai,
   },
   {
-    name: "Traffic Streaming Pipeline",
+    name: "Parallel Big Data Scaling",
     tag: "Academic Project · 2026",
     description:
-      "Streaming traffic-simulation pipeline με UXsim events σε Redpanda, Spark Structured Streaming, MongoDB storage και FastAPI exposure.",
-    chips: ["Python", "Kafka", "Spark", "MongoDB", "FastAPI"],
-    image: images.code,
-  },
-  {
-    name: "eduScout - Open Courses Aggregator",
-    tag: "Academic Project · 2026",
-    description:
-      "Full-stack course-catalog aggregation και analytics platform με React frontend, Express API, MongoDB storage και Spark-based ML/analytics jobs.",
-    chips: ["React", "TypeScript", "Express", "MongoDB", "PySpark"],
+      "Υλοποίηση standard και min-max scaling για μεγάλα binary datasets με serial C, SIMD, OpenMP και CUDA εκδόσεις, generated benchmarks και NumPy-based correctness checks.",
+    chips: ["C", "CUDA", "SIMD", "OpenMP", "NumPy"],
     image: images.systems,
   },
   {
@@ -111,6 +119,14 @@ export const destinations = [
       "EDA και ML pipeline για intrusion detection με data cleaning, feature selection, binary attack detection και multiclass attack-family classification.",
     chips: ["Python", "scikit-learn", "Pandas", "Random Forest"],
     image: images.security,
+  },
+  {
+    name: "Open Courses Aggregator",
+    tag: "Academic Project · 2026",
+    description:
+      "Full-stack course-catalog aggregation και analytics platform με React frontend, Express API, MongoDB storage και Spark-based ML/analytics jobs.",
+    chips: ["React", "TypeScript", "Express", "MongoDB", "PySpark"],
+    image: images.systems,
   },
 ];
 
@@ -126,46 +142,22 @@ export const experiences = [
   {
     icon: "AI",
     title: "Software Engineer",
-    period: "Jun 2025 - Dec 2025 · Jul 2026 - ongoing",
+    period: "Ιουν 2025 - Δεκ 2025 · Ιουλ 2026 - σήμερα",
+    periods: ["Ιουν 2025 - Δεκ 2025", "Ιουλ 2026 - σήμερα"],
     eyebrow: "Full-stack · AI · Data systems",
     description:
-      "Συμμετοχή σε production-oriented εφαρμογές με backend APIs, server-side logic, frontend integration, secure application development, data workflows και AI/LLM λειτουργίες.",
+      "Συμμετοχή σε production-oriented εφαρμογές, AI/data studies, backend APIs, server-side logic, frontend integration, secure application development, data workflows και AI/LLM λειτουργίες.",
     highlights: [
       "Backend APIs",
       "Database/API design",
       "RAG / NLQ systems",
       "ETL pipelines",
+      "AI strategy studies",
       "ML forecasting",
       "Authentication & logging",
       "Docker/Linux deployment",
     ],
     image: images.code,
-  },
-  {
-    icon: "TA",
-    title: "Teaching Assistant",
-    period: "Oct 2024 - Feb 2025",
-    eyebrow: "Differential Equations · Applied Mathematics",
-    description:
-      "Υποστήριξη διαλέξεων, problem-solving sessions και φοιτητικής καθοδήγησης σε πανεπιστημιακό μάθημα εφαρμοσμένων μαθηματικών.",
-    highlights: [
-      "Lecture support",
-      "Problem solving",
-      "Student support",
-      "Coursework preparation",
-      "Assessment assistance",
-    ],
-    image: images.systems,
-  },
-  {
-    icon: "LAB",
-    title: "Lab Instructor",
-    period: "Oct 2024 - Jun 2025",
-    eyebrow: "Mathematical Foundations in Computer Science",
-    description:
-      "Διεξαγωγή εργαστηρίων σε αλγοριθμική σκέψη, λογική και αποδείξεις, με καθοδήγηση ασκήσεων και αξιολόγηση παραδοτέων.",
-    highlights: ["Algorithms", "Logic", "Proofs", "Lab delivery", "Student feedback"],
-    image: images.lab,
   },
 ];
 
@@ -187,12 +179,6 @@ export const travelInfo = [
     period: "Σε εξέλιξη",
     detail:
       "Υποψήφιος, με προετοιμασία σε network security, IAM, risk management, cryptography και incident response.",
-  },
-  {
-    title: "Σχολική εκπαίδευση",
-    period: "Σεπ 2016 - Ιουν 2022",
-    detail:
-      "Δευτεροβάθμια εκπαίδευση στην Κοζάνη με έμφαση σε Μαθηματικά, Φυσική και Χημεία.",
   },
 ];
 
@@ -229,9 +215,9 @@ export const ui = {
     image: "/images/CVmeZOOM.jpg",
     imageAlt: "Πορτρέτο του Petros Papagiannis",
     label: "Προφίλ",
-    title: { line1: "Ποιος είναι ο", emphasis: "Petros Papagiannis", line2: "" },
+    title: { line1: "Σχετικά με εμένα ", emphasis: "", line2: "" },
     copy:
-      "Είμαι προπτυχιακός φοιτητής Μηχανικών Η/Υ και Πληροφορικής στο Πανεπιστήμιο Πατρών, με εστίαση στο cybersecurity, το secure software engineering και τα AI-driven systems. Η εμπειρία μου καλύπτει backend services, data-driven applications, production-oriented tools, authentication, logging, deployment hygiene, data handling και reliability. Παράλληλα αναπτύσσω πρακτική εμπειρία σε penetration testing, vulnerability analysis, Linux environments, networking, web security και security tooling μέσα από οργανωμένη εκπαίδευση και απομονωμένα εργαστήρια. Στόχος μου είναι η ανάπτυξη αξιόπιστων συστημάτων με καθαρή αρχιτεκτονική, τεχνική ακρίβεια και security-first τρόπο σκέψης.",
+    " Είμαι ο Πέτρος Παπαγιάννης, φοιτητής 5ου έτους Μηχανικός Ηλεκτρονικών Υπολογιστών και Πληροφορικής στο Πανεπιστήμιο Πατρών, με κύρια εστίαση στην Κυβερνοασφάλεια, την Ασφαλή Ανάπτυξη Λογισμικού και την Τεχνητή Νοημοσύνη. Επαγγελματικά, έχω εργαστεί ως Software Engineer, συμμετέχοντας στην ανάπτυξη backend υπηρεσιών, AI-powered εφαρμογών και μελετών, RAG συστημάτων, data-driven πλατφορμών και εργαλείων αυτοματοποίησης. Η εμπειρία μου περιλαμβάνει σχεδιασμό εφαρμογών και APIs, διαχείριση δεδομένων, ανάπτυξη και deployment εφαρμογών, καθώς και ενσωμάτωση τεχνολογιών AI/LLM σε πραγματικά έργα. Παράλληλα, αναπτύσσω τις γνώσεις μου στην κυβερνοασφάλεια μέσα από hands-on penetration testing, vulnerability analysis, network και web security, καθώς και Linux-based security environments. Τα projects μου περιλαμβάνουν penetration-testing labs, IDS και machine learning, Kubernetes-based συστήματα και έρευνα στον χώρο της κυβερνοασφάλειας. Μου αρέσει να κατανοώ σε βάθος τον τρόπο λειτουργίας των συστημάτων, να εντοπίζω τρόπους βελτίωσης και ασφάλειάς τους και να δημιουργώ πρακτικές λύσεις που συνδυάζουν λογισμικό, τεχνητή νοημοσύνη και κυβερνοασφάλεια.",
     link: "Δείτε τα έργα",
   },
   destinations: {
@@ -338,39 +324,88 @@ export type GuideCategory = {
 
 export const guideCategories: GuideCategory[] = [
   {
+    id: "security",
+    label: "Cybersecurity",
+    intro:
+      "Security tooling, networking, penetration-testing methodology και βασικά security foundations από το CV.",
+    image: images.security,
+    groups: [
+      {
+        title: "Security",
+        items: [
+          {
+            name: "Cybersecurity Tooling",
+            description: "Nmap, Wireshark, Burp Suite και Metasploit για reconnaissance, traffic analysis, web testing και exploitation labs.",
+            image: images.security,
+          },
+          {
+            name: "Security Testing & Analysis",
+            description: "Reconnaissance, enumeration, vulnerability analysis, penetration testing, threat modeling και IDS workflows.",
+            image: images.lab,
+          },
+        ],
+      },
+      {
+        title: "Foundations",
+        items: [
+          {
+            name: "Networking & Protocols",
+            description: "TCP/IP, DNS, DHCP, VLANs, VPN, TLS/SSL και Kafka/Redpanda protocol experience.",
+            image: images.systems,
+          },
+          {
+            name: "Cryptography & Security Foundations",
+            description: "Hashing, symmetric/asymmetric cryptography, PKI και digital certificates.",
+            image: images.security,
+          },
+          {
+            name: "Operating Systems",
+            description: "Linux environments όπως Ubuntu, Debian και Kali, μαζί με Windows και QEMU/KVM virtualization.",
+            image: images.lab,
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "engineering",
     label: "Software Engineering",
     intro:
-      "Full-stack εφαρμογές, APIs, responsive interfaces και προϊόντα με καθαρή αρχιτεκτονική.",
+      "Programming, backend APIs, web interfaces και delivery tooling για production-oriented projects.",
     image: images.code,
     groups: [
       {
-        title: "Frontend",
+        title: "Development",
         items: [
           {
-            name: "React / TypeScript",
-            description: "Δυναμικά interfaces, UI integration, usability testing και responsive εμπειρίες.",
+            name: "Programming & Scripting",
+            description: "Python, C, C++, Bash, PowerShell, PHP, JavaScript, TypeScript, C# και Java.",
             image: images.code,
           },
           {
-            name: "HTML5 / CSS3 / Bootstrap",
-            description: "Καθαρή δομή, προσεγμένο styling και γρήγορο prototyping για web projects.",
+            name: "Backend & APIs",
+            description: "FastAPI, Node.js, Express, REST APIs, authentication και sessions.",
+            image: images.systems,
+          },
+          {
+            name: "Web & UI Technologies",
+            description: "React, Next.js, Streamlit, HTML5, CSS3, Bootstrap και responsive interface work.",
             image: images.code,
           },
         ],
       },
       {
-        title: "Backend",
+        title: "Delivery",
         items: [
           {
-            name: "Node.js / PHP / Python",
-            description: "Backend APIs, server-side logic, runtime environments και σύνδεση με βάσεις δεδομένων.",
+            name: "Platforms, DevOps & Tooling",
+            description: "Git, GitHub, CI/CD pipelines, VS Code, Jupyter Notebook, Makefile και Vercel.",
             image: images.systems,
           },
           {
-            name: "Databases",
-            description: "MySQL, SQLite και MongoDB για structured application data και project storage.",
-            image: images.data,
+            name: "Academic Foundations & Systems Knowledge",
+            description: "Data structures and algorithms, operating systems, computer networks, distributed systems και software engineering.",
+            image: images.code,
           },
         ],
       },
@@ -380,75 +415,41 @@ export const guideCategories: GuideCategory[] = [
     id: "ai-data",
     label: "AI & Data",
     intro:
-      "LLM-powered προϊόντα, RAG/NLQ συστήματα, ML forecasting και data pipelines από ingestion μέχρι visualization.",
+      "AI/LLM systems, data science, databases, forecasting, big-data processing και analytics workflows.",
     image: images.ai,
     groups: [
       {
-        title: "LLMs",
+        title: "AI & ML",
         items: [
           {
-            name: "GPT / Gemini integration",
-            description: "Conversational AI, prompt engineering, fine-tuning, RAG και ανάκτηση σε πραγματικό χρόνο.",
+            name: "AI/LLM Systems",
+            description: "Gemini, RAG, prompting, input validation, abuse prevention και content privacy.",
             image: images.ai,
           },
           {
-            name: "NLQ systems",
-            description: "Ερωτήματα φυσικής γλώσσας για dashboards, analytics και knowledge bases δημόσιων υπηρεσιών.",
-            image: images.data,
-          },
-        ],
-      },
-      {
-        title: "Machine Learning",
-        items: [
-          {
-            name: "TensorFlow / PyTorch / scikit-learn",
-            description: "ML workflows με Pandas, NumPy, forecasting και πειραματισμό μοντέλων.",
+            name: "Data Science, ML & Forecasting",
+            description: "PyTorch, scikit-learn, Pandas, NumPy, Prophet, BigQuery ML και ARIMA PLUS.",
             image: images.ai,
           },
           {
-            name: "Airflow / BigQuery / PySpark",
-            description: "ETL pipelines, DAG workflows, big data processing και αυτοματοποιημένο forecasting.",
-            image: images.data,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "security",
-    label: "Cybersecurity",
-    intro:
-      "Πρακτική εκπαίδευση security με έμφαση σε reconnaissance, vulnerability analysis, exploitation και secure foundations.",
-    image: images.security,
-    groups: [
-      {
-        title: "Offensive tools",
-        items: [
-          {
-            name: "Nmap / Burp Suite / Metasploit",
-            description: "Enumeration, web testing, exploitation labs και πρακτικός κύκλος επίθεσης.",
-            image: images.security,
-          },
-          {
-            name: "Kali Linux labs",
-            description: "Απομονωμένα VM environments με vulnerable targets για πρακτική εξάσκηση.",
-            image: images.lab,
-          },
-        ],
-      },
-      {
-        title: "Foundations",
-        items: [
-          {
-            name: "Network security",
-            description: "TCP/IP, DNS, DHCP, VLANs, VPN, TLS/SSL και threat modeling.",
+            name: "Mathematics for ML & AI",
+            description: "Linear algebra, probability theory, statistics, optimization και calculus.",
             image: images.systems,
           },
+        ],
+      },
+      {
+        title: "Data",
+        items: [
           {
-            name: "Cryptography",
-            description: "Hashing, symmetric/asymmetric cryptography, PKI και digital certificates.",
-            image: images.security,
+            name: "Databases & Data Stores",
+            description: "MySQL, SQLite, MongoDB και BigQuery για application data, analytics και project storage.",
+            image: images.data,
+          },
+          {
+            name: "Big Data, Streaming & Analytics",
+            description: "Spark, PySpark, Spark Structured Streaming, Airflow, Looker και data visualization.",
+            image: images.data,
           },
         ],
       },
@@ -458,35 +459,30 @@ export const guideCategories: GuideCategory[] = [
     id: "systems",
     label: "Systems",
     intro:
-      "Βασικές γνώσεις computer engineering σε OS, distributed systems, parallelism, concurrency και DevOps tooling.",
+      "Systems, parallel programming, cloud-native observability και algorithmic foundations από academic/project work.",
     image: images.systems,
     groups: [
       {
-        title: "Low-level & parallel",
+        title: "Systems",
         items: [
           {
-            name: "C / C++ / Java / C#",
-            description: "Programming foundations με systems thinking και ισχυρό ακαδημαϊκό υπόβαθρο.",
-            image: images.code,
+            name: "Parallel, GPU & Systems Programming",
+            description: "CUDA, SIMD, OpenMP, MPI, multithreading, POSIX Threads, IPC και system calls.",
+            image: images.systems,
           },
           {
-            name: "MPI / OpenMP / POSIX Threads",
-            description: "Parallelism, multithreading, shared-memory parallelism και process coordination.",
+            name: "Cloud-Native & Observability",
+            description: "Docker, Docker Compose, Kubernetes, Argo Workflows, Prometheus και Grafana.",
             image: images.systems,
           },
         ],
       },
       {
-        title: "Platforms",
+        title: "Algorithms",
         items: [
           {
-            name: "Linux / Docker / CI/CD",
-            description: "Ubuntu, Debian, Kali, Git, GitHub, Docker και deployment workflows.",
-            image: images.lab,
-          },
-          {
-            name: "Kubernetes / Prometheus / Grafana",
-            description: "Containerized systems, monitoring data και pipelines πρόβλεψης πόρων.",
+            name: "Algorithms & Data Structures",
+            description: "R-trees, k-d Trees, LSH, range queries και feature engineering.",
             image: images.systems,
           },
         ],

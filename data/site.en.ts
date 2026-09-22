@@ -32,19 +32,51 @@ export const stats = [
 
 export const destinations = [
   {
+    name: "Cybersecurity Survey in Military UAV Systems",
+    tag: "CEID · 2026",
+    description:
+      "Analysis of UAV threats across communication, navigation, sensors and ground control, with practical countermeasures.",
+    chips: ["Threat Modeling", "UAV", "Security Research", "Countermeasures"],
+    image: images.code,
+    featured: true,
+  },
+  {
+    name: "Virtualized Penetration Testing Lab",
+    tag: "Personal · 2026 - ongoing",
+    description:
+      "Isolated VM-based lab with Kali and vulnerable targets for reconnaissance, scanning, exploitation and privilege escalation.",
+    chips: ["Kali", "Nmap", "Burp Suite", "Metasploit"],
+    image: images.security,
+  },
+  {
+    name: "Kubernetes Resource Prediction",
+    tag: "Academic Project · 2026",
+    description:
+      "End-to-end ML pipeline for Kubernetes resource forecasting using Prometheus time-series data and containerized deployment.",
+    chips: ["Kubernetes", "Prometheus", "ML", "Containers"],
+    image: images.systems,
+  },
+  {
+    name: "AI Strategy & Data Utilization Study",
+    tag: "Professional study · 2026",
+    description:
+      "Contributed to an AI strategy and data utilization study, analyzing organizational needs, current-state capabilities, AI use cases, data management practices and requirements to support strategic planning, action plans and measurable KPIs.",
+    chips: ["AI Strategy", "Data Utilization", "AI Use Cases", "KPIs", "AI Act"],
+    image: images.data,
+  },
+  {
     name: "Social AI Forecasting Platform",
     tag: "Professional project · 2026",
     description:
       "Forecasting and analytics platform with KPI dashboards, correlation analysis, Prophet regressors, MySQL persistence, authentication and Docker deployment.",
     chips: ["Python", "Streamlit", "Prophet", "MySQL", "Docker"],
     image: images.ai,
-    featured: true,
   },
   {
     name: "Tender Comparator Platform",
     tag: "Professional project · 2026",
     description:
-      "Document comparison platform for tender files and templates, detecting deviations, tracking audit history and exporting Markdown/PDF reports.",
+      "Platform for comparing beneficiary tender documents against templates, detecting deviations, exporting Markdown/PDF reports, tracking audit history and generating optional Gemini summaries.",
     chips: ["Python", "Streamlit", "SQLite", "Gemini", "Reports"],
     image: images.lab,
   },
@@ -57,28 +89,12 @@ export const destinations = [
     image: images.data,
   },
   {
-    name: "Kubernetes Resource Prediction",
+    name: "AIoT Human Activity Recognition",
     tag: "Academic Project · 2026",
     description:
-      "End-to-end ML pipeline for Kubernetes resource forecasting using Prometheus time-series data and containerized deployment.",
-    chips: ["Kubernetes", "Prometheus", "ML", "Containers"],
-    image: images.systems,
-  },
-  {
-    name: "Virtualized Penetration Testing Lab",
-    tag: "Personal · 2026 - ongoing",
-    description:
-      "Isolated VM-based lab with Kali and vulnerable targets for reconnaissance, scanning, exploitation and privilege escalation.",
-    chips: ["Kali", "Nmap", "Burp Suite", "Metasploit"],
-    image: images.security,
-  },
-  {
-    name: "Cybersecurity Survey in Military UAV Systems",
-    tag: "CEID · 2026",
-    description:
-      "Analysis of UAV threats across communication, navigation, sensors and ground control, with practical countermeasures.",
-    chips: ["Threat Modeling", "UAV", "Security Research", "Countermeasures"],
-    image: images.code,
+      "PAMAP2 activity-recognition workflow with MongoDB ingestion, signal preprocessing, windowing, feature engineering, sensor-configuration comparison and SVM/Random Forest models.",
+    chips: ["Python", "MongoDB", "scikit-learn", "Time-Series ML"],
+    image: images.ai,
   },
   {
     name: "BigQuery Forecasting Pipeline",
@@ -89,19 +105,11 @@ export const destinations = [
     image: images.ai,
   },
   {
-    name: "Traffic Streaming Pipeline",
+    name: "Parallel Big Data Scaling",
     tag: "Academic Project · 2026",
     description:
-      "Streaming traffic-simulation pipeline producing UXsim vehicle events to Redpanda, processing them with Spark Structured Streaming, storing them in MongoDB and exposing them through FastAPI.",
-    chips: ["Python", "Kafka", "Spark", "MongoDB", "FastAPI"],
-    image: images.code,
-  },
-  {
-    name: "eduScout - Open Courses Aggregator",
-    tag: "Academic Project · 2026",
-    description:
-      "Full-stack course-catalog aggregation and analytics platform with a React frontend, Express API, MongoDB storage and Spark-based ML/analytics jobs.",
-    chips: ["React", "TypeScript", "Express", "MongoDB", "PySpark"],
+      "Standard and min-max scaling for large binary datasets using serial C, SIMD, OpenMP and CUDA versions, with generated benchmarks and NumPy-based correctness checks.",
+    chips: ["C", "CUDA", "SIMD", "OpenMP", "NumPy"],
     image: images.systems,
   },
   {
@@ -111,6 +119,14 @@ export const destinations = [
       "EDA and ML pipeline for intrusion detection with data cleaning, feature selection, binary attack detection and multiclass attack-family classification.",
     chips: ["Python", "scikit-learn", "Pandas", "Random Forest"],
     image: images.security,
+  },
+  {
+    name: "Open Courses Aggregator",
+    tag: "Academic Project · 2026",
+    description:
+      "Full-stack course-catalog aggregation and analytics platform with a React frontend, Express API, MongoDB storage and Spark-based ML/analytics jobs.",
+    chips: ["React", "TypeScript", "Express", "MongoDB", "PySpark"],
+    image: images.systems,
   },
 ];
 
@@ -127,45 +143,21 @@ export const experiences = [
     icon: "AI",
     title: "Software Engineer",
     period: "Jun 2025 - Dec 2025 · Jul 2026 - ongoing",
+    periods: ["Jun 2025 - Dec 2025", "Jul 2026 - ongoing"],
     eyebrow: "Full-stack · AI · Data systems",
     description:
-      "Contributed to production-oriented applications across backend APIs, server-side logic, frontend integration, secure application development, data workflows and AI/LLM features.",
+      "Contributed to production-oriented applications, AI/data studies, backend APIs, server-side logic, frontend integration, secure application development, data workflows and AI/LLM features.",
     highlights: [
       "Backend APIs",
       "Database/API design",
       "RAG / NLQ systems",
       "ETL pipelines",
+      "AI strategy studies",
       "ML forecasting",
       "Authentication & logging",
       "Docker/Linux deployment",
     ],
     image: images.code,
-  },
-  {
-    icon: "TA",
-    title: "Teaching Assistant",
-    period: "Oct 2024 - Feb 2025",
-    eyebrow: "Differential Equations · Applied Mathematics",
-    description:
-      "Supported lectures, problem-solving sessions and student guidance for a university-level applied mathematics course.",
-    highlights: [
-      "Lecture support",
-      "Problem solving",
-      "Student support",
-      "Coursework preparation",
-      "Assessment assistance",
-    ],
-    image: images.systems,
-  },
-  {
-    icon: "LAB",
-    title: "Lab Instructor",
-    period: "Oct 2024 - Jun 2025",
-    eyebrow: "Mathematical Foundations in Computer Science",
-    description:
-      "Delivered labs on algorithmic thinking, logic and proofs, guiding exercises and assessing student submissions.",
-    highlights: ["Algorithms", "Logic", "Proofs", "Lab delivery", "Student feedback"],
-    image: images.lab,
   },
 ];
 
@@ -187,12 +179,6 @@ export const travelInfo = [
     period: "In progress",
     detail:
       "Candidate, preparing across network security, IAM, risk management, cryptography and incident response.",
-  },
-  {
-    title: "School Education",
-    period: "Sep 2016 - Jun 2022",
-    detail:
-      "Secondary education in Kozani with emphasis on mathematics, physics and chemistry.",
   },
 ];
 
@@ -229,9 +215,9 @@ export const ui = {
     image: "/images/CVmeZOOM.jpg",
     imageAlt: "Petros Papagiannis portrait",
     label: "Profile",
-    title: { line1: "About", emphasis: "Petros Papagiannis", line2: "" },
+    title: { line1: "About me", emphasis: "", line2: "" },
     copy:
-      "I am a Computer Engineering undergraduate at CEID, University of Patras, focused on cybersecurity, secure software engineering and AI-driven systems. My experience spans backend services, data-driven applications, production-oriented tools, authentication, logging, deployment hygiene, data handling and reliability. I am also developing practical experience in penetration testing, vulnerability analysis, Linux environments, networking, web security and security tooling through structured training and isolated labs. My goal is to build reliable systems with clean architecture, technical precision and a security-first mindset.",
+    "I’m Petros Papagiannis, a 5th-year Computer Engineering & Informatics student at the University of Patras, with a primary focus on Cybersecurity, Secure Software Engineering, and Artificial Intelligence. Professionally, I have worked as a Software Engineer, contributing to the development of backend services, AI-powered applications and studies, RAG systems, data-driven platforms, and automation tools. My experience includes application and API design, data management, application development and deployment, as well as integrating AI/LLM technologies into real-world projects. Alongside my professional experience, I am developing my cybersecurity expertise through hands-on penetration testing, vulnerability analysis, network and web security, and Linux-based security environments. My projects include penetration-testing labs, IDS and machine learning, Kubernetes-based systems, and cybersecurity research. I enjoy understanding how systems work at a deeper level, identifying ways to improve and secure them, and building practical solutions that bring together software engineering, artificial intelligence, and cybersecurity.",
     link: "Explore projects",
   },
   destinations: {
@@ -338,39 +324,88 @@ export type GuideCategory = {
 
 export const guideCategories: GuideCategory[] = [
   {
+    id: "security",
+    label: "Cybersecurity",
+    intro:
+      "Security tooling, networking, penetration-testing methodology and core security foundations from the CV.",
+    image: images.security,
+    groups: [
+      {
+        title: "Security",
+        items: [
+          {
+            name: "Cybersecurity Tooling",
+            description: "Nmap, Wireshark, Burp Suite and Metasploit for reconnaissance, traffic analysis, web testing and exploitation labs.",
+            image: images.security,
+          },
+          {
+            name: "Security Testing & Analysis",
+            description: "Reconnaissance, enumeration, vulnerability analysis, penetration testing, threat modeling and IDS workflows.",
+            image: images.lab,
+          },
+        ],
+      },
+      {
+        title: "Foundations",
+        items: [
+          {
+            name: "Networking & Protocols",
+            description: "TCP/IP, DNS, DHCP, VLANs, VPN, TLS/SSL and Kafka/Redpanda protocol experience.",
+            image: images.systems,
+          },
+          {
+            name: "Cryptography & Security Foundations",
+            description: "Hashing, symmetric/asymmetric cryptography, PKI and digital certificates.",
+            image: images.security,
+          },
+          {
+            name: "Operating Systems",
+            description: "Linux environments including Ubuntu, Debian and Kali, plus Windows and QEMU/KVM virtualization.",
+            image: images.lab,
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "engineering",
     label: "Software Engineering",
     intro:
-      "Full-stack applications, APIs, responsive interfaces and products built with clean architecture.",
+      "Programming, backend APIs, web interfaces and delivery tooling used across production-oriented projects.",
     image: images.code,
     groups: [
       {
-        title: "Frontend",
+        title: "Development",
         items: [
           {
-            name: "React / TypeScript",
-            description: "Dynamic interfaces, UI integration, usability testing and responsive experiences.",
+            name: "Programming & Scripting",
+            description: "Python, C, C++, Bash, PowerShell, PHP, JavaScript, TypeScript, C# and Java.",
             image: images.code,
           },
           {
-            name: "HTML5 / CSS3 / Bootstrap",
-            description: "Clean structure, polished styling and fast prototyping for web projects.",
+            name: "Backend & APIs",
+            description: "FastAPI, Node.js, Express, REST APIs, authentication and sessions.",
+            image: images.systems,
+          },
+          {
+            name: "Web & UI Technologies",
+            description: "React, Next.js, Streamlit, HTML5, CSS3, Bootstrap and responsive interface work.",
             image: images.code,
           },
         ],
       },
       {
-        title: "Backend",
+        title: "Delivery",
         items: [
           {
-            name: "Node.js / PHP / Python",
-            description: "Backend APIs, server-side logic, runtime environments and database integration.",
+            name: "Platforms, DevOps & Tooling",
+            description: "Git, GitHub, CI/CD pipelines, VS Code, Jupyter Notebook, Makefile and Vercel.",
             image: images.systems,
           },
           {
-            name: "Databases",
-            description: "MySQL, SQLite and MongoDB for structured application data and project storage.",
-            image: images.data,
+            name: "Academic Foundations & Systems Knowledge",
+            description: "Data structures and algorithms, operating systems, computer networks, distributed systems and software engineering.",
+            image: images.code,
           },
         ],
       },
@@ -380,75 +415,41 @@ export const guideCategories: GuideCategory[] = [
     id: "ai-data",
     label: "AI & Data",
     intro:
-      "LLM-powered products, RAG/NLQ systems, ML forecasting and data pipelines from ingestion to visualization.",
+      "AI/LLM systems, data science, databases, forecasting, big-data processing and analytics workflows.",
     image: images.ai,
     groups: [
       {
-        title: "LLMs",
+        title: "AI & ML",
         items: [
           {
-            name: "GPT / Gemini integration",
-            description: "Conversational AI, prompt engineering, fine-tuning, RAG and real-time retrieval.",
+            name: "AI/LLM Systems",
+            description: "Gemini, RAG, prompting, input validation, abuse prevention and content privacy.",
             image: images.ai,
           },
           {
-            name: "NLQ systems",
-            description: "Natural-language querying for dashboards, analytics and public-services knowledge bases.",
-            image: images.data,
-          },
-        ],
-      },
-      {
-        title: "Machine Learning",
-        items: [
-          {
-            name: "TensorFlow / PyTorch / scikit-learn",
-            description: "ML workflows with Pandas, NumPy, forecasting and model experimentation.",
+            name: "Data Science, ML & Forecasting",
+            description: "PyTorch, scikit-learn, Pandas, NumPy, Prophet, BigQuery ML and ARIMA PLUS.",
             image: images.ai,
           },
           {
-            name: "Airflow / BigQuery / PySpark",
-            description: "ETL pipelines, DAG workflows, big data processing and automated forecasting.",
-            image: images.data,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "security",
-    label: "Cybersecurity",
-    intro:
-      "Hands-on security training focused on reconnaissance, vulnerability analysis, exploitation and secure foundations.",
-    image: images.security,
-    groups: [
-      {
-        title: "Offensive tooling",
-        items: [
-          {
-            name: "Nmap / Burp Suite / Metasploit",
-            description: "Enumeration, web testing, exploitation labs and practical attack lifecycle.",
-            image: images.security,
-          },
-          {
-            name: "Kali Linux labs",
-            description: "Isolated VM environments with vulnerable targets for hands-on practice.",
-            image: images.lab,
-          },
-        ],
-      },
-      {
-        title: "Foundations",
-        items: [
-          {
-            name: "Network security",
-            description: "TCP/IP, DNS, DHCP, VLANs, VPN, TLS/SSL and threat modeling.",
+            name: "Mathematics for ML & AI",
+            description: "Linear algebra, probability theory, statistics, optimization and calculus.",
             image: images.systems,
           },
+        ],
+      },
+      {
+        title: "Data",
+        items: [
           {
-            name: "Cryptography",
-            description: "Hashing, symmetric/asymmetric cryptography, PKI and digital certificates.",
-            image: images.security,
+            name: "Databases & Data Stores",
+            description: "MySQL, SQLite, MongoDB and BigQuery for application data, analytics and project storage.",
+            image: images.data,
+          },
+          {
+            name: "Big Data, Streaming & Analytics",
+            description: "Spark, PySpark, Spark Structured Streaming, Airflow, Looker and data visualization.",
+            image: images.data,
           },
         ],
       },
@@ -458,35 +459,30 @@ export const guideCategories: GuideCategory[] = [
     id: "systems",
     label: "Systems",
     intro:
-      "Computer engineering fundamentals across operating systems, distributed systems, parallelism, concurrency and DevOps tooling.",
+      "Systems, parallel programming, cloud-native observability and algorithmic foundations from academic and project work.",
     image: images.systems,
     groups: [
       {
-        title: "Low-level & parallel",
+        title: "Systems",
         items: [
           {
-            name: "C / C++ / Java / C#",
-            description: "Programming foundations with systems thinking and a strong academic background.",
-            image: images.code,
+            name: "Parallel, GPU & Systems Programming",
+            description: "CUDA, SIMD, OpenMP, MPI, multithreading, POSIX Threads, IPC and system calls.",
+            image: images.systems,
           },
           {
-            name: "MPI / OpenMP / POSIX Threads",
-            description: "Parallelism, multithreading, shared-memory parallelism and process coordination.",
+            name: "Cloud-Native & Observability",
+            description: "Docker, Docker Compose, Kubernetes, Argo Workflows, Prometheus and Grafana.",
             image: images.systems,
           },
         ],
       },
       {
-        title: "Platforms",
+        title: "Algorithms",
         items: [
           {
-            name: "Linux / Docker / CI/CD",
-            description: "Ubuntu, Debian, Kali, Git, GitHub, Docker and deployment workflows.",
-            image: images.lab,
-          },
-          {
-            name: "Kubernetes / Prometheus / Grafana",
-            description: "Containerized systems, monitoring data and resource prediction pipelines.",
+            name: "Algorithms & Data Structures",
+            description: "R-trees, k-d Trees, LSH, range queries and feature engineering.",
             image: images.systems,
           },
         ],
