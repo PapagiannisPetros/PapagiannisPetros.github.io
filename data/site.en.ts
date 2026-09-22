@@ -26,34 +26,34 @@ const images = {
 export const stats = [
   { value: "HTB", label: "Hands-on cybersecurity training" },
   { value: "Sec+", label: "CompTIA Security+ candidate" },
-  { value: "8.58/10", label: "Current CEID grade" },
-  { value: "2025", label: "Software, AI and data systems experience" },
+  { value: "CEID", label: "Computer Engineering & Informatics" },
+  { value: "2025+", label: "Software, AI and data systems experience" },
 ];
 
 export const destinations = [
   {
-    name: "AI-Driven BI Assistant",
-    tag: "SMARTS · 2025",
+    name: "Social AI Forecasting Platform",
+    tag: "Professional project · 2026",
     description:
-      "NLQ-based BI chatbot using LLMs to query dashboards and generate real-time visual insights.",
-    chips: ["NLQ", "LLMs", "Dashboards", "Analytics"],
+      "Forecasting and analytics platform with KPI dashboards, correlation analysis, Prophet regressors, MySQL persistence, authentication and Docker deployment.",
+    chips: ["Python", "Streamlit", "Prophet", "MySQL", "Docker"],
     image: images.ai,
     featured: true,
   },
   {
-    name: "Context-Aware RAG Chatbot",
-    tag: "SMARTS · 2025",
+    name: "Tender Comparator Platform",
+    tag: "Professional project · 2026",
     description:
-      "RAG-based chatbot with vector embeddings for context-aware answers, recommendations and real-time retrieval across domain-specific knowledge bases.",
-    chips: ["RAG", "Embeddings", "Retrieval", "Knowledge Base"],
+      "Document comparison platform for tender files and templates, detecting deviations, tracking audit history and exporting Markdown/PDF reports.",
+    chips: ["Python", "Streamlit", "SQLite", "Gemini", "Reports"],
     image: images.lab,
   },
   {
-    name: "ML Forecasting Pipeline",
-    tag: "SMARTS · 2025",
+    name: "Local RAG Chatbot Platform",
+    tag: "Professional project · 2025",
     description:
-      "Time-series ML pipeline with Airflow orchestration, BigQuery, preprocessing, training and automated forecasting.",
-    chips: ["Airflow", "BigQuery", "Time Series", "Forecasting"],
+      "Reusable RAG chatbot backends with bilingual UI, content-safety checks, chat history, metadata and Dockerized FastAPI/MySQL deployment.",
+    chips: ["Python", "FastAPI", "Gemini", "RAG", "MySQL"],
     image: images.data,
   },
   {
@@ -81,20 +81,36 @@ export const destinations = [
     image: images.code,
   },
   {
-    name: "Public Services Chatbot",
-    tag: "SMARTS · 2025",
+    name: "BigQuery Forecasting Pipeline",
+    tag: "Professional project · 2025",
     description:
-      "NLQ/CAG conversational system with analytics and automated knowledge base updates for accurate responses.",
-    chips: ["NLQ", "CAG", "Analytics", "Automation"],
+      "Airflow-ready forecasting scripts for BigQuery datasets, schema detection, time-series validation, ARIMA PLUS forecasts and Looker-ready views.",
+    chips: ["Python", "Airflow", "BigQuery ML", "ARIMA PLUS"],
     image: images.ai,
   },
   {
-    name: "Additional Academic & Software Projects",
-    tag: "CEID · Personal",
+    name: "Traffic Streaming Pipeline",
+    tag: "Academic Project · 2026",
     description:
-      "Multi-Dimensional Indexing with k-d trees and LSH, Open Courses Aggregator with React/PySpark, Thesis Management System with Node.js/MySQL and UniBook Python desktop app.",
-    chips: ["React", "PySpark", "Node.js", "Python"],
+      "Streaming traffic-simulation pipeline producing UXsim vehicle events to Redpanda, processing them with Spark Structured Streaming, storing them in MongoDB and exposing them through FastAPI.",
+    chips: ["Python", "Kafka", "Spark", "MongoDB", "FastAPI"],
     image: images.code,
+  },
+  {
+    name: "eduScout - Open Courses Aggregator",
+    tag: "Academic Project · 2026",
+    description:
+      "Full-stack course-catalog aggregation and analytics platform with a React frontend, Express API, MongoDB storage and Spark-based ML/analytics jobs.",
+    chips: ["React", "TypeScript", "Express", "MongoDB", "PySpark"],
+    image: images.systems,
+  },
+  {
+    name: "Data Mining IDS",
+    tag: "Academic Project · 2026",
+    description:
+      "EDA and ML pipeline for intrusion detection with data cleaning, feature selection, binary attack detection and multiclass attack-family classification.",
+    chips: ["Python", "scikit-learn", "Pandas", "Random Forest"],
+    image: images.security,
   },
 ];
 
@@ -109,20 +125,47 @@ export const gallery = [
 export const experiences = [
   {
     icon: "AI",
-    title: "Software Engineer · S.M.A.R.T.S. IKE",
-    period: "Jun 2025 - Dec 2025",
+    title: "Software Engineer",
+    period: "Jun 2025 - Dec 2025 · Jul 2026 - ongoing",
     eyebrow: "Full-stack · AI · Data systems",
     description:
-      "At S.M.A.R.T.S. IKE, worked on production-oriented software engineering, combining backend APIs, server-side logic, frontend integrations and responsive UI with scalable architecture, data workflows and AI-driven features.",
+      "Contributed to production-oriented applications across backend APIs, server-side logic, frontend integration, secure application development, data workflows and AI/LLM features.",
     highlights: [
       "Backend APIs",
-      "Scalable architecture",
-      "RAG / NLQ",
-      "ETL / DAG workflows",
+      "Database/API design",
+      "RAG / NLQ systems",
+      "ETL pipelines",
       "ML forecasting",
-      "UI/UX",
+      "Authentication & logging",
+      "Docker/Linux deployment",
     ],
     image: images.code,
+  },
+  {
+    icon: "TA",
+    title: "Teaching Assistant",
+    period: "Oct 2024 - Feb 2025",
+    eyebrow: "Differential Equations · Applied Mathematics",
+    description:
+      "Supported lectures, problem-solving sessions and student guidance for a university-level applied mathematics course.",
+    highlights: [
+      "Lecture support",
+      "Problem solving",
+      "Student support",
+      "Coursework preparation",
+      "Assessment assistance",
+    ],
+    image: images.systems,
+  },
+  {
+    icon: "LAB",
+    title: "Lab Instructor",
+    period: "Oct 2024 - Jun 2025",
+    eyebrow: "Mathematical Foundations in Computer Science",
+    description:
+      "Delivered labs on algorithmic thinking, logic and proofs, guiding exercises and assessing student submissions.",
+    highlights: ["Algorithms", "Logic", "Proofs", "Lab delivery", "Student feedback"],
+    image: images.lab,
   },
 ];
 
@@ -131,7 +174,7 @@ export const travelInfo = [
     title: "Computer Engineering & Informatics Department",
     period: "Oct 2022 - ongoing",
     detail:
-      "University of Patras · Undergraduate. Current Grade: 8.58/10. Admitted 4th via Panhellenic Exams with 17,850/20,000. In-depth study: Cyber Security. Subsidiary subject: AI - Machine Learning.",
+      "University of Patras · Undergraduate, 5th year. In-depth study: Cyber Security. Subsidiary subject: Artificial Intelligence - Machine Learning.",
   },
   {
     title: "Hack The Box Academy",
@@ -149,7 +192,7 @@ export const travelInfo = [
     title: "School Education",
     period: "Sep 2016 - Jun 2022",
     detail:
-      "High School, Kozani · Secondary School Leaving Certificate, Grade 20/20. Middle School, Kozani · Grade 20/20.",
+      "Secondary education in Kozani with emphasis on mathematics, physics and chemistry.",
   },
 ];
 
@@ -163,8 +206,6 @@ export const contactDetails = {
 export const socialLinks = [
   { label: "GitHub", href: "https://github.com/PapagiannisPetros", value: "@PapagiannisPetros" },
   { label: "LinkedIn", href: "https://gr.linkedin.com/in/petros-papagiannis-04655a292", value: "petros-papagiannis" },
-  { label: "Instagram", href: "https://www.instagram.com/papagiannispetros", value: "@papagiannispetros" },
-  { label: "Spotify", href: "https://open.spotify.com", value: "Spotify" },
   { label: "Personal site", href: "https://papagiannispetros.github.io", value: "papagiannispetros.github.io" },
   { label: "Email", href: "mailto:petros.t.papagiannis@gmail.com", value: "petros.t.papagiannis@gmail.com" },
 ];
@@ -180,7 +221,7 @@ export const ui = {
     badge: "Cybersecurity · Software Engineering · AI",
     title: { primary: "Petros", emphasis: "Papagiannis" },
     subtitle:
-      "Personal portfolio for cybersecurity, secure software engineering, AI-driven systems and hands-on security research.",
+      "Official portfolio for cybersecurity, secure software engineering, AI-driven systems and production-oriented software projects.",
     cta: "View projects",
     contactCta: "Contact",
   },
@@ -190,7 +231,7 @@ export const ui = {
     label: "Profile",
     title: { line1: "About", emphasis: "Petros Papagiannis", line2: "" },
     copy:
-      "I am a Computer Engineering undergraduate at CEID, University of Patras, focused on cybersecurity. I am interested in understanding how systems work beneath the surface, where they become vulnerable and how they can be designed more securely from the start. I work on hands-on penetration testing, vulnerability analysis, threat modeling and security research, building practical experience through Hack The Box training, isolated VM labs and tools such as Kali Linux, Nmap, Burp Suite and Metasploit. At the same time, my experience in full-stack development, data pipelines and AI-driven applications helps me view security in the real context of a product: from APIs and infrastructure to user experience and data flows. My goal is to grow as an engineer who combines clean implementation, technical curiosity and a security-first mindset.",
+      "I am a Computer Engineering undergraduate at CEID, University of Patras, focused on cybersecurity, secure software engineering and AI-driven systems. My experience spans backend services, data-driven applications, production-oriented tools, authentication, logging, deployment hygiene, data handling and reliability. I am also developing practical experience in penetration testing, vulnerability analysis, Linux environments, networking, web security and security tooling through structured training and isolated labs. My goal is to build reliable systems with clean architecture, technical precision and a security-first mindset.",
     link: "Explore projects",
   },
   destinations: {
@@ -216,7 +257,7 @@ export const ui = {
     label: "Work background",
     title: "Professional experience",
     copy:
-      "My professional experience at S.M.A.R.T.S. IKE focused on production applications, APIs, AI/LLM integrations, data pipelines and practical feature delivery from the backend to the user-facing interface.",
+      "Professional experience focused on production applications, APIs, AI/LLM integrations, data pipelines and practical feature delivery from the backend to the user-facing interface.",
     closeLabel: "Close",
   },
   travel: {
@@ -232,8 +273,8 @@ export const ui = {
     panelLabel: "Academic profile",
     panelTitle: "Computer Engineering",
     highlights: [
-      { value: "8.58/10", label: "Current grade, University of Patras" },
-      { value: "4th", label: "Admission ranking via Panhellenic Exams" },
+      { value: "CEID", label: "Computer Engineering & Informatics" },
+      { value: "AI/ML", label: "Subsidiary academic subject" },
       { value: "HTB", label: "Junior Cybersecurity Analyst Path, ongoing" },
       { value: "Sec+", label: "CompTIA Security+ SY0-701 candidate" },
     ],

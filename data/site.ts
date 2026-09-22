@@ -26,34 +26,34 @@ const images = {
 export const stats = [
   { value: "HTB", label: "Πρακτική εκπαίδευση cybersecurity" },
   { value: "Sec+", label: "Υποψήφιος CompTIA Security+" },
-  { value: "8.58/10", label: "Τρέχων βαθμός στο CEID" },
-  { value: "2025", label: "Εμπειρία σε software, AI και data" },
+  { value: "CEID", label: "Μηχανικών Η/Υ και Πληροφορικής" },
+  { value: "2025+", label: "Εμπειρία σε software, AI και data systems" },
 ];
 
 export const destinations = [
   {
-    name: "AI Βοηθός BI",
-    tag: "SMARTS · 2025",
+    name: "Social AI Forecasting Platform",
+    tag: "Professional project · 2026",
     description:
-      "BI chatbot με φυσική γλώσσα και LLMs για ερωτήσεις σε dashboards και παραγωγή οπτικών insights σε πραγματικό χρόνο.",
-    chips: ["NLQ", "LLMs", "Dashboards", "Analytics"],
+      "Forecasting και analytics platform με KPI dashboards, correlation analysis, Prophet regressors, MySQL persistence, authentication και Docker deployment.",
+    chips: ["Python", "Streamlit", "Prophet", "MySQL", "Docker"],
     image: images.ai,
     featured: true,
   },
   {
-    name: "RAG Chatbot",
-    tag: "SMARTS · 2025",
+    name: "Tender Comparator Platform",
+    tag: "Professional project · 2026",
     description:
-      "Chatbot με RAG και vector embeddings για απαντήσεις με βάση το πλαίσιο, προτάσεις και ανάκτηση γνώσης σε πραγματικό χρόνο.",
-    chips: ["RAG", "Embeddings", "Retrieval", "Knowledge Base"],
+      "Πλατφόρμα σύγκρισης εγγράφων διαγωνισμών με templates, εντοπισμό αποκλίσεων, ιστορικό ελέγχων και εξαγωγή Markdown/PDF reports.",
+    chips: ["Python", "Streamlit", "SQLite", "Gemini", "Reports"],
     image: images.lab,
   },
   {
-    name: "ML Forecasting",
-    tag: "SMARTS · 2025",
+    name: "Local RAG Chatbot Platform",
+    tag: "Professional project · 2025",
     description:
-      "Pipeline χρονοσειρών με Airflow, BigQuery, προεπεξεργασία, εκπαίδευση μοντέλων και αυτοματοποιημένες προβλέψεις.",
-    chips: ["Airflow", "BigQuery", "Time Series", "Forecasting"],
+      "Reusable RAG chatbot backends με bilingual UI, content-safety checks, chat history, metadata και Dockerized FastAPI/MySQL deployment.",
+    chips: ["Python", "FastAPI", "Gemini", "RAG", "MySQL"],
     image: images.data,
   },
   {
@@ -81,20 +81,36 @@ export const destinations = [
     image: images.code,
   },
   {
-    name: "Public Services Chatbot",
-    tag: "SMARTS · 2025",
+    name: "BigQuery Forecasting Pipeline",
+    tag: "Professional project · 2025",
     description:
-      "Conversational system με NLQ/CAG, analytics και αυτοματοποιημένες ενημερώσεις knowledge base για ακριβείς απαντήσεις.",
-    chips: ["NLQ", "CAG", "Analytics", "Automation"],
+      "Airflow-ready forecasting scripts για BigQuery datasets, schema detection, time-series validation, ARIMA PLUS forecasts και Looker-ready views.",
+    chips: ["Python", "Airflow", "BigQuery ML", "ARIMA PLUS"],
     image: images.ai,
   },
   {
-    name: "Άλλα έργα",
-    tag: "CEID · Personal",
+    name: "Traffic Streaming Pipeline",
+    tag: "Academic Project · 2026",
     description:
-      "Multi-Dimensional Indexing με k-d trees και LSH, Open Courses Aggregator με React/PySpark, Thesis Management System με Node.js/MySQL και UniBook desktop app σε Python.",
-    chips: ["React", "PySpark", "Node.js", "Python"],
+      "Streaming traffic-simulation pipeline με UXsim events σε Redpanda, Spark Structured Streaming, MongoDB storage και FastAPI exposure.",
+    chips: ["Python", "Kafka", "Spark", "MongoDB", "FastAPI"],
     image: images.code,
+  },
+  {
+    name: "eduScout - Open Courses Aggregator",
+    tag: "Academic Project · 2026",
+    description:
+      "Full-stack course-catalog aggregation και analytics platform με React frontend, Express API, MongoDB storage και Spark-based ML/analytics jobs.",
+    chips: ["React", "TypeScript", "Express", "MongoDB", "PySpark"],
+    image: images.systems,
+  },
+  {
+    name: "Data Mining IDS",
+    tag: "Academic Project · 2026",
+    description:
+      "EDA και ML pipeline για intrusion detection με data cleaning, feature selection, binary attack detection και multiclass attack-family classification.",
+    chips: ["Python", "scikit-learn", "Pandas", "Random Forest"],
+    image: images.security,
   },
 ];
 
@@ -109,20 +125,47 @@ export const gallery = [
 export const experiences = [
   {
     icon: "AI",
-    title: "Software Engineer · S.M.A.R.T.S.",
-    period: "Jun 2025 - Dec 2025",
+    title: "Software Engineer",
+    period: "Jun 2025 - Dec 2025 · Jul 2026 - ongoing",
     eyebrow: "Full-stack · AI · Data systems",
     description:
-      "Στη S.M.A.R.T.S. IKE εργάστηκα σε εφαρμογές παραγωγής, συνδυάζοντας backend APIs, server-side logic, frontend integrations και responsive UI με scalable architecture, data workflows και AI-driven λειτουργίες.",
+      "Συμμετοχή σε production-oriented εφαρμογές με backend APIs, server-side logic, frontend integration, secure application development, data workflows και AI/LLM λειτουργίες.",
     highlights: [
       "Backend APIs",
-      "Scalable architecture",
-      "RAG / NLQ",
-      "ETL / DAG workflows",
+      "Database/API design",
+      "RAG / NLQ systems",
+      "ETL pipelines",
       "ML forecasting",
-      "UI/UX",
+      "Authentication & logging",
+      "Docker/Linux deployment",
     ],
     image: images.code,
+  },
+  {
+    icon: "TA",
+    title: "Teaching Assistant",
+    period: "Oct 2024 - Feb 2025",
+    eyebrow: "Differential Equations · Applied Mathematics",
+    description:
+      "Υποστήριξη διαλέξεων, problem-solving sessions και φοιτητικής καθοδήγησης σε πανεπιστημιακό μάθημα εφαρμοσμένων μαθηματικών.",
+    highlights: [
+      "Lecture support",
+      "Problem solving",
+      "Student support",
+      "Coursework preparation",
+      "Assessment assistance",
+    ],
+    image: images.systems,
+  },
+  {
+    icon: "LAB",
+    title: "Lab Instructor",
+    period: "Oct 2024 - Jun 2025",
+    eyebrow: "Mathematical Foundations in Computer Science",
+    description:
+      "Διεξαγωγή εργαστηρίων σε αλγοριθμική σκέψη, λογική και αποδείξεις, με καθοδήγηση ασκήσεων και αξιολόγηση παραδοτέων.",
+    highlights: ["Algorithms", "Logic", "Proofs", "Lab delivery", "Student feedback"],
+    image: images.lab,
   },
 ];
 
@@ -131,7 +174,7 @@ export const travelInfo = [
     title: "Τμήμα Μηχανικών Η/Υ και Πληροφορικής",
     period: "Οκτ 2022 - σήμερα",
     detail:
-      "Πανεπιστήμιο Πατρών · Προπτυχιακές σπουδές. Τρέχων βαθμός: 8.58/10. Εισαγωγή 4ος μέσω Πανελλαδικών με 17,850/20,000. Κατεύθυνση: Cyber Security. Δευτερεύον αντικείμενο: AI - Machine Learning.",
+      "Πανεπιστήμιο Πατρών · Προπτυχιακές σπουδές, 5ο έτος. Κατεύθυνση: Cyber Security. Δευτερεύον αντικείμενο: Artificial Intelligence - Machine Learning.",
   },
   {
     title: "Hack The Box Academy",
@@ -149,7 +192,7 @@ export const travelInfo = [
     title: "Σχολική εκπαίδευση",
     period: "Σεπ 2016 - Ιουν 2022",
     detail:
-      "Λύκειο, Κοζάνη · απολυτήριο 20/20. Γυμνάσιο, Κοζάνη · βαθμός 20/20.",
+      "Δευτεροβάθμια εκπαίδευση στην Κοζάνη με έμφαση σε Μαθηματικά, Φυσική και Χημεία.",
   },
 ];
 
@@ -163,8 +206,6 @@ export const contactDetails = {
 export const socialLinks = [
   { label: "GitHub", href: "https://github.com/PapagiannisPetros", value: "@PapagiannisPetros" },
   { label: "LinkedIn", href: "https://gr.linkedin.com/in/petros-papagiannis-04655a292", value: "petros-papagiannis" },
-  { label: "Instagram", href: "https://www.instagram.com/papagiannispetros", value: "@papagiannispetros" },
-  { label: "Spotify", href: "https://open.spotify.com", value: "Spotify" },
   { label: "Personal site", href: "https://papagiannispetros.github.io", value: "papagiannispetros.github.io" },
   { label: "Email", href: "mailto:petros.t.papagiannis@gmail.com", value: "petros.t.papagiannis@gmail.com" },
 ];
@@ -180,7 +221,7 @@ export const ui = {
     badge: "Cybersecurity · Software Engineering · AI",
     title: { primary: "Petros", emphasis: "Papagiannis" },
     subtitle:
-      "Προσωπικό portfolio για cybersecurity, secure software engineering, AI-driven systems και hands-on security research.",
+      "Επίσημο portfolio για cybersecurity, secure software engineering, AI-driven systems και production-oriented software projects.",
     cta: "Δείτε έργα",
     contactCta: "Επικοινωνία",
   },
@@ -190,7 +231,7 @@ export const ui = {
     label: "Προφίλ",
     title: { line1: "Ποιος είναι ο", emphasis: "Petros Papagiannis", line2: "" },
     copy:
-      "Είμαι προπτυχιακός φοιτητής Μηχανικών Η/Υ και Πληροφορικής στο Πανεπιστήμιο Πατρών, με κατεύθυνση το cybersecurity. Με ενδιαφέρει να καταλαβαίνω πώς λειτουργούν τα συστήματα κάτω από την επιφάνεια, πού εμφανίζουν αδυναμίες και πώς μπορούν να σχεδιαστούν με μεγαλύτερη ασφάλεια από την αρχή. Ασχολούμαι με penetration testing, vulnerability analysis, threat modeling και security research, χτίζοντας πρακτική εμπειρία μέσα από Hack The Box training, απομονωμένα VM labs και εργαλεία όπως Kali Linux, Nmap, Burp Suite και Metasploit. Παράλληλα, η εμπειρία μου σε full-stack development, data pipelines και AI-driven applications με βοηθά να βλέπω την ασφάλεια μέσα στο πραγματικό πλαίσιο ενός προϊόντος: από τα APIs και το infrastructure μέχρι το user experience και τα data flows. Στόχος μου είναι να εξελίσσομαι ως engineer που μπορεί να συνδυάζει καθαρή υλοποίηση, τεχνική περιέργεια και security-first τρόπο σκέψης.",
+      "Είμαι προπτυχιακός φοιτητής Μηχανικών Η/Υ και Πληροφορικής στο Πανεπιστήμιο Πατρών, με εστίαση στο cybersecurity, το secure software engineering και τα AI-driven systems. Η εμπειρία μου καλύπτει backend services, data-driven applications, production-oriented tools, authentication, logging, deployment hygiene, data handling και reliability. Παράλληλα αναπτύσσω πρακτική εμπειρία σε penetration testing, vulnerability analysis, Linux environments, networking, web security και security tooling μέσα από οργανωμένη εκπαίδευση και απομονωμένα εργαστήρια. Στόχος μου είναι η ανάπτυξη αξιόπιστων συστημάτων με καθαρή αρχιτεκτονική, τεχνική ακρίβεια και security-first τρόπο σκέψης.",
     link: "Δείτε τα έργα",
   },
   destinations: {
@@ -216,7 +257,7 @@ export const ui = {
     label: "Εργασιακό Υπόβαθρο",
     title: "Επαγγελματική εμπειρία",
     copy:
-      "Στη S.M.A.R.T.S. IKE εργάστηκα σε εφαρμογές παραγωγής, APIs, AI/LLM integrations και data pipelines, με συμμετοχή από το backend μέχρι το user-facing interface.",
+      "Εμπειρία σε εφαρμογές παραγωγής, APIs, AI/LLM integrations και data pipelines, με συμμετοχή από το backend μέχρι το user-facing interface.",
     closeLabel: "Κλείσιμο",
   },
   travel: {
@@ -232,8 +273,8 @@ export const ui = {
     panelLabel: "Ακαδημαϊκό προφίλ",
     panelTitle: "Computer Engineering",
     highlights: [
-      { value: "8.58/10", label: "Τρέχων βαθμός, Πανεπιστήμιο Πατρών" },
-      { value: "4ος", label: "Σειρά εισαγωγής μέσω Πανελλαδικών" },
+      { value: "CEID", label: "Computer Engineering & Informatics" },
+      { value: "AI/ML", label: "Δευτερεύον αντικείμενο σπουδών" },
       { value: "HTB", label: "Junior Cybersecurity Analyst Path" },
       { value: "Sec+", label: "Υποψήφιος CompTIA Security+ SY0-701" },
     ],
