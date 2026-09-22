@@ -558,24 +558,73 @@ img {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.38rem 1.15rem;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 0.42rem 0.65rem;
   min-height: 5.8rem;
   align-content: start;
-  color: rgba(235, 248, 250, 0.78);
+  color: rgba(235, 248, 250, 0.86);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: clamp(0.68rem, 0.85vw, 0.82rem);
   line-height: 1.5;
 }
 
+.terminal-column-label {
+  border-bottom: 1px solid rgba(34, 211, 238, 0.22);
+  padding: 0 0.55rem 0.32rem;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.terminal-row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  gap: 0.65rem;
+}
+
 .hero-terminal-lines p {
+  position: relative;
   margin: 0;
+  min-height: 1.78rem;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid rgba(34, 211, 238, 0.12);
+  background: rgba(3, 9, 15, 0.32);
   overflow-wrap: anywhere;
+  box-shadow: inset 2px 0 0 rgba(214, 163, 67, 0.22);
+}
+
+.hero-terminal-lines .terminal-command {
+  border-color: rgba(34, 211, 238, 0.2);
+  background:
+    linear-gradient(90deg, rgba(34, 211, 238, 0.1), transparent 70%),
+    rgba(3, 9, 15, 0.42);
+  color: rgba(245, 253, 255, 0.95);
+  box-shadow: inset 2px 0 0 var(--gold);
+}
+
+.hero-terminal-lines .terminal-output {
+  border-color: rgba(34, 211, 238, 0.08);
+  background: rgba(3, 9, 15, 0.22);
+  color: rgba(188, 221, 226, 0.82);
+  box-shadow: inset 2px 0 0 rgba(34, 211, 238, 0.24);
+}
+
+.hero-terminal-lines .terminal-output-pending {
+  color: rgba(188, 221, 226, 0.42);
 }
 
 .hero-terminal-lines span {
   margin-right: 0.65rem;
   color: var(--gold);
+  font-weight: 800;
+}
+
+.hero-terminal-lines .terminal-output span {
+  color: rgba(34, 211, 238, 0.9);
 }
 
 .hero-terminal-lines i {
@@ -2810,10 +2859,28 @@ img {
 
   .hero-terminal-lines {
     grid-template-columns: 1fr;
-    gap: 0.25rem;
+    gap: 0.32rem;
     min-height: 5rem;
     font-size: 0.62rem;
     line-height: 1.38;
+  }
+
+  .terminal-column-label {
+    display: none;
+  }
+
+  .terminal-row {
+    grid-template-columns: 1fr;
+    gap: 0.24rem;
+  }
+
+  .terminal-row + .terminal-row {
+    margin-top: 0.16rem;
+  }
+
+  .hero-terminal-lines p {
+    min-height: 1.55rem;
+    padding: 0.24rem 0.45rem;
   }
 
   .about-grid,

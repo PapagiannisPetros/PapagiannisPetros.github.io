@@ -20,41 +20,82 @@ function isRemoteImage(src: string) {
   return src.startsWith("http://") || src.startsWith("https://");
 }
 
-const terminalLines = [
-  "whoami",
-  "petros.papagiannis",
-  "scan --surface portfolio --mode focused",
-  "open ports: software_engineering, ai_systems, cybersecurity",
-  "run htb-lab --tools nmap,burp,metasploit",
-  "status: learning, building, hardening",
+type TerminalEntry = {
+  command: string;
+  output: string;
+};
+
+const terminalEntries: TerminalEntry[] = [
+  { command: "id -un && hostnamectl --static", output: "petros.papagiannis @ security-lab" },
+  {
+    command: "grep -E \"(cyber|secure|ai)\" /opt/profile/focus.yml",
+    output: "cybersecurity, secure software, ai-driven systems",
+  },
+  {
+    command: "jq -r '.experience[] | select(.role==\"Software Engineer\") | .scope[]'",
+    output: "backend APIs, AI/data studies, RAG, forecasting, deployment",
+  },
+  {
+    command: "find ./projects -maxdepth 2 -type f -name '*.case' | sort | head -4",
+    output: "UAV security, pentest lab, Kubernetes ML, AI strategy",
+  },
+  {
+    command: "nmap -sV --top-ports 25 skills.local/cybersecurity",
+    output: "nmap, burp, metasploit, wireshark, threat modeling",
+  },
+  {
+    command: "python -m skills.query --track ai-data --format compact",
+    output: "gemini, RAG, pytorch, scikit-learn, bigquery, airflow",
+  },
+  {
+    command: "kubectl get stack systems -o custom-columns=TOOLS:.spec.tools",
+    output: "docker, kubernetes, prometheus, cuda, openmp, r-trees",
+  },
+  {
+    command: "awk -F: '/current|focus|minor/{print $2}' ./education/ceid.profile",
+    output: "CEID University of Patras, cybersecurity focus, AI/ML",
+  },
+  {
+    command: "htb academy progress --path jca | tail -n 2",
+    output: "Hack The Box path, CompTIA Security+ candidate",
+  },
+  {
+    command: "curl -s portfolio.local/links | jq '.public[]'",
+    output: "github, linkedin, portfolio, spotify, instagram",
+  },
+  {
+    command: "systemctl --user status learning.service building.service hardening.service",
+    output: "learning, building, hardening",
+  },
 ];
 
 export function HeroSection({ ui }: Props) {
   const heroSlides = ui.slides.length ? ui.slides : ["/images/hero.jpg"];
   const heroImage = heroSlides[0];
-  const [visibleLines, setVisibleLines] = useState<string[]>([]);
+  const [visibleEntries, setVisibleEntries] = useState<TerminalEntry[]>([]);
   const [typingIndex, setTypingIndex] = useState(0);
-  const [typedLine, setTypedLine] = useState("");
+  const [typedCommand, setTypedCommand] = useState("");
 
   useEffect(() => {
-    const line = terminalLines[typingIndex] ?? "";
+    const entry = terminalEntries[typingIndex] ?? terminalEntries[0];
+    const command = entry.command;
 
-    if (typedLine.length < line.length) {
+    if (typedCommand.length < command.length) {
       const timer = window.setTimeout(() => {
-        setTypedLine(line.slice(0, typedLine.length + 1));
+        setTypedCommand(command.slice(0, typedCommand.length + 1));
       }, 24);
 
       return () => window.clearTimeout(timer);
     }
 
     const timer = window.setTimeout(() => {
-      setVisibleLines((current) => [...current, line].slice(-5));
-      setTypedLine("");
-      setTypingIndex((current) => (current + 1) % terminalLines.length);
+      setVisibleEntries((current) => [...current, entry].slice(-3));
+      setTypedCommand("");
+      setTypingIndex((current) => (current + 1) % terminalEntries.length);
     }, 850);
 
     return () => window.clearTimeout(timer);
-  }, [typedLine, typingIndex]);
+  }, [typedCommand, typingIndex]);
 
   return (
     <section className="hero-panel" id="top">
@@ -147,17 +188,31 @@ export function HeroSection({ ui }: Props) {
               live reconnaissance
             </p>
             <div className="hero-terminal-lines" aria-live="polite">
-              {visibleLines.map((line, index) => (
-                <p key={`${line}-${index}`}>
-                  <span>$</span>
-                  {line}
-                </p>
+              <div className="terminal-column-label">command</div>
+              <div className="terminal-column-label">output</div>
+              {visibleEntries.map((entry, index) => (
+                <div className="terminal-row" key={`${entry.command}-${index}`}>
+                  <p className="terminal-line terminal-command">
+                    <span>$</span>
+                    {entry.command}
+                  </p>
+                  <p className="terminal-line terminal-output">
+                    <span>-&gt;</span>
+                    {entry.output}
+                  </p>
+                </div>
               ))}
-              <p>
-                <span>$</span>
-                {typedLine}
-                <i />
-              </p>
+              <div className="terminal-row">
+                <p className="terminal-line terminal-command">
+                  <span>$</span>
+                  {typedCommand}
+                  <i />
+                </p>
+                <p className="terminal-line terminal-output terminal-output-pending">
+                  <span>-&gt;</span>
+                  waiting...
+                </p>
+              </div>
             </div>
           </div>
         </div>
