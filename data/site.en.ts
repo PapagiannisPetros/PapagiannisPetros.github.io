@@ -193,6 +193,8 @@ export const socialLinks = [
   { label: "GitHub", href: "https://github.com/PapagiannisPetros", value: "@PapagiannisPetros" },
   { label: "LinkedIn", href: "https://gr.linkedin.com/in/petros-papagiannis-04655a292", value: "petros-papagiannis" },
   { label: "Personal site", href: "https://papagiannispetros.github.io", value: "papagiannispetros.github.io" },
+  { label: "Spotify", href: "https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=c375ee2af1024477", value: "Petros Papagiannis" },
+  { label: "Instagram", href: "https://www.instagram.com/papagiannis._._", value: "@papagiannis._._" },
   { label: "Email", href: "mailto:petros.t.papagiannis@gmail.com", value: "petros.t.papagiannis@gmail.com" },
 ];
 
@@ -327,21 +329,56 @@ export const guideCategories: GuideCategory[] = [
     id: "security",
     label: "Cybersecurity",
     intro:
-      "Security tooling, networking, penetration-testing methodology and core security foundations from the CV.",
+      "Practical security skills grouped by tooling, testing methodology, network foundations and security fundamentals.",
     image: images.security,
     groups: [
       {
-        title: "Security",
+        title: "Offensive Tools",
         items: [
           {
-            name: "Cybersecurity Tooling",
-            description: "Nmap, Wireshark, Burp Suite and Metasploit for reconnaissance, traffic analysis, web testing and exploitation labs.",
+            name: "Nmap",
+            description: "Host discovery, service enumeration and network reconnaissance.",
             image: images.security,
           },
           {
-            name: "Security Testing & Analysis",
-            description: "Reconnaissance, enumeration, vulnerability analysis, penetration testing, threat modeling and IDS workflows.",
+            name: "Burp Suite",
+            description: "Web application testing, proxy inspection and request manipulation.",
+            image: images.security,
+          },
+          {
+            name: "Metasploit",
+            description: "Controlled exploitation practice inside isolated lab environments.",
             image: images.lab,
+          },
+          {
+            name: "Wireshark",
+            description: "Packet capture, protocol inspection and traffic analysis.",
+            image: images.systems,
+          },
+        ],
+      },
+      {
+        title: "Testing Methods",
+        items: [
+          {
+            name: "Reconnaissance",
+            description: "Structured target profiling before deeper technical testing.",
+            image: images.security,
+          },
+          {
+            name: "Vulnerability Analysis",
+            description: "Finding, validating and prioritizing weaknesses in systems and apps.",
+            image: images.lab,
+          },
+          {
+            name: "Penetration Testing",
+            description: "Hands-on testing workflow from enumeration to reporting.",
+            image: images.security,
+          },
+          {
+            name: "Threat Modeling",
+            description: "Mapping attack paths, assets, trust boundaries and countermeasures.",
+            image: images.systems,
           },
         ],
       },
@@ -349,18 +386,23 @@ export const guideCategories: GuideCategory[] = [
         title: "Foundations",
         items: [
           {
-            name: "Networking & Protocols",
-            description: "TCP/IP, DNS, DHCP, VLANs, VPN, TLS/SSL and Kafka/Redpanda protocol experience.",
+            name: "TCP/IP",
+            description: "Core networking model for analysis, routing and troubleshooting.",
             image: images.systems,
           },
           {
-            name: "Cryptography & Security Foundations",
-            description: "Hashing, symmetric/asymmetric cryptography, PKI and digital certificates.",
+            name: "TLS / SSL",
+            description: "Secure transport concepts, certificates and encrypted communication.",
             image: images.security,
           },
           {
-            name: "Operating Systems",
-            description: "Linux environments including Ubuntu, Debian and Kali, plus Windows and QEMU/KVM virtualization.",
+            name: "Cryptography",
+            description: "Hashing, symmetric/asymmetric crypto, PKI and digital certificates.",
+            image: images.security,
+          },
+          {
+            name: "Linux / Kali",
+            description: "Security-oriented Linux environments with QEMU/KVM virtualization.",
             image: images.lab,
           },
         ],
@@ -371,26 +413,56 @@ export const guideCategories: GuideCategory[] = [
     id: "engineering",
     label: "Software Engineering",
     intro:
-      "Programming, backend APIs, web interfaces and delivery tooling used across production-oriented projects.",
+      "Languages, APIs, web interfaces and engineering workflow used across production-oriented projects.",
     image: images.code,
     groups: [
       {
-        title: "Development",
+        title: "Languages",
         items: [
           {
-            name: "Programming & Scripting",
-            description: "Python, C, C++, Bash, PowerShell, PHP, JavaScript, TypeScript, C# and Java.",
+            name: "Python",
+            description: "Backend services, automation, data workflows and ML experiments.",
             image: images.code,
           },
           {
-            name: "Backend & APIs",
-            description: "FastAPI, Node.js, Express, REST APIs, authentication and sessions.",
+            name: "TypeScript / JavaScript",
+            description: "Frontend interfaces, API integrations and full-stack application logic.",
+            image: images.code,
+          },
+          {
+            name: "C / C++",
+            description: "Systems-oriented programming, performance work and academic foundations.",
             image: images.systems,
           },
           {
-            name: "Web & UI Technologies",
-            description: "React, Next.js, Streamlit, HTML5, CSS3, Bootstrap and responsive interface work.",
+            name: "Bash / PowerShell",
+            description: "Scripting, local automation and developer workflow utilities.",
+            image: images.lab,
+          },
+        ],
+      },
+      {
+        title: "Application",
+        items: [
+          {
+            name: "FastAPI",
+            description: "Python APIs, service endpoints and model-serving backends.",
+            image: images.systems,
+          },
+          {
+            name: "Node.js / Express",
+            description: "REST APIs, server-side logic and session-based applications.",
+            image: images.systems,
+          },
+          {
+            name: "React / Next.js",
+            description: "Component-based interfaces, routing and production web delivery.",
             image: images.code,
+          },
+          {
+            name: "Streamlit",
+            description: "Fast dashboards and data applications for professional workflows.",
+            image: images.data,
           },
         ],
       },
@@ -398,13 +470,23 @@ export const guideCategories: GuideCategory[] = [
         title: "Delivery",
         items: [
           {
-            name: "Platforms, DevOps & Tooling",
-            description: "Git, GitHub, CI/CD pipelines, VS Code, Jupyter Notebook, Makefile and Vercel.",
+            name: "Git / GitHub",
+            description: "Version control, collaboration and project history management.",
             image: images.systems,
           },
           {
-            name: "Academic Foundations & Systems Knowledge",
-            description: "Data structures and algorithms, operating systems, computer networks, distributed systems and software engineering.",
+            name: "CI/CD",
+            description: "Automated checks and deployment-oriented engineering workflows.",
+            image: images.systems,
+          },
+          {
+            name: "Testing & Documentation",
+            description: "Validation, handoff notes and maintainable project documentation.",
+            image: images.code,
+          },
+          {
+            name: "Vercel",
+            description: "Static and frontend deployment for web projects.",
             image: images.code,
           },
         ],
@@ -415,40 +497,85 @@ export const guideCategories: GuideCategory[] = [
     id: "ai-data",
     label: "AI & Data",
     intro:
-      "AI/LLM systems, data science, databases, forecasting, big-data processing and analytics workflows.",
+      "LLM integration, machine learning, analytics and data infrastructure from professional and academic projects.",
     image: images.ai,
     groups: [
       {
-        title: "AI & ML",
+        title: "LLM Systems",
         items: [
           {
-            name: "AI/LLM Systems",
-            description: "Gemini, RAG, prompting, input validation, abuse prevention and content privacy.",
+            name: "Gemini",
+            description: "LLM integration for chatbots, summaries and AI-assisted workflows.",
             image: images.ai,
           },
           {
-            name: "Data Science, ML & Forecasting",
-            description: "PyTorch, scikit-learn, Pandas, NumPy, Prophet, BigQuery ML and ARIMA PLUS.",
+            name: "RAG",
+            description: "Retrieval-augmented generation with metadata and knowledge-base context.",
+            image: images.data,
+          },
+          {
+            name: "Prompting",
+            description: "Instruction design, task framing and safer model interactions.",
             image: images.ai,
           },
           {
-            name: "Mathematics for ML & AI",
-            description: "Linear algebra, probability theory, statistics, optimization and calculus.",
+            name: "Input Validation",
+            description: "Abuse prevention, privacy-aware handling and safer AI interfaces.",
+            image: images.security,
+          },
+        ],
+      },
+      {
+        title: "ML & Analytics",
+        items: [
+          {
+            name: "PyTorch",
+            description: "Model experimentation and ML pipeline work.",
+            image: images.ai,
+          },
+          {
+            name: "scikit-learn",
+            description: "Classification, feature selection and time-series ML workflows.",
+            image: images.ai,
+          },
+          {
+            name: "Pandas / NumPy",
+            description: "Data cleaning, transformation, validation and numerical processing.",
+            image: images.data,
+          },
+          {
+            name: "Prophet / ARIMA PLUS",
+            description: "Forecasting workflows for KPI and time-series datasets.",
             image: images.systems,
           },
         ],
       },
       {
-        title: "Data",
+        title: "Data Platforms",
         items: [
           {
-            name: "Databases & Data Stores",
-            description: "MySQL, SQLite, MongoDB and BigQuery for application data, analytics and project storage.",
+            name: "MySQL / SQLite",
+            description: "Relational storage for applications, chat history and audit workflows.",
             image: images.data,
           },
           {
-            name: "Big Data, Streaming & Analytics",
-            description: "Spark, PySpark, Spark Structured Streaming, Airflow, Looker and data visualization.",
+            name: "MongoDB",
+            description: "Document storage for analytics and sensor-data projects.",
+            image: images.data,
+          },
+          {
+            name: "BigQuery",
+            description: "Cloud analytics, forecasting views and schema-aware data processing.",
+            image: images.data,
+          },
+          {
+            name: "Spark / PySpark",
+            description: "Big-data processing and analytics pipelines.",
+            image: images.systems,
+          },
+          {
+            name: "Airflow / Looker",
+            description: "Workflow orchestration and analytics-ready reporting views.",
             image: images.data,
           },
         ],
@@ -459,20 +586,55 @@ export const guideCategories: GuideCategory[] = [
     id: "systems",
     label: "Systems",
     intro:
-      "Systems, parallel programming, cloud-native observability and algorithmic foundations from academic and project work.",
+      "Cloud-native deployment, observability, parallel programming and algorithmic foundations.",
     image: images.systems,
     groups: [
       {
-        title: "Systems",
+        title: "Cloud Native",
         items: [
           {
-            name: "Parallel, GPU & Systems Programming",
-            description: "CUDA, SIMD, OpenMP, MPI, multithreading, POSIX Threads, IPC and system calls.",
+            name: "Docker",
+            description: "Containerized application packaging and local deployment workflows.",
             image: images.systems,
           },
           {
-            name: "Cloud-Native & Observability",
-            description: "Docker, Docker Compose, Kubernetes, Argo Workflows, Prometheus and Grafana.",
+            name: "Kubernetes",
+            description: "Container orchestration and resource-usage forecasting projects.",
+            image: images.systems,
+          },
+          {
+            name: "Prometheus / Grafana",
+            description: "Metrics collection, monitoring data and dashboard observability.",
+            image: images.data,
+          },
+          {
+            name: "Argo Workflows",
+            description: "DAG-based workflow execution for ML and systems pipelines.",
+            image: images.systems,
+          },
+        ],
+      },
+      {
+        title: "Parallel",
+        items: [
+          {
+            name: "CUDA",
+            description: "GPU acceleration for numerical processing and scaling workloads.",
+            image: images.systems,
+          },
+          {
+            name: "OpenMP / MPI",
+            description: "Shared-memory and distributed parallel programming patterns.",
+            image: images.systems,
+          },
+          {
+            name: "SIMD",
+            description: "Vectorized computation for performance-oriented data processing.",
+            image: images.code,
+          },
+          {
+            name: "POSIX Threads",
+            description: "Threading, synchronization and low-level process coordination.",
             image: images.systems,
           },
         ],
@@ -481,8 +643,18 @@ export const guideCategories: GuideCategory[] = [
         title: "Algorithms",
         items: [
           {
-            name: "Algorithms & Data Structures",
-            description: "R-trees, k-d Trees, LSH, range queries and feature engineering.",
+            name: "R-trees",
+            description: "Spatial indexing for multidimensional data structures.",
+            image: images.systems,
+          },
+          {
+            name: "k-d Trees / LSH",
+            description: "Similarity search, multidimensional lookup and range-query foundations.",
+            image: images.systems,
+          },
+          {
+            name: "Feature Engineering",
+            description: "Transforming raw signals and datasets into model-ready features.",
             image: images.systems,
           },
         ],

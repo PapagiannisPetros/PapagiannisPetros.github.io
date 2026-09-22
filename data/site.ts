@@ -193,6 +193,8 @@ export const socialLinks = [
   { label: "GitHub", href: "https://github.com/PapagiannisPetros", value: "@PapagiannisPetros" },
   { label: "LinkedIn", href: "https://gr.linkedin.com/in/petros-papagiannis-04655a292", value: "petros-papagiannis" },
   { label: "Personal site", href: "https://papagiannispetros.github.io", value: "papagiannispetros.github.io" },
+  { label: "Spotify", href: "https://open.spotify.com/user/313dibgyp2m6l5h5xfowjvlrhizq?si=c375ee2af1024477", value: "Petros Papagiannis" },
+  { label: "Instagram", href: "https://www.instagram.com/papagiannis._._", value: "@papagiannis._._" },
   { label: "Email", href: "mailto:petros.t.papagiannis@gmail.com", value: "petros.t.papagiannis@gmail.com" },
 ];
 
@@ -327,21 +329,56 @@ export const guideCategories: GuideCategory[] = [
     id: "security",
     label: "Cybersecurity",
     intro:
-      "Security tooling, networking, penetration-testing methodology και βασικά security foundations από το CV.",
+      "Πρακτικά security skills οργανωμένα σε εργαλεία, testing methodology, network foundations και security fundamentals.",
     image: images.security,
     groups: [
       {
-        title: "Security",
+        title: "Offensive Tools",
         items: [
           {
-            name: "Cybersecurity Tooling",
-            description: "Nmap, Wireshark, Burp Suite και Metasploit για reconnaissance, traffic analysis, web testing και exploitation labs.",
+            name: "Nmap",
+            description: "Host discovery, service enumeration και network reconnaissance.",
             image: images.security,
           },
           {
-            name: "Security Testing & Analysis",
-            description: "Reconnaissance, enumeration, vulnerability analysis, penetration testing, threat modeling και IDS workflows.",
+            name: "Burp Suite",
+            description: "Web application testing, proxy inspection και request manipulation.",
+            image: images.security,
+          },
+          {
+            name: "Metasploit",
+            description: "Controlled exploitation practice μέσα σε isolated lab environments.",
             image: images.lab,
+          },
+          {
+            name: "Wireshark",
+            description: "Packet capture, protocol inspection και traffic analysis.",
+            image: images.systems,
+          },
+        ],
+      },
+      {
+        title: "Testing Methods",
+        items: [
+          {
+            name: "Reconnaissance",
+            description: "Structured target profiling πριν από βαθύτερο technical testing.",
+            image: images.security,
+          },
+          {
+            name: "Vulnerability Analysis",
+            description: "Εντοπισμός, validation και prioritization αδυναμιών σε systems και apps.",
+            image: images.lab,
+          },
+          {
+            name: "Penetration Testing",
+            description: "Hands-on testing workflow από enumeration μέχρι reporting.",
+            image: images.security,
+          },
+          {
+            name: "Threat Modeling",
+            description: "Χαρτογράφηση attack paths, assets, trust boundaries και countermeasures.",
+            image: images.systems,
           },
         ],
       },
@@ -349,18 +386,23 @@ export const guideCategories: GuideCategory[] = [
         title: "Foundations",
         items: [
           {
-            name: "Networking & Protocols",
-            description: "TCP/IP, DNS, DHCP, VLANs, VPN, TLS/SSL και Kafka/Redpanda protocol experience.",
+            name: "TCP/IP",
+            description: "Core networking model για analysis, routing και troubleshooting.",
             image: images.systems,
           },
           {
-            name: "Cryptography & Security Foundations",
-            description: "Hashing, symmetric/asymmetric cryptography, PKI και digital certificates.",
+            name: "TLS / SSL",
+            description: "Secure transport concepts, certificates και encrypted communication.",
             image: images.security,
           },
           {
-            name: "Operating Systems",
-            description: "Linux environments όπως Ubuntu, Debian και Kali, μαζί με Windows και QEMU/KVM virtualization.",
+            name: "Cryptography",
+            description: "Hashing, symmetric/asymmetric crypto, PKI και digital certificates.",
+            image: images.security,
+          },
+          {
+            name: "Linux / Kali",
+            description: "Security-oriented Linux environments με QEMU/KVM virtualization.",
             image: images.lab,
           },
         ],
@@ -371,26 +413,56 @@ export const guideCategories: GuideCategory[] = [
     id: "engineering",
     label: "Software Engineering",
     intro:
-      "Programming, backend APIs, web interfaces και delivery tooling για production-oriented projects.",
+      "Languages, APIs, web interfaces και engineering workflow για production-oriented projects.",
     image: images.code,
     groups: [
       {
-        title: "Development",
+        title: "Languages",
         items: [
           {
-            name: "Programming & Scripting",
-            description: "Python, C, C++, Bash, PowerShell, PHP, JavaScript, TypeScript, C# και Java.",
+            name: "Python",
+            description: "Backend services, automation, data workflows και ML experiments.",
             image: images.code,
           },
           {
-            name: "Backend & APIs",
-            description: "FastAPI, Node.js, Express, REST APIs, authentication και sessions.",
+            name: "TypeScript / JavaScript",
+            description: "Frontend interfaces, API integrations και full-stack application logic.",
+            image: images.code,
+          },
+          {
+            name: "C / C++",
+            description: "Systems-oriented programming, performance work και academic foundations.",
             image: images.systems,
           },
           {
-            name: "Web & UI Technologies",
-            description: "React, Next.js, Streamlit, HTML5, CSS3, Bootstrap και responsive interface work.",
+            name: "Bash / PowerShell",
+            description: "Scripting, local automation και developer workflow utilities.",
+            image: images.lab,
+          },
+        ],
+      },
+      {
+        title: "Application",
+        items: [
+          {
+            name: "FastAPI",
+            description: "Python APIs, service endpoints και model-serving backends.",
+            image: images.systems,
+          },
+          {
+            name: "Node.js / Express",
+            description: "REST APIs, server-side logic και session-based applications.",
+            image: images.systems,
+          },
+          {
+            name: "React / Next.js",
+            description: "Component-based interfaces, routing και production web delivery.",
             image: images.code,
+          },
+          {
+            name: "Streamlit",
+            description: "Γρήγορα dashboards και data applications για professional workflows.",
+            image: images.data,
           },
         ],
       },
@@ -398,13 +470,23 @@ export const guideCategories: GuideCategory[] = [
         title: "Delivery",
         items: [
           {
-            name: "Platforms, DevOps & Tooling",
-            description: "Git, GitHub, CI/CD pipelines, VS Code, Jupyter Notebook, Makefile και Vercel.",
+            name: "Git / GitHub",
+            description: "Version control, collaboration και project history management.",
             image: images.systems,
           },
           {
-            name: "Academic Foundations & Systems Knowledge",
-            description: "Data structures and algorithms, operating systems, computer networks, distributed systems και software engineering.",
+            name: "CI/CD",
+            description: "Automated checks και deployment-oriented engineering workflows.",
+            image: images.systems,
+          },
+          {
+            name: "Testing & Documentation",
+            description: "Validation, handoff notes και maintainable project documentation.",
+            image: images.code,
+          },
+          {
+            name: "Vercel",
+            description: "Static και frontend deployment για web projects.",
             image: images.code,
           },
         ],
@@ -415,40 +497,85 @@ export const guideCategories: GuideCategory[] = [
     id: "ai-data",
     label: "AI & Data",
     intro:
-      "AI/LLM systems, data science, databases, forecasting, big-data processing και analytics workflows.",
+      "LLM integration, machine learning, analytics και data infrastructure από professional και academic projects.",
     image: images.ai,
     groups: [
       {
-        title: "AI & ML",
+        title: "LLM Systems",
         items: [
           {
-            name: "AI/LLM Systems",
-            description: "Gemini, RAG, prompting, input validation, abuse prevention και content privacy.",
+            name: "Gemini",
+            description: "LLM integration για chatbots, summaries και AI-assisted workflows.",
             image: images.ai,
           },
           {
-            name: "Data Science, ML & Forecasting",
-            description: "PyTorch, scikit-learn, Pandas, NumPy, Prophet, BigQuery ML και ARIMA PLUS.",
+            name: "RAG",
+            description: "Retrieval-augmented generation με metadata και knowledge-base context.",
+            image: images.data,
+          },
+          {
+            name: "Prompting",
+            description: "Instruction design, task framing και ασφαλέστερες model interactions.",
             image: images.ai,
           },
           {
-            name: "Mathematics for ML & AI",
-            description: "Linear algebra, probability theory, statistics, optimization και calculus.",
+            name: "Input Validation",
+            description: "Abuse prevention, privacy-aware handling και ασφαλέστερα AI interfaces.",
+            image: images.security,
+          },
+        ],
+      },
+      {
+        title: "ML & Analytics",
+        items: [
+          {
+            name: "PyTorch",
+            description: "Model experimentation και ML pipeline work.",
+            image: images.ai,
+          },
+          {
+            name: "scikit-learn",
+            description: "Classification, feature selection και time-series ML workflows.",
+            image: images.ai,
+          },
+          {
+            name: "Pandas / NumPy",
+            description: "Data cleaning, transformation, validation και numerical processing.",
+            image: images.data,
+          },
+          {
+            name: "Prophet / ARIMA PLUS",
+            description: "Forecasting workflows για KPI και time-series datasets.",
             image: images.systems,
           },
         ],
       },
       {
-        title: "Data",
+        title: "Data Platforms",
         items: [
           {
-            name: "Databases & Data Stores",
-            description: "MySQL, SQLite, MongoDB και BigQuery για application data, analytics και project storage.",
+            name: "MySQL / SQLite",
+            description: "Relational storage για applications, chat history και audit workflows.",
             image: images.data,
           },
           {
-            name: "Big Data, Streaming & Analytics",
-            description: "Spark, PySpark, Spark Structured Streaming, Airflow, Looker και data visualization.",
+            name: "MongoDB",
+            description: "Document storage για analytics και sensor-data projects.",
+            image: images.data,
+          },
+          {
+            name: "BigQuery",
+            description: "Cloud analytics, forecasting views και schema-aware data processing.",
+            image: images.data,
+          },
+          {
+            name: "Spark / PySpark",
+            description: "Big-data processing και analytics pipelines.",
+            image: images.systems,
+          },
+          {
+            name: "Airflow / Looker",
+            description: "Workflow orchestration και analytics-ready reporting views.",
             image: images.data,
           },
         ],
@@ -459,20 +586,55 @@ export const guideCategories: GuideCategory[] = [
     id: "systems",
     label: "Systems",
     intro:
-      "Systems, parallel programming, cloud-native observability και algorithmic foundations από academic/project work.",
+      "Cloud-native deployment, observability, parallel programming και algorithmic foundations.",
     image: images.systems,
     groups: [
       {
-        title: "Systems",
+        title: "Cloud Native",
         items: [
           {
-            name: "Parallel, GPU & Systems Programming",
-            description: "CUDA, SIMD, OpenMP, MPI, multithreading, POSIX Threads, IPC και system calls.",
+            name: "Docker",
+            description: "Containerized application packaging και local deployment workflows.",
             image: images.systems,
           },
           {
-            name: "Cloud-Native & Observability",
-            description: "Docker, Docker Compose, Kubernetes, Argo Workflows, Prometheus και Grafana.",
+            name: "Kubernetes",
+            description: "Container orchestration και resource-usage forecasting projects.",
+            image: images.systems,
+          },
+          {
+            name: "Prometheus / Grafana",
+            description: "Metrics collection, monitoring data και dashboard observability.",
+            image: images.data,
+          },
+          {
+            name: "Argo Workflows",
+            description: "DAG-based workflow execution για ML και systems pipelines.",
+            image: images.systems,
+          },
+        ],
+      },
+      {
+        title: "Parallel",
+        items: [
+          {
+            name: "CUDA",
+            description: "GPU acceleration για numerical processing και scaling workloads.",
+            image: images.systems,
+          },
+          {
+            name: "OpenMP / MPI",
+            description: "Shared-memory και distributed parallel programming patterns.",
+            image: images.systems,
+          },
+          {
+            name: "SIMD",
+            description: "Vectorized computation για performance-oriented data processing.",
+            image: images.code,
+          },
+          {
+            name: "POSIX Threads",
+            description: "Threading, synchronization και low-level process coordination.",
             image: images.systems,
           },
         ],
@@ -481,8 +643,18 @@ export const guideCategories: GuideCategory[] = [
         title: "Algorithms",
         items: [
           {
-            name: "Algorithms & Data Structures",
-            description: "R-trees, k-d Trees, LSH, range queries και feature engineering.",
+            name: "R-trees",
+            description: "Spatial indexing για multidimensional data structures.",
+            image: images.systems,
+          },
+          {
+            name: "k-d Trees / LSH",
+            description: "Similarity search, multidimensional lookup και range-query foundations.",
+            image: images.systems,
+          },
+          {
+            name: "Feature Engineering",
+            description: "Μετατροπή raw signals και datasets σε model-ready features.",
             image: images.systems,
           },
         ],

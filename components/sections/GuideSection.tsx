@@ -26,9 +26,6 @@ export function GuideSection({ guideCategories, ui }: Props) {
   const activeCategory =
     guideCategories.find((category) => category.id === activeCategoryId) ?? guideCategories[0];
   const [activeGroupTitle, setActiveGroupTitle] = useState(activeCategory?.groups[0]?.title ?? "");
-  const [selectedItemName, setSelectedItemName] = useState(
-    activeCategory?.groups[0]?.items[0]?.name ?? "",
-  );
 
   useEffect(() => {
     setActiveGroupTitle(activeCategory?.groups[0]?.title ?? "");
@@ -38,16 +35,10 @@ export function GuideSection({ guideCategories, ui }: Props) {
     activeCategory?.groups.find((group) => group.title === activeGroupTitle) ??
     activeCategory?.groups[0];
 
-  useEffect(() => {
-    setSelectedItemName(activeGroup?.items[0]?.name ?? "");
-  }, [activeGroup]);
-
   if (!activeCategory) {
     return null;
   }
 
-  const selectedItem =
-    activeGroup?.items.find((item) => item.name === selectedItemName) ?? activeGroup?.items[0];
   const skillCount = activeCategory.groups.reduce((total, group) => total + group.items.length, 0);
   const revealDelays: Array<"0" | "1" | "2" | "3"> = ["0", "1", "2", "3"];
 
@@ -113,34 +104,17 @@ export function GuideSection({ guideCategories, ui }: Props) {
               </div>
 
               <div className="skills-detail-grid">
-                <div className="skills-detail-panel">
-                  <span>{activeGroup?.title}</span>
-                  <h4>{selectedItem?.name}</h4>
-                  <p>{selectedItem?.description}</p>
-                  <div className="skills-detail-meta">
-                    <span>{ui.fields.hours}</span>
-                    <strong>{activeCategory.label}</strong>
-                    <span>{ui.fields.address}</span>
-                    <strong>{activeGroup?.title}</strong>
-                  </div>
-                </div>
-
                 <div className="skills-items-grid">
                   {activeGroup?.items.map((item, index) => (
                     <Reveal
                       key={`${activeGroup.title}-${item.name}`}
                       delay={revealDelays[index % revealDelays.length]}
                     >
-                      <button
-                        type="button"
-                        className={`skills-item-card ${item.name === selectedItem?.name ? "active" : ""}`}
-                        onClick={() => setSelectedItemName(item.name)}
-                        aria-pressed={item.name === selectedItem?.name}
-                      >
+                      <article className="skills-item-card">
                         <span>{String(index + 1).padStart(2, "0")}</span>
                         <strong>{item.name}</strong>
-                        <small>{activeGroup.title}</small>
-                      </button>
+                        <p>{item.description}</p>
+                      </article>
                     </Reveal>
                   ))}
                 </div>
