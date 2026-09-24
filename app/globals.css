@@ -2874,6 +2874,10 @@ img {
     gap: 0.24rem;
   }
 
+  .terminal-row:nth-last-of-type(n + 3) {
+    display: none;
+  }
+
   .terminal-row + .terminal-row {
     margin-top: 0.16rem;
   }
