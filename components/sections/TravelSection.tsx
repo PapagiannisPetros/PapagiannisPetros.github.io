@@ -4,6 +4,7 @@ type TravelItem = {
   title: string;
   period: string;
   detail: string;
+  paths?: { title: string; detail: string }[];
 };
 
 type Props = {
@@ -30,7 +31,14 @@ function EducationTrack({
             <div>
               <span className="education-period">{item.period}</span>
               <strong>{item.title}</strong>
-              <span className="education-detail">{item.detail}</span>
+              {item.detail ? <span className="education-detail">{item.detail}</span> : null}
+              {item.paths?.map((path) => (
+                <p className="education-detail" key={path.title}>
+                  <b>{path.title}</b>
+                  <br />
+                  {path.detail}
+                </p>
+              ))}
             </div>
           </li>
         </Reveal>

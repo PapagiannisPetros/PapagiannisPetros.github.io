@@ -56,8 +56,8 @@ const terminalEntries: TerminalEntry[] = [
     output: "CEID University of Patras, cybersecurity focus, AI/ML",
   },
   {
-    command: "htb academy progress --path jca | tail -n 2",
-    output: "Hack The Box path, CompTIA Security+ candidate",
+    command: "cat ./education/certifications.txt",
+    output: "HTB: Junior Cybersecurity Analyst + SOC Analyst completed; Cisco: Junior Cybersecurity Analyst ongoing",
   },
   {
     command: "curl -s portfolio.local/links | jq '.public[]'",

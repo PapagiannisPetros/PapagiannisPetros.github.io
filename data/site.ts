@@ -24,8 +24,8 @@ const images = {
 };
 
 export const stats = [
-  { value: "HTB", label: "Πρακτική εκπαίδευση cybersecurity" },
-  { value: "Sec+", label: "Υποψήφιος CompTIA Security+" },
+  { value: "HTB", label: "2 πιστοποιητικά κατάρτισης" },
+  { value: "Cisco", label: "Junior Cybersecurity Analyst · Σε εξέλιξη" },
   { value: "CEID", label: "Μηχανικών Η/Υ και Πληροφορικής" },
   { value: "2025+", label: "Εμπειρία σε software, AI και data systems" },
 ];
@@ -47,6 +47,14 @@ export const destinations = [
       "Απομονωμένο VM lab με Kali και ευάλωτους στόχους για reconnaissance, scanning, exploitation και privilege escalation.",
     chips: ["Kali", "Nmap", "Burp Suite", "Metasploit"],
     image: images.security,
+  },
+  {
+    name: "Linux Defense Lab",
+    tag: "Ακαδημαϊκό έργο · 2026 - σήμερα",
+    description:
+      "Debian VM lab για Linux hardening, αμυντική παρακολούθηση και ελέγχους ασφάλειας δικτύου. Εστίαση σε firewalling, SSH hardening, ανάλυση logs και ασφάλεια υπηρεσιών με iptables, nftables, tcpdump, fail2ban και auditd.",
+    chips: ["Debian", "Linux Hardening", "SOC", "Firewalling", "Logging", "Monitoring"],
+    image: images.lab,
   },
   {
     name: "Kubernetes Forecasting",
@@ -170,15 +178,23 @@ export const travelInfo = [
   },
   {
     title: "Hack The Box Academy",
-    period: "2026 - σήμερα",
-    detail:
-      "Junior Cybersecurity Analyst Path και πρακτική εκπαίδευση με Nmap, Burp Suite, Metasploit και Linux environments.",
+    period: "2026 | Ολοκληρώθηκε — Αποκτήθηκαν πιστοποιητικά",
+    detail: "",
+    paths: [
+      {
+        title: "Junior Cybersecurity Analyst",
+        detail: "Enumeration, αξιολόγηση ευπαθειών, exploitation με Metasploit και privilege escalation.",
+      },
+      {
+        title: "SOC Analyst",
+        detail: "Διερεύνηση σε SIEM (Splunk, Elastic Stack), IDS/IPS (Suricata, Snort), ανάλυση δικτύου (Zeek, Wireshark), threat hunting, digital forensics και incident handling.",
+      },
+    ],
   },
   {
-    title: "CompTIA Security+ (SY0-701)",
-    period: "Σε εξέλιξη",
-    detail:
-      "Υποψήφιος, με προετοιμασία σε network security, IAM, risk management, cryptography και incident response.",
+    title: "Cisco Networking Academy",
+    period: "2026 - σήμερα · Σε εξέλιξη",
+    detail: "Junior Cybersecurity Analyst",
   },
 ];
 
@@ -231,7 +247,7 @@ export const ui = {
     label: "Δεξιότητες",
     title: "Τεχνικό stack",
     copy:
-      "Οι δεξιότητες είναι οργανωμένες όπως χρησιμοποιούνται στην πράξη: software engineering, AI/data, security και systems.",
+      "Παρακολούθηση ασφάλειας, ανίχνευση απειλών, incident response, security testing, systems και AI/ML.",
     tabsAriaLabel: "Κατηγορίες δεξιοτήτων",
     closeLabel: "Κλείσιμο",
     fields: {
@@ -253,7 +269,7 @@ export const ui = {
     title: { line1: "Εκπαίδευση", line2: "και κατάρτιση" },
     educationTitle: "Education",
     trainingLabel: "Κατάρτιση",
-    trainingTitle: "Training & Certificates",
+    trainingTitle: "Πιστοποιήσεις & Κατάρτιση",
     googleMaps: "GitHub",
     googleMapsUrl: "https://github.com/PapagiannisPetros",
     appleMaps: "Personal site",
@@ -263,8 +279,8 @@ export const ui = {
     highlights: [
       { value: "CEID", label: "Computer Engineering & Informatics" },
       { value: "AI/ML", label: "Δευτερεύον αντικείμενο σπουδών" },
-      { value: "HTB", label: "Junior Cybersecurity Analyst Path" },
-      { value: "Sec+", label: "Υποψήφιος CompTIA Security+ SY0-701" },
+      { value: "HTB", label: "Junior Cybersecurity Analyst & SOC Analyst · Ολοκληρώθηκαν" },
+      { value: "Cisco", label: "Junior Cybersecurity Analyst · Σε εξέλιξη" },
     ],
   },
   contact: {
@@ -327,256 +343,220 @@ export type GuideCategory = {
 export const guideCategories: GuideCategory[] = [
   {
     id: "security",
-    label: "Cybersecurity",
-    intro:
-      "Πρακτικά security skills οργανωμένα σε εργαλεία, testing methodology, network foundations και security fundamentals.",
+    label: "Defensive Security",
+    intro: "Παρακολούθηση ασφάλειας, ανίχνευση απειλών, διαχείριση περιστατικών, ψηφιακή εγκληματολογία και ανάλυση κακόβουλου λογισμικού.",
     image: images.security,
     groups: [
       {
-        title: "Offensive Tools",
+        title: "SIEM & Security Monitoring",
         items: [
           {
-            name: "Nmap",
-            description: "Host discovery, service enumeration και network reconnaissance.",
+            name: "Splunk (SPL)",
+            description: "Διερεύνηση συμβάντων SIEM και αναζητήσεις ασφαλείας με SPL.",
             image: images.security,
           },
           {
-            name: "Burp Suite",
-            description: "Web application testing, proxy inspection και request manipulation.",
+            name: "Elastic Stack · Kibana · KQL",
+            description: "Παρακολούθηση ασφάλειας και διερεύνηση logs με Kibana και KQL.",
             image: images.security,
           },
           {
-            name: "Metasploit",
-            description: "Controlled exploitation practice μέσα σε isolated lab environments.",
-            image: images.lab,
-          },
-          {
-            name: "Wireshark",
-            description: "Packet capture, protocol inspection και traffic analysis.",
-            image: images.systems,
+            name: "Wazuh · Alert Triage",
+            description: "Παρακολούθηση ασφάλειας και αξιολόγηση ειδοποιήσεων.",
+            image: images.security,
           },
         ],
       },
       {
-        title: "Testing Methods",
+        title: "Threat Hunting & Detection",
         items: [
           {
-            name: "Reconnaissance",
-            description: "Structured target profiling πριν από βαθύτερο technical testing.",
+            name: "MITRE ATT&CK · IOC/TTP Analysis",
+            description: "Threat hunting με δείκτες παραβίασης και ανάλυση τακτικών, τεχνικών και διαδικασιών επιτιθέμενων.",
             image: images.security,
           },
           {
-            name: "Vulnerability Analysis",
-            description: "Εντοπισμός, validation και prioritization αδυναμιών σε systems και apps.",
-            image: images.lab,
-          },
-          {
-            name: "Penetration Testing",
-            description: "Hands-on testing workflow από enumeration μέχρι reporting.",
+            name: "YARA · Sigma",
+            description: "Ανάπτυξη και επικύρωση κανόνων ανίχνευσης.",
             image: images.security,
-          },
-          {
-            name: "Threat Modeling",
-            description: "Χαρτογράφηση attack paths, assets, trust boundaries και countermeasures.",
-            image: images.systems,
           },
         ],
       },
       {
-        title: "Foundations",
+        title: "Network Analysis & Defense",
         items: [
           {
-            name: "TCP/IP",
-            description: "Core networking model για analysis, routing και troubleshooting.",
-            image: images.systems,
-          },
-          {
-            name: "TLS / SSL",
-            description: "Secure transport concepts, certificates και encrypted communication.",
+            name: "Wireshark · tcpdump · TShark",
+            description: "Καταγραφή πακέτων και ανάλυση PCAP.",
             image: images.security,
           },
           {
-            name: "Cryptography",
-            description: "Hashing, symmetric/asymmetric crypto, PKI και digital certificates.",
+            name: "Zeek · Suricata · Snort",
+            description: "Ανάλυση δικτυακής κίνησης και παρακολούθηση IDS/IPS.",
             image: images.security,
           },
           {
-            name: "Linux / Kali",
-            description: "Security-oriented Linux environments με QEMU/KVM virtualization.",
-            image: images.lab,
+            name: "iptables · NAT",
+            description: "Κανόνες firewall και μετάφραση διευθύνσεων δικτύου.",
+            image: images.security,
+          },
+        ],
+      },
+      {
+        title: "Windows & Active Directory Security",
+        items: [
+          {
+            name: "Windows Event Logs · Sysmon · ETW",
+            description: "Τηλεμετρία ασφάλειας Windows και ανάλυση συμβάντων.",
+            image: images.security,
+          },
+          {
+            name: "Kerberos · NTLM",
+            description: "Πρωτόκολλα αυθεντικοποίησης και ανίχνευση επιθέσεων σε Active Directory.",
+            image: images.security,
+          },
+          {
+            name: "Credential Dumping · Lateral Movement",
+            description: "Ανάλυση δραστηριότητας υποκλοπής διαπιστευτηρίων και πλευρικής μετακίνησης.",
+            image: images.security,
+          },
+        ],
+      },
+      {
+        title: "Incident Handling & Reporting",
+        items: [
+          {
+            name: "Containment · IOC Enrichment",
+            description: "Περιορισμός περιστατικών και εμπλουτισμός δεικτών παραβίασης.",
+            image: images.security,
+          },
+          {
+            name: "TheHive · VirusTotal",
+            description: "Διαχείριση περιστατικών και διερεύνηση δεικτών.",
+            image: images.security,
+          },
+          {
+            name: "Incident Timelines · Evidence-Based Reporting",
+            description: "Ανασύνθεση χρονολογίου περιστατικών και τεκμηρίωση ευρημάτων με αποδεικτικά στοιχεία.",
+            image: images.security,
+          },
+        ],
+      },
+      {
+        title: "Digital Forensics",
+        items: [
+          {
+            name: "Disk & Memory Analysis",
+            description: "Διερεύνηση δίσκου και μνήμης με συσχέτιση τεκμηρίων Windows.",
+            image: images.security,
+          },
+          {
+            name: "FTK Imager · KAPE",
+            description: "Λήψη εικόνων δίσκου και συλλογή ψηφιακών τεκμηρίων.",
+            image: images.security,
+          },
+          {
+            name: "Velociraptor · Volatility 3",
+            description: "Συλλογή τεκμηρίων από endpoints και ανάλυση μνήμης.",
+            image: images.security,
+          },
+        ],
+      },
+      {
+        title: "Malware & Script Analysis",
+        items: [
+          {
+            name: "Static/Dynamic Analysis · PE Inspection",
+            description: "Στατική και δυναμική ανάλυση κακόβουλου λογισμικού και εξέταση αρχείων PE.",
+            image: images.security,
+          },
+          {
+            name: "Ghidra · x64dbg · Procmon",
+            description: "Reverse engineering, debugging και ανάλυση δραστηριότητας διεργασιών.",
+            image: images.security,
+          },
+          {
+            name: "JavaScript Deobfuscation",
+            description: "Αποκωδικοποίηση και ανάλυση συγκεκαλυμμένου κώδικα JavaScript.",
+            image: images.security,
           },
         ],
       },
     ],
   },
   {
-    id: "engineering",
-    label: "Software Engineering",
-    intro:
-      "Languages, APIs, web interfaces και engineering workflow για production-oriented projects.",
-    image: images.code,
+    id: "foundations",
+    label: "Security Foundations",
+    intro: "Έλεγχοι ασφάλειας, λειτουργικά συστήματα, εικονικοποίηση, δίκτυα και κρυπτογραφία.",
+    image: images.lab,
     groups: [
       {
-        title: "Languages",
+        title: "Security Testing",
         items: [
           {
-            name: "Python",
-            description: "Backend services, automation, data workflows και ML experiments.",
-            image: images.code,
+            name: "Burp Suite · Metasploit",
+            description: "Έλεγχος ασφάλειας web εφαρμογών και ελεγχόμενο exploitation.",
+            image: images.lab,
           },
           {
-            name: "TypeScript / JavaScript",
-            description: "Frontend interfaces, API integrations και full-stack application logic.",
-            image: images.code,
+            name: "Reconnaissance · Enumeration",
+            description: "Συλλογή πληροφοριών και απαρίθμηση hosts και υπηρεσιών.",
+            image: images.lab,
           },
           {
-            name: "C / C++",
-            description: "Systems-oriented programming, performance work και academic foundations.",
-            image: images.systems,
-          },
-          {
-            name: "Bash / PowerShell",
-            description: "Scripting, local automation και developer workflow utilities.",
+            name: "Vulnerability Assessment · Exploitation · Privilege Escalation",
+            description: "Αξιολόγηση ευπαθειών, exploitation και κλιμάκωση προνομίων σε εργαστηριακά περιβάλλοντα.",
             image: images.lab,
           },
         ],
       },
       {
-        title: "Application",
+        title: "Operating Systems & Virtualization",
         items: [
           {
-            name: "FastAPI",
-            description: "Python APIs, service endpoints και model-serving backends.",
-            image: images.systems,
+            name: "Linux · Ubuntu · Debian · Kali",
+            description: "Περιβάλλοντα Linux για ελέγχους ασφάλειας και αμυντικά εργαστήρια.",
+            image: images.lab,
           },
           {
-            name: "Node.js / Express",
-            description: "REST APIs, server-side logic και session-based applications.",
-            image: images.systems,
-          },
-          {
-            name: "React / Next.js",
-            description: "Component-based interfaces, routing και production web delivery.",
-            image: images.code,
-          },
-          {
-            name: "Streamlit",
-            description: "Γρήγορα dashboards και data applications για professional workflows.",
-            image: images.data,
+            name: "Windows · QEMU/KVM",
+            description: "Περιβάλλοντα Windows και εργαστήρια εικονικών μηχανών με QEMU/KVM.",
+            image: images.lab,
           },
         ],
       },
       {
-        title: "Delivery",
+        title: "Networking & Protocols",
         items: [
           {
-            name: "Git / GitHub",
-            description: "Version control, collaboration και project history management.",
-            image: images.systems,
+            name: "TCP/IP · DNS · DHCP",
+            description: "Δικτυακή επικοινωνία, επίλυση ονομάτων και ρύθμιση hosts.",
+            image: images.lab,
           },
           {
-            name: "CI/CD",
-            description: "Automated checks και deployment-oriented engineering workflows.",
-            image: images.systems,
+            name: "HTTP/S · SMB · LDAP",
+            description: "Πρωτόκολλα web, διαμοιρασμού αρχείων και υπηρεσιών καταλόγου.",
+            image: images.lab,
           },
           {
-            name: "Testing & Documentation",
-            description: "Validation, handoff notes και maintainable project documentation.",
-            image: images.code,
-          },
-          {
-            name: "Vercel",
-            description: "Static και frontend deployment για web projects.",
-            image: images.code,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "ai-data",
-    label: "AI & Data",
-    intro:
-      "LLM integration, machine learning, analytics και data infrastructure από professional και academic projects.",
-    image: images.ai,
-    groups: [
-      {
-        title: "LLM Systems",
-        items: [
-          {
-            name: "Gemini",
-            description: "LLM integration για chatbots, summaries και AI-assisted workflows.",
-            image: images.ai,
-          },
-          {
-            name: "RAG",
-            description: "Retrieval-augmented generation με metadata και knowledge-base context.",
-            image: images.data,
-          },
-          {
-            name: "Prompting",
-            description: "Instruction design, task framing και ασφαλέστερες model interactions.",
-            image: images.ai,
-          },
-          {
-            name: "Input Validation",
-            description: "Abuse prevention, privacy-aware handling και ασφαλέστερα AI interfaces.",
-            image: images.security,
+            name: "VLANs · VPN · TLS",
+            description: "Δικτυακή τμηματοποίηση, εικονικά ιδιωτικά δίκτυα και κρυπτογραφημένη μεταφορά.",
+            image: images.lab,
           },
         ],
       },
       {
-        title: "ML & Analytics",
+        title: "Cryptography & Authentication",
         items: [
           {
-            name: "PyTorch",
-            description: "Model experimentation και ML pipeline work.",
-            image: images.ai,
+            name: "Hashing · Symmetric/Asymmetric Cryptography",
+            description: "Hashing και αρχές συμμετρικής και ασύμμετρης κρυπτογραφίας.",
+            image: images.lab,
           },
           {
-            name: "scikit-learn",
-            description: "Classification, feature selection και time-series ML workflows.",
-            image: images.ai,
-          },
-          {
-            name: "Pandas / NumPy",
-            description: "Data cleaning, transformation, validation και numerical processing.",
-            image: images.data,
-          },
-          {
-            name: "Prophet / ARIMA PLUS",
-            description: "Forecasting workflows για KPI και time-series datasets.",
-            image: images.systems,
-          },
-        ],
-      },
-      {
-        title: "Data Platforms",
-        items: [
-          {
-            name: "MySQL / SQLite",
-            description: "Relational storage για applications, chat history και audit workflows.",
-            image: images.data,
-          },
-          {
-            name: "MongoDB",
-            description: "Document storage για analytics και sensor-data projects.",
-            image: images.data,
-          },
-          {
-            name: "BigQuery",
-            description: "Cloud analytics, forecasting views και schema-aware data processing.",
-            image: images.data,
-          },
-          {
-            name: "Spark / PySpark",
-            description: "Big-data processing και analytics pipelines.",
-            image: images.systems,
-          },
-          {
-            name: "Airflow / Looker",
-            description: "Workflow orchestration και analytics-ready reporting views.",
-            image: images.data,
+            name: "PKI · Digital Certificates · AD CS",
+            description: "Υποδομή δημόσιου κλειδιού, ψηφιακά πιστοποιητικά και Active Directory Certificate Services.",
+            image: images.lab,
           },
         ],
       },
@@ -584,78 +564,85 @@ export const guideCategories: GuideCategory[] = [
   },
   {
     id: "systems",
-    label: "Systems",
-    intro:
-      "Cloud-native deployment, observability, parallel programming και algorithmic foundations.",
+    label: "Systems & DevOps",
+    intro: "Παράλληλος προγραμματισμός, containers, workflows παράδοσης και παρατηρησιμότητα.",
     image: images.systems,
     groups: [
       {
-        title: "Cloud Native",
+        title: "Parallel & Systems Programming",
         items: [
           {
-            name: "Docker",
-            description: "Containerized application packaging και local deployment workflows.",
+            name: "CUDA · SIMD",
+            description: "Επιτάχυνση GPU και διανυσματικοί υπολογισμοί.",
             image: images.systems,
           },
           {
-            name: "Kubernetes",
-            description: "Container orchestration και resource-usage forecasting projects.",
+            name: "OpenMP · MPI",
+            description: "Παράλληλος προγραμματισμός κοινής μνήμης και κατανεμημένων συστημάτων.",
             image: images.systems,
           },
           {
-            name: "Prometheus / Grafana",
-            description: "Metrics collection, monitoring data και dashboard observability.",
-            image: images.data,
-          },
-          {
-            name: "Argo Workflows",
-            description: "DAG-based workflow execution για ML και systems pipelines.",
+            name: "Multithreading · POSIX Threads · IPC",
+            description: "Νήματα, συγχρονισμός και επικοινωνία μεταξύ διεργασιών.",
             image: images.systems,
           },
         ],
       },
       {
-        title: "Parallel",
+        title: "Containers, DevOps & Observability",
         items: [
           {
-            name: "CUDA",
-            description: "GPU acceleration για numerical processing και scaling workloads.",
+            name: "Docker · Kubernetes",
+            description: "Εφαρμογές σε containers και ενορχήστρωση containers.",
             image: images.systems,
           },
           {
-            name: "OpenMP / MPI",
-            description: "Shared-memory και distributed parallel programming patterns.",
+            name: "Argo Workflows · CI/CD",
+            description: "Ενορχήστρωση workflows και συνεχής ενσωμάτωση και παράδοση.",
             image: images.systems,
           },
           {
-            name: "SIMD",
-            description: "Vectorized computation για performance-oriented data processing.",
-            image: images.code,
+            name: "Prometheus · Grafana",
+            description: "Συλλογή μετρικών, παρακολούθηση και dashboards.",
+            image: images.systems,
           },
           {
-            name: "POSIX Threads",
-            description: "Threading, synchronization και low-level process coordination.",
+            name: "Git · GitHub · Makefile",
+            description: "Έλεγχος εκδόσεων, συνεργασία και αυτοματοποίηση build.",
             image: images.systems,
           },
         ],
       },
+    ],
+  },
+  {
+    id: "ai-data",
+    label: "AI & ML",
+    intro: "Συστήματα LLM, μηχανική μάθηση, κατανεμημένη επεξεργασία και προβλέψεις.",
+    image: images.ai,
+    groups: [
       {
-        title: "Algorithms",
+        title: "LLM Systems & AI/ML",
         items: [
           {
-            name: "R-trees",
-            description: "Spatial indexing για multidimensional data structures.",
-            image: images.systems,
+            name: "Gemini · RAG · Prompting",
+            description: "Ενσωμάτωση LLM, παραγωγή με ανάκτηση πληροφορίας και σχεδιασμός prompts.",
+            image: images.ai,
           },
           {
-            name: "k-d Trees / LSH",
-            description: "Similarity search, multidimensional lookup και range-query foundations.",
-            image: images.systems,
+            name: "PyTorch · scikit-learn",
+            description: "Μοντέλα μηχανικής μάθησης, ταξινόμηση και πειραματισμός.",
+            image: images.ai,
           },
           {
-            name: "Feature Engineering",
-            description: "Μετατροπή raw signals και datasets σε model-ready features.",
-            image: images.systems,
+            name: "PySpark",
+            description: "Κατανεμημένη επεξεργασία δεδομένων και workflows μηχανικής μάθησης.",
+            image: images.ai,
+          },
+          {
+            name: "Prophet · ARIMA PLUS",
+            description: "Πρόβλεψη χρονοσειρών για analytics και KPIs.",
+            image: images.ai,
           },
         ],
       },

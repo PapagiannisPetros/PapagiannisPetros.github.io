@@ -24,8 +24,8 @@ const images = {
 };
 
 export const stats = [
-  { value: "HTB", label: "Hands-on cybersecurity training" },
-  { value: "Sec+", label: "CompTIA Security+ candidate" },
+  { value: "HTB", label: "2 training certificates earned" },
+  { value: "Cisco", label: "Junior Cybersecurity Analyst · Ongoing" },
   { value: "CEID", label: "Computer Engineering & Informatics" },
   { value: "2025+", label: "Software, AI and data systems experience" },
 ];
@@ -47,6 +47,14 @@ export const destinations = [
       "Isolated VM-based lab with Kali and vulnerable targets for reconnaissance, scanning, exploitation and privilege escalation.",
     chips: ["Kali", "Nmap", "Burp Suite", "Metasploit"],
     image: images.security,
+  },
+  {
+    name: "Linux Defense Lab",
+    tag: "Academic Project · 2026 - ongoing",
+    description:
+      "Debian VM lab for Linux hardening, defensive monitoring and network security controls. Focused on firewalling, SSH hardening, log analysis and service security using iptables, nftables, tcpdump, fail2ban and auditd.",
+    chips: ["Debian", "Linux Hardening", "SOC", "Firewalling", "Logging", "Monitoring"],
+    image: images.lab,
   },
   {
     name: "Kubernetes Resource Prediction",
@@ -170,15 +178,23 @@ export const travelInfo = [
   },
   {
     title: "Hack The Box Academy",
-    period: "2026 - ongoing",
-    detail:
-      "Junior Cybersecurity Analyst Path & hands-on training using Nmap, Burp Suite, Metasploit and Linux environments.",
+    period: "2026 | Completed — Certificates Earned",
+    detail: "",
+    paths: [
+      {
+        title: "Junior Cybersecurity Analyst",
+        detail: "Enumeration, vulnerability assessment, exploitation with Metasploit and privilege escalation.",
+      },
+      {
+        title: "SOC Analyst",
+        detail: "SIEM investigations (Splunk, Elastic Stack), IDS/IPS (Suricata, Snort), network analysis (Zeek, Wireshark), threat hunting, digital forensics and incident handling.",
+      },
+    ],
   },
   {
-    title: "CompTIA Security+ (SY0-701)",
-    period: "In progress",
-    detail:
-      "Candidate, preparing across network security, IAM, risk management, cryptography and incident response.",
+    title: "Cisco Networking Academy",
+    period: "2026 - ongoing",
+    detail: "Junior Cybersecurity Analyst",
   },
 ];
 
@@ -231,7 +247,7 @@ export const ui = {
     label: "Skill map",
     title: "Technical stack",
     copy:
-      "Skills are grouped by how they are used in practice: engineering, AI/data, security and systems.",
+      "Security monitoring, threat detection, incident response, security testing, systems and AI/ML.",
     tabsAriaLabel: "Skill categories",
     closeLabel: "Close",
     fields: {
@@ -253,7 +269,7 @@ export const ui = {
     title: { line1: "Education", line2: "and training" },
     educationTitle: "Education",
     trainingLabel: "Training",
-    trainingTitle: "Training & Certificates",
+    trainingTitle: "Certifications & Training",
     googleMaps: "GitHub",
     googleMapsUrl: "https://github.com/PapagiannisPetros",
     appleMaps: "Personal site",
@@ -263,8 +279,8 @@ export const ui = {
     highlights: [
       { value: "CEID", label: "Computer Engineering & Informatics" },
       { value: "AI/ML", label: "Subsidiary academic subject" },
-      { value: "HTB", label: "Junior Cybersecurity Analyst Path, ongoing" },
-      { value: "Sec+", label: "CompTIA Security+ SY0-701 candidate" },
+      { value: "HTB", label: "Junior Cybersecurity Analyst & SOC Analyst · Completed" },
+      { value: "Cisco", label: "Junior Cybersecurity Analyst · Ongoing" },
     ],
   },
   contact: {
@@ -327,256 +343,220 @@ export type GuideCategory = {
 export const guideCategories: GuideCategory[] = [
   {
     id: "security",
-    label: "Cybersecurity",
-    intro:
-      "Practical security skills grouped by tooling, testing methodology, network foundations and security fundamentals.",
+    label: "Defensive Security",
+    intro: "Security monitoring, threat detection, incident handling, digital forensics and malware analysis.",
     image: images.security,
     groups: [
       {
-        title: "Offensive Tools",
+        title: "SIEM & Security Monitoring",
         items: [
           {
-            name: "Nmap",
-            description: "Host discovery, service enumeration and network reconnaissance.",
+            name: "Splunk (SPL)",
+            description: "SIEM investigations and security event queries using SPL.",
             image: images.security,
           },
           {
-            name: "Burp Suite",
-            description: "Web application testing, proxy inspection and request manipulation.",
+            name: "Elastic Stack · Kibana · KQL",
+            description: "Security monitoring and log investigation with Kibana and KQL.",
             image: images.security,
           },
           {
-            name: "Metasploit",
-            description: "Controlled exploitation practice inside isolated lab environments.",
-            image: images.lab,
-          },
-          {
-            name: "Wireshark",
-            description: "Packet capture, protocol inspection and traffic analysis.",
-            image: images.systems,
+            name: "Wazuh · Alert Triage",
+            description: "Security monitoring and alert assessment.",
+            image: images.security,
           },
         ],
       },
       {
-        title: "Testing Methods",
+        title: "Threat Hunting & Detection",
         items: [
           {
-            name: "Reconnaissance",
-            description: "Structured target profiling before deeper technical testing.",
+            name: "MITRE ATT&CK · IOC/TTP Analysis",
+            description: "Threat hunting through indicators of compromise and attacker tactics, techniques and procedures.",
             image: images.security,
           },
           {
-            name: "Vulnerability Analysis",
-            description: "Finding, validating and prioritizing weaknesses in systems and apps.",
-            image: images.lab,
-          },
-          {
-            name: "Penetration Testing",
-            description: "Hands-on testing workflow from enumeration to reporting.",
+            name: "YARA · Sigma",
+            description: "Detection rule development and validation.",
             image: images.security,
-          },
-          {
-            name: "Threat Modeling",
-            description: "Mapping attack paths, assets, trust boundaries and countermeasures.",
-            image: images.systems,
           },
         ],
       },
       {
-        title: "Foundations",
+        title: "Network Analysis & Defense",
         items: [
           {
-            name: "TCP/IP",
-            description: "Core networking model for analysis, routing and troubleshooting.",
-            image: images.systems,
-          },
-          {
-            name: "TLS / SSL",
-            description: "Secure transport concepts, certificates and encrypted communication.",
+            name: "Wireshark · tcpdump · TShark",
+            description: "Packet capture and PCAP analysis.",
             image: images.security,
           },
           {
-            name: "Cryptography",
-            description: "Hashing, symmetric/asymmetric crypto, PKI and digital certificates.",
+            name: "Zeek · Suricata · Snort",
+            description: "Network traffic analysis and IDS/IPS monitoring.",
             image: images.security,
           },
           {
-            name: "Linux / Kali",
-            description: "Security-oriented Linux environments with QEMU/KVM virtualization.",
-            image: images.lab,
+            name: "iptables · NAT",
+            description: "Firewall rules and network address translation.",
+            image: images.security,
+          },
+        ],
+      },
+      {
+        title: "Windows & Active Directory Security",
+        items: [
+          {
+            name: "Windows Event Logs · Sysmon · ETW",
+            description: "Windows security telemetry and event analysis.",
+            image: images.security,
+          },
+          {
+            name: "Kerberos · NTLM",
+            description: "Authentication protocols and Active Directory attack detection.",
+            image: images.security,
+          },
+          {
+            name: "Credential Dumping · Lateral Movement",
+            description: "Analysis of credential dumping and lateral movement activity.",
+            image: images.security,
+          },
+        ],
+      },
+      {
+        title: "Incident Handling & Reporting",
+        items: [
+          {
+            name: "Containment · IOC Enrichment",
+            description: "Incident containment and enrichment of indicators of compromise.",
+            image: images.security,
+          },
+          {
+            name: "TheHive · VirusTotal",
+            description: "Incident handling and indicator investigation.",
+            image: images.security,
+          },
+          {
+            name: "Incident Timelines · Evidence-Based Reporting",
+            description: "Reconstructing incident timelines and documenting findings with evidence.",
+            image: images.security,
+          },
+        ],
+      },
+      {
+        title: "Digital Forensics",
+        items: [
+          {
+            name: "Disk & Memory Analysis",
+            description: "Disk and memory investigations with Windows artifact correlation.",
+            image: images.security,
+          },
+          {
+            name: "FTK Imager · KAPE",
+            description: "Disk imaging and forensic artifact collection.",
+            image: images.security,
+          },
+          {
+            name: "Velociraptor · Volatility 3",
+            description: "Endpoint forensic collection and memory analysis.",
+            image: images.security,
+          },
+        ],
+      },
+      {
+        title: "Malware & Script Analysis",
+        items: [
+          {
+            name: "Static/Dynamic Analysis · PE Inspection",
+            description: "Static and dynamic malware analysis and Portable Executable inspection.",
+            image: images.security,
+          },
+          {
+            name: "Ghidra · x64dbg · Procmon",
+            description: "Reverse engineering, debugging and process activity analysis.",
+            image: images.security,
+          },
+          {
+            name: "JavaScript Deobfuscation",
+            description: "Deobfuscation and analysis of JavaScript code.",
+            image: images.security,
           },
         ],
       },
     ],
   },
   {
-    id: "engineering",
-    label: "Software Engineering",
-    intro:
-      "Languages, APIs, web interfaces and engineering workflow used across production-oriented projects.",
-    image: images.code,
+    id: "foundations",
+    label: "Security Foundations",
+    intro: "Security testing, operating systems, virtualization, networking and cryptography.",
+    image: images.lab,
     groups: [
       {
-        title: "Languages",
+        title: "Security Testing",
         items: [
           {
-            name: "Python",
-            description: "Backend services, automation, data workflows and ML experiments.",
-            image: images.code,
+            name: "Burp Suite · Metasploit",
+            description: "Web application security testing and controlled exploitation.",
+            image: images.lab,
           },
           {
-            name: "TypeScript / JavaScript",
-            description: "Frontend interfaces, API integrations and full-stack application logic.",
-            image: images.code,
+            name: "Reconnaissance · Enumeration",
+            description: "Reconnaissance and enumeration of hosts and services.",
+            image: images.lab,
           },
           {
-            name: "C / C++",
-            description: "Systems-oriented programming, performance work and academic foundations.",
-            image: images.systems,
-          },
-          {
-            name: "Bash / PowerShell",
-            description: "Scripting, local automation and developer workflow utilities.",
+            name: "Vulnerability Assessment · Exploitation · Privilege Escalation",
+            description: "Vulnerability assessment, exploitation and privilege escalation in lab environments.",
             image: images.lab,
           },
         ],
       },
       {
-        title: "Application",
+        title: "Operating Systems & Virtualization",
         items: [
           {
-            name: "FastAPI",
-            description: "Python APIs, service endpoints and model-serving backends.",
-            image: images.systems,
+            name: "Linux · Ubuntu · Debian · Kali",
+            description: "Linux operating systems for security testing and defensive lab work.",
+            image: images.lab,
           },
           {
-            name: "Node.js / Express",
-            description: "REST APIs, server-side logic and session-based applications.",
-            image: images.systems,
-          },
-          {
-            name: "React / Next.js",
-            description: "Component-based interfaces, routing and production web delivery.",
-            image: images.code,
-          },
-          {
-            name: "Streamlit",
-            description: "Fast dashboards and data applications for professional workflows.",
-            image: images.data,
+            name: "Windows · QEMU/KVM",
+            description: "Windows environments and virtual machine labs using QEMU/KVM.",
+            image: images.lab,
           },
         ],
       },
       {
-        title: "Delivery",
+        title: "Networking & Protocols",
         items: [
           {
-            name: "Git / GitHub",
-            description: "Version control, collaboration and project history management.",
-            image: images.systems,
+            name: "TCP/IP · DNS · DHCP",
+            description: "Network communication, name resolution and host configuration.",
+            image: images.lab,
           },
           {
-            name: "CI/CD",
-            description: "Automated checks and deployment-oriented engineering workflows.",
-            image: images.systems,
+            name: "HTTP/S · SMB · LDAP",
+            description: "Web, file sharing and directory service protocols.",
+            image: images.lab,
           },
           {
-            name: "Testing & Documentation",
-            description: "Validation, handoff notes and maintainable project documentation.",
-            image: images.code,
-          },
-          {
-            name: "Vercel",
-            description: "Static and frontend deployment for web projects.",
-            image: images.code,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "ai-data",
-    label: "AI & Data",
-    intro:
-      "LLM integration, machine learning, analytics and data infrastructure from professional and academic projects.",
-    image: images.ai,
-    groups: [
-      {
-        title: "LLM Systems",
-        items: [
-          {
-            name: "Gemini",
-            description: "LLM integration for chatbots, summaries and AI-assisted workflows.",
-            image: images.ai,
-          },
-          {
-            name: "RAG",
-            description: "Retrieval-augmented generation with metadata and knowledge-base context.",
-            image: images.data,
-          },
-          {
-            name: "Prompting",
-            description: "Instruction design, task framing and safer model interactions.",
-            image: images.ai,
-          },
-          {
-            name: "Input Validation",
-            description: "Abuse prevention, privacy-aware handling and safer AI interfaces.",
-            image: images.security,
+            name: "VLANs · VPN · TLS",
+            description: "Network segmentation, virtual private networks and encrypted transport.",
+            image: images.lab,
           },
         ],
       },
       {
-        title: "ML & Analytics",
+        title: "Cryptography & Authentication",
         items: [
           {
-            name: "PyTorch",
-            description: "Model experimentation and ML pipeline work.",
-            image: images.ai,
+            name: "Hashing · Symmetric/Asymmetric Cryptography",
+            description: "Hashing and symmetric and asymmetric cryptographic concepts.",
+            image: images.lab,
           },
           {
-            name: "scikit-learn",
-            description: "Classification, feature selection and time-series ML workflows.",
-            image: images.ai,
-          },
-          {
-            name: "Pandas / NumPy",
-            description: "Data cleaning, transformation, validation and numerical processing.",
-            image: images.data,
-          },
-          {
-            name: "Prophet / ARIMA PLUS",
-            description: "Forecasting workflows for KPI and time-series datasets.",
-            image: images.systems,
-          },
-        ],
-      },
-      {
-        title: "Data Platforms",
-        items: [
-          {
-            name: "MySQL / SQLite",
-            description: "Relational storage for applications, chat history and audit workflows.",
-            image: images.data,
-          },
-          {
-            name: "MongoDB",
-            description: "Document storage for analytics and sensor-data projects.",
-            image: images.data,
-          },
-          {
-            name: "BigQuery",
-            description: "Cloud analytics, forecasting views and schema-aware data processing.",
-            image: images.data,
-          },
-          {
-            name: "Spark / PySpark",
-            description: "Big-data processing and analytics pipelines.",
-            image: images.systems,
-          },
-          {
-            name: "Airflow / Looker",
-            description: "Workflow orchestration and analytics-ready reporting views.",
-            image: images.data,
+            name: "PKI · Digital Certificates · AD CS",
+            description: "Public key infrastructure, digital certificates and Active Directory Certificate Services.",
+            image: images.lab,
           },
         ],
       },
@@ -584,78 +564,85 @@ export const guideCategories: GuideCategory[] = [
   },
   {
     id: "systems",
-    label: "Systems",
-    intro:
-      "Cloud-native deployment, observability, parallel programming and algorithmic foundations.",
+    label: "Systems & DevOps",
+    intro: "Parallel programming, containers, delivery workflows and observability.",
     image: images.systems,
     groups: [
       {
-        title: "Cloud Native",
+        title: "Parallel & Systems Programming",
         items: [
           {
-            name: "Docker",
-            description: "Containerized application packaging and local deployment workflows.",
+            name: "CUDA · SIMD",
+            description: "GPU acceleration and vectorized computation.",
             image: images.systems,
           },
           {
-            name: "Kubernetes",
-            description: "Container orchestration and resource-usage forecasting projects.",
+            name: "OpenMP · MPI",
+            description: "Shared-memory and distributed parallel programming.",
             image: images.systems,
           },
           {
-            name: "Prometheus / Grafana",
-            description: "Metrics collection, monitoring data and dashboard observability.",
-            image: images.data,
-          },
-          {
-            name: "Argo Workflows",
-            description: "DAG-based workflow execution for ML and systems pipelines.",
+            name: "Multithreading · POSIX Threads · IPC",
+            description: "Threading, synchronization and inter-process communication.",
             image: images.systems,
           },
         ],
       },
       {
-        title: "Parallel",
+        title: "Containers, DevOps & Observability",
         items: [
           {
-            name: "CUDA",
-            description: "GPU acceleration for numerical processing and scaling workloads.",
+            name: "Docker · Kubernetes",
+            description: "Containerized applications and container orchestration.",
             image: images.systems,
           },
           {
-            name: "OpenMP / MPI",
-            description: "Shared-memory and distributed parallel programming patterns.",
+            name: "Argo Workflows · CI/CD",
+            description: "Workflow orchestration and continuous integration and delivery.",
             image: images.systems,
           },
           {
-            name: "SIMD",
-            description: "Vectorized computation for performance-oriented data processing.",
-            image: images.code,
+            name: "Prometheus · Grafana",
+            description: "Metrics collection, monitoring and dashboards.",
+            image: images.systems,
           },
           {
-            name: "POSIX Threads",
-            description: "Threading, synchronization and low-level process coordination.",
+            name: "Git · GitHub · Makefile",
+            description: "Version control, collaboration and build automation.",
             image: images.systems,
           },
         ],
       },
+    ],
+  },
+  {
+    id: "ai-data",
+    label: "AI & ML",
+    intro: "LLM systems, machine learning, distributed processing and forecasting.",
+    image: images.ai,
+    groups: [
       {
-        title: "Algorithms",
+        title: "LLM Systems & AI/ML",
         items: [
           {
-            name: "R-trees",
-            description: "Spatial indexing for multidimensional data structures.",
-            image: images.systems,
+            name: "Gemini · RAG · Prompting",
+            description: "LLM integration, retrieval-augmented generation and prompt design.",
+            image: images.ai,
           },
           {
-            name: "k-d Trees / LSH",
-            description: "Similarity search, multidimensional lookup and range-query foundations.",
-            image: images.systems,
+            name: "PyTorch · scikit-learn",
+            description: "Machine learning models, classification and experimentation.",
+            image: images.ai,
           },
           {
-            name: "Feature Engineering",
-            description: "Transforming raw signals and datasets into model-ready features.",
-            image: images.systems,
+            name: "PySpark",
+            description: "Distributed data processing and machine learning workflows.",
+            image: images.ai,
+          },
+          {
+            name: "Prophet · ARIMA PLUS",
+            description: "Time-series forecasting for analytics and KPI workflows.",
+            image: images.ai,
           },
         ],
       },
